@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>게시판1</h3>
+<h3>게시판12345</h3>
 </body>
 </html>
 
