@@ -7,7 +7,7 @@ public class Gittest {
 		// branch가 더 안전하고 효율적 이건 다음단계
 		
 		System.out.println("하..");
-
+		System.out.println("법규가함");
 	}
 
 }
