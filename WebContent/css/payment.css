@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+
+#love {    
+    box-sizing: border-box;
+    width: 700px;
+    height: 900px;
+    border: 1px;
+    background-color:#e7ddda;
+    padding: 20px;
+}
+
+#love>#love_title {        
+    background-color: #eb7c15;
+    color: white;    
+    text-align: center;
+    
+}
+#love_title>h2{
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: 33px;
+}
+#love_title>p{
+    position: relative;
+    top: -10px;
+    font-weight: bold;
+    
+}
+
+#line1 {    
+    margin-top: 35px;
+    margin-bottom: 30px;
+   border: 0;
+   height: 4px;
+   width: 659px;
+   background: #eb7c15;
+   
+   
+}
+
+#love_frm1 {
+    position: relative;
+    left: 16.5%;
+}
+
+#love_select{
+    font-size: 24px;
+    padding-right: 20px;
+    margin-bottom: 30px;    
+}
+
+#love_frm1>.price {
+    margin: 5px;
+}
+
+#line2 {
+    margin-top: 35px;
+    margin-bottom: 30px;
+   border: 0;
+   height: 2px;
+   width: 500px;
+    background: black;
+    position: relative;
+    left: 78px;   
+}
+
+#love_frm2{
+    position: relative;
+    left: 16.5%;
+    
+}
+
+#love_frm2>#info {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+#love_frm2> #name, #phone {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#pay{
+    position: relative;
+    left: 16.5%;
+}
+
+#pay>#payment {
+    font-size: 24px;    
+}
+#love_btn {
+    position: relative;
+    left: 30%;
+    margin-top: 50px;
+    padding: 15px;
+    width: 250px;
+
+}

@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+
+    /*-------------------------------------------- 마당 섹션 --------------------------------------------*/
+    #garden{
+        width: 1500px;
+        height: auto;
+        min-height: 1000px;
+        margin: 40px;
+        margin-left: 200px;
+        /*border:  1px solid red;*/
+    }
+    #box1 {    
+    border: 0;
+   height: 7px;
+   width: 130px;
+   background: #f84609;
+   position: absolute;
+   left: 46.5%;
+   padding-right: 6px;
+    }
+    #garden>#top>ul{        
+        list-style-type: none;
+        display: flex;        
+        justify-content: center;
+    }
+    #garden>#top>ul>li{
+        padding: 55px;
+        padding-bottom: 20px;
+        padding-left: 60px;
+        font-size: 23px;
+    }
+    #garden>#top>ul a {
+        text-decoration: none;
+        color: rgb(54, 50, 50);
+    }
+
+    #box2 {    
+        border: 0;
+   height: 7px;
+   width: 1030px;
+   padding-right: 38px;
+   background: #f84609;
+   position: absolute;
+   left: 22%;
+   padding-right: 38px;
+    }
+    #text{
+        padding: 20px;
+        font-size: 28px;
+        padding-top: 50px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .group {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 80px;
+    }
+
+    #garden #main #group4>#last {
+        padding-right: 1000px;
+    }
+
+    #garden #main p {
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    #garden{
+        padding-bottom: 90px;
+    }
+
+    #big1{
+        padding-top: 80px;
+        display: flex;
+        padding-left: 87px;
+    }
+    #big2{
+        padding-left:170px;
+    }
+
+
+
+/* hover css*/
+#MiniBar_title{
+    POSITION: absolute;
+    display:none;
+    max-width:145px;
+    width:145px;
+    color:black;
+    font-weight:bold;
+    opacity: 0.7;
+    background-color :#ed9e66;
+    border-left: 4px solid rgb(243, 79, 2);
+}
+
+/*===================*/

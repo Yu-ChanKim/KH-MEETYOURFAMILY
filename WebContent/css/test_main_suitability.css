@@ -1,0 +1,252 @@
+@charset "UTF-8";
+
+
+/* --------------  공통 초기화 작업 -------------- */
+li { list-style: none; }
+a { text-decoration: none; color: #444444;}
+body { width: 1900px; margin: 0 auto;}
+
+
+
+/* --------------  testMain.jsp -------------- */
+
+.center-contents{
+	box-sizing:border-box;
+	margin-top: 80px;
+	margin-bottom: 180px;
+}
+
+.center-contents .container-test{
+    width: 1000px;
+    box-sizing: border-box;
+    margin-top: 50px;
+    margin: auto;
+    color: #444444;
+    /* display: block; */
+}
+
+.center-contents .center-top-title>h3{
+    font-size: 35px;
+    background-color: #fddc71;
+    width: 340px;
+    height: 62px;
+    line-height: 62px;
+    text-align: center;
+    margin: auto;
+}
+
+.center-contents .center-top-title>p{
+    font-size: 14px;
+    text-align: center;
+    margin: 40px auto 60px auto;
+}
+
+.center-contents .center-middle-choice{
+    margin: auto;
+}
+
+.center-contents .center-middle-choice>.test-choice1{
+    width: 420px;
+    height: 420px;
+    background-color: #ff8a7b;
+    display: inline-block;
+    margin: 10px 38px auto 38px;
+}
+
+.center-contents .center-middle-choice>.test-choice2{
+    width: 420px;
+    height: 420px;
+    background-color: #79c9ff;
+    display: inline-block;
+    margin: auto 38px auto 38px;
+}
+
+.center-contents .center-middle-choice .containerForTest{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.center-contents .center-middle-choice .imgForChoice{
+    width: 240px;
+}
+
+.center-contents .center-middle-choice .clickForChoice{
+    color: #ffffff;
+}
+
+.center-contents .center-middle-choice .btnForChoice{
+    background-color: #5e5e5e;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 25px;
+}
+
+.center-contents .center-bottom-notice{
+    width: 410px;
+    margin: 100px auto;
+}
+
+.center-contents .center-bottom-notice>p{
+    font-size: 14px;
+    font-weight: bold;
+    color: #5e5e5e;
+    text-align: center;
+}
+
+.center-contents .center-bottom-notice>ul{
+    font-size: 13px;
+    color: #5e5e5e;
+}
+
+.center-contents .center-bottom-notice li{
+    list-style: square;
+}
+    
+    
+    
+/* --------------  testForSuitability.jsp -------------- */
+#wrap_test{
+	margin: 30px auto 60px auto;
+}
+
+#contents_test{
+	width: 1000px;
+	background-image: url('../img/testForSuitability/test_background.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+}
+
+#contents_test>.testMain{
+	margin: auto;
+	width: 1000px;
+	height: 650px;
+	box-sizing: border-box;
+	
+}
+
+#contents_test>.testMain>.wrap_test_startBtn{
+	width: 320px;
+	
+}
+
+#contents_test>.testMain>.wrap_test_startBtn>.test_startBtn{
+	position: absolute;
+	transform: translate(105% ,15%);
+	width: 320px;
+	text-align: center;
+	
+}
+
+#contents_test>.testMain>.wrap_test_startBtn>.test_startBtn:hover {
+	cursor: pointer;
+}
+
+#contents_test>.testMain>.wrap_test_mainLogo{
+	text-align: center;
+	padding: 50px 0 80px 50px;
+	width: 800px;
+	height: 650px;
+	margin: auto;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+#contents_test>.testMain>.wrap_test_mainLogo>.test_mainLogo{
+	width: 800px;
+}
+
+#contents_test>.testArea .test_question{
+	position: absolute;
+}
+
+#contents_test>.testArea .test_question1{
+	display: none;
+	width: 731px;
+    transform: translate(0% ,-323%);
+}
+
+#contents_test>.testArea .test_question2{
+	display: none;
+	width: 852px;
+    transform: translate(0% ,-334%);
+}
+
+#contents_test>.testArea .test_question3{
+	display: none;
+	width: 861px;
+    transform: translate(0% ,-403%);
+}
+
+#contents_test>.testArea .test_question4{
+	display: none;
+	width: 731px;
+    transform: translate(0% ,-406%);
+}
+
+#contents_test>.testArea .test_question5{
+	display: none;
+	width: 729px;
+    transform: translate(0% ,-407%);
+}
+
+#contents_test>.testArea .test_answer{
+	display: none;
+	box-sizing: border-box;
+	width: 1000px;
+	transform: translate(23% ,-140%);
+	position: absolute;
+}
+
+#contents_test>.testArea .test_answer>.test_yesBtn{
+	width: 220px;
+	cursor: pointer;
+	margin-right: 60px;
+}
+
+#contents_test>.testArea .test_answer>.test_noBtn{
+	width: 200px;
+	cursor: pointer;
+	margin-left: 60px;
+}
+
+#contents_test>.resultBg_pop{
+	display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+#contents_test>.resultBg_pop>.result_container{
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#contents_test>.resultBg_pop .test_resultBox{
+	position: absolute;
+	width: 800px;
+	top: 111px;
+	left: 100px;
+    
+}
+
+#contents_test>.resultBg_pop .test_resultBtn{
+	position: absolute;
+	width: 120px;
+	top: 400px;
+    left: 225px;
+}
