@@ -1,5 +1,5 @@
 package garden.model.vo;
-
+//jacob branch
 public class DogVo {
 	int dog_serial;
 	String dog_group;
