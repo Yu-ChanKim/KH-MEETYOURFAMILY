@@ -52,6 +52,14 @@
         <input type='button' value='완료' id='love_btn' name='love_btn' />
 
    </div>
+   
+   
+<script>
+	var love_btn = document.getElementById('love_btn');
+	love_btn.onclick = function(){
+		self.close();
+	}
+</script>
 
 </body>
 </html>

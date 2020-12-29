@@ -20,15 +20,17 @@
         </div>
         <div class="login-box">
           <div class="login-form">
-            <form action="/session" id="login-form" method="post">
+
+            <form action="/loginAction" id="login-form" method="post">
+
               <!-- <input name="_csrf_token" type="hidden" value="d">             -->
                 <div class="l-row l-input">
-                  <input data-cy="email" id="user_userid" name="user[userid]" placeholder="사용자 아이디" type="text">            
+                  <input data-cy="email" id="userID" name="userID" placeholder="사용자 아이디" type="text">            
                 </div>
                 <div class="l-row l-input">
-                  <input data-cy="password" id="user_password" name="user[password]" placeholder="사용자 비밀번호" type="password">
+                  <input data-cy="password" id="userPassword" name="userPassword" placeholder="사용자 비밀번호" type="password">
                 </div>
-                  <button class="button button-80 button-round button-point-border" type="submit" name="button" data-cy="submit">
+                  <button class="button button-80 button-round button-point-border" type="submit" name="button" data-cy="submit" value="로그인">
                     <span class="title-small8 color-peach b">로그인</span>
                   </button>
 
