@@ -16,7 +16,7 @@
 <body> 
 	<%
 		UserDao userDao = new UserDao();
-		int result = userDao.login(user.getUserID(), user.getUserPW());		/* 로그인페이지에서 입력된값이 이곳으로 넘어와 로그인 함수에서 실행 */
+		int result = userDao.login(user.getUserID(), user.getUserPassword());		/* 로그인페이지에서 입력된값이 이곳으로 넘어와 로그인 함수에서 실행 */
 			if(result == 1){
 				PrintWriter script = response.getWriter();
 				script.println("<location.href = 'main.jsp'>");	// 로그인이 성공하였을때 메인페이지로 넘어감.

@@ -27,7 +27,7 @@
 		<div id='main'>
 			<div class='group' id='group1'>
 				<div>
-					<a href="main.jsp?inc=./dog_garden/dog_page/dog_page_small_1.jsp"><img
+					<a href="main.jsp?inc=./dog_garden/dog_page/dog_page_small_1.jsp" readOnly><img
 						src="./img/dog_image/(소)푸들1.jpg" width='330px' height='330px'
 						onmouseover="Show_Minibar(this, '견종: 푸들','성별 : 수컷','나이 : 2(세)','성격 : 애교많음' );"></a>
 					<div id="MiniBar_title"></div>
