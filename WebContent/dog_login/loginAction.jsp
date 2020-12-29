@@ -5,7 +5,7 @@
 <%@ request.setCharacterEncoding("UTF-8"); %><!-- 건너오는 모든 데이터를 UTF-8 로 받는다. -->
 <jsp:useBean id="user" class="user.User" scope="page" />	<!--유저라는 클래스를 자바 빈즈로 사용. 현재페이지안에서만 빈즈가 사용될수 있게한다.   -->
 <jsp:setProperty name="user" property="userID"/>
-<jsp:setproperty name="user" property="userpassword" />
+<jsp:setproperty name="user" property="userPassword" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
