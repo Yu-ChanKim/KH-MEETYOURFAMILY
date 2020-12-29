@@ -21,8 +21,8 @@ public class User {
 	public String getUserPassword() {
 		return userPassword;
 	}
-	public void setUserPassword(String userPW) {
-		this.userPassword = userPW;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 	public String getUserGender() {
 		return userGender;

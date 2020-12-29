@@ -20,7 +20,7 @@
         </div>
         <div class="login-box">
           <div class="login-form">
-            <form action="loginAction" id="login-form" method="post">
+            <form action="loginAction.jsp" id="login-form" method="post">
               <!-- <input name="_csrf_token" type="hidden" value="d">             -->
                 <div class="l-row l-input">
                   <input data-cy="email" id="userID" name="userID" placeholder="사용자 아이디" type="text">            
