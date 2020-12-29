@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>alert_test</title>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <style>
 .swal-footer {
 	text-align: center;
@@ -63,10 +63,7 @@
                 text: '입양 절차 소개로 이동합니다.',
             });
         });
-    });
-    
-    
-
+    });  
     
 </script>
 </html>

@@ -12,6 +12,14 @@
 <link rel="stylesheet" href="./css/payment.css" type="text/css">
 <script src='./js/payment.js'></script>
 <script src='./lib/jquery-3.5.1.min.js'></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<style>
+.swal-footer {
+	text-align: center;
+}
+
+</style>
 </head>
 <!------------------------------------------------------------------------------------- 바디 ------------------------------------------------------------------------------------->
 <body>
