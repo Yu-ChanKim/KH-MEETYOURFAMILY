@@ -126,7 +126,7 @@
 					</c:if>
 			
 					<c:forEach var="i" begin="${startPage}" end="${(startPage+pages-1 lt lastPage)? startPage+pages-1 : lastPage}">
-						<td><input type="button" class="pageNo" value="${i}"
+						<td><input type="button" class="pageNo" value="${i}" name="${(pNo eq i)?'currentPage':''}"
 								onClick="location.href='?pageNo=${i}&category=${param.category}&keyword=${param.keyword}'"></td>
 					</c:forEach>
 
