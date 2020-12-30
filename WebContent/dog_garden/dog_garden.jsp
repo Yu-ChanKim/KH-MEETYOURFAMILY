@@ -17,11 +17,6 @@
 </head>
 <!------------------------------------------------------------------------------------- 바디 ------------------------------------------------------------------------------------->
 <body>
-		<%
-			DogDao dao = new DogDao();
-			List<DogVo> list = dao.select();
-			
-		%>
 
 
 	<!-------------------------------------------- 중간 -------------------------------------------->
@@ -33,8 +28,23 @@
 		<div id='text'>| 전체 |</div>
 		<!-- 강아지 사진 시작-->
 		
-			<% for(DogVo vo : list){ %>
+		<%
+			DogDao dao = new DogDao();
+			List<DogVo> list = dao.select();
+			
+			//total 16마리 / col 3개 row 6개 필요
+			int dogCnt = list.size();
+			int col = 3;
+			int row = (dogCnt/col) + (dogCnt%col>0? 1:0);
+			//출력개수를 총개수보다 많지않게 처리하는 값을 저장하는 변수
+			int checkNum =0;
+			
+			for(int i=0; i<row; i++){
+		%>
 		<div id='main'>
+			<% for(int j=0; j<col; j++){ 
+				DogVo vo = list.get(checkNum);
+			%>
 			<div class='group' id='group1'>
 				<div>
 					<a href="main.jsp?inc=./dog_garden/dog_page/dog_page_small_1.jsp"><img
@@ -46,6 +56,11 @@
 					<p><%=vo.getDog_name() %></p>
 				</div>
 			</div>
+		<%
+			checkNum++;
+			if(checkNum == dogCnt) break;
+			}
+		%>
 		</div>
 			<% } %>
 	</div>
