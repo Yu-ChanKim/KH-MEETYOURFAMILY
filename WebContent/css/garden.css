@@ -54,9 +54,7 @@
         justify-content: center;
 
     }
-	#main {
-		display:flex;
-	}
+
     .group {
         display: flex;
         justify-content: space-around;
