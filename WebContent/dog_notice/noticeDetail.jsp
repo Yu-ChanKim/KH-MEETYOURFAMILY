@@ -17,15 +17,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>notice_DETAIL</title>
-    <link rel="stylesheet" href="../css/notice/noticeDetail.css">
+    <link rel="stylesheet" href="./css/notice/noticeDetail.css">
+    
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+    
 </head>
 
 <body>
 
+<%@include file="../header.jsp"%>
+
+<%-- 
     <div id="header">
 		여긴 헤더야, 헤더.
     </div>
-
+--%>
+ 
     <div id="noticeDetail">
         
         <div class="noticeDetail_title">
@@ -100,9 +107,14 @@
 
     </div>
 
+<%-- 
     <div id="footer">
 		여긴 푸터다, 푸터.
 	</div>
+--%>
+
+<%@include file="../footer.jsp"%>
+
 </body>
 
 </html>

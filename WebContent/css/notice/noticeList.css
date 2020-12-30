@@ -4,13 +4,15 @@
     border: 1px solid black;
 } */
 
-
 body {
     margin: 0;
     box-sizing: border-box;
     text-align: center;
     
 }
+
+
+/*
 #header, #footer {
     height: 150px;
     background: lavender;
@@ -18,9 +20,11 @@ body {
     text-align: center;
     line-height: 300%;
 }
+*/
 
 
 #noticeList {
+	
     position: relative;
     display: inline-block;
     width: 1000px;
