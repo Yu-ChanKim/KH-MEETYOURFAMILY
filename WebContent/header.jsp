@@ -1,7 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <header id='header'>
+<<<<<<< HEAD
             <a href="main.jsp"><h2>Meet Your Family</h2></a>
+=======
+
+            <a href="../../KH-MEETYOURFAMILY/main.jsp"><h2>Meet Your Family</h2></a>
+
+>>>>>>> 3991eac5bc7b0b2bdbcfe05c57b94b43062f314d
             <nav>             
                 <ul>                    
                     <li><a href="main.jsp?inc=./dog_introduce/introduce.jsp">사업소개</a></li>

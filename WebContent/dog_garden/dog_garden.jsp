@@ -32,17 +32,17 @@
 			DogDao dao = new DogDao();
 			List<DogVo> list = dao.select();
 			
-			//total 16마리 / col 3개 row 6개 필요
+			//total 16마리 / col 6개 row 3개 
 			int dogCnt = list.size();
-			int col = 3;
-			int row = (dogCnt/col) + (dogCnt%col>0? 1:0);
+			int row = 3;
+			int col = (dogCnt/row) + (dogCnt%row>0? 1:0);
 			//출력개수를 총개수보다 많지않게 처리하는 값을 저장하는 변수
 			int checkNum =0;
 			
-			for(int i=0; i<row; i++){
+			for(int i=0; i<col; i++){
 		%>
 		<div id='main'>
-			<% for(int j=0; j<col; j++){ 
+			<% for(int j=0; j<row; j++){ 
 				DogVo vo = list.get(checkNum);
 			%>
 			<div class='group' id='group1'>
