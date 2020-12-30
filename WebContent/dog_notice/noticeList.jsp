@@ -12,9 +12,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>notice_LIST</title>
-	<link rel="stylesheet" href="../css/notice/noticeList.css">
+	<link rel="stylesheet" href="./css/notice/noticeList.css">
 	
-	<link rel="stylesheet" href="../css/main.css" type="text/css">
+	<link rel="stylesheet" href="./css/main.css" type="text/css">
 </head>
 
 <body>
@@ -63,7 +63,7 @@
 								<fmt:formatNumber value="${n.id}" />
 							</td>
 							<td class="text-align-left">
-								<a href="noticeDetail?id=${n.id}">${n.title}</a>
+								<a href="main.jsp?inc=./dog_notice/noticeDetail?id=${n.id}">${n.title}</a>
 							</td>
 							<td>
 								${n.writer}

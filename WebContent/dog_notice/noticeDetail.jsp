@@ -17,9 +17,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>notice_DETAIL</title>
-    <link rel="stylesheet" href="../css/notice/noticeDetail.css">
+    <link rel="stylesheet" href="./css/notice/noticeDetail.css">
     
-    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
 </head>
 
 <body>
@@ -83,7 +83,7 @@
 
         <div class="noticeDetail_btns">
         
-            <input type="button" class="noticeDetail_btns_list" onClick="location.href='noticeList'" value="목록">
+            <input type="button" class="noticeDetail_btns_list" onClick="location.href='main.jsp?inc=./dog_notice/noticeList'" value="목록">
             <input type="button" class="noticeDetail_btns_edit" onClick="location.href=''" value="수정">
             <input type="button" class="noticeDetail_btns_delete" onClick="location.href=''" value="삭제">
             
