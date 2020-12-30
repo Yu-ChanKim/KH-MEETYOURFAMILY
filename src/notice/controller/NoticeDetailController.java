@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import notice.entity.Notice;
+import notice.service.NoticeService;
 
 @WebServlet("/dog_notice/noticeDetail")
 public class NoticeDetailController extends HttpServlet
@@ -24,52 +25,9 @@ public class NoticeDetailController extends HttpServlet
 	{
 		int id = Integer.parseInt(req.getParameter("id"));
 
-		String url = "jdbc:oracle:thin:@localhost:1521:XE";
-		String sql = "SELECT * FROM NOTICE WHERE ID=?";
-		
-		try
-		{
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(url, "system", "oracle");
-			PreparedStatement st = con.prepareStatement(sql);
-			st.setInt(1, id);
-			
-			ResultSet rs = st.executeQuery();
-			
-			rs.next();
-			
-			String title = rs.getString("TITLE");
-			String writer = rs.getString("WRITER");
-			Date regdate = rs.getDate("REGDATE");
-			String files = rs.getString("FILES");
-			String hit = rs.getString("HIT");
-			String content = rs.getString("CONTENT");
-			
-			Notice notice = new Notice(id, title, writer, regdate, files, hit, content);
-		    
-		    req.setAttribute("n", notice);
-		    /*
-		    req.setAttribute("title", title);
-		    req.setAttribute("writer", writer);
-		    req.setAttribute("regdate", regdate);
-		    req.setAttribute("hit", hit);
-		    req.setAttribute("files", files);
-		    req.setAttribute("content", content);
-		    */
-		    
-			rs.close();
-			st.close();
-			con.close();
-
-		}
-		catch (ClassNotFoundException e)
-		{
-			e.printStackTrace();
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-		}
+		NoticeService service = new NoticeService();
+		Notice notice = service.getNotice(id);
+		req.setAttribute("n", notice);
 
 		req.getRequestDispatcher("/dog_notice/noticeDetail.jsp").forward(req, resp);
 	}

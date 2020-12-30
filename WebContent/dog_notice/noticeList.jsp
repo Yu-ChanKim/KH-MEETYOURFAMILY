@@ -115,17 +115,17 @@
 					<fmt:parseNumber var="startPage" type="number" value="${pNo-((pNo-1) mod pages)}" />
 					<fmt:parseNumber var="lastPage" type="number" value="${fn:substringBefore(Math.ceil(count/10), '.')}" />
  				-->
-					<c:if test="${pNo gt pages}">
+					<c:if test="${pNo > pages}">
 						<td><input type="button" class="paging-parenthesis prev" value="◀"
 								onClick="location.href='?pageNo=${startPage-pages}&category=${param.category}&keyword=${param.keyword}'" ></td>
 					</c:if>
 			
-					<c:forEach var="i" begin="${startPage}" end="${(startPage+pages-1 lt lastPage)? startPage+pages-1 : lastPage}">
-						<td><input type="button" class="pageNo" value="${i}"
+					<c:forEach var="i" begin="${startPage}" end="${(startPage+pages-1 < lastPage)? startPage+pages-1 : lastPage}">
+						<td><input type="button" class="pageNo" value="${i}" name="${(pNo==i)?"currentPage":""}"
 								onClick="location.href='?pageNo=${i}&category=${param.category}&keyword=${param.keyword}'"></td>
 					</c:forEach>
 
-					<c:if test="${startPage+pages lt lastPage}">
+					<c:if test="${startPage+pages < lastPage}">
 						<td><input type="button" class="paging-parenthesis next" value="▶"
 								onClick="location.href='?pageNo=${startPage+pages}&category=${param.category}&keyword=${param.keyword}'"></td>
 					</c:if>

@@ -199,6 +199,10 @@ body {
     transition: background-color 1s, color 1s;
 }
 
+#noticeList > .noticeList_paging > table input[name="currentPage"] {
+	background-color: lavender;
+}
+
 #noticeList > .noticeList_paging > table input:hover {
     background-color: aqua;
 }
@@ -206,32 +210,3 @@ body {
 #noticeList > .noticeList_paging > table input:active {
     background-color: deepskyblue;
 }
-
-
-
-
-/* 
-
-#noticeList > .noticeList_bottom > .noticeList_write {
-    display: inline-block;
-    background-color: orange;
-    width : 100px;
-    height : 35px;
-    font-size: 18px;
-    font-weight: bold;
-    color: black;
-    border-radius: 10px;
-    padding-top: 10px;
-    transition: background-color 500ms;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-}
-
-#noticeList > .noticeList_bottom > .noticeList_write:hover {
-    background-color: green;
-    transition: background-color 500ms, color 500ms;
-    color: cyan;
-}
-
- */
