@@ -21,7 +21,7 @@
         <div class="login-box">
           <div class="login-form">
 
-            <form action="/loginAction" id="login-form" method="post">
+            <form action="main.jsp?inc=main.jsp" id="login-form" method="post">
 
               <!-- <input name="_csrf_token" type="hidden" value="d">             -->
                 <div class="l-row l-input">
@@ -35,7 +35,7 @@
                   </button>
 
                 <div class="l-row l-input">
-                  <a class="button button-80 button-round button-mouse-border" href="main.jsp?inc=./dog_login/user_register.jsp">
+                  <a class="button button-80 button-round button-mouse-border" href="main.jsp?inc=./dog_login/join.jsp">
                     <span class="font-ns title-small8 color-mouse b">회원가입</span>
                   </a>
                   
