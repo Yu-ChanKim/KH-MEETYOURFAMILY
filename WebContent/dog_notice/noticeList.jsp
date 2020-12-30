@@ -6,28 +6,26 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
 	<meta charset="UTF-8">
 	<title>notice_LIST</title>
-	<link rel="stylesheet" href="./css/notice/noticeList.css">
+	<link rel="stylesheet" href="../css/notice/noticeList.css">
 	
-	<link rel="stylesheet" href="./css/main.css" type="text/css">
-	
+	<link rel="stylesheet" href="../css/main.css" type="text/css">
 </head>
 
 <body>
 
 <%@include file="../header.jsp"%>
-
 <%--
-	<div id="header">
+    <div id="header">
 		여긴 헤더야, 헤더.
-	</div>
+    </div>
 --%>
+
 
 	<div id="noticeList">
 
@@ -116,23 +114,23 @@
 					<c:set var="pNo" value="${(param.pageNo == null) ? 1 : param.pageNo}" />
 					<c:set var="startPage" value="${pNo-((pNo-1) mod pages)}" />
 					<c:set var="lastPage" value="${fn:substringBefore(Math.ceil(count/10), '.')}" />
-				<%-- 	
+				<!-- 	
 					<fmt:parseNumber var="pages" type="number" value="10" />
 					<fmt:parseNumber var="pNo" type="number" value="${(param.pageNo == null) ? 1 : param.pageNo}" />
 					<fmt:parseNumber var="startPage" type="number" value="${pNo-((pNo-1) mod pages)}" />
 					<fmt:parseNumber var="lastPage" type="number" value="${fn:substringBefore(Math.ceil(count/10), '.')}" />
- 				--%>
-					<c:if test="${pNo > pages}">
+ 				-->
+					<c:if test="${pNo gt pages}">
 						<td><input type="button" class="paging-parenthesis prev" value="◀"
 								onClick="location.href='?pageNo=${startPage-pages}&category=${param.category}&keyword=${param.keyword}'" ></td>
 					</c:if>
 			
-					<c:forEach var="i" begin="${startPage}" end="${(startPage+pages-1 < lastPage)? startPage+pages-1 : lastPage}">
-						<td><input type="button" class="pageNo" value="${i}" name="${(pNo==i)?"currentPage":""}"
+					<c:forEach var="i" begin="${startPage}" end="${(startPage+pages-1 lt lastPage)? startPage+pages-1 : lastPage}">
+						<td><input type="button" class="pageNo" value="${i}"
 								onClick="location.href='?pageNo=${i}&category=${param.category}&keyword=${param.keyword}'"></td>
 					</c:forEach>
 
-					<c:if test="${startPage+pages < lastPage}">
+					<c:if test="${startPage+pages lt lastPage}">
 						<td><input type="button" class="paging-parenthesis next" value="▶"
 								onClick="location.href='?pageNo=${startPage+pages}&category=${param.category}&keyword=${param.keyword}'"></td>
 					</c:if>
@@ -140,7 +138,7 @@
 
 			</table>
 
-		<%--
+		<!--
 			<c:set var="pages" value="10" />
 			<c:set var="pNo" value="${(param.pageNo == null) ? 1 : param.pageNo}" />
 			<c:set var="startPage" value="${pNo-(pNo%pages) + 1}" />
@@ -157,19 +155,19 @@
 			<c:if test="${startPage+pages < lastPage}">
 				<a class="paging-parenthesis next" href="?pageNo=${startPage+pages}">▶</a>
 			</c:if>
-		--%>
+		-->
 				
 		</div>
 		
 
 	</div>
 
+	
 <%--
-	<div id="footer">
+    <div id="footer">
 		여긴 푸터다, 푸터.
 	</div>
 --%>
-	
 <%@include file="../footer.jsp"%>
 
 </body>
