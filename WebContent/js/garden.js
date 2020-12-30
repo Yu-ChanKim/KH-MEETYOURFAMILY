@@ -11,8 +11,8 @@ function Show_Minibar(obj,content1,content2,content3,content4)
 
 
 function detail(name){
-	var frm = document.frm_garden;
-	frm.action = 'garden.do?siba=view';
-	frm.dname.value=name;	
-	frm.submit();	
+   var frm = document.frm_garden;
+   frm.action = 'garden.do?siba=view';
+   frm.dname.value=name;   
+   frm.submit();   
 }

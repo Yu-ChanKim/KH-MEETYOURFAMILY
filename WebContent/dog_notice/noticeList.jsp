@@ -12,14 +12,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>notice_LIST</title>
-	<link rel="stylesheet" href="../css/notice/noticeList.css">
+	<link rel="stylesheet" href="./css/notice/noticeList.css">
+	
+	<link rel="stylesheet" href="./css/main.css" type="text/css">
 </head>
 
 <body>
 
-	<div id="header">
+<%@include file="../header.jsp"%>
+<%--
+    <div id="header">
 		여긴 헤더야, 헤더.
-	</div>
+    </div>
+--%>
 
 
 	<div id="noticeList">
@@ -58,7 +63,7 @@
 								<fmt:formatNumber value="${n.id}" />
 							</td>
 							<td class="text-align-left">
-								<a href="noticeDetail?id=${n.id}">${n.title}</a>
+								<a href="main.jsp?inc=./dog_notice/noticeDetail?id=${n.id}">${n.title}</a>
 							</td>
 							<td>
 								${n.writer}
@@ -115,17 +120,17 @@
 					<fmt:parseNumber var="startPage" type="number" value="${pNo-((pNo-1) mod pages)}" />
 					<fmt:parseNumber var="lastPage" type="number" value="${fn:substringBefore(Math.ceil(count/10), '.')}" />
  				-->
-					<c:if test="${pNo > pages}">
+					<c:if test="${pNo gt pages}">
 						<td><input type="button" class="paging-parenthesis prev" value="◀"
 								onClick="location.href='?pageNo=${startPage-pages}&category=${param.category}&keyword=${param.keyword}'" ></td>
 					</c:if>
 			
-					<c:forEach var="i" begin="${startPage}" end="${(startPage+pages-1 < lastPage)? startPage+pages-1 : lastPage}">
-						<td><input type="button" class="pageNo" value="${i}" name="${(pNo==i)?"currentPage":""}"
+					<c:forEach var="i" begin="${startPage}" end="${(startPage+pages-1 lt lastPage)? startPage+pages-1 : lastPage}">
+						<td><input type="button" class="pageNo" value="${i}" name="${(pNo eq i)?'currentPage':''}"
 								onClick="location.href='?pageNo=${i}&category=${param.category}&keyword=${param.keyword}'"></td>
 					</c:forEach>
 
-					<c:if test="${startPage+pages < lastPage}">
+					<c:if test="${startPage+pages lt lastPage}">
 						<td><input type="button" class="paging-parenthesis next" value="▶"
 								onClick="location.href='?pageNo=${startPage+pages}&category=${param.category}&keyword=${param.keyword}'"></td>
 					</c:if>
@@ -158,9 +163,12 @@
 	</div>
 
 	
-	<div id="footer">
+<%--
+    <div id="footer">
 		여긴 푸터다, 푸터.
 	</div>
+--%>
+<%@include file="../footer.jsp"%>
 
 </body>
 

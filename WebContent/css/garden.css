@@ -7,7 +7,8 @@
         height: auto;
         min-height: 1000px;
         margin: 40px;
-        margin-left: 200px;        
+        margin-left: 200px;
+        
     }
     #box1 {    
       border: 0;
@@ -65,30 +66,32 @@
         padding : 45px;
      
     }
+  
 
-   #garden #main p {        
+    #garden #main p {
+        
         font-size: 25px;
         font-weight: bold;
     }
-	
-  
-	
-	
-	#main {	  
-	    width: 100%;
-	}
 
-	#main table {	  
-	    width: 100%;
-	    text-align: center;
-	    line-height: 40px;
-	}
 
-	#main img {
-    	padding-top: 20px;
-	}
-	
-	
+   
+   #main {
+    width: 100%;
+}
+
+   #main table {
+    
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+}
+
+   #main img {
+    padding-top: 20px;
+}
+
+
 /* hover css*/
 #MiniBar_title{
     POSITION: absolute;

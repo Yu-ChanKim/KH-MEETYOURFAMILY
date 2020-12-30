@@ -22,7 +22,7 @@
 
    <!-------------------------------------------- 중간 -------------------------------------------->
 <div id='garden'>
-	<div id='box1'></div>
+   <div id='box1'></div>
       <%@include file="garden_menu.jsp"%>
 
     <div id='box2'></div>
@@ -30,34 +30,34 @@
      <!-- 강아지 사진 시작-->
     
     <form name="frm_garden">
- 		<input name='dname' type='text' value='${param.dname }'>  
+       <input name='dname' type='text' value='${param.dname }'>  
     </form>  
       
       
     <% DogDao dao = new DogDao();
-   	   List<DogVo> list = dao.select(); %>
-	<div id='main'>
-    	<table>
-        	<tr>
-		<% for(DogVo vo : list) { %>            
-	            	<td>
-	                  <img src="./img/dog_image/<%=vo.getDog_photo()%>" onclick='detail(name)' name='<%=vo.getDog_name()%>' width='330px' height='330px'
-	                        onmouseover="Show_Minibar(this, '견종 : <%=vo.getDog_breed() %>'
-	                                               		  , '성별 : <%=vo.getDog_gender() %>'
-	                                               		  , '나이 : <%=vo.getDog_age() %>'
-	                                               		  , 'MBTI : <%=vo.getDog_mbti() %>' );">
-	                    
-	                <div id="MiniBar_title"></div>                   
-	                <p><%=vo.getDog_name() %></p>
-	                </td>
-			<% if(list.indexOf(vo)%3 == 2) {%>
-			</tr>
+         List<DogVo> list = dao.select(); %>
+   <div id='main'>
+       <table>
+           <tr>
+      <% for(DogVo vo : list) { %>            
+                  <td>
+                     <img src="./img/dog_image/<%=vo.getDog_photo()%>" onclick='detail(name)' name='<%=vo.getDog_name()%>' width='330px' height='330px'
+                           onmouseover="Show_Minibar(this, '견종 : <%=vo.getDog_breed() %>'
+                                                          , '성별 : <%=vo.getDog_gender() %>'
+                                                          , '나이 : <%=vo.getDog_age() %>'
+                                                          , 'MBTI : <%=vo.getDog_mbti() %>' );">
+                       
+                   <div id="MiniBar_title"></div>                   
+                   <p><%=vo.getDog_name() %></p>
+                   </td>
+         <% if(list.indexOf(vo)%3 == 2) {%>
+         </tr>
                <tr>
-			<% }
-		   } %> 
-		      </tr>
-		      
-    	</table>
+         <% }
+         } %> 
+            </tr>
+            
+       </table>
     </div>
 </div>
          
