@@ -17,6 +17,11 @@
 </head>
 <!------------------------------------------------------------------------------------- 바디 ------------------------------------------------------------------------------------->
 <body>
+		<%
+			DogDao dao = new DogDao();
+			List<DogVo> list = dao.select();
+			
+		%>
 
 
 	<!-------------------------------------------- 중간 -------------------------------------------->
@@ -28,14 +33,8 @@
 		<div id='text'>| 전체 |</div>
 		<!-- 강아지 사진 시작-->
 		
-		<%
-			DogDao dao = new DogDao();
-			List<DogVo> list = dao.select();
-			
-		
-		%>
-		<div id='main'>
 			<% for(DogVo vo : list){ %>
+		<div id='main'>
 			<div class='group' id='group1'>
 				<div>
 					<a href="main.jsp?inc=./dog_garden/dog_page/dog_page_small_1.jsp"><img
@@ -47,6 +46,7 @@
 					<p><%=vo.getDog_name() %></p>
 				</div>
 			</div>
+		</div>
 			<% } %>
 	</div>
 

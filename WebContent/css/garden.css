@@ -61,9 +61,6 @@
         padding-top: 80px;
     }
 
-    #garden #main #group4>#last {
-        padding-right: 1000px;
-    }
 
     #garden #main p {
         text-align: center;
@@ -73,15 +70,6 @@
 
     #garden{
         padding-bottom: 90px;
-    }
-
-    #big1{
-        padding-top: 80px;
-        display: flex;
-        padding-left: 87px;
-    }
-    #big2{
-        padding-left:170px;
     }
 
 
