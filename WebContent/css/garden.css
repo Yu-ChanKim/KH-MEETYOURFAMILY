@@ -7,17 +7,16 @@
         height: auto;
         min-height: 1000px;
         margin: 40px;
-        margin-left: 200px;
-        /*border:  1px solid red;*/
+        margin-left: 200px;        
     }
     #box1 {    
-    border: 0;
-   height: 7px;
-   width: 130px;
-   background: #f84609;
-   position: absolute;
-   left: 46.5%;
-   padding-right: 6px;
+      border: 0;
+      height: 7px;
+      width: 130px;
+      background: #f84609;
+      position: absolute;
+      left: 46.5%;
+      padding-right: 6px;
     }
     #garden>#top>ul{        
         list-style-type: none;
@@ -36,14 +35,14 @@
     }
 
     #box2 {    
-        border: 0;
-   height: 7px;
-   width: 1030px;
-   padding-right: 38px;
-   background: #f84609;
-   position: absolute;
-   left: 22%;
-   padding-right: 38px;
+       border: 0;
+      height: 7px;
+      width: 1030px;
+      padding-right: 38px;
+      background: #f84609;
+      position: absolute;
+      left: 22%;
+      padding-right: 38px;
     }
     #text{
         padding: 20px;
@@ -55,37 +54,41 @@
 
     }
 
-    .group {
-        display: flex;
-        justify-content: space-around;
-        padding-top: 80px;
-    }
-
-    #garden #main #group4>#last {
-        padding-right: 1000px;
-    }
-
-    #garden #main p {
-        text-align: center;
-        font-size: 25px;
-        font-weight: bold;
-    }
-
     #garden{
         padding-bottom: 90px;
     }
-
-    #big1{
+    
+    .group {      
         padding-top: 80px;
-        display: flex;
-        padding-left: 87px;
+        text-align: center;
+        display:inline-block;
+        padding : 45px;
+     
     }
-    #big2{
-        padding-left:170px;
+
+   #garden #main p {        
+        font-size: 25px;
+        font-weight: bold;
     }
+	
+  
+	
+	
+	#main {	  
+	    width: 100%;
+	}
 
+	#main table {	  
+	    width: 100%;
+	    text-align: center;
+	    line-height: 40px;
+	}
 
-
+	#main img {
+    	padding-top: 20px;
+	}
+	
+	
 /* hover css*/
 #MiniBar_title{
     POSITION: absolute;

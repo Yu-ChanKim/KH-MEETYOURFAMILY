@@ -11,9 +11,10 @@
 <link rel="stylesheet" href="./css/garden.css" type="text/css">
 <link rel="stylesheet" href="./css/payment.css" type="text/css">
 <script src='./js/payment.js'></script>
+<script src="./js/garden.js"></script>
 <script src='./lib/jquery-3.5.1.min.js'></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <style>
 .swal-footer {
 	text-align: center;
@@ -31,7 +32,7 @@
 		<div id='dog_page'>
 			<div id='box1'></div>
 			<div id='dog_page_top'>
-				<p>서울</p>
+				<p>'${vo.dog_name }'</p>
 			</div>
 			<div id='box2'></div>
 			<h4>올바른 반려문화를 지향합니다.</h4>
@@ -46,8 +47,8 @@
 				<!-------------------- 강아지 정보 영역 ------------------>
 				<div id='info1'>
 					<div id='info2'>
-						<span>견종</span> <span>푸들</span> <span>성격</span> <span>활발</span> <span>성별</span>
-						<span>암컷</span> <span>나이</span> <span>3살</span> <span>체중</span> <span>2.8kg</span>
+						<span>견종</span> <span>'${vo.dog_breed }'</span> <span>성격</span> <span>'${vo.dog_mbti_char }'</span> <span>성별</span>
+						<span>'${vo.dog_gender}'</span> <span>나이</span> <span>'${vo.dog_age }'</span> <span>체중</span> <span>'${vo.dog_weight }'</span>
 					</div>
 				</div>
 			</div>
@@ -97,7 +98,9 @@
 			</div>
 		</div>
 		<!-------------------------------------------- 하단 푸터 -------------------------------------------->
-
+    <input name='photo' type='text' value='${param.photo }'>
+    	
+	
 	</div>
 	
 <script>payment()</script>	

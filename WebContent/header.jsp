@@ -7,7 +7,7 @@
                     <li><a href="main.jsp?inc=./dog_introduce/introduce.jsp">사업소개</a></li>
                     <li><a href="main.jsp?inc=./dog_garden/dog_garden.jsp">마당</a></li>
                     <li><a href="main.jsp?inc=./dog_test/testMain.jsp">who's my family</a></li>
-                    <li><a href="main.jsp?inc=./dog_post/test4.jsp">meet your family</a></li>
+                    <li><a href="main.jsp?inc=./dog_notice/noticeList.jsp">meet your family</a></li>
                     <li><a href="main.jsp?inc=./dog_mypage/test5.jsp">마이페이지</a></li>                                                        
                 </ul>                               
             </nav>       

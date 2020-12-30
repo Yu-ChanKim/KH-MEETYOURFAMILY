@@ -22,27 +22,29 @@ public class DogDao {
 		List<DogVo> list = new ArrayList<DogVo>();
 		
 		try {
+					
+			String sql = " select * from dog ";
+		
+			ps = conn.prepareStatement(sql);
 			
-		
-		String sql = "select * from dog";
-		
-		ps = conn.prepareStatement(sql);
-		rs = ps.executeQuery();
-		
-		while(rs.next()) {
-			DogVo vo = new DogVo();
-			vo.setDog_serial(rs.getInt("dog_serial"));
-			vo.setDog_group(rs.getString("dog_group"));
-			vo.setDog_name(rs.getString("dog_name"));
-			vo.setDog_breed(rs.getString("dog_breed"));
-			vo.setDog_gender(rs.getString("dog_gender"));
-			vo.setDog_age(rs.getString("dog_age"));
-			vo.setDog_weight(rs.getString("dog_weight"));
-			vo.setDog_mbti(rs.getString("dog_mbti"));
-			vo.setDog_mbti_char(rs.getString("dog_mbti_char"));
-			vo.setDog_photo(rs.getString("dog_photo"));
 			
-			list.add(vo);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				DogVo vo = new DogVo();
+				vo.setDog_serial(rs.getInt("dog_serial"));
+				vo.setDog_group(rs.getString("dog_group"));
+				vo.setDog_name(rs.getString("dog_name"));
+				vo.setDog_breed(rs.getString("dog_breed"));
+				vo.setDog_gender(rs.getString("dog_gender"));
+				vo.setDog_age(rs.getString("dog_age"));
+				vo.setDog_weight(rs.getString("dog_weight"));
+				vo.setDog_mbti(rs.getString("dog_mbti"));
+				vo.setDog_mbti_char(rs.getString("dog_mbti_char"));
+				vo.setDog_photo(rs.getString("dog_photo"));
+				
+				list.add(vo);
 		}
 		
 		
@@ -55,8 +57,42 @@ public class DogDao {
 	}
 	
 	
+	public DogVo view(String name) {
+		DogVo vo = new DogVo();
+		try {
+			
+			String sql = " select * from dog where dog_name = ? ";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, name);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				vo.setDog_serial(rs.getInt("dog_serial"));
+				vo.setDog_group(rs.getString("dog_group"));
+				vo.setDog_name(rs.getString("dog_name"));
+				vo.setDog_breed(rs.getString("dog_breed"));
+				vo.setDog_gender(rs.getString("dog_gender"));
+				vo.setDog_age(rs.getString("dog_age"));
+				vo.setDog_weight(rs.getString("dog_weight"));
+				vo.setDog_mbti(rs.getString("dog_mbti"));
+				vo.setDog_mbti_char(rs.getString("dog_mbti_char"));
+				vo.setDog_photo(rs.getString("dog_photo"));				
+			}			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			disConn();
+			return vo;
+		}
+		
+		
+	}
+	
+	
 	
 	/*
+	
 	
 	insert(){	}
 	
