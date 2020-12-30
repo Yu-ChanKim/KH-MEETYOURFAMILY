@@ -11,13 +11,13 @@
         /*border:  1px solid red;*/
     }
     #box1 {    
-    border: 0;
-   height: 7px;
-   width: 130px;
-   background: #f84609;
-   position: absolute;
-   left: 46.5%;
-   padding-right: 6px;
+      border: 0;
+      height: 7px;
+      width: 130px;
+      background: #f84609;
+      position: absolute;
+      left: 46.5%;
+      padding-right: 6px;
     }
     #garden>#top>ul{        
         list-style-type: none;
@@ -36,14 +36,14 @@
     }
 
     #box2 {    
-        border: 0;
-   height: 7px;
-   width: 1030px;
-   padding-right: 38px;
-   background: #f84609;
-   position: absolute;
-   left: 22%;
-   padding-right: 38px;
+       border: 0;
+      height: 7px;
+      width: 1030px;
+      padding-right: 38px;
+      background: #f84609;
+      position: absolute;
+      left: 22%;
+      padding-right: 38px;
     }
     #text{
         padding: 20px;
@@ -55,22 +55,32 @@
 
     }
 
-    .group {
-        display: flex;
-        justify-content: space-around;
-        padding-top: 80px;
+    #garden{
+        padding-bottom: 90px;
     }
-
-
-    #garden #main p {
+    
+    .group {      
+        padding-top: 80px;
         text-align: center;
+     
+    }
+  
+   .group img {
+      padding: 30px;
+   }
+
+    #garden .group p {
+         display:inline;
         font-size: 25px;
         font-weight: bold;
     }
 
-    #garden{
-        padding-bottom: 90px;
-    }
+
+   .group #di {
+      display: block;
+   }
+
+
 
 
 
