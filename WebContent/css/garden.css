@@ -8,7 +8,7 @@
         min-height: 1000px;
         margin: 40px;
         margin-left: 200px;
-        /*border:  1px solid red;*/
+        
     }
     #box1 {    
       border: 0;
@@ -63,25 +63,33 @@
         padding-top: 80px;
         text-align: center;
         display:inline-block;
+        padding : 45px;
      
     }
   
-   .group img {
-      padding: 30px;
-   }
 
-    #garden .group p {
-         display:inline;
+    #garden #main p {
+        
         font-size: 25px;
         font-weight: bold;
     }
 
+
+   
    #main {
-      display: inline-block;
-   }
+    width: 100%;
+}
 
+	#main table {
+    
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+}
 
-
+	#main img {
+    padding-top: 20px;
+}
 
 
 /* hover css*/
