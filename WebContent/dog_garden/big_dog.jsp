@@ -30,7 +30,7 @@
       <!-- 강아지 사진 시작-->
       
       <form name="frm_garden" method='post'>
-      	<input name='dname' type='hidden' value='${param.dname }'>  
+         <input name='dname' type='hidden' value='${param.dname }'>  
       </form>  
       
       <%  DogDao dao = new DogDao();
@@ -38,7 +38,7 @@
          <div id='main'>
             <table>
                <tr>
-	<% for(DogVo vo : list) {   
+   <% for(DogVo vo : list) {   
                if(vo.getDog_group().equals("대")) {%>
                   <td>                    
                      <img src="./img/dog_image/<%=vo.getDog_photo1()%>" onclick='detail(name)' name='<%=vo.getDog_name()%>' width='330px' height='330px'

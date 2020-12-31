@@ -50,12 +50,13 @@ public class DogServlet extends HttpServlet {
          break;
          
       case "payment":
-    	  
-    	  String a = request.getParameter("btnSelect");          
+         
+         String a = request.getParameter("btnSelect");
+          
           
           request.setAttribute("a", a);
          
-          rd = request.getRequestDispatcher(url + "payment/love.jsp");
+          rd = request.getRequestDispatcher(url + "payment/card_api.jsp");
           rd.forward(request, response);
           break;
          

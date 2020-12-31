@@ -12,8 +12,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>notice_LIST</title>
-	<link rel="stylesheet" href="./css/notice/noticeList.css">
-	<link rel="stylesheet" href="./css/main.css" type="text/css">
+	<link rel="stylesheet" href="/css/notice/noticeList.css">
+	<link rel="stylesheet" href="/css/main.css" type="text/css">
 </head>
 
 <body>
@@ -51,9 +51,9 @@
 								<fmt:formatNumber value="${n.id}" />
 							</td>
 							<td class="text-align-left">
-								<a href="main.jsp?inc=./dog_notice/noticeDetail?id=${n.id}">${n.title}</a>
+								<a href="/dog_notice/noticeDetail?id=${n.id}">${n.title}</a>
 								<%--
-								<a href="main.jsp?inc=./dog_notice/noticeDetail?id=${n.id}">${n.title}</a>
+								<a href="main.jsp?inc=/dog_notice/noticeDetail?id=${n.id}">${n.title}</a>
 								--%>
 							</td>
 							<td>
@@ -98,18 +98,18 @@
 					<fmt:parseNumber var="lastPage" type="number" value="${fn:substringBefore(Math.ceil(count/10), '.')}" />
 					<c:if test="${pNo gt pages}">
 						<td><input type="button" class="paging-parenthesis prev" value="◀"
-							onClick="location.href='?pageNo=${startPage-pages}&category=${param.category}&keyword=${param.keyword}'" >
+							onClick="location.href='/dog_notice/noticeList?pageNo=${startPage-pages}&category=${param.category}&keyword=${param.keyword}'" >
 						</td>
 					</c:if>
 					<c:forEach var="i" begin="${startPage}" end="${(startPage+pages-1 lt lastPage)? startPage+pages-1 : lastPage}">
 						<td><input type="button" class="pageNo" value="${i}" name="${(pNo eq i)?'currentPage':''}"
-							onClick="location.href='?pageNo=${i}&category=${param.category}&keyword=${param.keyword}'">
+							onClick="location.href='/dog_notice/noticeList?pageNo=${i}&category=${param.category}&keyword=${param.keyword}'">
 						</td>
 					</c:forEach>
 
 					<c:if test="${startPage+pages lt lastPage}">
 						<td><input type="button" class="paging-parenthesis next" value="▶"
-								onClick="location.href='?pageNo=${startPage+pages}&category=${param.category}&keyword=${param.keyword}'">
+							onClick="location.href='/dog_notice/noticeList?pageNo=${startPage+pages}&category=${param.category}&keyword=${param.keyword}'">
 						</td>
 					</c:if>
 				</tr>

@@ -30,7 +30,7 @@
       <!-- 강아지 사진 시작-->
       
       <form name="frm_garden" method='post'>
-      	<input name='dname' type='hidden' value='${param.dname }'>  
+         <input name='dname' type='hidden' value='${param.dname }'>  
       </form>    
       
       

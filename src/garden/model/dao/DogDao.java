@@ -24,7 +24,7 @@ public class DogDao {
       
       try {
                
-         String sql = " select * from dog order by dog_serial asc ";
+         String sql = " select * from dog order by dog_serial asc";
       
          ps = conn.prepareStatement(sql);
          
@@ -46,7 +46,7 @@ public class DogDao {
             vo.setDog_photo1(rs.getString("dog_photo1"));
             vo.setDog_photo2(rs.getString("dog_photo2"));
             vo.setDog_photo3(rs.getString("dog_photo3"));
-            vo.setDog_photo4(rs.getString("dog_photo4"));            
+            vo.setDog_photo4(rs.getString("dog_photo4"));
             vo.setDog_story(rs.getString("dog_story"));
             
             list.add(vo);
@@ -84,7 +84,7 @@ public class DogDao {
             vo.setDog_photo1(rs.getString("dog_photo1"));
             vo.setDog_photo2(rs.getString("dog_photo2"));
             vo.setDog_photo3(rs.getString("dog_photo3"));
-            vo.setDog_photo4(rs.getString("dog_photo4")); 
+            vo.setDog_photo4(rs.getString("dog_photo4"));
             vo.setDog_story(rs.getString("dog_story"));
          }         
          

@@ -6,8 +6,8 @@
    //String phone = (String)request.getAttribute("phone");
    //String address = (String)request.getAttribute("address");
    //int totalPrice = (int)request.getAttribute("totalPrice");
-	String a = (String)request.getAttribute("a");
-	
+   String a = (String)request.getAttribute("a");
+   
     int totalPrice = 100;
 %>
 <!DOCTYPE html>
@@ -64,30 +64,30 @@
                 //성공시 이동할 페이지
                if(<%=a%>.equals("함께하기")) {
                 
-	                $().ready(function () {
-		                swal({
-		                    icon: "success",
-		                    title: "함께 해주셔서 감사합니다.",
-		                    text: "입양 절차 소개로 이동합니다.",
-		                    button: "입양 절차 소개로 이동",
-		                }) .then((value) => {
-		                   if(value) {
-		                      location.href ='main.jsp?inc=./dog_introduce/introduce.jsp'
-		                   }
-		                })
-		            });                
+                   $().ready(function () {
+                      swal({
+                          icon: "success",
+                          title: "함께 해주셔서 감사합니다.",
+                          text: "입양 절차 소개로 이동합니다.",
+                          button: "입양 절차 소개로 이동",
+                      }) .then((value) => {
+                         if(value) {
+                            location.href ='main.jsp?inc=./dog_introduce/introduce.jsp'
+                         }
+                      })
+                  });                
                } else if (<%=a%>.equals("사랑주기")){
-            	   $().ready(function () {
-		                swal({
-		                    icon: "success",
-            	                title: '소중한 후원 감사합니다.',
-            	                
-            	            }).then((value) => {
-     		                   if(value) {
-     		                      location.href ='main.jsp?inc=./dog_garden/dog_garden.jsp'
-     		                   }
-     		                })
-            	        });           	                	   
+                  $().ready(function () {
+                      swal({
+                          icon: "success",
+                               title: '소중한 후원 감사합니다.',
+                               
+                           }).then((value) => {
+                              if(value) {
+                                 location.href ='main.jsp?inc=./dog_garden/dog_garden.jsp'
+                              }
+                           })
+                       });                                    
                }
             } else {
                 msg = '결제에 실패하였습니다.';

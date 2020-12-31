@@ -38,15 +38,9 @@
    
    height: 4px;
    width: -webkit-fill-available;
-   background: #eb7c15;   
-}
-
-#love_frm2>.info1{	
-	display: inline-block;
-	text-align: left;
-	width: 150px;		
-    font-size: 18px;
-    margin-bottom: 20px;
+   background: #eb7c15;
+   
+   
 }
 
 #love_frm1 {
@@ -84,7 +78,13 @@
     font-size: 24px;
     margin-bottom: 30px;
 }
-
+#love_frm2>.info1{   
+   display: inline-block;
+   text-align: left;
+   width: 150px;      
+    font-size: 18px;
+    margin-bottom: 20px;
+}
 #love_frm2> #name, #phone {
     font-size: 18px;
     margin-bottom: 20px;

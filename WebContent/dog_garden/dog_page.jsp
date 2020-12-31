@@ -71,14 +71,14 @@
                <label for="Slide4" id="s4"></label>
                
                <div class="overflow-wrapper">
-	               <a class="slide">
-	               <img src="./img/dog_image/${vo.dog_photo1 }" width="940px" , height="470px" /></a> 
-	               <a class="slide">
-	               <img src="./img/dog_image/${vo.dog_photo2 }" width="940px" , height="470px" /></a>
-	               <a class="slide">
-	               <img src="./img/dog_image/${vo.dog_photo3 }" width="940px" , height="470px" /></a> 
-	               <a class="slide">
-	               <img src="./img/dog_image/${vo.dog_photo4 }" width="940px" , height="470px" /></a>
+                  <a class="slide">
+                  <img src="./img/dog_image/${vo.dog_photo1 }" width="940px" , height="470px" /></a> 
+                  <a class="slide">
+                  <img src="./img/dog_image/${vo.dog_photo2 }" width="940px" , height="470px" /></a>
+                  <a class="slide">
+                  <img src="./img/dog_image/${vo.dog_photo3 }" width="940px" , height="470px" /></a> 
+                  <a class="slide">
+                  <img src="./img/dog_image/${vo.dog_photo4 }" width="940px" , height="470px" /></a>
                </div>
             </div>
          </div>
@@ -94,13 +94,13 @@
          </div>
          
         <form name="frm_btn" method='post'>
-       		<input name='btnSelect' type='text' value='${param.btnSelect }'>  
-    	</form>    
+             <input name='btnSelect' type='text' value='${param.btnSelect }'>  
+       </form>    
          
          <div id='dog_btns'>
             <input type="button" value="목록으로" class="basic-input" id='btn_garden'/>
-            <input type="button" value="함께하기" class="basic-input" name='함께하기' id='btn_together' onclick='together(name)'/> 
-            <input type="button" value="사랑주기" class="basic-input" name='사랑주기' id='btn_love' onclick='love(name)'/>
+            <input type="button" value="함께하기" class="basic-input" id='btn_together' onclick='together("함께하기")'/> 
+            <input type="button" value="사랑주기" class="basic-input" id='btn_love' onclick='love("사랑주기")'/>
          </div>
       </div>
       <!-------------------------------------------- 하단 푸터 -------------------------------------------->

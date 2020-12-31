@@ -31,7 +31,8 @@
     
     <form name="frm_garden" method='post'>
        <input name='dname' type='hidden' value='${param.dname }'>  
-    </form>        
+    </form>  
+      
       
     <% DogDao dao = new DogDao();
          List<DogVo> list = dao.select(); %>
