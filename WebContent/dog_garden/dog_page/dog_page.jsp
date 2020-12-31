@@ -47,8 +47,8 @@
             <!-------------------- 강아지 정보 영역 ------------------>
             <div id='info1'>
                <div id='info2'>
-                  <span>견종</span> <span>'${vo.dog_breed }'</span> <span>성격</span> <span>'${vo.dog_mbti_char }'</span> <span>성별</span>
-                  <span>'${vo.dog_gender}'</span> <span>나이</span> <span>'${vo.dog_age }'</span> <span>체중</span> <span>'${vo.dog_weight }'</span>
+                  <span>견종</span> <span>${vo.dog_breed }</span> <span>성격</span> <span>${vo.dog_mbti_char }</span> <span>성별</span>
+                  <span>${vo.dog_gender}</span> <span>나이</span> <span>${vo.dog_age }</span> <span>체중</span> <span>${vo.dog_weight }</span>
                </div>
             </div>
          </div>

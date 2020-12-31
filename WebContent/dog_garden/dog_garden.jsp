@@ -29,7 +29,7 @@
     <div id='text'>| 전체 |</div>
      <!-- 강아지 사진 시작-->
     
-    <form name="frm_garden">
+    <form name="frm_garden" method='post'>
        <input name='dname' type='text' value='${param.dname }'>  
     </form>  
       
