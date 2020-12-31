@@ -45,11 +45,20 @@ public class DogServlet extends HttpServlet {
          
          request.setAttribute("vo", vo);
          
-         rd = request.getRequestDispatcher("main.jsp?inc=./dog_garden/dog_page/dog_page.jsp");
+         rd = request.getRequestDispatcher(url + "dog_page.jsp");
          rd.forward(request, response);
          break;
          
+      case "payment":
          
+         String a = request.getParameter("btnSelect");
+          
+          
+          request.setAttribute("a", a);
+         
+          rd = request.getRequestDispatcher(url + "payment/card_api.jsp");
+          rd.forward(request, response);
+          break;
          
          
       /*

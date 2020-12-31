@@ -29,6 +29,11 @@
       <div id='text'>| 소형견 |</div>
       <!-- 강아지 사진 시작-->
       
+      <form name="frm_garden" method='post'>
+         <input name='dname' type='hidden' value='${param.dname }'>  
+      </form>    
+      
+      
       <%  DogDao dao = new DogDao();
             List<DogVo> list = dao.select();%>
          <div id='main'>
@@ -36,14 +41,13 @@
                <tr>
 <%   for(DogVo vo : list) {   
                if(vo.getDog_group().equals("소")) {%>
-                  <td>
-                     <a href="main.jsp?inc=./dog_garden/dog_page/dog_page_small_1.jsp">
-                     <img src="./img/dog_image/<%=vo.getDog_photo()%>" width='330px' height='330px'
+                  <td>                   
+                     <img src="./img/dog_image/<%=vo.getDog_photo1()%>" onclick='detail(name)' name='<%=vo.getDog_name()%>' width='330px' height='330px'
                         onmouseover="Show_Minibar(this, '견종      : <%=vo.getDog_breed() %>'
                                                , '성별      : <%=vo.getDog_gender() %>'
                                                , '나이      : <%=vo.getDog_age() %>'
                                                , 'MBTI : <%=vo.getDog_mbti() %>' );">
-                     </a>
+                                                                    
                      <div id="MiniBar_title"></div>
                      <p><%=vo.getDog_name() %></p>
                   </td>

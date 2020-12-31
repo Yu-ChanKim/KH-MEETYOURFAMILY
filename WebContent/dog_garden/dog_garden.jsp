@@ -30,7 +30,7 @@
      <!-- 강아지 사진 시작-->
     
     <form name="frm_garden" method='post'>
-       <input name='dname' type='text' value='${param.dname }'>  
+       <input name='dname' type='hidden' value='${param.dname }'>  
     </form>  
       
       
@@ -41,7 +41,7 @@
            <tr>
       <% for(DogVo vo : list) { %>            
                   <td>
-                     <img src="./img/dog_image/<%=vo.getDog_photo()%>" onclick='detail(name)' name='<%=vo.getDog_name()%>' width='330px' height='330px'
+                     <img src="./img/dog_image/<%=vo.getDog_photo1()%>" onclick='detail(name)' name='<%=vo.getDog_name()%>' width='330px' height='330px'
                            onmouseover="Show_Minibar(this, '견종 : <%=vo.getDog_breed() %>'
                                                           , '성별 : <%=vo.getDog_gender() %>'
                                                           , '나이 : <%=vo.getDog_age() %>'

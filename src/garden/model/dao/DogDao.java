@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import garden.model.vo.DogVo;
+import oracle.net.aso.r;
 
 public class DogDao {
 
@@ -23,7 +24,7 @@ public class DogDao {
       
       try {
                
-         String sql = " select * from dog ";
+         String sql = " select * from dog order by dog_serial asc";
       
          ps = conn.prepareStatement(sql);
          
@@ -42,7 +43,11 @@ public class DogDao {
             vo.setDog_weight(rs.getString("dog_weight"));
             vo.setDog_mbti(rs.getString("dog_mbti"));
             vo.setDog_mbti_char(rs.getString("dog_mbti_char"));
-            vo.setDog_photo(rs.getString("dog_photo"));
+            vo.setDog_photo1(rs.getString("dog_photo1"));
+            vo.setDog_photo2(rs.getString("dog_photo2"));
+            vo.setDog_photo3(rs.getString("dog_photo3"));
+            vo.setDog_photo4(rs.getString("dog_photo4"));
+            vo.setDog_story(rs.getString("dog_story"));
             
             list.add(vo);
       }
@@ -76,7 +81,11 @@ public class DogDao {
             vo.setDog_weight(rs.getString("dog_weight"));
             vo.setDog_mbti(rs.getString("dog_mbti"));
             vo.setDog_mbti_char(rs.getString("dog_mbti_char"));
-            vo.setDog_photo(rs.getString("dog_photo"));            
+            vo.setDog_photo1(rs.getString("dog_photo1"));
+            vo.setDog_photo2(rs.getString("dog_photo2"));
+            vo.setDog_photo3(rs.getString("dog_photo3"));
+            vo.setDog_photo4(rs.getString("dog_photo4"));
+            vo.setDog_story(rs.getString("dog_story"));
          }         
          
       } catch (Exception e) {

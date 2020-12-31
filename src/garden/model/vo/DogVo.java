@@ -10,8 +10,11 @@ public class DogVo {
 	String dog_weight;
 	String dog_mbti;
 	String dog_mbti_char;
-	String dog_photo;
-	
+	String dog_photo1;
+	String dog_photo2;
+	String dog_photo3;
+	String dog_photo4;
+	String dog_story;
 	
 	public int getDog_serial() {
 		return dog_serial;
@@ -67,12 +70,38 @@ public class DogVo {
 	public void setDog_mbti_char(String dog_mbti_char) {
 		this.dog_mbti_char = dog_mbti_char;
 	}
-	public String getDog_photo() {
-		return dog_photo;
+	public String getDog_photo1() {
+		return dog_photo1;
 	}
-	public void setDog_photo(String dog_photo) {
-		this.dog_photo = dog_photo;
+	public void setDog_photo1(String dog_photo1) {
+		this.dog_photo1 = dog_photo1;
+	}
+	public String getDog_photo2() {
+		return dog_photo2;
+	}
+	public void setDog_photo2(String dog_photo2) {
+		this.dog_photo2 = dog_photo2;
+	}
+	public String getDog_photo3() {
+		return dog_photo3;
+	}
+	public void setDog_photo3(String dog_photo3) {
+		this.dog_photo3 = dog_photo3;
+	}
+	public String getDog_photo4() {
+		return dog_photo4;
+	}
+	public void setDog_photo4(String dog_photo4) {
+		this.dog_photo4 = dog_photo4;
+	}
+	public String getDog_story() {
+		return dog_story;
+	}
+	public void setDog_story(String dog_story) {
+		this.dog_story = dog_story;
 	}
 	
 	
-}
+	
+	
+}	
