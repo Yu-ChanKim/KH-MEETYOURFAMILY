@@ -41,14 +41,17 @@
          <div id='dog_info'>
             <!-------------------- 사진 영역 ------------------>
             <div id='img'>
-               <img src="./img/dog_image/(소)푸들1.jpg" width="500" height="500">
+               <img src="./img/dog_image/${vo.dog_photo1 }" width="500" height="500">
             </div>
 
             <!-------------------- 강아지 정보 영역 ------------------>
             <div id='info1'>
                <div id='info2'>
-                  <span>견종</span> <span>${vo.dog_breed }</span> <span>성격</span> <span>${vo.dog_mbti_char }</span> <span>성별</span>
-                  <span>${vo.dog_gender}</span> <span>나이</span> <span>${vo.dog_age }</span> <span>체중</span> <span>${vo.dog_weight }</span>
+                  <span>견종</span> <span>${vo.dog_breed }</span> 
+                  <span>성격</span> <span>${vo.dog_mbti_char }</span> 
+                  <span>성별</span> <span>${vo.dog_gender}</span> 
+                  <span>나이</span> <span>${vo.dog_age }</span> 
+                  <span>체중</span> <span>${vo.dog_weight }</span>
                </div>
             </div>
          </div>
@@ -58,20 +61,24 @@
          <!-- 사진 슬라이드 -->
          <div id="slider-wrapper">
             <div class="inner-wrapper">
-               <input checked type="radio" name="slide" class="control"
-                  id="Slide1" /> <label for="Slide1" id="s1"></label> <input
-                  type="radio" name="slide" class="control" id="Slide2" /> <label
-                  for="Slide2" id="s2"></label> <input type="radio" name="slide"
-                  class="control" id="Slide3" /> <label for="Slide3" id="s3"></label>
-               <input type="radio" name="slide" class="control" id="Slide4" /> <label
-                  for="Slide4" id="s4"></label>
+               <input checked type="radio" name="slide" class="control" id="Slide1" /> 
+               <label for="Slide1" id="s1"></label> 
+               <input type="radio" name="slide" class="control" id="Slide2" /> 
+               <label for="Slide2" id="s2"></label> 
+               <input type="radio" name="slide" class="control" id="Slide3" /> 
+               <label for="Slide3" id="s3"></label>
+               <input type="radio" name="slide" class="control" id="Slide4" /> 
+               <label for="Slide4" id="s4"></label>
+               
                <div class="overflow-wrapper">
-                  <a class="slide" href=""><img src="./img/dog_image/(소)푸들1.jpg"
-                     width="940px" , height="470px" /></a> <a class="slide" href=""><img
-                     src="./img/dog_image/(소)푸들2.jpg" width="940px" , height="470px" /></a>
-                  <a class="slide" href=""><img src="./img/dog_image/(소)푸들3.jpg"
-                     width="940px" , height="470px" /></a> <a class="slide" href=""><img
-                     src="./img/dog_image/(소)푸들4.jpg" width="940px" , height="470px" /></a>
+	               <a class="slide">
+	               <img src="./img/dog_image/${vo.dog_photo1 }" width="940px" , height="470px" /></a> 
+	               <a class="slide">
+	               <img src="./img/dog_image/${vo.dog_photo2 }" width="940px" , height="470px" /></a>
+	               <a class="slide">
+	               <img src="./img/dog_image/${vo.dog_photo3 }" width="940px" , height="470px" /></a> 
+	               <a class="slide">
+	               <img src="./img/dog_image/${vo.dog_photo4 }" width="940px" , height="470px" /></a>
                </div>
             </div>
          </div>
@@ -82,23 +89,22 @@
                <span>안녕하세요.</span> 제 이름은 <span>${vo.dog_name }</span>에요
             </p>
             <p id='stroy1'>
-               작은몸에 초롱초롱한 눈망울이 매력적인 츄비예요<br> 츄비는 구조당시 심장사상충에 걸려 있었고<br>
-
-               현재 심장사상충 치료중입니다.<br> (심장사상충 임시보호 가능합니다.)<br> 친구들과도 잘 어울리고
-               사람도 좋아 좋아하는 츄비!<br> 패드도 잘 가리는 야무진 아이예요<br> 미용이나 병원처치 등에서도
-               묵묵히 잘 견뎌는 강한 츄비<br> 사상충 치료중으로 현재 행동에 제한이 되다보니<br> 아직 다양한
-               상황을 만나보지 못했고<br> 새로운 츄비의 모습이 있을까 궁금하기도 합니다<br> 얼른 임보가정이라도
-               만나서 답답한 병원 생활을 청산해주고 싶어요!!<br>
+               ${vo.dog_story}
             </p>
          </div>
+         
+        <form name="frm_btn" method='post'>
+       		<input name='btnSelect' type='text' value='${param.btnSelect }'>  
+    	</form>    
+         
          <div id='dog_btns'>
             <input type="button" value="목록으로" class="basic-input" id='btn_garden'/>
-            <input type="button" value="함께하기" class="basic-input" id='btn_together'/> 
-            <input type="button" value="사랑주기" class="basic-input" id='btn_love'/>
+            <input type="button" value="함께하기" class="basic-input" name='함께하기' id='btn_together' onclick='together(name)'/> 
+            <input type="button" value="사랑주기" class="basic-input" name='사랑주기' id='btn_love' onclick='love(name)'/>
          </div>
       </div>
       <!-------------------------------------------- 하단 푸터 -------------------------------------------->
-    <input name='photo' type='text' value='${param.photo }'>
+    
        
    
    </div>

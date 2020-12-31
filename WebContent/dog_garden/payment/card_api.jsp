@@ -6,10 +6,9 @@
    //String phone = (String)request.getAttribute("phone");
    //String address = (String)request.getAttribute("address");
    //int totalPrice = (int)request.getAttribute("totalPrice");
-    String name = "곽재훈";
-    String phone = "01072265831";
-    String address = "인천시";
-    int totalPrice = 1000;
+	String a = (String)request.getAttribute("a");
+	
+    int totalPrice = 100;
 %>
 <!DOCTYPE html>
 <html>
@@ -18,7 +17,8 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <script>
@@ -31,12 +31,9 @@
             pg : 'kakaopay',
             pay_method : 'card',
             merchant_uid : 'merchant_' + new Date().getTime(),
-            name : 'KH Books 도서 결제',
+            name : 'Meet Your Family',
             amount : <%=totalPrice%>,  //가격
-            buyer_name : '<%=name%>',
-            buyer_tel : '<%=phone%>',
-            buyer_addr : '<%=address%>',
-            buyer_postcode : '123-456',
+          
             //m_redirect_url : 'http://www.naver.com'
         }, function(rsp) {
             if ( rsp.success ) {
@@ -65,7 +62,33 @@
                     }
                 });
                 //성공시 이동할 페이지
-                location.href='main.jsp?inc=./dog_introduce/introduce.jsp'
+               if(<%=a%>.equals("함께하기")) {
+                
+	                $().ready(function () {
+		                swal({
+		                    icon: "success",
+		                    title: "함께 해주셔서 감사합니다.",
+		                    text: "입양 절차 소개로 이동합니다.",
+		                    button: "입양 절차 소개로 이동",
+		                }) .then((value) => {
+		                   if(value) {
+		                      location.href ='main.jsp?inc=./dog_introduce/introduce.jsp'
+		                   }
+		                })
+		            });                
+               } else if (<%=a%>.equals("사랑주기")){
+            	   $().ready(function () {
+		                swal({
+		                    icon: "success",
+            	                title: '소중한 후원 감사합니다.',
+            	                
+            	            }).then((value) => {
+     		                   if(value) {
+     		                      location.href ='main.jsp?inc=./dog_garden/dog_garden.jsp'
+     		                   }
+     		                })
+            	        });           	                	   
+               }
             } else {
                 msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;

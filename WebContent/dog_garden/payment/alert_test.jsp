@@ -46,15 +46,7 @@
             });
         });
     });
-    $().ready(function () {
-        $("#alertStart3").click(function () {
-            swal({
-                icon: 'warning',
-                title: '함께 할 수 없습니다.',
-                text: '고객님과 매칭된 강아지가 아닙니다.',
-            });
-        });
-    });
+    
     $().ready(function () {
         $("#alertStart4").click(function () {
             swal({
