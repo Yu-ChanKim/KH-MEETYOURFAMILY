@@ -32,7 +32,7 @@
       <div id='dog_page'>
          <div id='box1'></div>
          <div id='dog_page_top'>
-            <p>'${vo.dog_name }'</p>
+            <p>${vo.dog_name }</p>
          </div>
          <div id='box2'></div>
          <h4>올바른 반려문화를 지향합니다.</h4>
@@ -47,8 +47,8 @@
             <!-------------------- 강아지 정보 영역 ------------------>
             <div id='info1'>
                <div id='info2'>
-                  <span>견종</span> <span>'${vo.dog_breed }'</span> <span>성격</span> <span>'${vo.dog_mbti_char }'</span> <span>성별</span>
-                  <span>'${vo.dog_gender}'</span> <span>나이</span> <span>'${vo.dog_age }'</span> <span>체중</span> <span>'${vo.dog_weight }'</span>
+                  <span>견종</span> <span>${vo.dog_breed }</span> <span>성격</span> <span>${vo.dog_mbti_char }</span> <span>성별</span>
+                  <span>${vo.dog_gender}</span> <span>나이</span> <span>${vo.dog_age }</span> <span>체중</span> <span>${vo.dog_weight }</span>
                </div>
             </div>
          </div>
@@ -79,7 +79,7 @@
          <!-------------------- 스토리 영역 ------------------>
          <div id='story'>
             <p>
-               <span>안녕하세요.</span> 제 이름은 <span>츄비</span>에요
+               <span>안녕하세요.</span> 제 이름은 <span>${vo.dog_name }</span>에요
             </p>
             <p id='stroy1'>
                작은몸에 초롱초롱한 눈망울이 매력적인 츄비예요<br> 츄비는 구조당시 심장사상충에 걸려 있었고<br>
