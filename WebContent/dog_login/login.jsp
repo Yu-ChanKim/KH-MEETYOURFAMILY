@@ -20,30 +20,32 @@
         </div>
         <div class="login-box">
           <div class="login-form">
-
             <form action="main.jsp?inc=main.jsp" id="login-form" method="post">
-
               <!-- <input name="_csrf_token" type="hidden" value="d">             -->
                 <div class="l-row l-input">
-                  <input data-cy="email" id="userID" name="userID" placeholder="사용자 아이디" type="text">            
+                  <input id="userID" name="userID" placeholder="사용자 아이디" type="text" value="">            
                 </div>
                 <div class="l-row l-input">
-                  <input data-cy="password" id="userPassword" name="userPassword" placeholder="사용자 비밀번호" type="password">
+                  <input id="userPassword" name="userPassword" placeholder="사용자 비밀번호" type="password" value="">
                 </div>
-                  <button class="button button-80 button-round button-point-border" type="submit" name="button" data-cy="submit" value="로그인">
+                 
+                  <button class="button button-80 button-round button-point-border" type="submit" name="button" data-cy="submit">
                     <span class="title-small8 color-peach b">로그인</span>
                   </button>
-
-                <div class="l-row l-input">
-                  <a class="button button-80 button-round button-mouse-border" href="main.jsp?inc=./dog_login/join.jsp">
-                    <span class="font-ns title-small8 color-mouse b">회원가입</span>
-                  </a>
                   
-                </div>
-              
+            <div class="l-row l-input">
+                  
+			  <a class="button button-80 button-round button-mouse-border" href="main.jsp?inc=./dog_login/join.jsp">
+			    <span class="font-ns title-small8 color-mouse b">회원가입</span>
+			  </a>
+			  
+			</div>
+			
             </form>
           </div>
         <span class="line"></span>
+        
+			
         <div class="find">
           <a class="button id-find" href="main.jsp?inc=./dog_login/id-find.jsp">
             <span>아이디 찾기</span>
