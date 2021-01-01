@@ -23,9 +23,10 @@ String incc = "main.jsp";
       request.setAttribute("incc",incc);
 
 %>
+   <%@include file="header.jsp"%>
    <div class="container">
       <!--------------------------------------------  상단 헤더 -------------------------------------------->
-      <%@include file="header.jsp"%>
+
       <!-------------------------------------------- 중간 섹션 -------------------------------------------->
 
       <c:if test='${inc == incc}'>
@@ -120,7 +121,8 @@ String incc = "main.jsp";
          <jsp:include page="<%=inc %>" />
       </c:if>
       <!-------------------------------------------- 하단 푸터 -------------------------------------------->
-      <%@include file="footer.jsp"%>
    </div>
+
+<%@include file="footer.jsp"%>
 </body>
 </html>

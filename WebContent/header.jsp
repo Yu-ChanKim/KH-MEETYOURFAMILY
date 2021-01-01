@@ -7,13 +7,11 @@
                     <li><a href="/main.jsp?inc=/dog_introduce/introduce.jsp">사업소개</a></li>
                     <li><a href="/main.jsp?inc=/dog_garden/dog_garden.jsp">마당</a></li>
                     <li><a href="/main.jsp?inc=/dog_test/testMain.jsp">who's my family</a></li>
-
-                    <li><a href="/main.jsp?inc=/dog_notice/noticeList">meet your family</a></li>
-
-                    <li><a href="/main.jsp?inc=/dog_mypage/test5.jsp">마이페이지</a></li>                                                        
-                </ul>                               
-            </nav>       
+                    <li><a href="/dog_notice/noticeList">meet your family</a></li>
+                    <li><a href="/main.jsp?inc=/dog_mypage/test5.jsp">마이페이지</a></li>
+                </ul>
+            </nav>
             <div>
-                <li><a href="/main.jsp?inc=/dog_login/login.jsp">로그인/회원가입</a></li>                    
+                <li><a href="/main.jsp?inc=/dog_login/login.jsp">로그인/회원가입</a></li>
             </div>
  </header>
