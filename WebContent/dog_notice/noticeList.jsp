@@ -18,7 +18,7 @@
 
 <body>
 
-<%@include file="../header.jsp"%>
+<%@include file="/header.jsp"%>
 
 <%--
     <div id="header">
@@ -53,7 +53,7 @@
 							<td class="text-align-left">
 								<a href="/dog_notice/noticeDetail?id=${n.id}">${n.title}</a>
 								<%--
-								<a href="main.jsp?inc=/dog_notice/noticeDetail?id=${n.id}">${n.title}</a>
+								&nbsp;${(n.commentCount) != 0 ? [n.commentCount] : ""}
 								--%>
 							</td>
 							<td>
@@ -124,7 +124,7 @@
 	</div>
 --%>
 
-<%@include file="../footer.jsp"%>
+<%@include file="/footer.jsp"%>
 
 </body>
 
