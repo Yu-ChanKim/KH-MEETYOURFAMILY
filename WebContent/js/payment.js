@@ -18,7 +18,7 @@ function getID(id) {
 
    if(btn_garden != null) {
       btn_garden.onclick = function(){
-         location.href = url + 'dog_garden.jsp';
+         location.href = "garden.do?siba=page&dname=&group=전체";
       }      
    }  
 
