@@ -5,9 +5,9 @@
               <div class="footer-container" data-side="false">
                 <div class="footer-logo">MEET YOUR FAMILY</div>
                 <ul class="footer-sns">
-                    <li><a href="https://blog.naver.com/" target="_new"><img src="./img/footer-sns-naver.png"></a></li>
-                    <li><a href="https://www.instagram.com/" target="_new"><img src="./img/footer-sns-instagram.png"></a></li>
-                    <li><a href="https://www.facebook.com/" target="_new"><img src="./img/footer-sns-facebook.png"></a></li>
+                    <li><a href="https://blog.naver.com/" target="_new"><img src="/img/footer-sns-naver.png"></a></li>
+                    <li><a href="https://www.instagram.com/" target="_new"><img src="/img/footer-sns-instagram.png"></a></li>
+                    <li><a href="https://www.facebook.com/" target="_new"><img src="/img/footer-sns-facebook.png"></a></li>
                 </ul>
                 <ul class="footer-link">
                   <li><a href="https://google.com/" target="_new">이용약관</a></li>

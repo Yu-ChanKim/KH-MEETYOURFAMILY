@@ -81,7 +81,9 @@
         </div>
 
         <div class="noticeDetail_btns">
-            <input type="button" class="noticeDetail_btns_list" onClick="location.href='/dog_notice/noticeList'" value="목록">
+            <input type="button" class="noticeDetail_btns_list" onClick="location.href='/dog_notice/noticeListAdmin'" value="목록">
+            <input type="button" class="noticeDetail_btns_edit" value="수정">
+            <input type="submit" class="noticeDetail_btns_delete" onClick="location.href=''" name="deleteBtn" value="삭제">
         </div>
 
         <div class="noticeDetail_table">

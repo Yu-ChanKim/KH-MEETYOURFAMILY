@@ -22,10 +22,10 @@
 
 <%--
 <%
-	String mbti = "";
-	if(request.getParameter("mbti") != null){
-		mbti = request.getParameter("mbti");
-	}
+   String mbti = "";
+   if(request.getParameter("mbti") != null){
+      mbti = request.getParameter("mbti");
+   }
 %>
  --%>
  
