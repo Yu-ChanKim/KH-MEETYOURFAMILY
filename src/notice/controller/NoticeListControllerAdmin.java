@@ -22,12 +22,12 @@ import notice.service.NoticeService;
 import oracle.net.ano.Service;
 
 
-@WebServlet("/dog_notice/noticeList")
-public class NoticeListController extends HttpServlet
+@WebServlet("/dog_notice/noticeListAdmin")
+public class NoticeListControllerAdmin extends HttpServlet
 {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-	{		
+	{
 		String category = "title";
 		String category_ = req.getParameter("category");
 		if(category_ != null && !category_.equals(""))
@@ -56,6 +56,33 @@ public class NoticeListController extends HttpServlet
 		req.setAttribute("count", count);
 		req.setAttribute("list", list);
 		
-		req.getRequestDispatcher("/dog_notice/noticeList.jsp").forward(req, resp);
+		req.getRequestDispatcher("/dog_notice/noticeListAdmin.jsp").forward(req, resp);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+	{
+		String[] openIds = req.getParameterValues("openId");
+		String[] deleteIdsStr = req.getParameterValues("deleteId");
+		
+		String openBtn = req.getParameter("openBtn");
+		String deleteBtn = req.getParameter("deleteBtn");
+		
+		if(openBtn != null && openIds != null)
+		{
+			
+		}
+		else if(deleteBtn != null && deleteIdsStr != null)
+		{
+			NoticeService service = new NoticeService();
+			int[] deleteIds = new int[deleteIdsStr.length];
+			for (int i=0; i<deleteIds.length; i++)
+			{
+				deleteIds[i] = Integer.parseInt(deleteIdsStr[i]);
+			}
+			int deleteResult = service.deleteNoticeAll(deleteIds);
+		}
+		
+		resp.sendRedirect("/dog_notice/noticeListAdmin");
 	}
 }
