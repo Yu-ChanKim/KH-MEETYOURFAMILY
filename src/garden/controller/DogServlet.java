@@ -62,27 +62,22 @@ public class DogServlet extends HttpServlet {
       case "page":
          String group = request.getParameter("group");
  
-         if(group.equals("전체")) {
-            List<DogVo> list = dao.select();
-            
-           request.setAttribute("list", list);
-          
-           rd = request.getRequestDispatcher(url + "dog_garden.jsp");
-             rd.forward(request, response);
-             break;
-    
+         if(group.equals("전체") || group == null) {
+           group = "";
            } 
-         else if (!group.equals("전체")) {
-           List<DogVo> list = dao.page(group);
-           request.setAttribute("list", list);
+        
+         List<DogVo> list = dao.page(group);
+         request.setAttribute("list", list);
            
            
-           rd = request.getRequestDispatcher(url + "dog_garden.jsp");
-             rd.forward(request, response);
-             break;
-         }
+         rd = request.getRequestDispatcher(url + "dog_garden.jsp");
+          rd.forward(request, response);
+          break;
+       
           
-          
+         
+         
+         
          
       /*
       case "select":

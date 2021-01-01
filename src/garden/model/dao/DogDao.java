@@ -18,48 +18,7 @@ public class DogDao {
    public DogDao() {
       conn = new Application().getConn();
    }
-   
-   public List<DogVo> select(){    
-      List<DogVo> list = new ArrayList<DogVo>();
       
-      try {
-               
-         String sql = " select * from dog order by dog_serial asc";
-      
-         ps = conn.prepareStatement(sql);
-         
-         
-         
-         rs = ps.executeQuery();
-         
-         while(rs.next()) {
-            DogVo vo1 = new DogVo();
-            vo1.setDog_serial(rs.getInt("dog_serial"));
-            vo1.setDog_group(rs.getString("dog_group"));
-            vo1.setDog_name(rs.getString("dog_name"));
-            vo1.setDog_breed(rs.getString("dog_breed"));
-            vo1.setDog_gender(rs.getString("dog_gender"));
-            vo1.setDog_age(rs.getString("dog_age"));
-            vo1.setDog_weight(rs.getString("dog_weight"));
-            vo1.setDog_mbti(rs.getString("dog_mbti"));
-            vo1.setDog_mbti_char(rs.getString("dog_mbti_char"));
-            vo1.setDog_photo1(rs.getString("dog_photo1"));
-            vo1.setDog_photo2(rs.getString("dog_photo2"));
-            vo1.setDog_photo3(rs.getString("dog_photo3"));
-            vo1.setDog_photo4(rs.getString("dog_photo4"));
-            vo1.setDog_story(rs.getString("dog_story"));
-            
-            list.add(vo1);
-      }
-      
-      
-      } catch (Exception e) {
-         e.printStackTrace();
-      }finally {
-         disConn();         
-         return list;   
-      }   
-   }
    
    public List<DogVo> page(String group){
       
@@ -67,10 +26,10 @@ public class DogDao {
          
          try {
                   
-            String sql = " select * from dog where dog_group = ?";
+            String sql = " select * from dog where dog_group Like ? order by dog_serial asc";
          
             ps = conn.prepareStatement(sql);
-            ps.setString(1, group);       
+            ps.setString(1, "%"+group+"%");       
             
             rs = ps.executeQuery();
             
@@ -101,13 +60,7 @@ public class DogDao {
             disConn();         
             return list;   
          }   
-      }   
-      
-      
-      
-   
-   
-   
+      }  
    
    
    public DogVo view(String name) {
@@ -141,11 +94,8 @@ public class DogDao {
       }finally {
          disConn();
          return vo;
-      }
-      
-      
-   }
-   
+      }         
+   }   
    
    
    /*
@@ -161,6 +111,8 @@ public class DogDao {
    
    public void disConn() {
       try {
+         rs.close();
+         ps.close();
          conn.close();
       } catch (Exception e) {
          e.printStackTrace();

@@ -16,12 +16,19 @@
 <script src='./lib/jquery-3.5.1.min.js'></script>
 <script src="./js/garden.js"></script>
 
-
 </head>
 <!------------------------------------------------------------------------------------- 바디 ------------------------------------------------------------------------------------->
 <body>
 
-
+<%--
+<%
+   String mbti = "";
+   if(request.getParameter("mbti") != null){
+      mbti = request.getParameter("mbti");
+   }
+%>
+ --%>
+ 
    <!-------------------------------------------- 중간 -------------------------------------------->
 <div id='garden'>
    <div id='box1'></div>
@@ -42,15 +49,12 @@
     <form name="frm_garden" method='post'>
        <input name='dname' type='hidden' value='${param.dname }'>  
        <input name='group' type='hidden' value='${param.group }'>
-    </form>  
-      
-   
-         
+    </form>           
          
    <div id='main'>
        <table>
-           <tr>
-           <c:forEach var='vo' items='${list}' varStatus='vs'>                 
+           <tr>          
+           <c:forEach var='vo' items='${list}' varStatus='vs'>          
                   <td>
                      <img src="./img/dog_image/${vo.dog_photo1 }" onclick='detail(name)' name='${vo.dog_name }' width='330px' height='330px'
                           onmouseover="Show_Minibar(this, '견종 : ${vo.dog_breed }'
@@ -64,15 +68,12 @@
                 <c:if test="${vs.index%3 == 2 }">
                <tr>
             </tr>        
-          </c:if>
+          </c:if>         
          </c:forEach>
          </tr>
             
        </table>
     </div>
-</div>
-         
-
-
+</div>   
 </body>
 </html>
