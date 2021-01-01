@@ -16,3 +16,10 @@ function detail(name){
    frm.dname.value=name;   
    frm.submit();   
 }
+
+function findView(str){
+   var frm = document.frm_garden;
+     frm.action = 'garden.do?siba=page';
+   frm.group.value=str;
+   frm.submit();   
+}

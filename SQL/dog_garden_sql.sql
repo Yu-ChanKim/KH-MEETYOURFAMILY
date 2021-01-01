@@ -1,9 +1,12 @@
 --SemiProject KH-MEETYOURFAMILY 12.28
---DOG TABLE 생성.
+--DOG TABLE 삭제.
 drop table dog;
 
-select * from dog order by dog_serial asc;
-/*constraint fk_char_serial foreign key (dog_char_serial) references dog_character (dog_char_serial)*/
+/*dog_serial 시퀀스 삭제*/
+drop sequence seq_dog_serial;
+
+/*dog_serial 시퀀스 생성*/
+create sequence seq_dog_serial;
 
 /*dog 테이블 생성*/
 create table dog(
@@ -19,16 +22,6 @@ create table dog(
     dog_photo     VARCHAR2(200),
     dog_story     VARCHAR2(4000) 
 );
-
-/*dog table 칼럼 추가*/
-alter table dog rename column dog_photo to dog_photo1;
-alter table dog add(dog_photo2 varchar2(200));
-alter table dog add(dog_photo3 varchar2(200));
-alter table dog add(dog_photo4 varchar2(200));
-
-/*dog_serial 시퀀스 생성*/
-create sequence seq_dog_serial;
-drop sequence seq_dog_serial;
 
 insert into dog values(seq_dog_serial.nextval,'소','츄비','푸들','수컷','2살','2.8kg','INFP','재밌는 개그맨형','','');
 insert into dog values(seq_dog_serial.nextval,'소','찰랑','비숑프라제','수컷','4살','3.6kg','ISFP','어리버리 모범생형','','');
@@ -49,8 +42,11 @@ insert into dog values(seq_dog_serial.nextval,'대','주호','도베르만','수
 insert into dog values(seq_dog_serial.nextval,'대','브로콜리','보더콜리','수컷','1살','10.6kg','INFJ','소심한 피터팬형','','');
 insert into dog values(seq_dog_serial.nextval,'대','코바','골든리트리버','수컷','1살','2.4kg','ENFP','헌신적인 테레사형','','');
 
-select * from v$version where banner like 'Oracle%';
-
+/*dog table 칼럼 추가*/
+alter table dog rename column dog_photo to dog_photo1;
+alter table dog add(dog_photo2 varchar2(200));
+alter table dog add(dog_photo3 varchar2(200));
+alter table dog add(dog_photo4 varchar2(200));
 
 update dog set dog_photo1='(소)푸들1.jpg' where dog_serial = 1;
 update dog set dog_photo1='(소)비숑프리제1.jpg' where dog_serial = 2;
@@ -288,4 +284,3 @@ set dog_story ='코바는 사람을 좋아하고 애교도 많아요.<br>
 코바의 수많은 장점을 알아봐 주실 가족은 어디에 계실까요?<br>' where dog_serial = '16';
 
 commit;
-

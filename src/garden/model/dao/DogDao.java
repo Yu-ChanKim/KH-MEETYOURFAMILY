@@ -33,23 +33,23 @@ public class DogDao {
          rs = ps.executeQuery();
          
          while(rs.next()) {
-            DogVo vo = new DogVo();
-            vo.setDog_serial(rs.getInt("dog_serial"));
-            vo.setDog_group(rs.getString("dog_group"));
-            vo.setDog_name(rs.getString("dog_name"));
-            vo.setDog_breed(rs.getString("dog_breed"));
-            vo.setDog_gender(rs.getString("dog_gender"));
-            vo.setDog_age(rs.getString("dog_age"));
-            vo.setDog_weight(rs.getString("dog_weight"));
-            vo.setDog_mbti(rs.getString("dog_mbti"));
-            vo.setDog_mbti_char(rs.getString("dog_mbti_char"));
-            vo.setDog_photo1(rs.getString("dog_photo1"));
-            vo.setDog_photo2(rs.getString("dog_photo2"));
-            vo.setDog_photo3(rs.getString("dog_photo3"));
-            vo.setDog_photo4(rs.getString("dog_photo4"));
-            vo.setDog_story(rs.getString("dog_story"));
+            DogVo vo1 = new DogVo();
+            vo1.setDog_serial(rs.getInt("dog_serial"));
+            vo1.setDog_group(rs.getString("dog_group"));
+            vo1.setDog_name(rs.getString("dog_name"));
+            vo1.setDog_breed(rs.getString("dog_breed"));
+            vo1.setDog_gender(rs.getString("dog_gender"));
+            vo1.setDog_age(rs.getString("dog_age"));
+            vo1.setDog_weight(rs.getString("dog_weight"));
+            vo1.setDog_mbti(rs.getString("dog_mbti"));
+            vo1.setDog_mbti_char(rs.getString("dog_mbti_char"));
+            vo1.setDog_photo1(rs.getString("dog_photo1"));
+            vo1.setDog_photo2(rs.getString("dog_photo2"));
+            vo1.setDog_photo3(rs.getString("dog_photo3"));
+            vo1.setDog_photo4(rs.getString("dog_photo4"));
+            vo1.setDog_story(rs.getString("dog_story"));
             
-            list.add(vo);
+            list.add(vo1);
       }
       
       
@@ -60,6 +60,54 @@ public class DogDao {
          return list;   
       }   
    }
+   
+   public List<DogVo> page(String group){
+      
+      List<DogVo> list = new ArrayList<DogVo>();
+         
+         try {
+                  
+            String sql = " select * from dog where dog_group = ?";
+         
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, group);       
+            
+            rs = ps.executeQuery();
+            
+            while(rs.next()) {
+               DogVo vo2 = new DogVo();
+               vo2.setDog_serial(rs.getInt("dog_serial"));
+               vo2.setDog_group(rs.getString("dog_group"));
+               vo2.setDog_name(rs.getString("dog_name"));
+               vo2.setDog_breed(rs.getString("dog_breed"));
+               vo2.setDog_gender(rs.getString("dog_gender"));
+               vo2.setDog_age(rs.getString("dog_age"));
+               vo2.setDog_weight(rs.getString("dog_weight"));
+               vo2.setDog_mbti(rs.getString("dog_mbti"));
+               vo2.setDog_mbti_char(rs.getString("dog_mbti_char"));
+               vo2.setDog_photo1(rs.getString("dog_photo1"));
+               vo2.setDog_photo2(rs.getString("dog_photo2"));
+               vo2.setDog_photo3(rs.getString("dog_photo3"));
+               vo2.setDog_photo4(rs.getString("dog_photo4"));
+               vo2.setDog_story(rs.getString("dog_story"));
+               
+               list.add(vo2);
+         }
+         
+         
+         } catch (Exception e) {
+            e.printStackTrace();
+         }finally {
+            disConn();         
+            return list;   
+         }   
+      }   
+      
+      
+      
+   
+   
+   
    
    
    public DogVo view(String name) {

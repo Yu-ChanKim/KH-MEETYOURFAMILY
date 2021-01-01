@@ -1,6 +1,7 @@
 package garden.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -34,8 +35,6 @@ public class DogServlet extends HttpServlet {
       RequestDispatcher rd = null;
       dao = new DogDao();
       DogVo vo = null;
-
-      
       
       switch(siba) {
          
@@ -59,7 +58,31 @@ public class DogServlet extends HttpServlet {
           rd = request.getRequestDispatcher(url + "payment/card_api.jsp");
           rd.forward(request, response);
           break;
-         
+       
+      case "page":
+         String group = request.getParameter("group");
+ 
+         if(group.equals("전체")) {
+            List<DogVo> list = dao.select();
+            
+           request.setAttribute("list", list);
+          
+           rd = request.getRequestDispatcher(url + "dog_garden.jsp");
+             rd.forward(request, response);
+             break;
+    
+           } 
+         else if (!group.equals("전체")) {
+           List<DogVo> list = dao.page(group);
+           request.setAttribute("list", list);
+           
+           
+           rd = request.getRequestDispatcher(url + "dog_garden.jsp");
+             rd.forward(request, response);
+             break;
+         }
+          
+          
          
       /*
       case "select":
