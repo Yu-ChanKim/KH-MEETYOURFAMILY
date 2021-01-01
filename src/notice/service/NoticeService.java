@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 import notice.entity.Notice;
+import notice.entity.NoticeView;
 
 public class NoticeService
 {
@@ -19,25 +20,57 @@ public class NoticeService
 	private final String DB_USER = "system";
 	private final String DB_PASS = "oracle";
 	
-	public List<Notice> getNoticeList()
+	public int removeNoticeAll(int[] ids)
+	{
+		return 0;
+	}
+
+	public int pubNoticeAll(int[] ids)
+	{
+		return 0;
+	}
+	
+	public int insertNotice(Notice notice)
+	{
+		return 0;
+	}
+	
+	public int deleteNotice(int id)
+	{
+		return 0;
+	}
+	
+	public int updateNotice(Notice notice)
+	{
+		return 0;
+	}
+	
+	List<Notice> getNoticeNewestList()
+	{
+		return null;
+	}
+	
+	
+	// NoticeView
+	public List<NoticeView> getNoticeList()
 	{
 		return getNoticeList("TITLE", "", 1);
 	}
 	
-	public List<Notice> getNoticeList(int page)
+	public List<NoticeView> getNoticeList(int page)
 	{
 		return getNoticeList("TITLE", "", page);
 	}
 	
-	public List<Notice> getNoticeList(String field, String query, int page)
+	public List<NoticeView> getNoticeList(String field, String query, int page)
 	{	
-		List<Notice> list = new ArrayList<>();
+		List<NoticeView> list = new ArrayList<>();
 		
 		String sql = "SELECT * FROM"
 				+ " ("
 				+ "    SELECT ROWNUM NUM, N.* FROM"
 				+ "    ("
-				+ "        SELECT * FROM NOTICE WHERE " + field + " LIKE ? ORDER BY REGDATE DESC"
+				+ "        SELECT * FROM NOTICE_VIEW WHERE " + field + " LIKE ? ORDER BY REGDATE DESC"
 				+ "    ) N"
 				+ " )"
 				+ " WHERE NUM BETWEEN ? AND ?";
@@ -66,9 +99,11 @@ public class NoticeService
 				Date regdate = rs.getDate("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
-				String content = rs.getString("CONTENT");
+//				String content = rs.getString("CONTENT");
+				int commentCount = rs.getInt("COMMENT_COUNT");
 				
-				Notice notice = new Notice(id, title, writer, regdate, files, hit, content);
+				NoticeView notice = new NoticeView(id, title, writer, regdate, files, hit, commentCount);
+//				Notice notice = new Notice(id, title, writer, regdate, files, hit, content);
 				
 				list.add(notice);
 			}
@@ -108,7 +143,7 @@ public class NoticeService
 				+ " ("
 				+ "    SELECT ROWNUM NUM, N.* FROM"
 				+ "    ("
-				+ "        SELECT * FROM NOTICE WHERE " + field + " LIKE ? ORDER BY REGDATE DESC"
+				+ "        SELECT * FROM NOTICE_TB WHERE " + field + " LIKE ? ORDER BY REGDATE DESC"
 				+ "    ) N"
 				+ " )";
 		
@@ -157,7 +192,7 @@ public class NoticeService
 	{
 		Notice notice = null;
 		
-		String sql = "SELECT * FROM NOTICE WHERE ID=?";
+		String sql = "SELECT * FROM NOTICE_TB WHERE ID=?";
 				
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -212,13 +247,13 @@ public class NoticeService
 	{
 		Notice notice = null;
 		
-		String sql = "SELECT * FROM NOTICE"
+		String sql = "SELECT * FROM NOTICE_TB"
 				+ " WHERE ID ="
 				+ " ("
-				+ "    SELECT ID FROM NOTICE"
+				+ "    SELECT ID FROM NOTICE_TB"
 				+ "    WHERE REGDATE >"
 				+ "    ("
-				+ "        SELECT REGDATE FROM NOTICE WHERE ID = ?"
+				+ "        SELECT REGDATE FROM NOTICE_TB WHERE ID = ?"
 				+ "    )"
 				+ "    AND ROWNUM = 1"
 				+ " )";
@@ -276,16 +311,16 @@ public class NoticeService
 	{
 		Notice notice = null;
 		
-		String sql = "SELECT * FROM NOTICE "
+		String sql = "SELECT * FROM NOTICE_TB"
 				+ " WHERE ID ="
 				+ " ("
 				+ "    SELECT ID FROM"
 				+ "    ("
-				+ "        SELECT * FROM NOTICE ORDER BY REGDATE DESC"
+				+ "        SELECT * FROM NOTICE_TB ORDER BY REGDATE DESC"
 				+ "    )"
 				+ "    WHERE REGDATE <"
 				+ "    ("
-				+ "        SELECT REGDATE FROM NOTICE WHERE ID = ?"
+				+ "        SELECT REGDATE FROM NOTICE_TB WHERE ID = ?"
 				+ "    )"
 				+ "    AND ROWNUM = 1"
 				+ " )";
@@ -337,5 +372,51 @@ public class NoticeService
 		}
 		
 		return notice;
+	}
+
+	public int deleteNoticeAll(int[] deleteIds)
+	{
+		int deleteResult = 0;
+		String ids = "";
+		
+		for(int i : deleteIds)
+		{
+			ids += (i+",");
+		}
+		ids = ids.substring(0, ids.length()-1);
+		
+		
+		String sql = "DELETE NOTICE_TB WHERE ID IN ("+ ids +")";
+		
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try
+		{
+			Class.forName(JDBC_DRIVER);
+			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			stmt = conn.createStatement();
+
+			deleteResult = stmt.executeUpdate(sql);
+		}
+		catch (ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			if (stmt != null)	try { stmt.close();}	catch (Exception e) {}
+			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
+		}
+		
+		return deleteResult;
 	}
 }

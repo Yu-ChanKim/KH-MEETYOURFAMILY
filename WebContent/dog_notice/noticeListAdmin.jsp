@@ -34,43 +34,59 @@
 		</div>
 
 		<div class="noticeList_table">
-			<table>
-				<thead>
-					<tr>
-						<th class="title-1"><p class="border_right">번호</p></th>
-						<th class="title-2"><p class="border_right">제목</p></th>
-						<th class="title-3"><p class="border_right">작성자</p></th>
-						<th class="title-4"><p class="border_right">작성일</p></th>
-						<th class="title-5"><p>조회수</p></th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="n" items="${list}">
+		
+			<form id="frm" action="" method="post">
+							
+				<table>
+					<thead>
 						<tr>
-							<td>
-								<fmt:formatNumber value="${n.id}" />
-							</td>
-							<td class="text-align-left">
-								<a href="/dog_notice/noticeDetail?id=${n.id}">${n.title}</a>
-								&nbsp;${(n.commentCount) != 0 ? [n.commentCount] : ""}
-							</td>
-							<td>
-								${n.writer}
-							</td>
-							<td>
-								${n.regdate}
-							</td>
-							<td>
-								<fmt:formatNumber value="${n.hit}" />
-							</td>
+							<th class="title-1"><p class="border_right">번호</p></th>
+							<th class="title-2"><p class="border_right">제목</p></th>
+							<th class="title-3"><p class="border_right">작성자</p></th>
+							<th class="title-4"><p class="border_right">작성일</p></th>
+							<th class="title-5"><p class="border_right">조회수</p></th>
+							<th class="title-6"><p class="border_right">공개</p></th>
+							<th class="title-7"><p>삭제</p></th>
 						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
+					</thead>
+						<tbody>
+							<c:forEach var="n" items="${list}">
+								<tr>
+									<td>
+										<fmt:formatNumber value="${n.id}" />
+									</td>
+									<td class="text-align-left">
+										<a href="/dog_notice/noticeDetailAdmin?id=${n.id}">${n.title}</a>
+										&nbsp;${(n.commentCount) != 0 ? [n.commentCount] : ""}
+									</td>
+									<td>
+										${n.writer}
+									</td>
+									<td>
+										${n.regdate}
+									</td>
+									<td>
+										<fmt:formatNumber value="${n.hit}" />
+									</td>
+									<td>
+										<input type="checkbox" name="openId" value="${n.id}">
+									</td>
+									<td>
+										<input type="checkbox" name="deleteId" value="${n.id}">
+									</td>
+								</tr>
+							</c:forEach>			
+						</tbody>
+				</table>
+				
+			</form>
+			
 		</div>
 
 		<div class="noticeList_bottom">
-
+			<input type="submit" class="noticeList_bottom_button" name="openBtn" form="frm" value="공개하기">
+			<input type="submit" class="noticeList_bottom_button" name="deleteBtn" form="frm" value="삭제하기">
+			<input type="button" class="noticeList_bottom_button" onClick="location.href=''" value="글쓰기">
 			<form class="noticeList_search">
 				<select class="search_category" name="category">
 					<option ${(param.category=="title")?"selected":""} value="title">제목</option>
@@ -96,18 +112,18 @@
 					<fmt:parseNumber var="lastPage" type="number" value="${fn:substringBefore(Math.ceil(count/10), '.')}" />
 					<c:if test="${pNo gt pages}">
 						<td><input type="button" class="paging-parenthesis prev" value="◀"
-							onClick="location.href='/dog_notice/noticeList?pageNo=${startPage-pages}&category=${param.category}&keyword=${param.keyword}'" >
+							onClick="location.href='/dog_notice/noticeListAdmin?pageNo=${startPage-pages}&category=${param.category}&keyword=${param.keyword}'" >
 						</td>
 					</c:if>
 					<c:forEach var="i" begin="${startPage}" end="${(startPage+pages-1 lt lastPage)? startPage+pages-1 : lastPage}">
 						<td><input type="button" class="pageNo" value="${i}" name="${(pNo eq i)?'currentPage':''}"
-							onClick="location.href='/dog_notice/noticeList?pageNo=${i}&category=${param.category}&keyword=${param.keyword}'">
+							onClick="location.href='/dog_notice/noticeListAdmin?pageNo=${i}&category=${param.category}&keyword=${param.keyword}'">
 						</td>
 					</c:forEach>
 
 					<c:if test="${startPage+pages lt lastPage}">
 						<td><input type="button" class="paging-parenthesis next" value="▶"
-							onClick="location.href='/dog_notice/noticeList?pageNo=${startPage+pages}&category=${param.category}&keyword=${param.keyword}'">
+							onClick="location.href='/dog_notice/noticeListAdmin?pageNo=${startPage+pages}&category=${param.category}&keyword=${param.keyword}'">
 						</td>
 					</c:if>
 				</tr>
