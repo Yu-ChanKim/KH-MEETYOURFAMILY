@@ -72,13 +72,13 @@
                
                <div class="overflow-wrapper">
                   <a class="slide">
-                  <img src="./img/dog_image/${vo.dog_photo1 }" width="940px" , height="470px" /></a> 
+                  <img src="./img/dog_image/${vo.dog_photo1 }" width="940px" height="470px" /></a> 
                   <a class="slide">
-                  <img src="./img/dog_image/${vo.dog_photo2 }" width="940px" , height="470px" /></a>
+                  <img src="./img/dog_image/${vo.dog_photo2 }" width="940px" height="470px" /></a>
                   <a class="slide">
-                  <img src="./img/dog_image/${vo.dog_photo3 }" width="940px" , height="470px" /></a> 
+                  <img src="./img/dog_image/${vo.dog_photo3 }" width="940px" height="470px" /></a> 
                   <a class="slide">
-                  <img src="./img/dog_image/${vo.dog_photo4 }" width="940px" , height="470px" /></a>
+                  <img src="./img/dog_image/${vo.dog_photo4 }" width="940px" height="470px" /></a>
                </div>
             </div>
          </div>
@@ -92,21 +92,26 @@
                ${vo.dog_story}
             </p>
          </div>
-         
-        <form name="frm_btn" method='post'>
-             <input name='btnSelect' type='text' value='${param.btnSelect }'>  
+      
+        <form name="frm_garden" method='post'>
+             <input name='btnSelect' type='hidden'>  
+    		 <input name='price' type='hidden'>        
        </form>    
          
          <div id='dog_btns'>
             <input type="button" value="목록으로" class="basic-input" id='btn_garden'/>
-            <input type="button" value="함께하기" class="basic-input" id='btn_together' onclick='together("함께하기")'/> 
-            <input type="button" value="사랑주기" class="basic-input" id='btn_love' onclick='love("사랑주기")'/>
+            <c:if test="${empty sessionScope.mid }">
+            <input type="button" value="함께하기" class="basic-input" id='btn_together_out'/>
+            </c:if>
+            <c:if test='${not empty sessionScope.mid }'>
+            <input type="button" value="함께하기" class="basic-input" id='btn_together' onclick='together()'/>
+            </c:if>
+             
+            <input type="button" value="사랑주기" class="basic-input" id='btn_love' onclick='love()'/>
          </div>
       </div>
       <!-------------------------------------------- 하단 푸터 -------------------------------------------->
-    
-       
-   
+  
    </div>
    
 <script>payment()</script>   

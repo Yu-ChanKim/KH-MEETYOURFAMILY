@@ -22,8 +22,8 @@
       <div id='line1'></div>
 
       <form id='love_frm1' method='post'>
-         <label for='love_select' id='love_select'>책임금</label>
-         <input type='text' id='love_select' name='love_select' size='7' value='50,000' readOnly/><br> 
+         <label for='love_select' class='love_select'>책임금</label>
+         <input type='text' class='love_select' id='loveSelect' name='love_select' size='7' value='50,000' readOnly/><br> 
       </form>
 
       <div id='line2'></div>
@@ -49,7 +49,11 @@
    </div>
    
    
-<script>payment()
+<script>
+var love_btn = document.getElementById("love_btn");
+love_btn.onclick = function(){	
+	self.close();
+   }
 </script>
 
 </body>
