@@ -51,8 +51,8 @@
    
 <script>
 var love_btn = document.getElementById("love_btn");
-love_btn.onclick = function(){	
-	self.close();
+love_btn.onclick = function(){   
+   self.close();
    }
 </script>
 

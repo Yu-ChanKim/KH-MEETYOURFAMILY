@@ -12,7 +12,7 @@
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <style>
 .swal-footer {
-	text-align: center;
+   text-align: center;
 }
 </style>
 </head>
@@ -60,26 +60,26 @@
               
                 $().ready(function () {                   
                         swal({
-                        	icon: "success",
+                           icon: "success",
                             title: "소중한 후원 감사합니다.",
                             button: "확인",
                         }) .then((value) => {
-                        	if(value) {
-                        		location.href ='main.jsp?inc=./dog_introduce/introduce.jsp'
-                        	}
+                           if(value) {
+                              location.href ='main.jsp?inc=./dog_introduce/introduce.jsp'
+                           }
                         })                   
                 });
             } else {
                 //실패시 이동할 페이지
-            	$().ready(function () {                   
+               $().ready(function () {                   
                         swal({
                             icon: "error",
                             title: "결제가 취소 되었습니다.",                          
                             button: "확인",
                         }) .then((value) => {
-                        	if(value) {
-                        		location.href ='garden.do?siba=page&dname=&group=전체'
-                        	}
+                           if(value) {
+                              location.href ='garden.do?siba=page&dname=&group=전체'
+                           }
                         })                   
                 });
             }

@@ -58,11 +58,11 @@ public class DogServlet extends HttpServlet {
          break;
          
       case "love":
-    	  
-    	  int price = Integer.parseInt(request.getParameter("price"));
-    	  
-    	  request.setAttribute("price", price);    	
-    	
+         
+         int price = Integer.parseInt(request.getParameter("price"));
+         
+         request.setAttribute("price", price);       
+       
       
           rd = request.getRequestDispatcher(url + "payment/card_api_love.jsp");
           rd.forward(request, response);          

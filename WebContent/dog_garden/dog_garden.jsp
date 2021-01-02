@@ -73,10 +73,10 @@
                    <p>${vo.dog_name }</p>
                    </td>
                 <c:if test="${vs.index%3 == 2 }">
-               		<tr>
-           			</tr>        
-         		</c:if>
-        	</c:if>
+                     <tr>
+                    </tr>        
+               </c:if>
+           </c:if>
          </c:forEach>
          </tr>
             

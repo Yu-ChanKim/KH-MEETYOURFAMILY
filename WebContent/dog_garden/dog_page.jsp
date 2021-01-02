@@ -72,13 +72,13 @@
                
                <div class="overflow-wrapper">
                   <a class="slide">
-                  <img src="./img/dog_image/${vo.dog_photo1 }" width="940px" height="470px" /></a> 
+                  <img src="./img/dog_image/${vo.dog_photo1 }" width="940px"  height="470px" /></a> 
                   <a class="slide">
-                  <img src="./img/dog_image/${vo.dog_photo2 }" width="940px" height="470px" /></a>
+                  <img src="./img/dog_image/${vo.dog_photo2 }" width="940px"  height="470px" /></a>
                   <a class="slide">
-                  <img src="./img/dog_image/${vo.dog_photo3 }" width="940px" height="470px" /></a> 
+                  <img src="./img/dog_image/${vo.dog_photo3 }" width="940px"  height="470px" /></a> 
                   <a class="slide">
-                  <img src="./img/dog_image/${vo.dog_photo4 }" width="940px" height="470px" /></a>
+                  <img src="./img/dog_image/${vo.dog_photo4 }" width="940px"  height="470px" /></a>
                </div>
             </div>
          </div>
@@ -95,7 +95,7 @@
       
         <form name="frm_garden" method='post'>
              <input name='btnSelect' type='hidden'>  
-    		 <input name='price' type='hidden'>        
+           <input name='price' type='hidden'>        
        </form>    
          
          <div id='dog_btns'>

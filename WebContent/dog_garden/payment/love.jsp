@@ -22,9 +22,8 @@
 
       <form name ='love_frm1' id='love_frm1' method='post'>
          <label for='love_select' class='love_select'>후원금액</label>
-         <input type='text' class='love_select' id='loveSelect' required name='love_select' size='7' placeholder='후원금액을 입력하세요(숫자)'/><br> 
+         <input type='text' class='love_select' id='loveSelect' name='love_select' size='7' placeholder='후원금액을 입력하세요(숫자)' required/><br> 
 
-    
 
       <div id='line2'></div>
 
@@ -32,10 +31,10 @@
       
          <div id='info'>회원정보</div>
          <label class='info1' for='name'>이름</label> 
-         <input class='info1' type='text' id='name' name='name' required placeholder='이름을 입력하세요.'/><br> 
+         <input class='info1' type='text' id='name' name='name' placeholder='이름을 입력하세요.' required/><br> 
          <label class='info1' for='phone'>휴대전화</label>
-         <input class='info1' type='text' id='phone' name='phone' required placeholder='번호를 입력하세요.'/>
-     
+         <input class='info1' type='text' id='phone' name='phone' placeholder='번호를 입력하세요.' required/>
+      
 
       <div id='line2'></div>
 
@@ -44,18 +43,19 @@
             <label><input type='checkbox' id='card' checked="true" onclick="return false;" size='10'>신용카드결제</label><br>          
         </div>
       <div id='finish'>
-           <input type=submit value='완료' id='love_btn' name='love_btn'/>
+           <input type='submit' value='완료' id='love_btn' name='love_btn'/>
       </div>
-	</form>
+      </form>
+
    </div>
    
 <script>
 var love_btn = document.getElementById("love_btn");
 love_btn.onclick = function(){
-	var frm = document.love_frm1;
-	var price = frm.love_select.value;
-	opener.document.frm_garden.price.value = price;
-	self.close();
+   var frm = document.love_frm1;
+   var price = frm.love_select.value;
+   opener.document.frm_garden.price.value = price;
+   self.close();
    }
 </script>
 
