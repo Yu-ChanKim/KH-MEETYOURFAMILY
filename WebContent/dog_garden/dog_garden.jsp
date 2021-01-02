@@ -26,6 +26,11 @@
    if(request.getParameter("mbti") != null){
       mbti = request.getParameter("mbti");
    }
+   
+   //이거와 같다 
+   <c:set var='mbti' value="${param.mbti }"/>
+   
+   
 %>
  --%>
  
@@ -37,8 +42,7 @@
             <li><p onclick="findView(id)" style='cursor:pointer' id='전체'>전체</p></li>          
             <li><p onclick="findView(id)" style='cursor:pointer' id='소형견'>소형견</p></li>
             <li><p onclick="findView(id)" style='cursor:pointer' id='중형견'>중형견</p></li>
-            <li><p onclick="findView(id)" style='cursor:pointer' id='대형견'>대형견</p></li>
-          
+            <li><p onclick="findView(id)" style='cursor:pointer' id='대형견'>대형견</p></li>          
         </ul>
       </div>
 
@@ -48,13 +52,16 @@
     
     <form name="frm_garden" method='post'>
        <input name='dname' type='hidden' value='${param.dname }'>  
-       <input name='group' type='hidden' value='${param.group }'>
+       <input name='group' type='hidden' value='${param.group }'>       
     </form>           
          
    <div id='main'>
        <table>
-           <tr>          
-           <c:forEach var='vo' items='${list}' varStatus='vs'>          
+           <tr>
+           
+           <c:set var='mbti' value="${param.mbti }"/>
+           <c:forEach var='vo' items='${list}' varStatus='vs'>                 
+           <c:if test="${vo.dog_mbti eq mbti || mbti eq null }">
                   <td>
                      <img src="./img/dog_image/${vo.dog_photo1 }" onclick='detail(name)' name='${vo.dog_name }' width='330px' height='330px'
                           onmouseover="Show_Minibar(this, '견종 : ${vo.dog_breed }'
@@ -66,9 +73,10 @@
                    <p>${vo.dog_name }</p>
                    </td>
                 <c:if test="${vs.index%3 == 2 }">
-               <tr>
-            </tr>        
-          </c:if>         
+                     <tr>
+                    </tr>        
+               </c:if>
+           </c:if>
          </c:forEach>
          </tr>
             
