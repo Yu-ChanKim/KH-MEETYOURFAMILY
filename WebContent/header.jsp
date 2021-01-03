@@ -9,6 +9,7 @@
                     <li><a href="/main.jsp?inc=/dog_test/testMain.jsp">who's my family</a></li>
                     <li><a href="/dog_notice/noticeList">meet your family</a></li>
                     <li><a href="/main.jsp?inc=/dog_mypage/test5.jsp">마이페이지</a></li>
+                    <li><a href="dog_garden?admin=select">강아지 관리자 페이지</a></li>
                 </ul>
             </nav>
             <div>

@@ -15,7 +15,14 @@ public class DogVo {
    String dog_photo3;
    String dog_photo4;
    String dog_story;
+   String delFile;
    
+   public String getDelFile() {
+   return delFile;
+   }
+   public void setDelFile(String delFile) {
+   this.delFile = delFile;
+   }
    public int getDog_serial() {
       return dog_serial;
    }
