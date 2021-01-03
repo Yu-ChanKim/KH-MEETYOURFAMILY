@@ -68,7 +68,7 @@ h3 {
 .login-box .line {
     display: block;
     margin: 10px auto 0;
-    width: 600px;
+    width: 400px;
     height: 1px;
     background: #c2c2c2;
 }
@@ -121,7 +121,7 @@ input[type='text'], input[type='password'], input[type='email'], select {
 
 /* �α��� ��ư */
 
-.login-box button{
+.login-box .button{
     font-family: inherit;
     background: none;
     border: none;
@@ -134,7 +134,7 @@ input[type='text'], input[type='password'], input[type='email'], select {
     line-height: 77px;
 }
 
-.login-form .button {
+.login-form>.button {
     margin: 38px 0 20px;
     width: 100%;
     display: inline-block;
@@ -178,7 +178,7 @@ input[type='text'], input[type='password'], input[type='email'], select {
     height: 80px;
     line-height: 77px;
     margin: 38px 15px 20px;
-    width: 180px;
+    width: 160px;
     display: inline-block;
     text-align: center;
 }
@@ -197,70 +197,43 @@ input[type='text'], input[type='password'], input[type='email'], select {
     font-weight: 600;
 }
 
-1-row> #gender {
-	width : 100%
-}
+
 
 .login-bottom{
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .login-bottom a{
-    font-size: 15px !important;
+    font-size: 14px !important;
 }
 
-.join-button{
-font-family: inherit;
-background: #ffffff !important;
-cursor: pointer;
-font-size: 24px;
-border:10px;
-outline: none;
-letter-spacing: -0.1em;
-border-radius: 40px;
-border: 1px solid #ff6f61 !important;
-height: 80px;
-line-height: 77px;
-margin: 38px 0 20px;
-width: 100%;
-display: inline-block;
-text-align: center;
-	
-}
-
-#question {
-	background: #f2f2f2;
-    width: 400px;
-    height: 75px;
-    border: 1px solid #f2f2f2;
-    box-sizing: border-box;
-    
-    cursor: pointer;
-    font-size :20px;
-	color : gray;
-}
-
-#gender{
-	background: #f2f2f2;
-    width: 400px;
-    height: 75px;
-    border: 1px solid #f2f2f2;
-    box-sizing: border-box;
-    
-    cursor: pointer;
-    font-size :20px;
-	color : gray;
-}
-
-
-#userDate{
-	font-family: inherit;
+/*로그인 부분*/
+.login1{
+	word-break: keep-all;
+	-webkit-font-smoothing: antialiased;
+	padding: 0;
+	box-sizing: border-box;
+	background: none;
+	outline: none;
+	letter-spacing: -0.1em;
 	cursor: pointer;
-	font-size :20px;
-	color : gray;
-	padding: 0 20px;
-    font-family: NotoKR;
+	font-family: NotoKR;
+	display: inline-block;
+	text-align: center;
+	height: 80px;
+	line-height: 77px;
+	border: 1px solid #ff6f61 !important;
+	border-radius: 40px;
+	background-color: #ff6f61 !important;
+	margin: 38px 0 20px;
+	width: 100%;
+}
+
+.login1 value{
+	font-size: 28px;
+	color: #ff6f61 !important;
+	font-weight: 700;
 }
 
 

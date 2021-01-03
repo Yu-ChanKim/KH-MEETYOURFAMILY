@@ -10,10 +10,10 @@
 
                     <li><a href="main.jsp?inc=./dog_notice/noticeList">meet your family</a></li>
 
-                    <li><a href="main.jsp?inc=./dog_mypage/test5.jsp">마이페이지</a></li>                                                        
+                    <li><a href="main.jsp?inc=./member/updated.jsp">마이페이지</a></li>                                                        
                 </ul>                               
             </nav>       
             <div>
-                <li><a href="main.jsp?inc=./dog_login/login.jsp">로그인/회원가입</a></li>                    
+                <li><a href="main.jsp?inc=./member/login.jsp">로그인/회원가입</a></li>                    
             </div>
  </header>
