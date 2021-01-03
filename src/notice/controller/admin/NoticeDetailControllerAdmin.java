@@ -1,4 +1,4 @@
-package notice.controller;
+package notice.controller.admin;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,11 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 import notice.entity.Notice;
 import notice.service.NoticeService;
 
-@WebServlet("/dog_notice/noticeDetailAdmin")
+@WebServlet("/dog_notice/noticeDetail_Admin")
 public class NoticeDetailControllerAdmin extends HttpServlet
 {
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
 		int id = Integer.parseInt(req.getParameter("id"));
 
@@ -29,7 +29,7 @@ public class NoticeDetailControllerAdmin extends HttpServlet
 		Notice notice = service.getNotice(id);
 		req.setAttribute("n", notice);
 
-		req.getRequestDispatcher("/dog_notice/noticeDetailAdmin.jsp").forward(req, resp);
+		req.getRequestDispatcher("/dog_notice/noticeDetail_Admin.jsp").forward(req, resp);
 		
 //		String deleteBtn = req.getParameter("deleteBtn");
 //		
@@ -41,5 +41,12 @@ public class NoticeDetailControllerAdmin extends HttpServlet
 //			
 //			resp.sendRedirect("/dog_notice/noticeListAdmin.jsp");
 //		}
+//		상세화면 삭제기능
+	}
+	
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+	{
+		doPost(req, resp);
 	}
 }

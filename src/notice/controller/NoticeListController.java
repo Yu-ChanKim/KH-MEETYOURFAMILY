@@ -25,9 +25,10 @@ import oracle.net.ano.Service;
 @WebServlet("/dog_notice/noticeList")
 public class NoticeListController extends HttpServlet
 {
+	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-	{		
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+	{
 		String category = "title";
 		String category_ = req.getParameter("category");
 		if(category_ != null && !category_.equals(""))
@@ -57,5 +58,11 @@ public class NoticeListController extends HttpServlet
 		req.setAttribute("list", list);
 		
 		req.getRequestDispatcher("/dog_notice/noticeList.jsp").forward(req, resp);
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+	{
+		doPost(req, resp);
 	}
 }

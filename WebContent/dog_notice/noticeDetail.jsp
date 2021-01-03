@@ -18,8 +18,9 @@
 	<meta charset="UTF-8">
 	<title>notice_DETAIL</title>
     <link rel="stylesheet" href="/css/notice/noticeDetail.css">
-    
     <link rel="stylesheet" href="/css/main.css" type="text/css">
+    <script src="/lib/jquery-3.5.1.min.js"></script>
+    <script src="/js/notice/noticeList.js"></script>
 </head>
 
 <body>
@@ -41,24 +42,24 @@
         <div class="noticeDetail_table">
             <table>
 				<tr>
-                	<td class="bg_color">제목</td>
-                    <td class="indentation" colspan="3">
+                	<td colspan="1" class="bg_color_1">제목</td>
+                    <td colspan="3" class="bg_color_2">
                     	${n.title}
                     </td>
 				</tr>
                 <tr>
-                    <td class="bg_color">작성자</td>
-                    <td class="indentation">
+                    <td colspan="1" class="bg_color_1">작성자</td>
+                    <td colspan="1" class="bg_color_2">
                         ${n.writer}
                 	</td>
-                    <td class="bg_color">작성일</td>
-                    <td class="indentation">
+                    <td colspan="1" class="bg_color_1">작성일</td>
+                    <td colspan="1" class="bg_color_2">
 						<fmt:formatDate pattern="yyyy년 MM월 dd일 hh시 mm분" value="${n.regdate}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td class="bg_color">첨부파일</td>
-                    <td class="indentation">
+                    <td colspan="1" class="bg_color_1">첨부파일</td>
+                    <td colspan="1" class="bg_color_2">
                         <c:forTokens var="fileName" items="${n.files}" delims="," varStatus="st">
                         	<a href="${fileName}">${fileName}</a>
                         	<c:if test="${!st.last}">
@@ -66,35 +67,30 @@
                         	</c:if>
                         </c:forTokens>
                     </td>
-                    <td class="bg_color">조회수</td>
-                    <td class="indentation">
+                    <td colspan="1" class="bg_color_1">조회수</td>
+                    <td colspan="1" class="bg_color_2">
                     	<fmt:formatNumber value="${n.hit}" />
                     </td>
                 </tr>
-                
+				<tr>
+					<td colspan="4" class="box_content">
+						${n.content}
+					</td>
+				</tr>
+				<tr>
+					<td colspan="1" class="bg_color_1">이전글</td>
+					<td colspan="3" class="bg_color_2">이전글</td>
+				</tr>
+				<tr>
+					<td colspan="1" class="bg_color_1">다음글</td>
+					<td colspan="3" class="bg_color_2">다음글</td>
+				</tr>                
             </table>
             
         </div>
 
-        <div class="noticeDetail_content">
-            ${n.content}
-        </div>
-
         <div class="noticeDetail_btns">
-            <input type="button" class="noticeDetail_btns_list" onClick="location.href='/dog_notice/noticeList'" value="목록">
-        </div>
-
-        <div class="noticeDetail_table">
-            <table>
-				<tr>
-                    <td class="bg_color">이전글</td>
-                    <td class="indentation" colspan="3">이전글</td>
-                </tr>
-                <tr>
-                	<td class="bg_color">다음글</td>
-                    <td class="indentation" colspan="3">다음글</td>
-                </tr>
-            </table>
+			<input type="button" class="noticeDetail_btns_list" onClick="location.href='/dog_notice/noticeList'" value="목록">
         </div>
 
     </div>

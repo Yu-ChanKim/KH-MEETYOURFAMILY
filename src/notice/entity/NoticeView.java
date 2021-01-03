@@ -16,9 +16,9 @@ public class NoticeView extends Notice
 		this.commentCount = commentCount;
 	}
 
-	public NoticeView(int id, String title, String writer, Date regdate, String files, String hit, int commentCount)
+	public NoticeView(int id, String title, String writer, Date regdate, String files, String hit, /*String content,*/ boolean pub, int commentCount)
 	{
-		super(id, title, writer, regdate, files, hit, null);
+		super(id, title, writer, regdate, files, hit, null, pub);
 		this.commentCount = commentCount;
 	}
 }

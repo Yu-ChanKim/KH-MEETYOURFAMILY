@@ -32,7 +32,43 @@ public class NoticeService
 	
 	public int insertNotice(Notice notice)
 	{
-		return 0;
+		int result = 0;
+	
+		String sql = "INSERT INTO NOTICE(TITLE, CONTENT, WRITER, PUB) VALUES(?, ?, ?, 0)";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try
+		{
+			Class.forName(JDBC_DRIVER);
+			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, notice.getTitle());
+			pstmt.setString(2, notice.getContent());
+			pstmt.setString(3, notice.getWriter());
+			
+			result = pstmt.executeUpdate();
+		}
+		catch (ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			if (pstmt != null)	try { pstmt.close();}	catch (Exception e) {}
+			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
+		}
+		
+		return result;
 	}
 	
 	public int deleteNotice(int id)
@@ -100,10 +136,10 @@ public class NoticeService
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 //				String content = rs.getString("CONTENT");
+				boolean pub = rs.getBoolean("PUB");
 				int commentCount = rs.getInt("COMMENT_COUNT");
 				
-				NoticeView notice = new NoticeView(id, title, writer, regdate, files, hit, commentCount);
-//				Notice notice = new Notice(id, title, writer, regdate, files, hit, content);
+				NoticeView notice = new NoticeView(id, title, writer, regdate, files, hit, /*content,*/ pub, commentCount);
 				
 				list.add(notice);
 			}
@@ -217,8 +253,9 @@ public class NoticeService
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 				String content = rs.getString("CONTENT");
+				boolean pub = rs.getBoolean("PUB");
 				
-				notice = new Notice(nid, title, writer, regdate, files, hit, content);
+				notice = new Notice(nid, title, writer, regdate, files, hit, content, pub);
 			}
 		}
 		catch (ClassNotFoundException e)
@@ -281,8 +318,9 @@ public class NoticeService
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 				String content = rs.getString("CONTENT");
+				boolean pub = rs.getBoolean("PUB");
 				
-				notice = new Notice(nid, title, writer, regdate, files, hit, content);
+				notice = new Notice(nid, title, writer, regdate, files, hit, content, pub);
 			}
 		}
 		catch (ClassNotFoundException e)
@@ -348,8 +386,9 @@ public class NoticeService
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 				String content = rs.getString("CONTENT");
+				boolean pub = rs.getBoolean("PUB");
 				
-				notice = new Notice(nid, title, writer, regdate, files, hit, content);
+				notice = new Notice(nid, title, writer, regdate, files, hit, content, pub);
 			}
 		}
 		catch (ClassNotFoundException e)
@@ -376,7 +415,7 @@ public class NoticeService
 
 	public int deleteNoticeAll(int[] deleteIds)
 	{
-		int deleteResult = 0;
+		int result = 0;
 		String ids = "";
 		
 		for(int i : deleteIds)
@@ -384,7 +423,6 @@ public class NoticeService
 			ids += (i+",");
 		}
 		ids = ids.substring(0, ids.length()-1);
-		
 		
 		String sql = "DELETE NOTICE_TB WHERE ID IN ("+ ids +")";
 		
@@ -397,7 +435,7 @@ public class NoticeService
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 			stmt = conn.createStatement();
 
-			deleteResult = stmt.executeUpdate(sql);
+			result = stmt.executeUpdate(sql);
 		}
 		catch (ClassNotFoundException e)
 		{
@@ -417,6 +455,6 @@ public class NoticeService
 			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
 		}
 		
-		return deleteResult;
+		return result;
 	}
 }
