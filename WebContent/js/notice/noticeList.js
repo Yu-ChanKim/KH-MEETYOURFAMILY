@@ -1,8 +1,8 @@
 const nDetail = "/dog_notice/noticeDetail";
-const nDetailA = "/dog_notice/noticeDetail_Admin";
+const nDetailA = "/dog_notice/noticeDetail/Admin";
 const nList = "/dog_notice/noticeList";
-const nListA = "/dog_notice/noticeList_Admin";
-const nRegA = "/dog_notice/noticeReg_Admin";
+const nListA = "/dog_notice/noticeList/Admin";
+const nRegA = "/dog_notice/noticeReg/Admin";
 
 function goDetailPage(s, id)
 {

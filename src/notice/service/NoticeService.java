@@ -34,7 +34,7 @@ public class NoticeService
 	{
 		int result = 0;
 	
-		String sql = "INSERT INTO NOTICE(TITLE, CONTENT, WRITER, PUB) VALUES(?, ?, ?, 0)";
+		String sql = "INSERT INTO NOTICE_TB (TITLE, WRITER, CONTENT) VALUES(?, ?, ?)";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -45,8 +45,8 @@ public class NoticeService
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, notice.getTitle());
-			pstmt.setString(2, notice.getContent());
-			pstmt.setString(3, notice.getWriter());
+			pstmt.setString(2, notice.getWriter());
+			pstmt.setString(3, notice.getContent());
 			
 			result = pstmt.executeUpdate();
 		}
@@ -93,12 +93,12 @@ public class NoticeService
 		return getNoticeList("TITLE", "", 1);
 	}
 	
-	public List<NoticeView> getNoticeList(int page)
+	public List<NoticeView> getNoticeList(int pageNo)
 	{
-		return getNoticeList("TITLE", "", page);
+		return getNoticeList("TITLE", "", pageNo);
 	}
 	
-	public List<NoticeView> getNoticeList(String field, String query, int page)
+	public List<NoticeView> getNoticeList(String category, String keyword, int pageNo)
 	{	
 		List<NoticeView> list = new ArrayList<>();
 		
@@ -106,7 +106,7 @@ public class NoticeService
 				+ " ("
 				+ "    SELECT ROWNUM NUM, N.* FROM"
 				+ "    ("
-				+ "        SELECT * FROM NOTICE_VIEW WHERE " + field + " LIKE ? ORDER BY REGDATE DESC"
+				+ "        SELECT * FROM NOTICE_VIEW WHERE " + category + " LIKE ? ORDER BY REGDATE DESC"
 				+ "    ) N"
 				+ " )"
 				+ " WHERE NUM BETWEEN ? AND ?";
@@ -121,9 +121,9 @@ public class NoticeService
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, "%" + query + "%");
-			pstmt.setInt(2, 1+(page-1)*10);
-			pstmt.setInt(3, page*10);
+			pstmt.setString(1, "%" + keyword + "%");
+			pstmt.setInt(2, 1+(pageNo-1)*10);
+			pstmt.setInt(3, pageNo*10);
 			
 			rs = pstmt.executeQuery();
 
@@ -132,14 +132,14 @@ public class NoticeService
 				int id = rs.getInt("ID");
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
+//				String content = rs.getString("CONTENT");
 				Date regdate = rs.getDate("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
-//				String content = rs.getString("CONTENT");
 				boolean pub = rs.getBoolean("PUB");
 				int commentCount = rs.getInt("COMMENT_COUNT");
 				
-				NoticeView notice = new NoticeView(id, title, writer, regdate, files, hit, /*content,*/ pub, commentCount);
+				NoticeView notice = new NoticeView(id, title, writer, /*content,*/ regdate, files, hit, pub, commentCount);
 				
 				list.add(notice);
 			}
@@ -171,7 +171,7 @@ public class NoticeService
 		return getNoticeCount("title", "");
 	}
 	
-	public int getNoticeCount(String field, String query)
+	public int getNoticeCount(String category, String keyword)
 	{
 		int count = 0;
 		
@@ -179,7 +179,7 @@ public class NoticeService
 				+ " ("
 				+ "    SELECT ROWNUM NUM, N.* FROM"
 				+ "    ("
-				+ "        SELECT * FROM NOTICE_TB WHERE " + field + " LIKE ? ORDER BY REGDATE DESC"
+				+ "        SELECT * FROM NOTICE_TB WHERE " + category + " LIKE ? ORDER BY REGDATE DESC"
 				+ "    ) N"
 				+ " )";
 		
@@ -193,7 +193,7 @@ public class NoticeService
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, "%" + query + "%");
+			pstmt.setString(1, "%" + keyword + "%");
 
 			rs = pstmt.executeQuery();
 
@@ -249,13 +249,13 @@ public class NoticeService
 				int nid = rs.getInt("ID");
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
+				String content = rs.getString("CONTENT");
 				Date regdate = rs.getDate("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
-				String content = rs.getString("CONTENT");
 				boolean pub = rs.getBoolean("PUB");
 				
-				notice = new Notice(nid, title, writer, regdate, files, hit, content, pub);
+				notice = new Notice(nid, title, writer, content, regdate, files, hit, pub);
 			}
 		}
 		catch (ClassNotFoundException e)
@@ -314,13 +314,13 @@ public class NoticeService
 				int nid = rs.getInt("ID");
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
+				String content = rs.getString("CONTENT");
 				Date regdate = rs.getDate("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
-				String content = rs.getString("CONTENT");
 				boolean pub = rs.getBoolean("PUB");
 				
-				notice = new Notice(nid, title, writer, regdate, files, hit, content, pub);
+				notice = new Notice(nid, title, writer, content, regdate, files, hit, pub);
 			}
 		}
 		catch (ClassNotFoundException e)
@@ -382,13 +382,13 @@ public class NoticeService
 				int nid = rs.getInt("ID");
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
+				String content = rs.getString("CONTENT");
 				Date regdate = rs.getDate("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
-				String content = rs.getString("CONTENT");
 				boolean pub = rs.getBoolean("PUB");
 				
-				notice = new Notice(nid, title, writer, regdate, files, hit, content, pub);
+				notice = new Notice(nid, title, writer, content, regdate, files, hit, pub);
 			}
 		}
 		catch (ClassNotFoundException e)

@@ -60,7 +60,7 @@
 	                        	</c:if>
 	                        </c:forTokens>
 	                    </td>
-	                    <td colspan="1" class="bg_color_1">작성자</td>
+	                    <td colspan="1" class="bg_color_1">Admin</td>
 	                    <td colspan="1" class="bg_color_2">
 	                        관리자
 	                	</td>

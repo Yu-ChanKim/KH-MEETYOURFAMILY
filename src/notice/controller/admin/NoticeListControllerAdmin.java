@@ -21,12 +21,14 @@ import notice.entity.NoticeView;
 import notice.service.NoticeService;
 import oracle.net.ano.Service;
 
-@WebServlet("/dog_notice/noticeList_Admin")
+@WebServlet("/dog_notice/noticeList/Admin")
 public class NoticeListControllerAdmin extends HttpServlet
 {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
+		req.setAttribute("user", "admin");
+		
 		String deleteBtn = req.getParameter("deleteBtn");
 		String openBtn = req.getParameter("openBtn");
 		
@@ -43,7 +45,7 @@ public class NoticeListControllerAdmin extends HttpServlet
 				}
 				int result = service.deleteNoticeAll(deleteIds);
 			}
-			resp.sendRedirect("/dog_notice/noticeList_Admin");
+			resp.sendRedirect("/dog_notice/noticeList/Admin");
 		}
 		else if(openBtn != null)
 		{
@@ -79,7 +81,7 @@ public class NoticeListControllerAdmin extends HttpServlet
 			req.setAttribute("count", count);
 			req.setAttribute("list", list);
 
-			req.getRequestDispatcher("/dog_notice/noticeList_Admin.jsp").forward(req, resp);
+			req.getRequestDispatcher("/dog_notice/noticeList.jsp").forward(req, resp);
 		}
 	}
 

@@ -23,6 +23,8 @@ public class NoticeDetailController extends HttpServlet
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
+		req.setAttribute("user", "user");
+		
 		int id = Integer.parseInt(req.getParameter("id"));
 
 		NoticeService service = new NoticeService();

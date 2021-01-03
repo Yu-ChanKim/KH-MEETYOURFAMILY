@@ -84,13 +84,17 @@
 				<tr>
 					<td colspan="1" class="bg_color_1">다음글</td>
 					<td colspan="3" class="bg_color_2">다음글</td>
-				</tr>                
+				</tr>				                
             </table>
             
         </div>
 
         <div class="noticeDetail_btns">
-			<input type="button" class="noticeDetail_btns_list" onClick="location.href='/dog_notice/noticeList'" value="목록">
+            <input type="button" class="noticeDetail_btns_list" onClick="goPage(nListA)" value="목록">
+            <c:if test="${user == 'admin'}">
+				<input type="button" class="noticeDetail_btns_edit" value="수정">
+				<input type="submit" class="noticeDetail_btns_delete" onClick="deleting('${n.id}')" name="deleteBtn" value="삭제">
+			</c:if>
         </div>
 
     </div>

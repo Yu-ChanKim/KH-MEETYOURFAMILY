@@ -7,10 +7,10 @@ public class Notice
 	private int id;
 	private String title;
 	private String writer;
+	private String content;
 	private Date regdate;
 	private String files;
 	private String hit;
-	private String content;
 	private boolean pub;
 	
 	public Notice()
@@ -18,15 +18,15 @@ public class Notice
 		
 	}
 	
-	public Notice(int id, String title, String writer, Date regdate, String files, String hit, String content, boolean pub)
+	public Notice(int id, String title, String writer, String content, Date regdate, String files, String hit, boolean pub)
 	{
 		this.id = id;
 		this.title = title;
 		this.writer = writer;
+		this.content = content;
 		this.regdate = regdate;
 		this.files = files;
 		this.hit = hit;
-		this.content = content;
 		this.pub = pub;
 	}
 
@@ -60,6 +60,16 @@ public class Notice
 		this.writer = writer;
 	}
 
+	public String getContent()
+	{
+		return content;
+	}
+
+	public void setContent(String content)
+	{
+		this.content = content;
+	}
+	
 	public Date getRegdate()
 	{
 		return regdate;
@@ -89,16 +99,6 @@ public class Notice
 	{
 		this.files = files;
 	}
-
-	public String getContent()
-	{
-		return content;
-	}
-
-	public void setContent(String content)
-	{
-		this.content = content;
-	}
 	
 	public boolean getPub()
 	{
@@ -111,9 +111,8 @@ public class Notice
 	}
 
 	@Override
-	public String toString()
-	{
-		return "Notice [id=" + id + ", title=" + title + ", writer=" + writer + ", regdate=" + regdate + ", files="
-				+ files + ", hit=" + hit + ", content=" + content + ", pub=" + pub + "]";
+	public String toString() {
+		return "Notice [id=" + id + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regdate="
+				+ regdate + ", files=" + files + ", hit=" + hit + ", pub=" + pub + "]";
 	}
 }

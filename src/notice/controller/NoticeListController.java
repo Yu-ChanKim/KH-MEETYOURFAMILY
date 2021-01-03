@@ -29,6 +29,8 @@ public class NoticeListController extends HttpServlet
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
+		req.setAttribute("user", "user");
+		
 		String category = "title";
 		String category_ = req.getParameter("category");
 		if(category_ != null && !category_.equals(""))
