@@ -21,8 +21,10 @@ import notice.service.NoticeService;
 public class NoticeDetailController extends HttpServlet
 {
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
+		req.setAttribute("user", "user");
+		
 		int id = Integer.parseInt(req.getParameter("id"));
 
 		NoticeService service = new NoticeService();
@@ -30,5 +32,11 @@ public class NoticeDetailController extends HttpServlet
 		req.setAttribute("n", notice);
 
 		req.getRequestDispatcher("/dog_notice/noticeDetail.jsp").forward(req, resp);
+	}
+
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+	{
+		doPost(req, resp);
 	}
 }

@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import notice.entity.Notice;
+import notice.entity.NoticeView;
 import notice.service.NoticeService;
 import oracle.net.ano.Service;
 
@@ -24,16 +25,19 @@ import oracle.net.ano.Service;
 @WebServlet("/dog_notice/noticeList")
 public class NoticeListController extends HttpServlet
 {
+	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-	{		
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+	{
+		req.setAttribute("user", "user");
+		
 		String category = "title";
 		String category_ = req.getParameter("category");
 		if(category_ != null && !category_.equals(""))
 		{
 			category = category_;
 		}
-		
+
 		String keyword = "";
 		String keyword_ = req.getParameter("keyword");
 		if(keyword_ != null)
@@ -49,12 +53,18 @@ public class NoticeListController extends HttpServlet
 		}
 		
 		NoticeService service = new NoticeService();
-		List<Notice> list = service.getNoticeList(category, keyword, pageNo);
+		List<NoticeView> list = service.getNoticeList(category, keyword, pageNo);
 		int count = service.getNoticeCount(category, keyword);
-		req.setAttribute("count", count);
 		
+		req.setAttribute("count", count);
 		req.setAttribute("list", list);
 		
 		req.getRequestDispatcher("/dog_notice/noticeList.jsp").forward(req, resp);
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+	{
+		doPost(req, resp);
 	}
 }

@@ -1,6 +1,7 @@
 package garden.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -34,8 +35,6 @@ public class DogServlet extends HttpServlet {
       RequestDispatcher rd = null;
       dao = new DogDao();
       DogVo vo = null;
-
-      
       
       switch(siba) {
          
@@ -45,9 +44,46 @@ public class DogServlet extends HttpServlet {
          
          request.setAttribute("vo", vo);
          
-         rd = request.getRequestDispatcher("main.jsp?inc=./dog_garden/dog_page/dog_page.jsp");
+         rd = request.getRequestDispatcher(url + "dog_page.jsp");
          rd.forward(request, response);
          break;
+         
+      case "together":
+         
+         String a = request.getParameter("btnSelect");
+             
+         rd = request.getRequestDispatcher(url + "payment/card_api_together.jsp");
+         rd.forward(request, response);
+    
+         break;
+         
+      case "love":
+         
+         int price = Integer.parseInt(request.getParameter("price"));
+         
+         request.setAttribute("price", price);       
+       
+      
+          rd = request.getRequestDispatcher(url + "payment/card_api_love.jsp");
+          rd.forward(request, response);          
+          break;
+       
+      case "page":
+         String group = request.getParameter("group");
+ 
+         if(group.equals("전체") || group == null) {
+           group = "";
+           } 
+        
+         List<DogVo> list = dao.page(group);
+         request.setAttribute("list", list);
+           
+           
+         rd = request.getRequestDispatcher(url + "dog_garden.jsp");
+          rd.forward(request, response);
+          break;
+       
+          
          
          
          

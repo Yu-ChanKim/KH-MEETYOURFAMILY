@@ -11,7 +11,6 @@ body {
     
 }
 
-
 /*
 #header, #footer {
     height: 150px;
@@ -22,11 +21,7 @@ body {
 }
 */
 
-
-
-
 #noticeList {
-	
     position: relative;
     display: inline-block;
     width: 1000px;
@@ -42,7 +37,7 @@ body {
     border-bottom: 10px solid aqua;
 }
 
-#noticeList > .noticeList_table > table {
+#noticeList > .noticeList_table table {
     position: relative;
     width: 100%;
     border-spacing: 0px;
@@ -51,13 +46,19 @@ body {
     /* border-bottom: 1px solid black; */
 }
 
-#noticeList > .noticeList_table > table .noticeList_list_table-title-1 {width: 10%;}
-#noticeList > .noticeList_table > table .noticeList_list_table-title-2 {width: 45%;}
-#noticeList > .noticeList_table > table .noticeList_list_table-title-3 {width: 15%;}
-#noticeList > .noticeList_table > table .noticeList_list_table-title-4 {width: 15%;}
-#noticeList > .noticeList_table > table .noticeList_list_table-title-5 {width: 15%;}
+#noticeList > .noticeList_table table .title-1 {width: 10%;}
+#noticeList > .noticeList_table table .title-2 {width: 45%;}
+#noticeList > .noticeList_table table .title-3 {width: 15%;}
+#noticeList > .noticeList_table table .title-4 {width: 15%;}
+#noticeList > .noticeList_table table .title-5 {width: 10%;}
+#noticeList > .noticeList_table table .title-6 {width: 5%;}
+#noticeList > .noticeList_table table .title-7 {width: 5%;}
 
-#noticeList > .noticeList_table > table th {
+#noticeList > .noticeList_table table .border_right {
+    border-right: 2px solid aqua;
+}
+
+#noticeList > .noticeList_table table th {
     border-top: 5px solid aqua;
     border-bottom: 1px solid aqua;
     background-color: lightcyan;
@@ -65,61 +66,73 @@ body {
     font-weight: bold;
 }
 
-#noticeList > .noticeList_table > table td {
+#noticeList > .noticeList_table table td {
     border-bottom: 1px solid aqua;
     height: 50px;
 }
 
-#noticeList > .noticeList_table > table a {
+#noticeList > .noticeList_table table a {
     text-decoration: none;
     color: black;
 }
 
-#noticeList > .noticeList_table > table a:hover {
+#noticeList > .noticeList_table table a:hover {
     text-decoration: underline;
 }
 
-#noticeList > .noticeList_table > table .text-align-left {
+#noticeList > .noticeList_table table .text-align-left {
+	padding-left: 10px;
     text-align: left;
 }
 
-#noticeList > .noticeList_table > table > tbody > tr:hover {
+#noticeList > .noticeList_table table tbody tr:hover {
     background-color: LightCyan;
 }
 
+#noticeList > .noticeList_table table .list_pointer {
+	cursor: pointer;
+	display: inline-block;
+}
 
-#noticeList > .noticeList_bottom {
+#noticeList > .noticeList_table table .list_pointer:hover {
+	font-weight: bolder;
+}
+
+#noticeList > .noticeList_btns {
     /* display: inline-block; */
     /* position: relative; */
     width: 100%;
+    height: 50px;
     /* height: 100px; */
     text-align: justify;
-    margin: 20px 0px 20px 0px;
+    margin: 10px 0px 20px 0px;
     /* border: 1px solid black; */
 }
 
-#noticeList > .noticeList_bottom > .noticeList_write {
+#noticeList > .noticeList_btns > .noticeList_bottom_button {
     outline: none;
     width: 100px;
     height: 50px;
+    line-height: 0;
     font-size: 18px;
     font-weight: bold;
     border-radius: 10px;
     border : 0px;
+    margin-right : 10px;
     cursor: pointer;
     background-color: lavender;
     transition: background-color 500ms, color 500ms;
 }
 
-#noticeList > .noticeList_bottom > .noticeList_write:hover {
+#noticeList > .noticeList_btns > .noticeList_bottom_button:hover {
     background-color: aqua;
 }
 
-#noticeList > .noticeList_bottom > .noticeList_write:active {
+#noticeList > .noticeList_btns > .noticeList_bottom_button:active {
     background-color: deepskyblue;
 }
 
-#noticeList > .noticeList_bottom > .noticeList_search {
+#noticeList > .noticeList_btns > .noticeList_search {
     display: inline-block;
     position: absolute;
     height: 50px;
@@ -132,7 +145,7 @@ body {
     /* border: 1px solid Lavender; */
 }
 
-#noticeList > .noticeList_bottom > .noticeList_search * {
+#noticeList > .noticeList_btns > .noticeList_search * {
     position: absolute;
     box-sizing: border-box;
     height: 100%;
@@ -142,13 +155,13 @@ body {
     padding: 0px 10px 0px 10px;
 }
 
-#noticeList > .noticeList_bottom > .noticeList_search .search_category {
+#noticeList > .noticeList_btns > .noticeList_search .search_category {
     width: 90px;
     left: 0;
     border-radius: 10px;
 }
 
-#noticeList > .noticeList_bottom > .noticeList_search .search_text {
+#noticeList > .noticeList_btns > .noticeList_search .search_text {
     width: 200px;
     height: 100%;
     right: 100px;
@@ -156,7 +169,7 @@ body {
     border-radius: 10px 0px 0px 10px;
 }
 
-#noticeList > .noticeList_bottom > .noticeList_search .search_submit {
+#noticeList > .noticeList_btns > .noticeList_search .search_submit {
     /* position: absolute; */
     font-size: 18px;
     font-weight: bold;
@@ -168,17 +181,18 @@ body {
     border: none;
 }
 
-#noticeList > .noticeList_bottom > .noticeList_search .search_submit:hover {
+#noticeList > .noticeList_btns > .noticeList_search .search_submit:hover {
     background-color: aqua;
 }
 
-#noticeList > .noticeList_bottom > .noticeList_search .search_submit:active {
+#noticeList > .noticeList_btns > .noticeList_search .search_submit:active {
     background-color: deepskyblue;
 }
 
 #noticeList > .noticeList_paging {
     position: relative;
     display: inline-block;
+    margin-top: 20px;
     height: 100%;
     /* border: 1px solid red; */
 }

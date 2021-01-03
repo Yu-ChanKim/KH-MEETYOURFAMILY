@@ -1,16 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-  // String name = (String)request.getAttribute("name");
-   // String email = (String)request.getAttribute("email");
-   //String phone = (String)request.getAttribute("phone");
-   //String address = (String)request.getAttribute("address");
-   //int totalPrice = (int)request.getAttribute("totalPrice");
-    String name = "곽재훈";
-    String phone = "01072265831";
-    String address = "인천시";
-    int totalPrice = 1000;
-%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,9 +8,19 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<style>
+.swal-footer {
+   text-align: center;
+}
+</style>
 </head>
 <body>
+<%    
+    int donation = (int)request.getAttribute("price");
+   
+%>
     <script>
     $(function(){
         var IMP = window.IMP; // 생략가능
@@ -31,12 +31,9 @@
             pg : 'kakaopay',
             pay_method : 'card',
             merchant_uid : 'merchant_' + new Date().getTime(),
-            name : 'KH Books 도서 결제',
-            amount : <%=totalPrice%>,  //가격
-            buyer_name : '<%=name%>',
-            buyer_tel : '<%=phone%>',
-            buyer_addr : '<%=address%>',
-            buyer_postcode : '123-456',
+            name : 'Meet Your Family',
+            amount : <%=donation%>,  //가격
+          
             //m_redirect_url : 'http://www.naver.com'
         }, function(rsp) {
             if ( rsp.success ) {
@@ -52,26 +49,39 @@
                 }).done(function(data) {
                     //[2] 서버에서 REST API로 결제정보확인 및 서비스루틴이 정상적인 경우
                     if ( everythings_fine ) {
-                        msg = '결제가 완료되었습니다.';
-                        msg += '\n고유ID : ' + rsp.imp_uid;
-                        msg += '\n상점 거래ID : ' + rsp.merchant_uid;
-                        msg += '\결제 금액 : ' + rsp.paid_amount;
-                        msg += '카드 승인번호 : ' + rsp.apply_num;
                         
-                        alert(msg);
+                        
                     } else {
                         //[3] 아직 제대로 결제가 되지 않았습니다.
                         //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
                     }
                 });
                 //성공시 이동할 페이지
-                location.href='main.jsp?inc=./dog_introduce/introduce.jsp'
+              
+                $().ready(function () {                   
+                        swal({
+                           icon: "success",
+                            title: "소중한 후원 감사합니다.",
+                            button: "확인",
+                        }) .then((value) => {
+                           if(value) {
+                              location.href ='main.jsp?inc=./dog_introduce/introduce.jsp'
+                           }
+                        })                   
+                });
             } else {
-                msg = '결제에 실패하였습니다.';
-                msg += '에러내용 : ' + rsp.error_msg;
                 //실패시 이동할 페이지
-                location.href="main.jsp?inc=./dog_garden/dog_garden.jsp";
-                alert(msg);
+               $().ready(function () {                   
+                        swal({
+                            icon: "error",
+                            title: "결제가 취소 되었습니다.",                          
+                            button: "확인",
+                        }) .then((value) => {
+                           if(value) {
+                              location.href ='garden.do?siba=page&dname=&group=전체'
+                           }
+                        })                   
+                });
             }
         });
         

@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>MEET YOUR FAMILY</title>
-<link rel="stylesheet" href="./css/main.css" type="text/css">
-<script src='./lib/jquery-3.5.1.min.js'></script>
+<link rel="stylesheet" href="/css/main.css" type="text/css">
+<script src='/lib/jquery-3.5.1.min.js'></script>
 </head>
 <body>
 <%
@@ -23,9 +23,10 @@ String incc = "main.jsp";
       request.setAttribute("incc",incc);
 
 %>
+   <%@include file="header.jsp"%>
    <div class="container">
       <!--------------------------------------------  상단 헤더 -------------------------------------------->
-      <%@include file="header.jsp"%>
+
       <!-------------------------------------------- 중간 섹션 -------------------------------------------->
 
       <c:if test='${inc == incc}'>
@@ -38,11 +39,11 @@ String incc = "main.jsp";
                   </h2>
                   <li>어떤 강아지와 잘 맞을지 궁금할땐, 견종 매칭테스트</li>
                   <div id='testpage'>
-                    <li><a href="main.jsp?inc=./dog_test/testMain.jsp">검사하러 가기</a></li>
+                    <li><a href="main.jsp?inc=/dog_test/testMain.jsp">검사하러 가기</a></li>
                   </div>
                </div>
                <div id='article1_div2'>
-                  <img src="./img/foot.png" />
+                  <img src="/img/foot.png" />
                </div>
                <div id='article1_div3'>
                   <img width='600px' height='600px' src="./img/dog.png" />
@@ -67,7 +68,7 @@ String incc = "main.jsp";
             <!------------------ 세번째 ------------------>
             <article id="article3">
                 <div id="love">
-                    <div><img src="./img/love.png" width='500px' height='500px'></div>
+                    <div><img src="/img/love.png" width='500px' height='500px'></div>
                     <div id="love1">
                         <h2><p>'사랑주기'</p></h2>                       
                         <p>사랑주기는  후원 서비스입니다.</p>
@@ -98,7 +99,7 @@ String incc = "main.jsp";
                         <p>않고 넘치는 정을 나누어줄 새 동반자를 찾고 있습니다.</p>
                         <p>아이들에게 따뜻한 손길을 내어주세요!</p>
                     </div>
-                    <div><img src="./img/together.png" width='500px' height='500px'></div>
+                    <div><img src="/img/together.png" width='500px' height='500px'></div>
                 </div>
             </article>
         </section> 
@@ -120,7 +121,8 @@ String incc = "main.jsp";
          <jsp:include page="<%=inc %>" />
       </c:if>
       <!-------------------------------------------- 하단 푸터 -------------------------------------------->
-      <%@include file="footer.jsp"%>
    </div>
+
+<%@include file="footer.jsp"%>
 </body>
 </html>
