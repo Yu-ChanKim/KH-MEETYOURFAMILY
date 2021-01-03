@@ -30,7 +30,7 @@
 	
 		<div class="noticeList_btns">
 			<c:if test="${user == 'admin'}">
-				<input type="button" class="noticeList_bottom_button" onClick="location.href='/dog_notice/noticeReg_Admin.jsp'" value="글쓰기">
+				<input type="button" class="noticeList_bottom_button" onClick="goPage(nRegA)" value="글쓰기">
 				<input type="submit" class="noticeList_bottom_button" name="openBtn" form="frmCheck" value="공개하기">
 				<input type="submit" class="noticeList_bottom_button" name="deleteBtn" form="frmCheck" value="삭제하기">
 			</c:if>	

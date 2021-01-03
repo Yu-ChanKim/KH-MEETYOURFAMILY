@@ -39,7 +39,7 @@
             공지사항
         </div>
         
-       	<form id="reg" action="/dog_notice/noticeReg_Admin" method="post">
+       	<form id="reg" action="/dog_notice/noticeReg/Admin" method="post">
 
 	        <div class="noticeDetail_table">
 
@@ -84,8 +84,8 @@
         </form>
 
         <div class="noticeDetail_btns">
-            <input type="button" class="noticeDetail_btns_list" onClick="goPage(nListA)" value="취소">
-            <input type="submit" form="reg" class="noticeDetail_btns_reg" value="등록">
+            <input type="button" class="noticeDetail_btns_list" onClick="goPage(nListA)" value="목록">
+            <input type="submit" form="reg" class="noticeDetail_btns_reg" name="regBtn" value="등록">
         </div>
 
     </div>

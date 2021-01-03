@@ -19,18 +19,26 @@ public class NoticeRegControllerAdmin extends HttpServlet
 	{	
 		req.setAttribute("user", "admin");
 		
-		String title = req.getParameter("title");
-		String content = req.getParameter("content");
-		
-		Notice notice = new Notice();
-		notice.setTitle(title);
-		notice.setWriter("Admin");
-		notice.setContent(content);
-		
-		NoticeService service = new NoticeService();
-		int result = service.insertNotice(notice);
-		
-		resp.sendRedirect("/dog_notice/noticeList/Admin");
+		String regBtn = req.getParameter("regBtn");
+		if(regBtn != null)
+		{
+			String title = req.getParameter("title");
+			String content = req.getParameter("content");
+			
+			Notice notice = new Notice();
+			notice.setTitle(title);
+			notice.setWriter("Admin");
+			notice.setContent(content);
+			
+			NoticeService service = new NoticeService();
+			int result = service.insertNotice(notice);
+			
+			resp.sendRedirect("/dog_notice/noticeList/Admin");
+		}
+		else
+		{
+			resp.sendRedirect("/dog_notice/noticeReg.jsp");
+		}
 	}
 	
 	@Override

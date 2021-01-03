@@ -37,7 +37,7 @@ public class NoticeListController extends HttpServlet
 		{
 			category = category_;
 		}
-		
+
 		String keyword = "";
 		String keyword_ = req.getParameter("keyword");
 		if(keyword_ != null)

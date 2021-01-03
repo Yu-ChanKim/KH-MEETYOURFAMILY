@@ -90,7 +90,7 @@
         </div>
 
         <div class="noticeDetail_btns">
-            <input type="button" class="noticeDetail_btns_list" onClick="goPage(nListA)" value="목록">
+            <input type="button" class="noticeDetail_btns_list" onClick="goPage(${(user == 'admin') ? 'nListA' : 'nList'})" value="목록">
             <c:if test="${user == 'admin'}">
 				<input type="button" class="noticeDetail_btns_edit" value="수정">
 				<input type="submit" class="noticeDetail_btns_delete" onClick="deleting('${n.id}')" name="deleteBtn" value="삭제">
