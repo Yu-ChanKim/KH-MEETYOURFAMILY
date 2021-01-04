@@ -32,22 +32,10 @@ public class NoticeDetailControllerAdmin extends HttpServlet
 		req.setAttribute("n", notice);
 
 		req.getRequestDispatcher("/dog_MYF/notice/noticeDetail.jsp").forward(req, resp);
-		
-//		String deleteBtn = req.getParameter("deleteBtn");
-//		
-//		if(deleteBtn != null)
-//		{
-//			int[] id_ = {id};
-//			System.out.println("abc");
-//			int deleteResult = service.deleteNoticeAll(id_);
-//			
-//			resp.sendRedirect("/dog_notice/noticeListAdmin.jsp");
-//		}
-//		상세화면 삭제기능
 	}
 	
 	@Override
-	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
 		doPost(req, resp);
 	}
