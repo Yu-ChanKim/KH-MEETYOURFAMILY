@@ -45,7 +45,7 @@ public class NoticeListControllerAdmin extends HttpServlet
 				}
 				int result = service.deleteNoticeAll(deleteIds);
 			}
-			resp.sendRedirect("/dog_MYF/notice/noticeList/Admin");
+			resp.sendRedirect("/dog_MYF/noticeList/Admin");
 		}
 		else if(openBtn != null)
 		{

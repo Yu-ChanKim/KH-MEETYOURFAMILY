@@ -32,7 +32,7 @@
 <%-- ADMIN --%>
 			<c:if test="${user == 'admin'}">
 				<input class="btn" type="button" onClick="goPage(nRegA)" value="글쓰기">
-				<input class="btn" type="submit" name="deleteBtn" form="frmCheck" value="삭제하기">
+				<input class="btn" action="/dog_MYF/noticeList/Admin" type="submit" name="deleteBtn" form="frmCheck" value="삭제하기">
 			</c:if>
 <%-----------%>
 			<form class="search" name="search"  method="post">
