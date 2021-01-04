@@ -13,8 +13,8 @@
 <title>마당</title>
 <link rel="stylesheet" href="./css/garden.css" type="text/css">
 <link rel="stylesheet" href="./css/main.css" type="text/css">
-<script src='./lib/jquery-3.5.1.min.js'></script>
 <script src="./js/garden.js"></script>
+<script src='./lib/jquery-3.5.1.min.js'></script>
 
 </head>
 <!------------------------------------------------------------------------------------- 바디 ------------------------------------------------------------------------------------->

@@ -33,8 +33,14 @@
       <textarea rows="20" cols="70" name ='story'>
       </textarea><br>
       <label>사진</label>
-      <input type='file' name='dog_photo1' id='btnPhoto'/> <!-- 이벤트 처리를 위해 id 생성 -->
+      <input type='file' name='dog_photo1' id='btnPhoto1'/>
       <img src='http://placehold.it/200x140' id='dog_photo1' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
+      <input type='file' name='dog_photo2' id='btnPhoto2'/>
+      <img src='http://placehold.it/200x140' id='dog_photo2' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
+      <input type='file' name='dog_photo3' id='btnPhoto3'/>
+      <img src='http://placehold.it/200x140' id='dog_photo3' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
+      <input type='file' name='dog_photo4' id='btnPhoto4'/>
+      <img src='http://placehold.it/200x140' id='dog_photo4' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
          
       <hr>
    

@@ -85,9 +85,21 @@ public class DogAdminDao {
              }catch(Exception ex) {
             msg = ex.getMessage();
             
-            File file = new File(FileUpload.saveDir + vo.getDog_photo1());
-            if(file.exists()) {
-               file.delete();
+            File file1 = new File(FileUpload.saveDir + vo.getDog_photo1());
+            if(file1.exists()) {
+               file1.delete();
+            }
+            File file2 = new File(FileUpload.saveDir + vo.getDog_photo2());
+            if(file2.exists()) {
+               file2.delete();
+            }
+            File file3 = new File(FileUpload.saveDir + vo.getDog_photo3());
+            if(file3.exists()) {
+               file3.delete();
+            }
+            File file4 = new File(FileUpload.saveDir + vo.getDog_photo4());
+            if(file4.exists()) {
+               file4.delete();
             }
             }finally {
                disConn();
@@ -165,11 +177,29 @@ public class DogAdminDao {
          
          // 이미지가 수정된 경우 기존 파일 삭제
          if(vo.getDog_photo1() != null && !vo.getDog_photo1().equals("")) {
-            File file = new File(FileUpload.saveDir + vo.getDelFile());
-            if(file.exists()) {
-               file.delete();
+            File file1 = new File(FileUpload.saveDir + vo.getDelFile1());
+            if(file1.exists()) {
+               file1.delete();
             }
-         }      
+         }
+         if(vo.getDog_photo2() != null && !vo.getDog_photo2().equals("")) {
+             File file2 = new File(FileUpload.saveDir + vo.getDelFile2());
+             if(file2.exists()) {
+                file2.delete();
+             }
+          }
+         if(vo.getDog_photo3() != null && !vo.getDog_photo3().equals("")) {
+             File file3 = new File(FileUpload.saveDir + vo.getDelFile3());
+             if(file3.exists()) {
+                file3.delete();
+             }
+          }
+         if(vo.getDog_photo4() != null && !vo.getDog_photo4().equals("")) {
+             File file4 = new File(FileUpload.saveDir + vo.getDelFile4());
+             if(file4.exists()) {
+                file4.delete();
+             }
+          }
          
    } catch (Exception e) {
       msg  = e.getMessage();
@@ -198,9 +228,21 @@ public class DogAdminDao {
 			throw new Exception("강아지 정보 삭제중 오류 발생");
 		}
 		
-		File file = new File(FileUpload.saveDir + vo.getDelFile());
-		if(file.exists()) {
-			file.delete();
+		File file1 = new File(FileUpload.saveDir + vo.getDelFile1());
+		if(file1.exists()) {
+			file1.delete();
+		}
+		File file2 = new File(FileUpload.saveDir + vo.getDelFile2());
+		if(file2.exists()) {
+			file2.delete();
+		}
+		File file3 = new File(FileUpload.saveDir + vo.getDelFile3());
+		if(file3.exists()) {
+			file3.delete();
+		}
+		File file4 = new File(FileUpload.saveDir + vo.getDelFile4());
+		if(file4.exists()) {
+			file4.delete();
 		}
 	} catch (Exception ex) {
 		msg = ex.getMessage();
