@@ -83,17 +83,7 @@ public class DogServlet extends HttpServlet {
           rd.forward(request, response);
           break;
        
-          
-         
-         
-         
-         
-      /*
-      case "select":
-      case "insert":
-      case "delete":
-      case "update":
-      */
+
       
       }
    

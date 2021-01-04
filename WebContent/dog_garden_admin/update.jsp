@@ -49,11 +49,11 @@
          <input type='button' value='수정' id='btnUpdate'/>
          <input type='button' value='목록으로' id='btnSelect'/>            
       </div>
-      <input type='hidden' name='delFile1' value='${vo.dog_photo1 }'/>
-      <input type='hidden' name='delFile2' value='${vo.dog_photo2 }'/>
-      <input type='hidden' name='delFile3' value='${vo.dog_photo3 }'/>
-      <input type='hidden' name='delFile4' value='${vo.dog_photo4 }'/>
-      
+        <input type='hidden' name='delFile1' value='${vo.dog_photo1 }'/>
+          <input type='hidden' name='delFile2' value='${vo.dog_photo2 }'/>
+            <input type='hidden' name='delFile3' value='${vo.dog_photo3 }'/>
+              <input type='hidden' name='delFile4' value='${vo.dog_photo4 }'/>
+   
    </form>   
 </div>
 <script>admin()</script>

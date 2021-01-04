@@ -194,40 +194,40 @@
         text-align: center;
     }
     /*--------------------------------------------  후기글  --------------------------------------------*/
-	aside{		
-		margin-top: -22px;
-		background-color: rgb(243, 235, 235) ;
-	}
-	#aside{
-		font-size: 40px;
-		padding-top: 70px;
-		padding-bottom: 30px;
-		position: relative;
-		text-align: center;
-		font-weight: bold;
-		list-style-type: none;
-		margin-bottom: 50px;
-	}	
-	.slick-items { 	   	
-		margin-left: 30px;
-		padding: 10px;
-		width: 1840px;			
-	}
-	aside>.slick-items .slick-div {
-		display: inline-block;		
-		border:7px solid rgb(233, 162, 150);
-		width: 500px;
-		border-radius:10px;
-		display: flex;
-		margin-left: 60px;
-		margin-right: 60px;	
-		margin-bottom: 60px;
-		padding: 5px;
-				
-	}
-	
-	 
-	
+   aside{      
+      margin-top: -22px;
+      background-color: rgb(243, 235, 235) ;
+   }
+   #aside{
+      font-size: 40px;
+      padding-top: 70px;
+      padding-bottom: 30px;
+      position: relative;
+      text-align: center;
+      font-weight: bold;
+      list-style-type: none;
+      margin-bottom: 50px;
+   }   
+   .slick-items {          
+      margin-left: 30px;
+      padding: 10px;
+      width: 1840px;         
+   }
+   aside>.slick-items .slick-div {
+      display: inline-block;      
+      border:7px solid rgb(233, 162, 150);
+      width: 500px;
+      border-radius:10px;
+      display: flex;
+      margin-left: 60px;
+      margin-right: 60px;   
+      margin-bottom: 60px;
+      padding: 5px;
+            
+   }
+   
+    
+   
 
 
 
@@ -295,4 +295,3 @@
     .footer-container .copyright{
         padding-top: 20px;
     }
-

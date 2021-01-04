@@ -32,7 +32,7 @@
       <input type='text' name='mbti_char' size='60' disabled value='${vo.dog_mbti_char }'/><br>
       <label>스토리</label><br>
       <p>${vo.dog_story }</p>
-  
+
       <hr>
    
       <div class='btns'>
@@ -41,11 +41,10 @@
          <input type='button' value='목록으로' id='btnSelect'/>
       </div>
       <input type='hidden' name='serial' value='${vo.dog_serial}'/>
-      <input type='hidden' name='delFile1' value='${vo.dog_photo1 }'/>
-      <input type='hidden' name='delFile2' value='${vo.dog_photo2 }'/>
-      <input type='hidden' name='delFile3' value='${vo.dog_photo3 }'/>
-      <input type='hidden' name='delFile4' value='${vo.dog_photo4 }'/>
-         
+      <input type='hidden' name='delFile1' value='${vo.dog_photo1}'/>
+        <input type='hidden' name='delFile2' value='${vo.dog_photo2}'/>
+          <input type='hidden' name='delFile3' value='${vo.dog_photo3}'/>
+            <input type='hidden' name='delFile4' value='${vo.dog_photo4}'/>   
    </form>   
 <script>admin()</script>
 </div>

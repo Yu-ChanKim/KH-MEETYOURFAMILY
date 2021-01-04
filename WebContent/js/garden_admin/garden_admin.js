@@ -95,7 +95,7 @@ var admin = function(){
        }
     }
 
-	if(btnPhoto2 != null){
+   if(btnPhoto2 != null){
        btnPhoto2.onchange = function(ev){
            var tag = ev.srcElement; //이벤트 발생한 태그
             var url =tag.files[0];
@@ -110,7 +110,7 @@ var admin = function(){
        }
     }
 
-	if(btnPhoto3 != null){
+   if(btnPhoto3 != null){
        btnPhoto3.onchange = function(ev){
            var tag = ev.srcElement; //이벤트 발생한 태그
             var url =tag.files[0];
@@ -125,7 +125,7 @@ var admin = function(){
        }
     }
 
-	if(btnPhoto4 != null){
+   if(btnPhoto4 != null){
        btnPhoto4.onchange = function(ev){
            var tag = ev.srcElement; //이벤트 발생한 태그
             var url =tag.files[0];

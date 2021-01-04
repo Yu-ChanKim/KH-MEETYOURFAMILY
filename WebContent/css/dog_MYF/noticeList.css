@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+* {
+    /* border: 1px solid rgba(255, 0, 0, 0.3); */
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#myf_list {
+    position: relative;
+    display: inline-block;
+    width: 1000px;
+    height: 100%;
+}
+
+#myf_list > .title {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 50px 0px 50px 0px;
+    padding: 0px 15px 15px 15px;
+    border-bottom: 10px solid aqua;
+}
+
+#myf_list > .list table {
+    position: relative;
+    width: 100%;
+    border-spacing: 0px;
+    table-layout: fixed;
+    font-size: 15px;
+}
+
+#myf_list > .list table thead tr th:nth-child(1) {width: 10%;}
+#myf_list > .list table thead tr th:nth-child(2) {width: 45%;}
+#myf_list > .list table thead tr th:nth-child(3) {width: 15%;}
+#myf_list > .list table thead tr th:nth-child(4) {width: 15%;}
+#myf_list > .list table thead tr th:nth-child(5) {width: 10%;}
+#myf_list > .list table thead tr th:nth-child(6) {width: 5%;}
+#myf_list > .list table thead tr th:nth-child(7) {width: 5%;}
+
+#myf_list > .list table tr td {
+    border-bottom: 1px solid aqua;
+}
+
+#myf_list > .list table tr th {
+    background-color: lightcyan;
+    border-top: 5px solid aqua;
+    border-bottom: 1px solid aqua;
+}
+
+#myf_list > .list table tr:hover {
+    background-color: lightcyan;
+}
+
+#myf_list > .list table th p {
+    font-weight: bolder;
+    border-right: 3px solid aqua;
+}
+
+#myf_list > .list table th:last-child p {
+    border-right: none;
+}
+
+#myf_list > .list table tbody .title p {
+    display: block;
+    cursor: pointer;
+    text-align: left;
+    padding: 0px 10px 0px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 20px);
+    height: 100%;
+}
+
+#myf_list > .list table tbody .title p:hover {
+    font-weight: bolder;
+}
+
+#myf_list > .paging table {
+    display: inline-block;
+    margin: 20px 0px 50px 0px;
+}
+
+#myf_list > .paging table input {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: white;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 1s, color 1s;
+}
+
+#myf_list > .paging table input[name="currentPage"] {
+	background-color: lavender;
+}
+
+#myf_list > .paging table input:hover {
+    background-color: aqua;
+}
+
+#myf_list > .paging table input:active {
+    background-color: deepskyblue;
+}
+
+#myf_list > .btns {
+    width: 100%;
+    height: 50px;
+    text-align: justify;
+    margin: 0px 0px 20px 0px;
+}
+
+#myf_list > .btns .btn {
+    outline: none;
+    width: 100px;
+    height: 50px;
+    line-height: 0;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    border : 0px;
+    margin-right : 10px;
+    cursor: pointer;
+    background-color: lavender;
+    transition: background-color 500ms, color 500ms;
+}
+
+#myf_list > .btns .search {
+    display: inline-block;
+    position: absolute;
+    height: 50px;
+    width: 400px;
+    right: 0;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#myf_list > .btns .search * {
+    position: absolute;
+    box-sizing: border-box;
+    height: 100%;
+    outline: none;
+    font-size: 15px;
+    border: 1px solid lavender;
+    padding: 0px 10px 0px 10px;
+}
+
+#myf_list > .btns .search .category {
+    width: 90px;
+    left: 0;
+    border-radius: 10px;
+}
+
+#myf_list > .btns .search .textbox {
+    width: 200px;
+    height: 100%;
+    right: 100px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#myf_list > .btns .search .btn {
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    right: 0;
+    margin-right : 0px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: lavender;
+    transition: background-color 500ms, color 500ms;
+    border: none;
+}
+
+#myf_list > .btns .btn:hover {
+    background-color: aqua;
+}
+
+#myf_list > .btns .btn:active {
+    background-color: deepskyblue;
+}

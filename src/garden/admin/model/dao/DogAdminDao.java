@@ -181,25 +181,25 @@ public class DogAdminDao {
             if(file1.exists()) {
                file1.delete();
             }
-         }
+         }  
          if(vo.getDog_photo2() != null && !vo.getDog_photo2().equals("")) {
              File file2 = new File(FileUpload.saveDir + vo.getDelFile2());
              if(file2.exists()) {
                 file2.delete();
              }
-          }
+          }    
          if(vo.getDog_photo3() != null && !vo.getDog_photo3().equals("")) {
              File file3 = new File(FileUpload.saveDir + vo.getDelFile3());
              if(file3.exists()) {
                 file3.delete();
              }
-          }
+          }    
          if(vo.getDog_photo4() != null && !vo.getDog_photo4().equals("")) {
              File file4 = new File(FileUpload.saveDir + vo.getDelFile4());
              if(file4.exists()) {
                 file4.delete();
              }
-          }
+          }    
          
    } catch (Exception e) {
       msg  = e.getMessage();

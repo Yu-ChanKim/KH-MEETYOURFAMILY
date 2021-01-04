@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+/* * {
+    border: 1px solid black;
+} */
+
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#myf_detail {
+    position: relative;
+    display: inline-block;
+    width: 1000px;
+    height: 100%;
+}
+
+#myf_detail .title {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 50px 0px 50px 0px;
+    padding: 0px 15px 15px 15px;
+    border-bottom: 10px solid aqua;
+}
+
+#myf_detail .detail table {
+    position: relative;
+    width: 100%;
+    border-spacing: 5px;
+    table-layout: fixed;
+    font-size: 16px;
+}
+
+#myf_detail .detail table .box1 {
+    background-color: aqua;
+    height: 50px;
+    font-weight: bold;
+}
+
+
+#myf_detail .detail table .box2 {
+    padding-left: 10px;
+    text-align: left;
+    background-color: lightcyan;
+}
+
+#myf_detail .detail table .content_ {
+    padding: 20px;
+    background-color: lightcyan;
+}
+
+#myf_detail .detail table input {
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    height: 30px;
+    padding: 0px 10px 0px 10px;
+    background-color: snow;
+    border-radius: 5px;
+    border: 1px solid lavender;
+}
+
+#myf_detail .detail table textarea {
+    display: block;
+    box-sizing: border-box;
+    resize: none;
+    width: calc(100% - 40px);
+    height: 300px;
+    margin: 20px 0px 20px 20px;
+    border: 1px solid lavender;
+    background-color: snow;
+    border-radius: 10px;
+    padding : 20px;
+}
+
+#myf_detail .detail table input:focus {
+    outline: none;
+    border: 3px solid lavender;
+}
+
+#myf_detail .detail table textarea:focus {
+    outline: none;
+    border: 3px solid lavender;
+}
+
+#myf_detail .btns {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#myf_detail .btns input {
+    display: inline-block;
+    outline: none;
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    border : 0px;
+    margin: 20px 5px 20px 5px;
+    cursor: pointer;
+    background-color: lavender;
+    transition: background-color 500ms, color 500ms;
+}
+
+#myf_detail .btns input:hover {
+    background-color: aqua;
+}
+
+#myf_detail .btns input:active {
+    background-color: deepskyblue;
+}

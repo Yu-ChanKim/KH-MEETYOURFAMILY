@@ -13,7 +13,7 @@ import garden.model.vo.DogVo;
 public class FileUpload {
    
    //saveDirectory
-   public static final String saveDir = "C:\\jQuery\\workspace\\KH-MEETYOURFAMILY\\WebContent\\img\\dog_image\\"; //upload 파일 경로 복붙하고 맨뒤에 역슬러쉬 \\ 두개를 붙인다.
+   public static final String saveDir = "C:\\Users\\PC\\Desktop\\Jacob_Home3\\KH-MEETYOURFAMILY\\WebContent\\img\\dog_image\\"; //upload 파일 경로 복붙하고 맨뒤에 역슬러쉬 \\ 두개를 붙인다.
    int maxSize = 1024*1024*100; //100Mb
    String encoding = "utf-8";
    MultipartRequest mul;
@@ -75,9 +75,10 @@ public class FileUpload {
         vo.setDog_photo4(sysFile4);
         vo.setDog_story(mul.getParameter("story"));
         vo.setDelFile1(mul.getParameter("delFile1"));
-        vo.setDelFile2(mul.getParameter("delFile2"));
-        vo.setDelFile3(mul.getParameter("delFile3"));
-        vo.setDelFile4(mul.getParameter("delFile4"));
+        vo.setDelFile2(mul.getParameter("delFile2")); 
+        vo.setDelFile3(mul.getParameter("delFile3")); 
+        vo.setDelFile4(mul.getParameter("delFile4")); 
+
 
       return vo;
    }
