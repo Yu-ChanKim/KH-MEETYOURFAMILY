@@ -99,7 +99,10 @@ public class DogAdminServlet extends HttpServlet {
        case "delete" :
     	   vo = new DogVo();
     	   vo.setDog_serial(Integer.parseInt(request.getParameter("serial")));
-    	   vo.setDelFile(request.getParameter("delFile"));
+    	   vo.setDelFile1(request.getParameter("delFile1"));
+    	   vo.setDelFile2(request.getParameter("delFile2"));
+    	   vo.setDelFile3(request.getParameter("delFile3"));
+    	   vo.setDelFile4(request.getParameter("delFile4"));
     	   
     	   msg = dao.delete(vo);
     	   

@@ -96,18 +96,7 @@ public class DogDao {
          return vo;
       }         
    }   
-   
-   
-   /*
-   
-   
-   insert(){   }
-   
-   update(){   }
-   
-   delete(){   }
-   */
-   
+
    
    public void disConn() {
       try {

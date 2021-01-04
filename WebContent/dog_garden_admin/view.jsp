@@ -32,19 +32,7 @@
       <input type='text' name='mbti_char' size='60' disabled value='${vo.dog_mbti_char }'/><br>
       <label>스토리</label><br>
       <p>${vo.dog_story }</p>
-      <%--
-      <label></label>
-      <c:choose>
-         <c:when test="${empty vo.photo1 }">
-            <img src='http://placehold.it/200X140' width='200px' height='140px'/>
-         </c:when>   
-         <c:otherwise>
-            <a href='./img/dog_image/${vo.photo1 }' download='${vo.photo1 }'> <!-- href에 링크걸려있는 애를 download로 다운받겠다 -->
-            <img src='./img/dog_image/${vo.photo1 }' width='200px' height='140px'/>
-            </a>
-         </c:otherwise>
-      </c:choose>
-       --%>
+
       <hr>
    
       <div class='btns'>
@@ -53,7 +41,10 @@
          <input type='button' value='목록으로' id='btnSelect'/>
       </div>
       <input type='hidden' name='serial' value='${vo.dog_serial}'/>
-      <input type='hidden' name='delFile' value='${vo.dog_photo1}'/>   
+      <input type='hidden' name='delFile1' value='${vo.dog_photo1}'/>
+        <input type='hidden' name='delFile2' value='${vo.dog_photo2}'/>
+          <input type='hidden' name='delFile3' value='${vo.dog_photo3}'/>
+            <input type='hidden' name='delFile4' value='${vo.dog_photo4}'/>   
    </form>   
 <script>admin()</script>
 </div>

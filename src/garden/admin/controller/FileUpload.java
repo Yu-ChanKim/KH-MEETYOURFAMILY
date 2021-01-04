@@ -17,8 +17,16 @@ public class FileUpload {
    int maxSize = 1024*1024*100; //100Mb
    String encoding = "utf-8";
    MultipartRequest mul;
-   String sysFile = "";
-   String oriFile = "";
+   String sysFile1 = "";
+   String sysFile2 = "";
+   String sysFile3 = "";
+   String sysFile4 = "";
+   
+   String oriFile1 = "";
+   String oriFile2 = "";
+   String oriFile3 = "";
+   String oriFile4 = "";
+   
       
    public FileUpload(HttpServletRequest request) {
             
@@ -30,9 +38,18 @@ public class FileUpload {
          //업로드된 파일명 가져오는 방법
          Enumeration<String> en = mul.getFileNames();
          while(en.hasMoreElements()) {
-            String tag = (String)en.nextElement();
-            sysFile = mul.getFilesystemName(tag); // 수정된 파일명
-            oriFile = mul.getOriginalFileName(tag); // 원본 파일명         
+            String tag1 = (String)en.nextElement();
+            String tag2 = (String)en.nextElement();
+            String tag3 = (String)en.nextElement();
+            String tag4 = (String)en.nextElement();
+            sysFile1 = mul.getFilesystemName(tag1); // 수정된 파일명
+            sysFile2 = mul.getFilesystemName(tag2); // 수정된 파일명
+            sysFile3 = mul.getFilesystemName(tag3); // 수정된 파일명
+            sysFile4 = mul.getFilesystemName(tag4); // 수정된 파일명
+            oriFile1 = mul.getOriginalFileName(tag1); // 원본 파일명         
+            oriFile2 = mul.getOriginalFileName(tag2); // 원본 파일명
+            oriFile3 = mul.getOriginalFileName(tag3); // 원본 파일명
+            oriFile4 = mul.getOriginalFileName(tag4); // 원본 파일명
          }   
          
       } catch (Exception e) {
@@ -52,19 +69,17 @@ public class FileUpload {
         vo.setDog_weight(mul.getParameter("weight"));
         vo.setDog_mbti(mul.getParameter("mbti"));
         vo.setDog_mbti_char(mul.getParameter("mbti_char"));
-        vo.setDog_photo1(sysFile);
-        vo.setDog_photo2(sysFile);
-        vo.setDog_photo3(sysFile);
-        vo.setDog_photo4(sysFile);
+        vo.setDog_photo1(sysFile1);
+        vo.setDog_photo2(sysFile2);
+        vo.setDog_photo3(sysFile3);
+        vo.setDog_photo4(sysFile4);
         vo.setDog_story(mul.getParameter("story"));
-      vo.setDelFile(mul.getParameter("delFile")); 
+        vo.setDelFile1(mul.getParameter("delFile1"));
+        vo.setDelFile2(mul.getParameter("delFile2")); 
+        vo.setDelFile3(mul.getParameter("delFile3")); 
+        vo.setDelFile4(mul.getParameter("delFile4")); 
 
-      
-        /*
-        vo.setDog_photo2(mul.getParameter("dog_photo2"));
-        vo.setDog_photo3(mul.getParameter("dog_photo3"));
-        vo.setDog_photo4(mul.getParameter("dog_photo4"));
-        */
+
       return vo;
    }
    

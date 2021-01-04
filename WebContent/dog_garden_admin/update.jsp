@@ -31,30 +31,28 @@
       <label>MBTI 성격</label>
       <input type='text' name='mbti_char' size='60' required value='${vo.dog_mbti_char }'/><br>
       <label>스토리</label><br>      
-      <textarea rows="10" cols="90" name='story'>${vo.dog_story }</textarea><br>      
+      <textarea rows="10" cols="90" name='story'>${vo.dog_story }</textarea><br>
+            
       <label>사진</label>
-      <input type='file' name='dog_photo1' id='btnPhoto'/>
-      <input type='file' name='dog_photo2' id='btnPhoto'/>
-      <input type='file' name='dog_photo3' id='btnPhoto'/>
-      <input type='file' name='dog_photo4' id='btnPhoto'/>
-      
-      <%--
-      <c:choose>
-         <c:when test="${empty vo.dog_photo1 }">
-            <img src='http://placehold.it/200x140' id='photo' width='200px' height='140px'/>
-         </c:when>
-         <c:otherwise>
-            <img src='./upload/${vo.dog_photo1 }' id='photo' width='200px' height='140px'/>
-         </c:otherwise>
-      </c:choose>   
-       --%>
-       
+      <input type='file' name='dog_photo1' id='btnPhoto1'/>
+      <img src='http://placehold.it/200x140' id='dog_photo1' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
+      <input type='file' name='dog_photo2' id='btnPhoto2'/>
+      <img src='http://placehold.it/200x140' id='dog_photo2' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
+      <input type='file' name='dog_photo3' id='btnPhoto3'/>
+      <img src='http://placehold.it/200x140' id='dog_photo3' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
+      <input type='file' name='dog_photo4' id='btnPhoto4'/>
+      <img src='http://placehold.it/200x140' id='dog_photo4' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
+
       <hr>
    
       <div class='btns'>
          <input type='button' value='수정' id='btnUpdate'/>
          <input type='button' value='목록으로' id='btnSelect'/>            
       </div>
+        <input type='hidden' name='delFile1' value='${vo.dog_photo1 }'/>
+          <input type='hidden' name='delFile2' value='${vo.dog_photo2 }'/>
+            <input type='hidden' name='delFile3' value='${vo.dog_photo3 }'/>
+              <input type='hidden' name='delFile4' value='${vo.dog_photo4 }'/>
    
    </form>   
 </div>
