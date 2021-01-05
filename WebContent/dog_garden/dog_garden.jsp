@@ -13,8 +13,8 @@
 <title>마당</title>
 <link rel="stylesheet" href="./css/garden.css" type="text/css">
 <link rel="stylesheet" href="./css/main.css" type="text/css">
-<script src="./js/garden.js"></script>
 <script src='./lib/jquery-3.5.1.min.js'></script>
+<script src="./js/garden.js"></script>
 
 </head>
 <!------------------------------------------------------------------------------------- 바디 ------------------------------------------------------------------------------------->
@@ -58,10 +58,14 @@
    <div id='main'>
        <table>
            <tr>
-           
+           <c:set var = "doneLoop" value="false"/>
            <c:set var='mbti' value="${param.mbti }"/>
-           <c:forEach var='vo' items='${list}' varStatus='vs'>                 
-           <c:if test="${vo.dog_mbti eq mbti || mbti eq null }">
+           
+           <c:forEach var='vo' items='${list}' varStatus='vs'>
+           <c:if test="${not doneLoop}">
+           <c:choose>
+                            
+           <c:when test = "${vo.dog_mbti eq mbti || empty mbti }">
                   <td>
                      <img src="./img/dog_image/${vo.dog_photo1 }" onclick='detail(name)' name='${vo.dog_name }' width='330px' height='330px'
                           onmouseover="Show_Minibar(this, '견종 : ${vo.dog_breed }'
@@ -70,12 +74,22 @@
                                                           , 'MBTI : ${vo.dog_mbti }' );">
                        
                    <div id="MiniBar_title"></div>                   
+
                    <p>${vo.dog_name }</p>
                    </td>
                 <c:if test="${vs.index%3 == 2 }">
                      <tr>
                     </tr>        
                </c:if>
+           </c:when>
+
+           
+           <c:when test = "${vo.dog_mbti ne mbti   }">
+           	<c:set var = "doneLoop" value="true"/>	
+           	<h1>매칭된 강아지가 없습니다. 죄송합니다.</h1>
+           </c:when>
+           
+           </c:choose>
            </c:if>
          </c:forEach>
          </tr>
