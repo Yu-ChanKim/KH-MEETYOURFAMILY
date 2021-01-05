@@ -15,13 +15,37 @@ public class DogVo {
    String dog_photo3;
    String dog_photo4;
    String dog_story;
-   String delFile;
+   String delFile1;
+   String delFile2;
+   String delFile3;
+   String delFile4;
    
-   public String getDelFile() {
-   return delFile;
+   
+   
+
+   public String getDelFile1() {
+	return delFile1;
    }
-   public void setDelFile(String delFile) {
-   this.delFile = delFile;
+   public void setDelFile1(String delFile1) {
+	this.delFile1 = delFile1;
+   }
+   public String getDelFile2() {
+	return delFile2;
+   }
+   public void setDelFile2(String delFile2) {
+	this.delFile2 = delFile2;
+   }
+   public String getDelFile3() {
+	return delFile3;
+   }
+   public void setDelFile3(String delFile3) {
+	this.delFile3 = delFile3;
+   }
+   public String getDelFile4() {
+	return delFile4;
+   }
+   public void setDelFile4(String delFile4) {
+	this.delFile4 = delFile4;
    }
    public int getDog_serial() {
       return dog_serial;

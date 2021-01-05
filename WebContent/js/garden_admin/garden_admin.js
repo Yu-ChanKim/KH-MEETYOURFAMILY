@@ -13,7 +13,10 @@ var admin = function(){
    var btnUpdate = getID('btnUpdate');
    var btnDelete = getID('btnDelete');
    var btnInsert = getID('btnInsert');
-   var btnPhoto = getID('btnPhoto');
+   var btnPhoto1 = getID('btnPhoto1');
+   var btnPhoto2 = getID('btnPhoto2');
+   var btnPhoto3 = getID('btnPhoto3');
+   var btnPhoto4 = getID('btnPhoto4');
    var btnSave = getID('btnSave');
 
 
@@ -77,8 +80,8 @@ var admin = function(){
       }
    
    /*---------- 추가시 사진미리보기 ----------*/
-    if(btnPhoto != null){
-       btnPhoto.onchange = function(ev){
+    if(btnPhoto1 != null){
+       btnPhoto1.onchange = function(ev){
            var tag = ev.srcElement; //이벤트 발생한 태그
             var url =tag.files[0];
              var reader = new FileReader();
@@ -88,7 +91,52 @@ var admin = function(){
             img.src = e.target.result;
             var photo = getID('dog_photo1');
             photo.src = img.src;
-          }
+          }         
+       }
+    }
+
+   if(btnPhoto2 != null){
+       btnPhoto2.onchange = function(ev){
+           var tag = ev.srcElement; //이벤트 발생한 태그
+            var url =tag.files[0];
+             var reader = new FileReader();
+             reader.readAsDataURL(url);
+             reader.onload = function(e){
+            var img = new Image();
+            img.src = e.target.result;
+            var photo = getID('dog_photo2');
+            photo.src = img.src;
+          }         
+       }
+    }
+
+   if(btnPhoto3 != null){
+       btnPhoto3.onchange = function(ev){
+           var tag = ev.srcElement; //이벤트 발생한 태그
+            var url =tag.files[0];
+             var reader = new FileReader();
+             reader.readAsDataURL(url);
+             reader.onload = function(e){
+            var img = new Image();
+            img.src = e.target.result;
+            var photo = getID('dog_photo3');
+            photo.src = img.src;
+          }         
+       }
+    }
+
+   if(btnPhoto4 != null){
+       btnPhoto4.onchange = function(ev){
+           var tag = ev.srcElement; //이벤트 발생한 태그
+            var url =tag.files[0];
+             var reader = new FileReader();
+             reader.readAsDataURL(url);
+             reader.onload = function(e){
+            var img = new Image();
+            img.src = e.target.result;
+            var photo = getID('dog_photo4');
+            photo.src = img.src;
+          }         
        }
     }
 

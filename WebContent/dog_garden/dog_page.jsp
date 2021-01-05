@@ -72,7 +72,7 @@
                
                <div class="overflow-wrapper">
                   <a class="slide">
-                  <img src="./img/dog_image/${vo.dog_photo1 }" width="940px"  height="470px" /></a> 
+                  <img src="./img/dog_image/${vo.dog_photo1 }" width="940px"  height="470px" /></a>				 
                   <a class="slide">
                   <img src="./img/dog_image/${vo.dog_photo2 }" width="940px"  height="470px" /></a>
                   <a class="slide">
