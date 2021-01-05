@@ -6,7 +6,7 @@ String.prototype.trim = function() {
 
 // E-Mail 검사
 function isValidEmail(email) {
-	var format = /^((\w|[\-\.])+)@((\w|[\-\.])+)\.([A-Za-z]+)$/;
+	var format = /^((\w|[\-\.])+)@((\w|[\-\.])+)\.([a-zA-Z]+)$/;
     if (email.search(format) != -1)
         return true; //올바른 포맷 형식
     return false;
