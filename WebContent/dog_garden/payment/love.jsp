@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마당</title>
+<title>사랑주기(후원금)</title>
 <link rel="stylesheet" href="/css/payment.css" type="text/css">
 </head>
-<body>
+<body style ='overflow-y:hidden'>
    <div id='love'>
       <div id='love_title'>
          <h2>사랑주기(후원)</h2>
@@ -21,9 +21,10 @@
       <div id='line1'></div>
 
       <form name ='love_frm1' id='love_frm1' method='post'>
-         <label for='love_select' class='love_select'>후원금액</label>
-         <input type='text' class='love_select' id='loveSelect' name='love_select' size='7' placeholder='후원금액을 입력하세요(숫자)'/><br> 
-
+		<div id ='info'>후원금액</div>
+		<input type='text' class='info1' id='loveSelect' name='love_select' placeholder='후원금액을 입력하세요'/>
+        <label for='love_select' class = 'info1'>원</label> 
+      
       </form>
 
       <div id='line2'></div>
@@ -32,16 +33,17 @@
       <form id='love_frm2' method='post'>
          <div id='info'>회원정보</div>
          <label class='info1' for='name'>이름</label> 
-         <input class='info1' type='text' id='name' name='name' placeholder='이름을 입력하세요.'/><br> 
+         <input class='info1' type='text' id='name' name='name' placeholder='이름을 입력하세요'/><br> 
          <label class='info1' for='phone'>휴대전화</label>
-         <input class='info1' type='text' id='phone' name='phone' placeholder='번호를 입력하세요.'/>
+         <input class='info1' type='text' id='phone' name='phone' placeholder='번호를 입력하세요'/>
       </form>
 
       <div id='line2'></div>
 
         <div id='pay'>
           <div id='payment'>결제정보</div> <br>
-            <label><input type='checkbox' id='card' checked="true" onclick="return false;" size='10'>신용카드결제</label><br>          
+            <input type='checkbox' id='card' checked="true" onclick="return false;" size='20'>
+            <label class='info1'>신용카드 결제</label><br>          
         </div>
       <div id='finish'>
            <input type='button' value='완료' id='love_btn' name='love_btn'/>

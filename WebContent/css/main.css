@@ -192,7 +192,7 @@
         text-align: center;
     }
     /*--------------------------------------------  후기글  --------------------------------------------*/
-   aside{      
+   aside{         
       margin-top: -22px;
       background-color: rgb(243, 235, 235) ;
    }
@@ -206,34 +206,34 @@
       list-style-type: none;
       margin-bottom: 50px;
    }   
-   .slick-items {          
-      margin-left: 30px;
+   .slick-items {
+      display: block;                
+      margin-left: 80px;
       padding: 10px;
-      width: 1840px;         
+      width: 1740px;    
    }
    aside>.slick-items .slick-div {
-      display: inline-block;      
-      border:7px solid rgb(233, 162, 150);
-      width: 500px;
-      border-radius:10px;
-      display: flex;
+      display: block;      
+      border:7px solid rgb(233, 162, 150);      
+      border-radius:20px;      
       margin-left: 60px;
       margin-right: 60px;   
       margin-bottom: 60px;
-      padding: 5px;
-            
+      padding:10px;             
    }
-   
-    
-   
-
-
-
-
-
-
-
-    
+   aside>.slick-items .slick-div p {
+      padding-right: 10px;
+      padding-left: 10px;       
+   }  
+   aside>.slick-items p {
+        line-height: 23px;
+     max-height: 8.6em;
+     text-align: justify;          
+     overflow: hidden;
+     display: -webkit-box;
+     -webkit-line-clamp: 5;
+     -webkit-box-orient: vertical;
+   }
 
     /*-------------------------------------------- 하단 푸터 --------------------------------------------*/
    

@@ -13,7 +13,7 @@
    <h2>강아지 관리</h2>
    <form class='update' method='post' name='frm_admin_garden'>
       <label>serialNo</label>
-      <input type='text' name='serial' size='10' required value='${vo.dog_serial }'/><br>
+      <input type='text' name='serial' size='10' value='${vo.dog_serial }' disabled/><br>
       <label>분류</label>
       <input type='text' name='group'size='12' required value='${vo.dog_group }'/><br>
       <label>이름</label>
