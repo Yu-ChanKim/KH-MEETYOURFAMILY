@@ -4,14 +4,14 @@
 	request.setCharacterEncoding("UTF-8");
 	String cp=request.getContextPath();
 %>
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <link rel="stylesheet" href="<%=cp %>/member/data/login.css" type="text/css"/>
 
-<title>로그인</title>
+<title>MYF : 로그인</title>
 
 <script>
 	function login(){
@@ -30,7 +30,7 @@
 		}
 		
 		//로그인이 됐을 때 넘어가는 페이지
-		f.action="<%=cp%>/main.jsp";
+		f.action="<%=cp%>/join/login_ok.do";
 		f.submit();
 	}
 </script>
@@ -64,7 +64,7 @@
 					<input class="login1" type="button" value="로그인" class="btn2" onclick="login();">
 					
 					<span class="line"></span>
-					
+										
 					<input type="button" value="회원가입"  class="btn2"
 					onclick="javascript:location.href='<%=cp %>/join/created.do';"/>
 					
@@ -76,13 +76,18 @@
 				<span class="line"></span>
 				
 				<div class="find">
-		          <a class="button id-find" href="main.jsp?inc=./dog_login/id-find.jsp">
+		          <a class="button id-find" 
+		          	onclick="javascript:location.href='<%=cp %>/join/searchid.do';">
 		            <span>아이디 찾기</span>
 		          </a>
-		          <a class="button pw-find" href="main.jsp?inc=./dog_login/password-find.jsp">
+		          
+		          <a class="button pw-find" 
+		          onclick="javascript:location.href='<%=cp %>/join/searchpw.do';">
 		            <span>비밀번호 찾기</span>
 		          </a>
+		          
 		        </div>
+				
 		        <div class="login-bottom">
 		          <p class="font-nsr title-xsmall6 color-grey9">
 		        	    가입시 동의하신 <a class="color-peach b" href="">이용약관</a>과 <a class="color-peach b" href="">개인정보처리방침</a>에 따라 관리됩니다.
@@ -96,13 +101,15 @@
 					<font color="red"><b>${message }</b></font> 
 					</td>
 				</tr>
-				<tr height="1"><td colspan="2" bgcolor="#cccccc"></td></tr>
+
+		<!-- 	<tr height="1"><td colspan="2" bgcolor="#cccccc"></td></tr>
 				<tr height="30">
 					<td colspan="2" align="center">
-					<a href="<%=cp %>/join/searchpw.do" >비밀번호 찾기</a>
+					<a href=" /join/searchpw.do" >비밀번호 찾기</a>
 					</td>
 				</tr>
 				<tr height="1"><td colspan="2" bgcolor="#cccccc"></td></tr>
+				-->
 				</c:if>
 			</table>
 		</form>
