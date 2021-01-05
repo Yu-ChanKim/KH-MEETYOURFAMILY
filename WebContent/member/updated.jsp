@@ -4,7 +4,7 @@
 	request.setCharacterEncoding("UTF-8");
 	String cp=request.getContextPath();
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/lNamese.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -116,7 +116,7 @@
 	
 	<input type="button" value="수정하기" class="btn2" onclick="sendIt()"/>
 	<input type="button" value="수정취소" class="btn2"
-	onclick="javascript:location.href='<%=cp%>';"/>	
+	onclick="javascript:location.href='<%=cp%>/main.jsp';"/>	
 	</div>
 	</form>
 
