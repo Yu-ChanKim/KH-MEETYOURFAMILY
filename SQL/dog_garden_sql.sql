@@ -19,102 +19,31 @@ create table dog(
     dog_weight    VARCHAR2(10) not null,
     dog_mbti      VARCHAR2(10) not null,
     dog_mbti_char VARCHAR2(30) not null,
-    dog_photo     VARCHAR2(200),
+    dog_photo1     VARCHAR2(200) not null,
+    dog_photo2     VARCHAR2(200) not null,
+    dog_photo3     VARCHAR2(200) not null,
+    dog_photo4     VARCHAR2(200) not null,
     dog_story     VARCHAR2(4000) 
 );
 
-insert into dog values(seq_dog_serial.nextval,'소형견','츄비','푸들','수컷','2살','2.8kg','INFP','재밌는 개그맨형','','');
-insert into dog values(seq_dog_serial.nextval,'소형견','찰랑','비숑프라제','수컷','4살','3.6kg','ISFP','어리버리 모범생형','','');
-insert into dog values(seq_dog_serial.nextval,'소형견','무무','치와와','수컷','3살','2.9kg','ISTJ','듬직한 기사형','','');
-insert into dog values(seq_dog_serial.nextval,'소형견','아라','요크셔테리어','암컷','13살','2.9kg','INTJ','음흉한 귀족형','','');
-insert into dog values(seq_dog_serial.nextval,'소형견','봉봉','페키니즈','암컷','8살','6.3kg','ISTP','오늘만사는 백수형','','');
-insert into dog values(seq_dog_serial.nextval,'소형견','큐피트','닥스훈트','수컷','1살','2.3kg','ESTJ','솔직한 정치가형','','');
-insert into dog values(seq_dog_serial.nextval,'소형견','조이','말티즈','수컷','1살','2.0kg','ISFJ','까칠한 신데렐라형','','');
+insert into dog values(seq_dog_serial.nextval,'소형견','츄비','푸들','수컷','2살','2.8kg','INFP','재밌는 개그맨형','(소)푸들1.jpg','(소)푸들2.jpg','(소)푸들3.jpg','(소)푸들4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'소형견','찰랑','비숑프라제','수컷','4살','3.6kg','ISFP','어리버리 모범생형','(소)비숑프리제1.jpg','(소)비숑프리제2.jpg','(소)비숑프리제3.jpg','(소)비숑프리제4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'소형견','무무','치와와','수컷','3살','2.9kg','ISTJ','듬직한 기사형','(소)치와와1.jpg','(소)치와와2.jpg','(소)치와와3.jpg','(소)치와와4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'소형견','아라','요크셔테리어','암컷','13살','2.9kg','INTJ','음흉한 귀족형','(소)요크셔테리어1.jpg','(소)요크셔테리어2.jpg','(소)요크셔테리어3.jpg','(소)요크셔테리어4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'소형견','봉봉','페키니즈','암컷','8살','6.3kg','ISTP','오늘만사는 백수형','(소)페키니즈1.jpg','(소)페키니즈2.jpg','(소)페키니즈3.jpg','(소)페키니즈4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'소형견','큐피트','닥스훈트','수컷','1살','2.3kg','ESTJ','솔직한 정치가형','(소)닥스훈트1.jpg','(소)닥스훈트2.jpg','(소)닥스훈트3.jpg','(소)닥스훈트4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'소형견','조이','말티즈','수컷','1살','2.0kg','ISFJ','까칠한 신데렐라형','(소)말티즈1.jpg','(소)말티즈2.jpg','(소)말티즈3.jpg','(소)말티즈4.jpg','');
 
-insert into dog values(seq_dog_serial.nextval,'중형견','만두','웰시코기','수컷','4살','5.5kg','ESTP','생일맞은 왕자님형','','');
-insert into dog values(seq_dog_serial.nextval,'중형견','초희','프렌치불독','수컷','2살','15.3kg','ENTJ','대담한 운동선수형','','');
-insert into dog values(seq_dog_serial.nextval,'중형견','서울','비글','암컷','4살','3.0kg','ESFP','신나는 댄싱머신형','','');
-insert into dog values(seq_dog_serial.nextval,'중형견','아델','보스턴테리어','암컷','12살','5.0kg','ESFJ','겁많은 젠틀형','','');
-insert into dog values(seq_dog_serial.nextval,'중형견','딸기','스피츠','수컷','2살','5.0kg','ENTP','사차원 예술가형','','');
+insert into dog values(seq_dog_serial.nextval,'중형견','만두','웰시코기','수컷','4살','5.5kg','ESTP','생일맞은 왕자님형','(중)웰시코기1.jpg','(중)웰시코기2.jpg','(중)웰시코기3.jpg','(중)웰시코기4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'중형견','초희','프렌치불독','수컷','2살','15.3kg','ENTJ','대담한 운동선수형','(중)프렌치불독1.jpg','(중)프렌치불독2.jpg','(중)프렌치불독3.jpg','(중)프렌치불독4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'중형견','서울','비글','암컷','4살','3.0kg','ESFP','신나는 댄싱머신형','(중)비글1.jpg','(중)비글2.jpg','(중)비글3.jpg','(중)비글4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'중형견','아델','보스턴테리어','암컷','12살','5.0kg','ESFJ','겁많은 젠틀형','(중)보스턴테리어1.jpg','(중)보스턴테리어2.jpg','(중)보스턴테리어3.jpg','(중)보스턴테리어4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'중형견','딸기','스피츠','수컷','2살','5.0kg','ENTP','사차원 예술가형','(중)스피츠1.jpg','(중)스피츠2.jpg','(중)스피츠3.jpg','(중)스피츠4.jpg','');
 
-insert into dog values(seq_dog_serial.nextval,'대형견','수호랑','시베리안허스키','수컷','2살','12.5kg','INTP','시크한 무사형','','');
-insert into dog values(seq_dog_serial.nextval,'대형견','주호','도베르만','수컷','1살','10.6kg','ENFJ','잘나가는 유튜브형','','');
-insert into dog values(seq_dog_serial.nextval,'대형견','브로콜리','보더콜리','수컷','1살','10.6kg','INFJ','소심한 피터팬형','','');
-insert into dog values(seq_dog_serial.nextval,'대형견','코바','골든리트리버','수컷','1살','2.4kg','ENFP','헌신적인 테레사형','','');
-
-/*dog table 칼럼 추가*/
-alter table dog rename column dog_photo to dog_photo1;
-alter table dog add(dog_photo2 varchar2(200));
-alter table dog add(dog_photo3 varchar2(200));
-alter table dog add(dog_photo4 varchar2(200));
-
-update dog set dog_photo1='(소)푸들1.jpg' where dog_serial = 1;
-update dog set dog_photo1='(소)비숑프리제1.jpg' where dog_serial = 2;
-update dog set dog_photo1='(소)치와와1.jpg' where dog_serial = 3;
-update dog set dog_photo1='(소)요크셔테리어1.jpg' where dog_serial = 4;
-update dog set dog_photo1='(소)페키니즈1.jpg' where dog_serial = 5;
-update dog set dog_photo1='(소)닥스훈트1.jpg' where dog_serial = 6;
-update dog set dog_photo1='(소)말티즈1.jpg' where dog_serial = 7;
-update dog set dog_photo1='(중)웰시코기1.jpg' where dog_serial = 8;
-update dog set dog_photo1='(중)프렌치불독1.jpg' where dog_serial = 9;
-update dog set dog_photo1='(중)비글1.jpg' where dog_serial = 10;
-update dog set dog_photo1='(중)보스턴테리어1.jpg' where dog_serial = 11;
-update dog set dog_photo1='(중)스피츠1.jpg' where dog_serial = 12;
-update dog set dog_photo1='(대)시베리안허스키1.jpg' where dog_serial = 13;
-update dog set dog_photo1='(대)도베르만1.jpg' where dog_serial = 14;
-update dog set dog_photo1='(대)보더콜리1.jpg' where dog_serial = 15;
-update dog set dog_photo1='(대)골든리트리버1.jpg' where dog_serial = 16;
-
-update dog set dog_photo2='(소)푸들2.jpg' where dog_serial = 1;
-update dog set dog_photo2='(소)비숑프리제2.jpg' where dog_serial = 2;
-update dog set dog_photo2='(소)치와와2.jpg' where dog_serial = 3;
-update dog set dog_photo2='(소)요크셔테리어2.jpg' where dog_serial = 4;
-update dog set dog_photo2='(소)페키니즈2.jpg' where dog_serial = 5;
-update dog set dog_photo2='(소)닥스훈트2.jpg' where dog_serial = 6;
-update dog set dog_photo2='(소)말티즈2.jpg' where dog_serial = 7;
-update dog set dog_photo2='(중)웰시코기2.jpg' where dog_serial = 8;
-update dog set dog_photo2='(중)프렌치불독2.jpg' where dog_serial = 9;
-update dog set dog_photo2='(중)비글2.jpg' where dog_serial = 10;
-update dog set dog_photo2='(중)보스턴테리어2.jpg' where dog_serial = 11;
-update dog set dog_photo2='(중)스피츠2.jpg' where dog_serial = 12;
-update dog set dog_photo2='(대)시베리안허스키2.jpg' where dog_serial = 13;
-update dog set dog_photo2='(대)도베르만2.jpg' where dog_serial = 14;
-update dog set dog_photo2='(대)보더콜리2.jpg' where dog_serial = 15;
-update dog set dog_photo2='(대)골든리트리버2.jpg' where dog_serial = 16;
-
-update dog set dog_photo3='(소)푸들3.jpg' where dog_serial = 1;
-update dog set dog_photo3='(소)비숑프리제3.jpg' where dog_serial = 2;
-update dog set dog_photo3='(소)치와와3.jpg' where dog_serial = 3;
-update dog set dog_photo3='(소)요크셔테리어3.jpg' where dog_serial = 4;
-update dog set dog_photo3='(소)페키니즈3.jpg' where dog_serial = 5;
-update dog set dog_photo3='(소)닥스훈트3.jpg' where dog_serial = 6;
-update dog set dog_photo3='(소)말티즈3.jpg' where dog_serial = 7;
-update dog set dog_photo3='(중)웰시코기3.jpg' where dog_serial = 8;
-update dog set dog_photo3='(중)프렌치불독3.jpg' where dog_serial = 9;
-update dog set dog_photo3='(중)비글3.jpg' where dog_serial = 10;
-update dog set dog_photo3='(중)보스턴테리어3.jpg' where dog_serial = 11;
-update dog set dog_photo3='(중)스피츠3.jpg' where dog_serial = 12;
-update dog set dog_photo3='(대)시베리안허스키3.jpg' where dog_serial = 13;
-update dog set dog_photo3='(대)도베르만3.jpg' where dog_serial = 14;
-update dog set dog_photo3='(대)보더콜리3.jpg' where dog_serial = 15;
-update dog set dog_photo3='(대)골든리트리버3.jpg' where dog_serial = 16;
-
-update dog set dog_photo4='(소)푸들4.jpg' where dog_serial = 1;
-update dog set dog_photo4='(소)비숑프리제4.jpg' where dog_serial = 2;
-update dog set dog_photo4='(소)치와와4.jpg' where dog_serial = 3;
-update dog set dog_photo4='(소)요크셔테리어4.jpg' where dog_serial = 4;
-update dog set dog_photo4='(소)페키니즈4.jpg' where dog_serial = 5;
-update dog set dog_photo4='(소)닥스훈트4.jpg' where dog_serial = 6;
-update dog set dog_photo4='(소)말티즈4.jpg' where dog_serial = 7;
-update dog set dog_photo4='(중)웰시코기4.jpg' where dog_serial = 8;
-update dog set dog_photo4='(중)프렌치불독4.jpg' where dog_serial = 9;
-update dog set dog_photo4='(중)비글4.jpg' where dog_serial = 10;
-update dog set dog_photo4='(중)보스턴테리어4.jpg' where dog_serial = 11;
-update dog set dog_photo4='(중)스피츠4.jpg' where dog_serial = 12;
-update dog set dog_photo4='(대)시베리안허스키4.jpg' where dog_serial = 13;
-update dog set dog_photo4='(대)도베르만4.jpg' where dog_serial = 14;
-update dog set dog_photo4='(대)보더콜리4.jpg' where dog_serial = 15;
-update dog set dog_photo4='(대)골든리트리버4.jpg' where dog_serial = 16;
+insert into dog values(seq_dog_serial.nextval,'대형견','수호랑','시베리안허스키','수컷','2살','12.5kg','INTP','시크한 무사형','(대)시베리안허스키1.jpg','(대)시베리안허스키2.jpg','(대)시베리안허스키3.jpg','(대)시베리안허스키4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'대형견','주호','도베르만','수컷','1살','10.6kg','ENFJ','잘나가는 유튜브형','(대)도베르만1.jpg','(대)도베르만2.jpg','(대)도베르만3.jpg','(대)도베르만4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'대형견','브로콜리','보더콜리','수컷','1살','10.6kg','INFJ','소심한 피터팬형','(대)보더콜리1.jpg','(대)보더콜리2.jpg','(대)보더콜리3.jpg','(대)보더콜리4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'대형견','코바','골든리트리버','수컷','1살','2.4kg','ENFP','헌신적인 테레사형','(대)골든리트리버1.jpg','(대)골든리트리버2.jpg','(대)골든리트리버3.jpg','(대)골든리트리버4.jpg','');
 
 
 -------------------------------------------------------------------------------------------      
@@ -284,3 +213,5 @@ set dog_story ='코바는 사람을 좋아하고 애교도 많아요.<br>
 코바의 수많은 장점을 알아봐 주실 가족은 어디에 계실까요?<br>' where dog_serial = '16';
 
 commit;
+
+select * from dog order by dog_serial asc;
