@@ -18,8 +18,6 @@
 	<title>notice_DETAIL</title>
     <link rel="stylesheet" href="/css/dog_MYF/noticeDetail.css">
 	<link rel="stylesheet" href="/css/main.css" type="text/css">
-	<script src="/lib/jquery-3.5.1.min.js"></script>
-    <script src="/js/dog_MYF/meetyourfamily.js"></script>
 </head>
 
 <body>
@@ -32,8 +30,10 @@
             공지사항
         </div>
         
+        <br>현재 접속자(test) : ${currentUser}
+        
         <div class="detail">
-       	    <form id="reg" action="/dog_notice/noticeReg/Admin" method="post">
+       	    <form id="register" action="/dog_MYF/noticeList" method="post">
 	            <table>
 					<tr>
 	                	<td colspan="1" class="box1">제목</td>
@@ -74,8 +74,8 @@
         </div>      	
         
         <div class="btns">
-            <input type="button" onClick="goPage(nListA)" value="목록">
-            <input type="submit" form="reg" name="regBtn" value="등록">
+            <button onClick="location.href='/dog_MYF/noticeList'">목록</button>
+            <button type="submit" form="register" name="register" value="register">등록</button>
         </div>
 
     </div>

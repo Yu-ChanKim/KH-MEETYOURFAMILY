@@ -43,7 +43,6 @@
 		<input type="button" onClick="logout()" value="로그아웃">
 		<br>
 		<input type="button" onClick="location.href='/dog_MYF/noticeList'" value="공지사항">
-		<input type="button" onClick="location.href='/dog_MYF/noticeList/Admin'" value="공지사항(관리자)">
 		<input type="button" onClick="location.href='/dog_MYF/postList'" value="게시판">
 		<input type="button" value="[미구현]">
 	
