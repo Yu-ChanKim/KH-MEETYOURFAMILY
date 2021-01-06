@@ -1,13 +1,14 @@
 package dog_MYF.notice.service;
 
 import java.sql.Connection;
+import java.sql.Timestamp;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 import dog_MYF.notice.entity.Notice;
@@ -35,6 +36,7 @@ public class NoticeService
 		int result = 0;
 	
 		String sql = "INSERT INTO NOTICE_TB (TITLE, WRITER, CONTENT) VALUES(?, ?, ?)";
+//		String sql = "INSERT INTO NOTICE_TB (TITLE, WRITER, CONTENT, REGDATE) VALUES(?, ?, ?, SYSTIMESTAMP)";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -73,7 +75,10 @@ public class NoticeService
 	
 	public int deleteNotice(int id)
 	{
-		return 0;
+		int[] idArr = {id};
+		int result = deleteNoticeAll(idArr);
+		
+		return result;
 	}
 	
 	public int updateNotice(Notice notice)
@@ -133,7 +138,7 @@ public class NoticeService
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
 //				String content = rs.getString("CONTENT");
-				Date regdate = rs.getDate("REGDATE");
+				Timestamp regdate = rs.getTimestamp("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 				boolean pub = rs.getBoolean("PUB");
@@ -250,7 +255,7 @@ public class NoticeService
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
 				String content = rs.getString("CONTENT");
-				Date regdate = rs.getDate("REGDATE");
+				Timestamp regdate = rs.getTimestamp("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 				boolean pub = rs.getBoolean("PUB");
@@ -315,7 +320,7 @@ public class NoticeService
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
 				String content = rs.getString("CONTENT");
-				Date regdate = rs.getDate("REGDATE");
+				Timestamp regdate = rs.getTimestamp("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 				boolean pub = rs.getBoolean("PUB");
@@ -383,7 +388,7 @@ public class NoticeService
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
 				String content = rs.getString("CONTENT");
-				Date regdate = rs.getDate("REGDATE");
+				Timestamp regdate = rs.getTimestamp("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 				boolean pub = rs.getBoolean("PUB");

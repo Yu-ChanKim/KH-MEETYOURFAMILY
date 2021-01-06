@@ -18,8 +18,6 @@
     <title>notice_DETAIL</title>
     <link rel="stylesheet" href="/css/dog_MYF/noticeDetail.css">
     <link rel="stylesheet" href="/css/main.css" type="text/css">
-    <script src="/lib/jquery-3.5.1.min.js"></script>
-    <script src="/js/dog_MYF/meetyourfamily.js"></script>
 </head>
 
 <body>
@@ -32,6 +30,8 @@
             공지사항
         </div>
 
+		<br>현재 접속자(test) : ${currentUser}
+		
         <div class="detail">
             <table>
 				<tr>
@@ -47,7 +47,7 @@
                 	</td>
                     <td colspan="1" class="box1">작성일</td>
                     <td colspan="1" class="box2">
-						<fmt:formatDate pattern="yyyy년 MM월 dd일 hh시 mm분" value="${n.regdate}"/>
+						<fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${n.regdate}"/>
                     </td>
                 </tr>
                 <tr>
@@ -84,17 +84,22 @@
 
         <div class="btns">
 <%-- ????? --%>
-            <input type="button" onClick="goPage(${(user == 'admin') ? 'nListA' : 'nList'})" value="목록">
+<%--
+            <button type="submit" name="listPage" value="">목록</button>
+--%>
+            <button onClick="location.href='/dog_MYF/noticeList'">목록</button>
 <%-- ADMIN --%>
-            <c:if test="${user == 'admin'}">
-				<input type="button" value="수정">
-				<input type="submit" onClick="deleting('${n.id}')" name="deleteBtn" value="삭제">
+            <c:if test="${currentUser == 'admin'}">
+				<button type="submit">수정</button>
+				<button type="submit" form="deleteId" name="deleteId" value="${n.id}">삭제</button>
 			</c:if>
 <%-----------%>
         </div>
 
     </div>
-
+    
+	<form id="deleteId" action="/dog_MYF/noticeList" method="post"></form>
+		
 	<%@include file="/footer.jsp"%>
 
 </body>

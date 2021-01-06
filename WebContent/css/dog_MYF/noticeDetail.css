@@ -91,7 +91,7 @@ body {
     margin-bottom: 30px;
 }
 
-#myf_detail .btns input {
+#myf_detail .btns button {
     display: inline-block;
     outline: none;
     width: 100px;
@@ -106,10 +106,10 @@ body {
     transition: background-color 500ms, color 500ms;
 }
 
-#myf_detail .btns input:hover {
+#myf_detail .btns button:hover {
     background-color: aqua;
 }
 
-#myf_detail .btns input:active {
+#myf_detail .btns button:active {
     background-color: deepskyblue;
 }

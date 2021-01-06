@@ -1,6 +1,6 @@
 package dog_MYF.notice.entity;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class Notice
 {
@@ -8,7 +8,7 @@ public class Notice
 	private String title;
 	private String writer;
 	private String content;
-	private Date regdate;
+	private Timestamp regdate;
 	private String files;
 	private String hit;
 	private boolean pub;
@@ -18,7 +18,7 @@ public class Notice
 		
 	}
 	
-	public Notice(int id, String title, String writer, String content, Date regdate, String files, String hit, boolean pub)
+	public Notice(int id, String title, String writer, String content, Timestamp regdate, String files, String hit, boolean pub)
 	{
 		this.id = id;
 		this.title = title;
@@ -70,12 +70,12 @@ public class Notice
 		this.content = content;
 	}
 	
-	public Date getRegdate()
+	public Timestamp getRegdate()
 	{
 		return regdate;
 	}
 
-	public void setRegdate(Date regdate)
+	public void setRegdate(Timestamp regdate)
 	{
 		this.regdate = regdate;
 	}
