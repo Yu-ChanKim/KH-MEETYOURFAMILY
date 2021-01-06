@@ -252,6 +252,10 @@
     margin-bottom: 30px;
       
 }
+#admin_garden_view .btns{
+	position:relative;
+	left :16%;
+}
 #admin_garden_view .btns #btnModify, #btnDelete, #btnSelect {
  position: relative;
     left: 45%;
