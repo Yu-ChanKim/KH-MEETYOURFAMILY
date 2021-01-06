@@ -113,10 +113,11 @@ String incc = "main.jsp";
         </section> 
          <!--------------------------------------------  후기글  -------------------------------------------->
          <aside>
-            <div id='aside'>             
+          <div id ='aside_'>			<!-- aside -->
+            <div id='aside'>           <!-- adide_1 -->  
                <li>반려인 이야기</li>
             </div>
-            <div class="slick-items">
+            <div class="slick-items"> <!-- aside_2 -->
                 <div class='slick-div'>
                    <div><img width='275px' height='275px' src="./img/main_postscript/사진1.jpg"/></div>
                    <div><p>보다 충만하고 보람찬 생활로 삶을 꽉채우고 있습니다. 우리강아지가 아주 좋은 가족이자 친구가 되어주네요! 반려하기로 결심하기까지 꽤 오랜시간 신중하게 생각해보았는데 정말 옮은 선택이었습니다. 반려동물을 선택 할 때 주거형태, 경제능력, 성격적으로 잘 맞을 수 있는 성향을 가진 품종의 아이를 신중하게 생각해보시면 좋을거 같습니다. </p></div>
@@ -166,6 +167,7 @@ String incc = "main.jsp";
                   <div><p>항상 웃음 많고 쾌할하던 엄마도 갱년기가 찾아오셨는지 우울함과 무기력증에 시달리셨죠...엄마가 예민해지니 집안 분위기가 굉장히 쳐지기 시작했는데 반려견을 키우면서 부터는 엄마의 웃음소리가 많이들리고 많이 좋아지고 있어요! 앞으로도 정성껏 키울테니 건강하게만 자라다오~</p></div>
                </div>                        
             </div>
+           </div>
       </aside>
       </c:if>
       <c:if test='${inc != incc}'>
