@@ -1,27 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <style>
-.swal-footer {
-   text-align: center;
-}
+   .swal-footer {
+      text-align: center;
+   }
 </style>
 </head>
 <body>
-<%    
-    int donation = (int)request.getAttribute("price");
-   
-%>
-    <script>
+   <%
+      int donation = (int) request.getAttribute("price");
+   %>
+   <script>
     $(function(){
         var IMP = window.IMP; // 생략가능
         IMP.init('imp44956881'); // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
@@ -34,12 +33,11 @@
             name : 'Meet Your Family',
             amount : <%=donation%>,  //가격
           
-            //m_redirect_url : 'http://www.naver.com'
         }, function(rsp) {
             if ( rsp.success ) {
                 //[1] 서버단에서 결제정보 조회를 위해 jQuery ajax로 imp_uid 전달하기
                 jQuery.ajax({
-                    url: "/payments/complete", //cross-domain error가 발생하지 않도록 주의해주세요
+                    url: "/payments/complete", //cross-domain error가 발생하지 않도록 주의
                     type: 'POST',
                     dataType: 'json',
                     data: {
@@ -86,7 +84,35 @@
         });
         
     });
-    </script>
- 
+</script>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
 </body>
 </html>

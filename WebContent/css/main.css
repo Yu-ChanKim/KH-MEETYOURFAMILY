@@ -1,357 +1,338 @@
 @charset "UTF-8";
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 
-    
-    html,body{ 
-        margin:0; padding:0; 
-        font-family: 'Noto Sans KR', sans-serif;
-    }
-    .container{
-        width: 1900px; height: 100%; margin: 0 auto;
-        box-sizing:border-box;       
-    }
-    
-    header,nav,section,article,aside,footer{ 
-        box-sizing: border-box;
-    }
-    header,footer,section,aside{
-        width: 1900px; 
-    }
+@import
+   url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap')
+   ;
 
-    /*--------------------------------------------  상단 헤더 --------------------------------------------*/
-    #header{
-         text-align: left;
-        position: relative;
-        width: 1000px;
-        margin: 0 auto;
-        height: 100px;
-        list-style-type: none;
-       text-decoration:none;               
-    }   
-    
-    #header>.header_1 {      
-       position: absolute;
-        display: inline-block;
-        width: 300px;
-        left: -450px;
-        top: -6px; 
-        height: 100px;
-        line-height: 100px;
-        text-align: center;       
-    }
-    #header>.header_1>a{
-        font-family: 'Dancing Script', cursive;
-       text-decoration:none;
-        font-size: 30px;
-        font-weight: bold;        
-        box-sizing:border-box;        
-        color: rgb(219, 46, 46);
-    }   
+@import
+   url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap')
+   ;
 
-    #header>.header_2 {       
-        display: inline-block;
-        width : 100%;        
-        text-align: center;
-        height: 100px;
-    }
+html, body {
+   margin: 0;
+   padding: 0;
+   font-family: 'Noto Sans KR', sans-serif;
+}
 
-    #header>.header_2>ul {
-       position: relative;
-       top:-20px;
-        height: 100%;
-        line-height: 10px;        
-        
-    }
-    #header>.header_2>ul>li {  
-        display: inline-block;
-        margin: 50px 25px 0px 25px;     
-    }
-    #header>.header_2>ul>li>a {
-       text-decoration:none;
-    }      
-    
-    #header>.header_3 {       
-        position: absolute;
-        display: inline-block;
-        width: 200px;
-        left: calc(100% + 50px);
-        text-align: center;
-        height: 50px;
-        top: 25px;
-        line-height: 45px;
-        border: 1px solid rgb(107, 101, 101);                      
-        border-radius: 25px;
-        color:rgb(107, 101, 101);
-              
-    } 
-    
-    #header>.header_3 a  {
-           text-decoration:none;
-           padding-right: 20px;
-    
-    
-    }
-    
-    /*
-    header div{      
-        position: absolute;
-        left: 1500px;
-        top: -2px;
-        width: 110px;        
-        line-height: 4px;
-        margin: 30px;
-        padding-top: 20px;           
-    }
-    header div>li a{
-        text-decoration: none;    
-        color:rgb(107, 101, 101);        
-    }
-    header nav>ul>li a{
-        text-decoration:none;
-        font-size: 1rem;
-    }  
-  */
-    /*-------------------------------------------- 중간 섹션 --------------------------------------------*/
-    
-    /*------------------ 첫번째 ------------------*/
-   
-    section>#article1{
-        height: 640px;        
-        border: 1px solid white;
-        background-color: rgb(93, 170, 214);
-        position: relative;
-    }
-    section>#article1>#article1_div1{
-        list-style-type: none;
-        color: white;        
-        float:left;
-        margin: 100px;
-        padding:10px;
-        padding-left: 380px;
-    }
-    section>#article1>#article1_div1>h2{
-        font-size: 55px;
-    }
-    section>#article1>#article1_div1>li{
-        font-size: 20px;
-    }
-    section>#article1>#article1_div1>#testpage{
-        padding-top: 65px;
-        padding-left: 110px;                
-    }
-    section>#article1>#article1_div1>#testpage>li{
-        border: 1px solid black;
-        border-style: none;
-        border-radius: 30px;    
-        background-color: rgb(71, 62, 62); 
-        width: 170px;
-        height: 60px;
-        line-height: 58px;
-    }
-    section>#article1>#article1_div1>#testpage a{
-        padding-left: 20px;        
-        font-size: 22px;
-        color: white;
-        text-decoration:none;
-    }
-    section>#article1>#article1_div2{
-        margin-top: 110px;        
-        position: absolute;
-        left: 1375px;        
-    }   
-    section>#article1>#article1_div3{
-        position: absolute;
-        left: 1000px;
-        top: 100px;
-        z-index: inherit;
-    }
+.container {
+   width: 1900px;
+   height: 100%;
+   margin: 0 auto;
+   box-sizing: border-box;
+}
 
+header, nav, section, article, aside, footer {
+   box-sizing: border-box;
+}
 
-    /*------------------ 두번째 ------------------*/
-    #article2>div h2{
-        margin-top: 60px;
-        font-family: 'Dancing Script', cursive;
-        color: rgb(219, 46, 46);
-        font-size: 50px;
-        font-weight: bold;
-    }
-    #article2>div{
-        margin:30px;        
-        height: 670px;
-        text-align: center;
-    }  
-    #article2 #p1{
-        padding-top: 70px;
-    }
-    #article2 #p3,#p4,#p6,#p7{
-        padding-top: 30px;
-    }
+header, footer, section, aside {
+   width: 1900px;
+}
 
-    /*------------------ 세번째 ------------------*/
-    #article3{                        
-        display: flex;
-        flex-direction:column;
-    }
-    #article3>#love{   
-        background-color: rgb(216, 233, 238);
-        display: flex;
-        justify-content:space-evenly;
-        width: 1900px;
-        height: 500px;
-    }
-    #article3>#love p{
-        font-size: 15px;
-    }    
-    #article3>#love>#love1>h2>p{
-        padding-top: 40px;
-        font-size: 40px;
-    }
-    #article3>#love>#love1{
-        margin: -40px;      
-        text-align: center;
-        padding-top: 60px;               
-        float:left;
-    }
-    #article3>#love>#love2{        
-        padding-top: 120px;                      
-        text-align: center;
-    }
-    #article3>#together{        
-        display: flex;
-        justify-content:space-evenly;
-        width: 1900px;
-        height: 500px;
-        background-color: rgb(200, 218, 218);
-    }
-    #article3>#together p{        
-        font-size: 15px;
-    }    
-    #article3>#together>#together1>h2>p{
-        padding-top: 20px;
-        font-size: 40px;
-    }        
-    #article3>#together>#together2{                
-        padding-top: 150px;
-        text-align: center;
-    }
-    /*--------------------------------------------  후기글  --------------------------------------------*/
-   aside{         
-      margin-top: -22px;
-      background-color: rgb(243, 235, 235) ;
-   }
-   #aside{
-      font-size: 40px;
-      padding-top: 70px;
-      padding-bottom: 30px;
-      position: relative;
-      text-align: center;
-      font-weight: bold;
-      list-style-type: none;
-      margin-bottom: 50px;
-   }   
-   .slick-items {
-      display: block;                
-      margin-left: 80px;
-      padding: 10px;
-      width: 1740px;    
-   }
-   aside>.slick-items .slick-div {
-      display: block;      
-      border:7px solid rgb(233, 162, 150);      
-      border-radius:20px;      
-      margin-left: 60px;
-      margin-right: 60px;   
-      margin-bottom: 60px;
-      padding:10px;             
-   }
-   aside>.slick-items .slick-div p {
-      padding-right: 10px;
-      padding-left: 10px;       
-   }  
-   aside>.slick-items p {
-        line-height: 23px;
-     max-height: 8.6em;
-     text-align: justify;          
-     overflow: hidden;
-     display: -webkit-box;
-     -webkit-line-clamp: 5;
-     -webkit-box-orient: vertical;
-   }
+/*--------------------------- 헤더 영역 ---------------------------*/
+#header {
+   text-align: left;
+   position: relative;
+   width: 1000px;
+   margin: 0 auto;
+   height: 100px;
+   list-style-type: none;
+   text-decoration: none;
+}
 
-    /*-------------------------------------------- 하단 푸터 --------------------------------------------*/
-   
-   #footer {
-        position: relative;
-        height: 400px;
-        margin: 0 auto;
-        text-align: center;           
-        background-color: rgba(0,0,0,0.1);
-   }
+#header>.header_1 {
+   position: absolute;
+   display: inline-block;
+   width: 300px;
+   left: -450px;
+   top: -6px;
+   height: 100px;
+   line-height: 100px;
+   text-align: center;
+}
 
-   #footer>.footer_1 {
-         padding-top: 45px;
-        font-size: 30px;
-        font-weight: bold;
-        font-family: 'Dancing Script', cursive;
-        color:rgb(219, 46, 46);
-   }
-   
-   #footer>.footer_2 {
-         padding-top: 20px;                  
-        position: relative;
-        text-align:left;
-        display: inline-block;
-        width: 100%;
-        text-align: center;     
-   }
-   #footer>.footer_2>a {
-        text-align: center;     
-         padding: 10px;
-         
-   }
-   
-   #footer>.footer_3 {
-      padding: 20px;
-   }
-   
-   
-   #footer>.footer_3>a {         
-       text-decoration:none;
-        text-align: center;
-        padding: 20px;
-   }   
-   
-   #footer>.footer_4 {
-        padding-top: 25px;
-        line-height: 20px;  
-   }
-   
-  
-  
-   
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+#header>.header_1>a {
+   font-family: 'Dancing Script', cursive;
+   text-decoration: none;
+   font-size: 30px;
+   font-weight: bold;
+   box-sizing: border-box;
+   color: rgb(219, 46, 46);
+}
+
+#header>.header_2 {
+   position: relative;
+   display: inline-block;
+   width: 100%;
+   text-align: center;
+   top: 0px;
+}
+
+#header>.header_2>ul {
+   position: absolute;
+   top: -45px;
+   height: 100%;
+}
+
+#header>.header_2>ul>li {
+   display: inline-block;
+   margin: 50px 25px 0px 25px;
+}
+
+#header>.header_2>ul>li>a {
+   text-decoration: none;
+}
+
+#header>.header_3 {
+   position: absolute;
+   display: inline-block;
+   width: 200px;
+   left: calc(100% + 50px);
+   text-align: center;
+   height: 50px;
+   top: 25px;
+   line-height: 45px;
+   border: 1px solid rgb(107, 101, 101);
+   border-radius: 25px;
+   color: rgb(107, 101, 101);
+}
+
+#header>.header_3 a {
+   text-decoration: none;
+   padding-right: 20px;
+}
+
+/*--------------------------- 중간 영역 ---------------------------*/
+/*---------------- 첫번째 ----------------*/
+section>#article1 {
+   height: 640px;
+   border: 1px solid white;
+   background-color: rgb(93, 170, 214);
+   position: relative;
+}
+
+section>#article1>#article1_div1 {
+   list-style-type: none;
+   color: white;
+   float: left;
+   margin: 100px;
+   padding: 10px;
+   padding-left: 380px;
+}
+
+section>#article1>#article1_div1>h2 {
+   font-size: 55px;
+}
+
+section>#article1>#article1_div1>li {
+   font-size: 20px;
+}
+
+section>#article1>#article1_div1>#testpage {
+   padding-top: 65px;
+   padding-left: 110px;
+}
+
+section>#article1>#article1_div1>#testpage>li {
+   border: 1px solid black;
+   border-style: none;
+   border-radius: 30px;
+   background-color: rgb(71, 62, 62);
+   width: 170px;
+   height: 60px;
+   line-height: 58px;
+}
+
+section>#article1>#article1_div1>#testpage a {
+   padding-left: 20px;
+   font-size: 22px;
+   color: white;
+   text-decoration: none;
+}
+
+section>#article1>#article1_div2 {
+   margin-top: 110px;
+   position: absolute;
+   left: 1375px;
+}
+
+section>#article1>#article1_div3 {
+   position: absolute;
+   left: 1000px;
+   top: 100px;
+   z-index: inherit;
+}
+
+/*---------------- 두번째 ----------------*/
+#article2>div h2 {
+   margin-top: 60px;
+   font-family: 'Dancing Script', cursive;
+   color: rgb(219, 46, 46);
+   font-size: 50px;
+   font-weight: bold;
+}
+
+#article2>div {
+   margin: 30px;
+   height: 670px;
+   text-align: center;
+}
+
+#article2 #p1 {
+   padding-top: 70px;
+}
+
+#article2 #p3, #p4, #p6, #p7 {
+   padding-top: 30px;
+}
+
+/*---------------- 세번째 ----------------*/
+#article3 {
+   display: flex;
+   flex-direction: column;
+}
+
+#article3>#love {
+   background-color: rgb(216, 233, 238);
+   display: flex;
+   justify-content: space-evenly;
+   width: 1900px;
+   height: 500px;
+}
+
+#article3>#love p {
+   font-size: 15px;
+}
+
+#article3>#love>#love1>h2>p {
+   padding-top: 40px;
+   font-size: 40px;
+}
+
+#article3>#love>#love1 {
+   margin: -40px;
+   text-align: center;
+   padding-top: 60px;
+   float: left;
+}
+
+#article3>#love>#love2 {
+   padding-top: 120px;
+   text-align: center;
+}
+
+#article3>#together {
+   display: flex;
+   justify-content: space-evenly;
+   width: 1900px;
+   height: 500px;
+   background-color: rgb(200, 218, 218);
+}
+
+#article3>#together p {
+   font-size: 15px;
+}
+
+#article3>#together>#together1>h2>p {
+   padding-top: 20px;
+   font-size: 40px;
+}
+
+#article3>#together>#together2 {
+   padding-top: 150px;
+   text-align: center;
+}
+/*--------------------------- 후기글 영역 ---------------------------*/
+aside {
+   margin-top: -22px;
+   background-color: rgb(243, 235, 235);
+}
+
+#aside {
+   font-size: 40px;
+   padding-top: 70px;
+   padding-bottom: 30px;
+   position: relative;
+   text-align: center;
+   font-weight: bold;
+   list-style-type: none;
+   margin-bottom: 50px;
+}
+
+.slick-items {
+   display: block;
+   margin-left: 80px;
+   padding: 10px;
+   width: 1740px;
+}
+
+aside>.slick-items .slick-div {
+   display: block;
+   border: 7px solid rgb(233, 162, 150);
+   border-radius: 20px;
+   margin-left: 60px;
+   margin-right: 60px;
+   margin-bottom: 60px;
+   padding: 10px;
+}
+
+aside>.slick-items .slick-div p {
+   padding-right: 10px;
+   padding-left: 10px;
+}
+
+aside>.slick-items p {
+   line-height: 23px;
+   max-height: 8.6em;
+   text-align: justify;
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 5;
+   -webkit-box-orient: vertical;
+}
+
+/*--------------------------- 푸처 영역 ---------------------------*/
+#footer {
+   position: relative;
+   height: 400px;
+   margin: 0 auto;
+   text-align: center;
+   background-color: rgba(0, 0, 0, 0.1);
+}
+
+#footer>.footer_1 {
+   padding-top: 45px;
+   font-size: 30px;
+   font-weight: bold;
+   font-family: 'Dancing Script', cursive;
+   color: rgb(219, 46, 46);
+}
+
+#footer>.footer_2 {
+   padding-top: 20px;
+   position: relative;
+   text-align: left;
+   display: inline-block;
+   width: 100%;
+   text-align: center;
+}
+
+#footer>.footer_2>a {
+   text-align: center;
+   padding: 10px;
+}
+
+#footer>.footer_3 {
+   padding: 20px;
+}
+
+#footer>.footer_3>a {
+   text-decoration: none;
+   text-align: center;
+   padding: 20px;
+}
+
+#footer>.footer_4 {
+   padding-top: 25px;
+   line-height: 20px;
+}

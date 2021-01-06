@@ -5,14 +5,15 @@
    display: inline-block;   
    position: relative;   
    left:34%;
+   text-align: -webkit-center;
+   margin: 40px 0;
 }
 #admin_garden_select>#box1 {    
       border: 0;
       height: 3px;
       width: 130px;
-      background: #f84609;
-      position : relative;
-      text-align: center;
+      background: #fe6234;
+
       
       
 }
@@ -20,22 +21,36 @@
       border: 0;
       height: 4px;
       width: 500px; 
-      background: #f84609;
-      position : relative;
-      text-align: center;
+   	  background: #fe6234;
+
       
 }
 #admin_garden_select>h3{
    text-align: center;   
 }
 #admin_garden_select #frm_admin_garden #btnInsert{
-   position: relative;   
-   left: 0%;
+    position: relative;   
+    left: -42%;
+    width: 100px;
+    height: 30px;
+    text-decoration: none;
+    color: #ffffff;
+    border: 0;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #fe6234;
+   margin-top: 20px;
+   margin-bottom: 3px;
+}
+#admin_garden_select #frm_admin_garden #btnInsert:hover {
+	background-color: #f4853d;
+	cursor:pointer;
 }
 
 #admin_garden_select .title{
    margin-top:6px;
-   background-color: #f84609;
+   background-color: #fe6234;
    padding: 4px 0;
    color : #fff;
    text-align: center;   
@@ -68,142 +83,303 @@
 }
 
 /*============= insert ===============*/
+#admin_garden_insert {
+   display: inline-block;   
+   position: relative;   
+   left:18.5%;
+   text-align: -webkit-center;
+   margin: 40px 0;
+}
 #admin_garden_insert>h2{
    text-align: center;
 }
+#admin_garden_insert>#box1 {    
+      border: 0;
+      height: 3px;
+      width: 130px;
+      background: #fe6234;
+     
+      
+}
+#admin_garden_insert>#box2 {    
+      border: 0;
+      height: 4px;
+      width: 500px; 
+   	  background: #fe6234;
+
+      
+}
 #admin_garden_insert .insert {
    display: inline-block;   
-   position: relative;      
-   left:20%;
+   position: relative;
+   left: -44%;
+   margin-top: 20px;      
+   
    
 }
 #admin_garden_insert .insert label{
    display: inline-block;
    width : 90px;
-   text-align: right;
-   line-height: 24px;   
-   padding-right: 10px;
+   padding-right: 2px;
+}
+#admin_garden_insert .insert #story{
+	left: 25%;
+    margin-bottom: 10px;
+    margin-top: 3px;
 }
 #admin_garden_insert .insert label, input, textarea {
    position: relative;      
    left:30%;
    
 }
+#admin_garden_insert .insert textarea{
+	left: 45%;
+}
 #admin_garden_insert #btnPhoto1,#btnPhoto2,#btnPhoto3,#btnPhoto4{
-   position: relative;   
-   left:-4%;
-   padding-right: 14px;
-   padding-top: 10px;
-   Padding-bottom: 10px;
+  position: relative;
+    left: 45%;
+    padding-right: 15px;
+    padding-top: 15px;
+    Padding-bottom: 15px;
 }
 #admin_garden_insert .insert img {
    position: relative;      
-   left: -5px;
+   left: 43%;
    padding-left: 65px;      
 }
-#admin_garden_insert .btns {
-   position: relative;      
-   left:13%;
+#admin_garden_insert .insert>#box1 {    
+      border: 0;
+      height: 3px;
+      width: 500px;
+    margin-top: 20px;
+    background: #fe6234;
+     position: relative;
+    left: 45%;
+    margin-bottom: 30px;
+      
+}
+#admin_garden_insert .btns #btnSave, #btnSelect {
+ position: relative;
+    left: 45%;
+    width: 100px;
+    height: 30px;
+    text-decoration: none;
+    color: #ffffff;
+    border: 0;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #fe6234;
+    margin-bottom: 5px;
+    margin: 20px;
+}
+
+#admin_garden_insert .btns #btnSelect:hover {
+	background-color: #f4853d;
+	cursor:pointer;
+}
+#admin_garden_insert .btns #btnSave:hover {
+	background-color: #f4853d;
+	cursor:pointer;
 }
 
 /*============= view ===============*/
+#admin_garden_view {
+   display: inline-block;   
+   position: relative;   
+   left:37.5%;
+   text-align: -webkit-center;
+   margin: 40px 0;
+}
 #admin_garden_view>h2{
    text-align: center;
 }
-#admin_garden_view .view {   
-   display: inline-block;         
-   position: relative;      
-   left:38%;   
+#admin_garden_view>#box1 {    
+      border: 0;
+      height: 3px;
+      width: 130px;
+      background: #fe6234;
+     
+      
+}
+#admin_garden_view>#box2 {    
+      border: 0;
+      height: 4px;
+      width: 500px; 
+   	  background: #fe6234;
+
+      
+}
+#admin_garden_view .view {
+   display: inline-block;   
+   position: relative;
+   left: -62%;
+   margin-top: 20px;      
+   
+   
 }
 #admin_garden_view .view label{
    display: inline-block;
    width : 90px;
-   text-align: right;
-   line-height: 24px;   
-   padding-right: 10px;
-   position: relative;      
-   left:0%;
+   padding-right: 2px;
+   margin-bottom :3px;
 }
-#admin_garden_view .view input{
+#admin_garden_view .view #story{
+	left: 19%;
+    margin-top: 3px;
+}
+#admin_garden_view .view label, input{
    position: relative;      
-   left:0%;   
+   left:30%;
+   
+}
+#admin_garden_view .view p{
+   left:64%;
+   position:relative;
+   padding-right: 2px;
+   margin-bottom :3px;
 }
 
-#admin_garden_view .view textarea{
-   position: relative;      
-   left:0%;   
+
+#admin_garden_view .view>#box2 {    
+      border: 0;
+      height: 4px;
+      width: 500px;
+    margin-top: 20px;
+    background: #fe6234;
+     position: relative;
+    left: 64%;
+    margin-bottom: 30px;
+      
+}
+#admin_garden_view .btns #btnModify, #btnDelete, #btnSelect {
+ position: relative;
+    left: 45%;
+    width: 100px;
+    height: 30px;
+    text-decoration: none;
+    color: #ffffff;
+    border: 0;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #fe6234;
+    margin-bottom: 5px;
+    margin: 20px;
 }
 
-#admin_garden_view .btns {
-   position: relative;      
-   left:37%;
+#admin_garden_view .btns #btnModify:hover {
+	background-color: #f4853d;
+	cursor:pointer;
 }
+#admin_garden_view .btns #btnDelete:hover {
+	background-color: #f4853d;
+	cursor:pointer;
+}
+#admin_garden_view .btns #btnSelect:hover {
+	background-color: #f4853d;
+	cursor:pointer;
+}
+
 
 /*============= update ===============*/
+#admin_garden_update {
+   display: inline-block;   
+   position: relative;   
+   left:18.5%;
+   text-align: -webkit-center;
+   margin: 40px 0;
+}
 #admin_garden_update>h2{
    text-align: center;
 }
-#admin_garden_update .update {   
-   display: inline-block;         
-   position: relative;      
-   left:20%;   
+#admin_garden_update>#box1 {    
+      border: 0;
+      height: 3px;
+      width: 130px;
+      background: #fe6234;
+     
+      
+}
+#admin_garden_update>#box2 {    
+      border: 0;
+      height: 4px;
+      width: 500px; 
+   	  background: #fe6234;
+
+      
+}
+#admin_garden_update .update{
+   display: inline-block;   
+   position: relative;
+   left: -44%;
+   margin-top: 20px;      
+   
+   
 }
 #admin_garden_update .update label{
    display: inline-block;
    width : 90px;
-   text-align: right;
-   line-height: 24px;   
-   padding-right: 10px;
+   padding-right: 2px;
 }
-#admin_garden_update .update label{
+#admin_garden_update .update #story{
+	left: 25%;
+    margin-bottom: 10px;
+    margin-top: 3px;
+}
+#admin_garden_update .update label, input, textarea {
    position: relative;      
-   left:20%;   
+   left:30%;
+   
 }
-#admin_garden_update .update input{
-   position: relative;      
-   left:20%;   
-}
-
 #admin_garden_update .update textarea{
-   position: relative;      
-   left:20%;   
+	left: 45%;
 }
-#admin_garden_update #btnPhoto1{
-   position: relative;   
-   left:-4%;
-   padding-right: 14px;
-   padding-top: 10px;
-   Padding-bottom: 10px;
+#admin_garden_update #btnPhoto1,#btnPhoto2,#btnPhoto3,#btnPhoto4{
+  position: relative;
+    left: 45%;
+    padding-right: 15px;
+    padding-top: 15px;
+    Padding-bottom: 15px;
 }
-#admin_garden_update #btnPhoto2{
-   position: relative;   
-   left:-4%;
-   padding-right: 14px;
-   padding-top: 10px;
-   Padding-bottom: 10px;
-}
-#admin_garden_update #btnPhoto3{
-   position: relative;   
-   left:-4%;
-   padding-right: 14px;
-   padding-top: 10px;
-   Padding-bottom: 10px;
-}
-#admin_garden_update #btnPhoto4{
-   position: relative;   
-   left:-4%;
-   padding-right: 14px;
-   padding-top: 10px;
-   Padding-bottom: 10px;
-}
-
 #admin_garden_update .update img {
    position: relative;      
-   left: -5px;
+   left: 43%;
    padding-left: 65px;      
 }
-
-#admin_garden_update .btns {
-   position: relative;      
-   left:23%;
+#admin_garden_update .update>#box1 {    
+      border: 0;
+      height: 3px;
+      width: 500px;
+    margin-top: 20px;
+    background: #fe6234;
+     position: relative;
+    left: 45%;
+    margin-bottom: 30px;
+      
 }
+#admin_garden_update .btns #btnUpdate, #btnSelect {
+ position: relative;
+    left: 45%;
+    width: 100px;
+    height: 30px;
+    text-decoration: none;
+    color: #ffffff;
+    border: 0;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #fe6234;
+    margin-bottom: 5px;
+    margin: 20px;
+}
+
+#admin_garden_update .btns #btnSelect:hover {
+	background-color: #f4853d;
+	cursor:pointer;
+}
+#admin_garden_update .btns #btnSave:hover {
+	background-color: #f4853d;
+	cursor:pointer;
+}
+

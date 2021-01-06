@@ -1,11 +1,9 @@
 @charset "UTF-8";
 
-*{
-   margin: 0;
-   padding: 0;   
-}
 
 #love {    
+    margin: 0;
+    padding: 0;  
     box-sizing: border-box;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
@@ -56,7 +54,7 @@
     margin-bottom: 20px;
 }
 #love_frm1>#loveSelect{
-	font-size: 18px;
+   font-size: 18px;
 }
 
 #love_frm1>.price {
@@ -96,7 +94,7 @@
 #love_btn {
     
     
-    margin: 80px;
+    margin: 40px;
     padding: 15px;
     width: 250px;
     border-radius: 3px;
@@ -110,7 +108,7 @@
     
 }
 #love_btn:hover {
-	cursor:pointer;
-	background-color: #eb8925
-	
+   cursor:pointer;
+   background-color: #eb8925
+   
 }

@@ -1,272 +1,269 @@
 @charset "UTF-8";
-/*-------------------------------------------- 강아지 상세보기 섹션 --------------------------------------------*/
-
-#dog_page{
-    width: 1500px;
-    height: auto;
-    min-height: 1000px;
-    margin: 40px;
-    margin-left: 200px;
+/*--------------------------- 강아지 상세보기 영역 ---------------------------*/
+#dog_page {
+   margin-top: -20px;
+   padding-top: -20px;
+   width: 1500px;
+   margin: 40px;
+   margin-left: 200px;
+   
 }
 
-#dog_page>#dog_page_top>p{                   
-    display: flex;        
-    justify-content: center;    
-    padding-top: 40px;
-    padding-right: 55px;
-    padding-bottom: px;
-    padding-left: 60px;
-    font-size: 45px;
-    color: rgb(243, 79, 2);
-    font-weight: bold;
-}
-#dog_page>h4{
-    padding-top: 30px;
-    padding-left:15px;
-    font-size: 30px;
-    display: flex;        
-    justify-content: center;
+#dog_page>#dog_page_top {
+   position: relative;
+   top:20px;   
 }
 
-#dog_page>#dog_info>#img{
-    padding-left: 350px;
-}
-#dog_page #info1{
-    position: relative;
+#dog_page>#dog_page_top>p {
+   
+   text-align: center;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   font-size: 45px;
+   color: rgb(243, 79, 2);
+   font-weight: bold;
 }
 
-#dog_page #info2{
-    padding-left: 20px;
-    position: absolute;    
-    left: 900px;
-    top: -505px;
-    width: 220px;
-    height: 500px;
-    border: 1px solid rgb(172, 169, 169);
-    display: flex;
-    flex-direction: column;
+#dog_page>h4 {
+   padding-top: 30px;
+   padding-bottom: 10px; 
+   font-size : 30px;
+   text-align: center;
+   font-size: 30px;
 }
-#dog_page #info2 span{
-    font-size: 35px;
-    text-align: left;
+
+#dog_page>#dog_info {
+   padding-bottom: 20px;
 }
-#dog_page>#dog_info #info2 span:nth-of-type(2){
-    padding-left:15px;
-    padding-bottom: 10px;
-    font-size: 24px;
+
+#dog_page>#dog_info>#img {
+   padding-left: 350px;
 }
-#dog_page>#dog_info #info2 span:nth-of-type(4){
-    padding-left:15px;
-    padding-bottom: 10px;
-    font-size: 24px;
+
+#dog_page #info1 {
+   position: relative;
 }
-#dog_page>#dog_info #info2 span:nth-of-type(6){
-    padding-left:15px;
-    padding-bottom: 10px;
-    font-size: 24px;
+
+#dog_page #info2 {
+   padding-left: 20px;
+   position: absolute;
+   left: 900px;
+   top: -505px;
+   width: 220px;
+   height: 500px;
+   border: 1px solid rgb(172, 169, 169);
+   display: flex;
+   flex-direction: column;
 }
-#dog_page>#dog_info #info2 span:nth-of-type(8){
-    padding-left:15px;
-    padding-bottom: 10px;
-    font-size: 24px;
+
+#dog_page #info2 span {
+   font-size: 35px;
+   text-align: left;
 }
-#dog_page>#dog_info #info2 span:nth-of-type(10){
-    padding-left:15px;
-    padding-bottom: 10px;
-    font-size: 24px;
+
+#dog_page>#dog_info #info2 span:nth-of-type(2) {
+   padding-left: 15px;
+   padding-bottom: 10px;
+   font-size: 24px;
 }
+#dog_page>#dog_info #info2 span:nth-of-type(4) {
+   padding-left: 15px;
+   padding-bottom: 10px;
+   font-size: 24px;
+}
+#dog_page>#dog_info #info2 span:nth-of-type(6) {
+   padding-left: 15px;
+   padding-bottom: 10px;
+   font-size: 24px;
+}
+#dog_page>#dog_info #info2 span:nth-of-type(8) {
+   padding-left: 15px;
+   padding-bottom: 10px;
+   font-size: 24px;
+}
+#dog_page>#dog_info #info2 span:nth-of-type(10) {
+   padding-left: 15px;
+   padding-bottom: 10px;
+   font-size: 24px;
+}
+
 /*--------------------------- 스토리 영역 ---------------------------*/
 #story {
-    padding-top: 50px;
-    text-align: center;
+   padding-top: 50px;
+   text-align: center;
 }
 #story>p {
-    font-size: 55px;
+   font-size: 55px;
+}
+#story>p span {
+   font-size: 70px;
+   color: rgb(27, 146, 126);
 }
 
-#story>p span{
-    font-size: 70px;
-    color:rgb(27, 146, 126);
+#story>#stroy1 {
+   box-sizing: border-box;
+   padding: 5px;
+   border: none;
+   font-size: 30px;
+   font-weight: bold;
+   font-family: inherit;
+   margin-top: 10px;
 }
-
-#story>#stroy1 {        
-    box-sizing: border-box;
-    padding: 5px;
-    border: none;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: inherit;    
-    margin-top: 10px;
-}
-
-
-
-
-
-
-
 
 /*--------------------------- 버튼 영역 ---------------------------*/
 #dog_btns {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    display: flex;
-    justify-content: center;
+   padding-top: 50px;
+   padding-bottom: 50px;
+   display: flex;
+   justify-content: center;
 }
-
 
 .basic-input {
-    margin-left: 20px;
-    margin-top: 20px;
-    background-color: #2c974b;
-    text-decoration : none;
-    width : 250px;
-    height : 55px;
-    color : #ffffff;
-    border : 0;
-    border-radius: 3px;    
-    font-size: 25px;
-    font-weight: bold;
+   margin-left: 20px;
+   margin-top: 20px;
+   background-color: #2c974b;
+   text-decoration: none;
+   width: 250px;
+   height: 55px;
+   color: #ffffff;
+   border: 0;
+   border-radius: 3px;
+   font-size: 25px;
+   font-weight: bold;
 }
 .basic-input:hover {
-    background-color:  #2ebc4f;
-    cursor: pointer;
+   background-color: #2ebc4f;
+   cursor: pointer;
 }
 
-
-
-/* ==================슬라이드 css ================= */
+/*--------------------------- 슬라이드 ---------------------------*/
 #slider-wrapper {
-    width: 940px;
-    height: 470px;
-    margin: 50px auto;
-    position: relative;
-    margin-bottom: 0px;
-    background: rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-  }
-  
-  #s1 {
-    padding: 6px;
-    background: #000000;
-    position: absolute;
-    left: 50%;
-    bottom: 25px;
-    margin-left: -36px;
-    border-radius: 20px;
-    opacity: 0.3;
-    cursor: pointer;
-    z-index: 999;
-  }
-  
-  #s2 {
-    padding: 6px;
-    background: #000000;
-    position: absolute;
-    left: 50%;
-    bottom: 25px;
-    margin-left: -12px;
-    border-radius: 20px;
-    opacity: 0.3;
-    cursor: pointer;
-    z-index: 999;
-  }
-  
-  #s3 {
-    padding: 6px;
-    background: #000000;
-    position: absolute;
-    left: 50%;
-    bottom: 25px;
-    margin-left: 12px;
-    border-radius: 20px;
-    opacity: 0.3;
-    cursor: pointer;
-    z-index: 999;
-  }
-  
-  #s4 {
-    padding: 6px;
-    background: #000000;
-    position: absolute;
-    left: 50%;
-    bottom: 25px;
-    margin-left: 36px;
-    border-radius: 20px;
-    opacity: 0.3;
-    cursor: pointer;
-    z-index: 999;
-  }
-  
-  #s1:hover,
-  #s2:hover,
-  #s3:hover,
-  #s4:hover {
-    opacity: .50;
-  }
-  
-  .inner-wrapper {
-    width: 940px;
-    height: 470px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-bottom: 0px;
-    overflow: hidden;
-  }
-  
-  .control {
-    display: none;
-  }
-  
-  #Slide1:checked ~ .overflow-wrapper {
-    margin-left: 0%;
-  }
-  
-  #Slide2:checked ~ .overflow-wrapper {
-    margin-left: -100%;
-  }
-  
-  #Slide3:checked ~ .overflow-wrapper {
-    margin-left: -200%;
-  }
-  
-  #Slide4:checked ~ .overflow-wrapper {
-    margin-left: -300%;
-  }
-  
-  #Slide1:checked + #s1 {
-    opacity: 1;
-  }
-  
-  #Slide2:checked + #s2 {
-    opacity: 1;
-  }
-  
-  #Slide3:checked + #s3 {
-    opacity: 1;
-  }
-  
-  #Slide4:checked + #s4 {
-    opacity: 1;
-  }
-  
-  .overflow-wrapper {
-    width: 400%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow-y: hidden;
-    z-index: 1;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .slide img {
-    width: 25%;
-    float: left;
-  }
-  /*  ==================슬라이드 css ================= */
+   width: 940px;
+   height: 470px;
+   margin: 50px auto;
+   position: relative;
+   margin-bottom: 0px;
+   background: rgba(0, 0, 0, 0.5);
+   overflow: hidden;
+}
+
+#s1 {
+   padding: 6px;
+   background: #000000;
+   position: absolute;
+   left: 50%;
+   bottom: 25px;
+   margin-left: -36px;
+   border-radius: 20px;
+   opacity: 0.3;
+   cursor: pointer;
+   z-index: 999;
+}
+
+#s2 {
+   padding: 6px;
+   background: #000000;
+   position: absolute;
+   left: 50%;
+   bottom: 25px;
+   margin-left: -12px;
+   border-radius: 20px;
+   opacity: 0.3;
+   cursor: pointer;
+   z-index: 999;
+}
+
+#s3 {
+   padding: 6px;
+   background: #000000;
+   position: absolute;
+   left: 50%;
+   bottom: 25px;
+   margin-left: 12px;
+   border-radius: 20px;
+   opacity: 0.3;
+   cursor: pointer;
+   z-index: 999;
+}
+
+#s4 {
+   padding: 6px;
+   background: #000000;
+   position: absolute;
+   left: 50%;
+   bottom: 25px;
+   margin-left: 36px;
+   border-radius: 20px;
+   opacity: 0.3;
+   cursor: pointer;
+   z-index: 999;
+}
+
+#s1:hover, #s2:hover, #s3:hover, #s4:hover {
+   opacity: .50;
+}
+
+.inner-wrapper {
+   width: 940px;
+   height: 470px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   margin-bottom: 0px;
+   overflow: hidden;
+}
+
+.control {
+   display: none;
+}
+
+#Slide1:checked ~ .overflow-wrapper {
+   margin-left: 0%;
+}
+
+#Slide2:checked ~ .overflow-wrapper {
+   margin-left: -100%;
+}
+
+#Slide3:checked ~ .overflow-wrapper {
+   margin-left: -200%;
+}
+
+#Slide4:checked ~ .overflow-wrapper {
+   margin-left: -300%;
+}
+
+#Slide1:checked+#s1 {
+   opacity: 1;
+}
+
+#Slide2:checked+#s2 {
+   opacity: 1;
+}
+
+#Slide3:checked+#s3 {
+   opacity: 1;
+}
+
+#Slide4:checked+#s4 {
+   opacity: 1;
+}
+
+.overflow-wrapper {
+   width: 400%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   overflow-y: hidden;
+   z-index: 1;
+   -webkit-transition: all 0.3s ease-in-out;
+   -moz-transition: all 0.3s ease-in-out;
+   -o-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
+}
+
+.slide img {
+   width: 25%;
+   float: left;
+}

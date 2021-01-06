@@ -1,109 +1,98 @@
 @charset "UTF-8";
 
-
-    /*-------------------------------------------- 마당 섹션 --------------------------------------------*/
-    #garden{
-        width: 1500px;
-        height: auto;
-        min-height: 1000px;
-        margin: 40px;
-        margin-left: 200px;
-        
-    }
-    #box1 {    
-      border: 0;
-      height: 7px;
-      width: 130px;
-      background: #f84609;
-      position: absolute;
-      left: 46.5%;
-      padding-right: 6px;
-    }
-    #garden>#top>ul{        
-        list-style-type: none;
-        display: flex;        
-        justify-content: center;
-    }
-    #garden>#top>ul>li{
-        padding: 55px;
-        padding-bottom: 20px;
-        padding-left: 60px;
-        font-size: 23px;
-    }
-    #garden>#top>ul a {
-        text-decoration: none;
-        color: rgb(54, 50, 50);
-    }
-
-    #box2 {    
-       border: 0;
-      height: 7px;
-      width: 1030px;
-      padding-right: 38px;
-      background: #f84609;
-      position: absolute;
-      left: 22%;
-      padding-right: 38px;
-    }
-    #text{
-        padding: 20px;
-        font-size: 28px;
-        padding-top: 50px;
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-
-    }
-
-    #garden{
-        padding-bottom: 90px;
-    }
-    
-    .group {      
-        padding-top: 80px;
-        text-align: center;
-        display:inline-block;
-        padding : 45px;
-     
-    }
-  
-
-    #garden #main p {
-        
-        font-size: 25px;
-        font-weight: bold;
-    }
-
-
-   
-   #main {
-    width: 100%;
+/*--------------------------- 마당 영역 ---------------------------*/
+#garden {
+   width: 1500px;
+   height: auto;
+   min-height: 1000px;
+   margin: 40px;
+   margin-left: 200px;
 }
 
-   #main table {
-    
-    width: 100%;
-    text-align: center;
-    line-height: 40px;
+#box1 {   
+   border: 0;
+   height: 7px;
+   width: 130px;
+   background: #f84609;
+   position: absolute;
+   left: 46.5%;
+   padding-right: 6px;   
 }
 
-   #main img {
-    padding-top: 20px;
-    cursor: pointer;
+#garden>#top>ul {
+   list-style-type: none;
+   display: flex;
+   justify-content: center;   
+}
+#garden>#top>ul>li {
+   padding: 55px;
+   padding-top: 30px;
+   padding-bottom: 10px;
+   padding-left: 60px;
+   font-size: 23px;
+}
+#garden>#top>ul a {
+   text-decoration: none;
+   color: rgb(54, 50, 50);
 }
 
-
-/* hover css*/
-#MiniBar_title{
-    POSITION: absolute;
-    display:none;
-    max-width:145px;
-    width:145px;
-    color:black;
-    font-weight:bold;
-    opacity: 0.7;
-    background-color :#ed9e66;
-    border-left: 4px solid rgb(243, 79, 2);
+#box2 {
+   border: 0;
+   height: 7px;
+   width: 1030px;
+   padding-right: 38px;
+   background: #f84609;
+   position: absolute;
+   left: 22%;
+   padding-right: 38px;
 }
 
-/*===================*/
+#text {
+   padding: 20px;
+   font-size: 28px;
+   padding-top: 50px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+}
+
+#garden {
+   padding-bottom: 90px;
+}
+
+.group {
+   padding-top: 80px;
+   text-align: center;
+   display: inline-block;
+   padding: 45px;
+}
+
+#garden #main p {
+   font-size: 25px;
+   font-weight: bold;
+}
+#main {
+   width: 100%;
+}
+#main table {
+   width: 100%;
+   text-align: center;
+   line-height: 40px;
+}
+#main img {
+   padding-top: 20px;
+   cursor: pointer;
+}
+
+/*--------------------------- hover ---------------------------*/
+#MiniBar_title {
+   POSITION: absolute;
+   display: none;
+   max-width: 145px;
+   width: 145px;
+   color: black;
+   font-weight: bold;
+   opacity: 0.7;
+   background-color: #ed9e66;
+   border-left: 4px solid rgb(243, 79, 2);
+}

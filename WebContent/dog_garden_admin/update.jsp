@@ -11,28 +11,30 @@
 </head>
 <body>
 <div id='admin_garden_update'>
+	<div id='box1'></div>
    <h2>강아지 정보변경</h2>
+   <div id='box2'></div>
    <form class='update' method='post' name='frm_admin_garden'>
       <label>serialNo</label>
       <input type='text' name='serial' size='10' value='${vo.dog_serial }' disabled/><br>
       <label>분류</label>
-      <input type='text' name='group'size='12' required value='${vo.dog_group }'/><br>
+      <input type='text' name='group'size='10' required value='${vo.dog_group }'/><br>
       <label>이름</label>
-      <input type='text' name='name' size='12' required value='${vo.dog_name }'/><br>
+      <input type='text' name='name' size='10' required value='${vo.dog_name }'/><br>
       <label>견종</label>
-      <input type='text' name='breed' size='12' value='${vo.dog_breed }'/><br>
+      <input type='text' name='breed' size='10' value='${vo.dog_breed }'/><br>
       <label>성별</label>
-      <input type='email' name='gender' size='35' value='${vo.dog_gender }'/><br>
+      <input type='email' name='gender' size='10' value='${vo.dog_gender }'/><br>
       <label>나이</label>
-      <input type='text' name='age' size='15' value='${vo.dog_age }'/><br>
+      <input type='text' name='age' size='10' value='${vo.dog_age }'/><br>
       <label>무게</label>
-      <input type='text' name='weight' size='6' required value='${vo.dog_weight }'/><br>                  
+      <input type='text' name='weight' size='10' required value='${vo.dog_weight }'/><br>                  
       <label>MBTI</label>
-      <input type='text' name='mbti' size='60' required value='${vo.dog_mbti }'/><br>
+      <input type='text' name='mbti' size='10' required value='${vo.dog_mbti }'/><br>
       <label>MBTI 성격</label>
-      <input type='text' name='mbti_char' size='60' required value='${vo.dog_mbti_char }'/><br>
-      <label>스토리</label><br>      
-      <textarea rows="10" cols="90" name='story'>${vo.dog_story }</textarea><br>
+      <input type='text' name='mbti_char' size='10' required value='${vo.dog_mbti_char }'/><br>
+       <label id='story'>스토리</label><br>
+      <textarea rows="20" cols="85" name ='story' required>'${vo.dog_story }'</textarea><br>
             
       <label></label>
       <input type='file' name='dog_photo1' id='btnPhoto1'/>
@@ -44,7 +46,7 @@
       <img src='http://placehold.it/200x140' id='dog_photo3' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
       <img src='http://placehold.it/200x140' id='dog_photo4' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
 
-      <hr>
+      <div id='box1'></div>
    
       <div class='btns'>
          <input type='button' value='수정' id='btnUpdate'/>
