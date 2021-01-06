@@ -66,54 +66,54 @@
               <div id="bbs">
                  <form action="" method="post" name="myForm">
                     <div id="bbsCreated">
-	                    <div class="bbsCreated_bottomLine">
-	                       <dl>
-	                          <dt>아이디</dt>
-	                          <dd>
-	                          ${sessionScope.customInfo.userId }
-	                          </dd>
-	                       </dl>
-	                    </div>
-	                    
-	                    <div class="bbsCreated_bottomLine">
-	                       <dl>
-	                          <dt>이름</dt>
-	                          <dd>
-	                          ${sessionScope.customInfo.userName }
-	                          </dd>
-	                       </dl>
-	                    </div>
-	                    
-	                    <div class="bbsCreated_bottomLine">
-	                       <dl>
-	                          <dt>패스워드</dt>
-	                          <dd>
-	                             <input type="password" name="userPwd" size="35" maxlength="20" class="booxTF"
-	                             value="${dto.userPwd }" />
-	                          </dd>
-	                       </dl>
-	                    </div>
-	                    
-	                    <div class="bbsCreated_bottomLine">
-	                       <dl>
-	                          <dt>생년월일</dt>
-	                          <dd>
-	                             <input type="date" name="userBirth" size="35" maxlength="50" class="boxTF"
-	                             value="${dto.userBirth }" />
-	                             [YYYY-MM-DD]
-	                          </dd>
-	                       </dl>
-	                    </div>
-	                    
-	                    <div class="bbsCreated_bottomLine">
-	                       <dl>
-	                          <dt>전화번호</dt>
-	                          <dd>
-	                             <input type="text" name="userTel" size="35" maxlength="50" class="boxTF"
-	                             value="${dto.userTel }" />
-	                          </dd>
-	                       </dl>
-	                    </div>
+                       <div class="bbsCreated_bottomLine">
+                          <dl>
+                             <dt>아이디</dt>
+                             <dd>
+                             ${sessionScope.customInfo.userId }
+                             </dd>
+                          </dl>
+                       </div>
+                       
+                       <div class="bbsCreated_bottomLine">
+                          <dl>
+                             <dt>이름</dt>
+                             <dd>
+                             ${sessionScope.customInfo.userName }
+                             </dd>
+                          </dl>
+                       </div>
+                       
+                       <div class="bbsCreated_bottomLine">
+                          <dl>
+                             <dt>패스워드</dt>
+                             <dd>
+                                <input type="password" name="userPwd" size="35" maxlength="20" class="booxTF"
+                                value="${dto.userPwd }" />
+                             </dd>
+                          </dl>
+                       </div>
+                       
+                       <div class="bbsCreated_bottomLine">
+                          <dl>
+                             <dt>생년월일</dt>
+                             <dd>
+                                <input type="date" name="userBirth" size="35" maxlength="50" class="boxTF"
+                                value="${dto.userBirth }" />
+                                [YYYY-MM-DD]
+                             </dd>
+                          </dl>
+                       </div>
+                       
+                       <div class="bbsCreated_bottomLine">
+                          <dl>
+                             <dt>전화번호</dt>
+                             <dd>
+                                <input type="text" name="userTel" size="35" maxlength="50" class="boxTF"
+                                value="${dto.userTel }" />
+                             </dd>
+                          </dl>
+                       </div>
                     </div>
                     
                     <div id="bbsCreated_footer">
@@ -130,6 +130,5 @@
 
 </body>
 </html>
-
 
 

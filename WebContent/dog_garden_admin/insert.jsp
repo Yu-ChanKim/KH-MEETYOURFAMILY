@@ -6,9 +6,10 @@
 <meta charset="UTF-8">
 <title>추가</title>
 <script src='./js/garden_admin/garden_admin.js'></script>
+<link rel="stylesheet" href="/css/garden_admin/garden_admin.css" type="text/css">
 </head>
 <body>
-<div id='adimn_garden'>
+<div id='admin_garden_insert'>
    <h2>강아지 관리</h2>
    <form class='insert' method='post' name='frm_admin_garden'>
       <label>serialNo</label>
@@ -32,14 +33,14 @@
       <label>스토리</label><br>
       <textarea rows="20" cols="70" name ='story'>
       </textarea><br>
-      <label>사진</label>
+      <label></label>
       <input type='file' name='dog_photo1' id='btnPhoto1'/> <!-- 이벤트 처리를 위해 id 생성 -->
-      <img src='http://placehold.it/200x140' id='dog_photo1' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
       <input type='file' name='dog_photo2' id='btnPhoto2'/>
-      <img src='http://placehold.it/200x140' id='dog_photo2' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
       <input type='file' name='dog_photo3' id='btnPhoto3'/>
+      <input type='file' name='dog_photo4' id='btnPhoto4'/><br>
+      <img src='http://placehold.it/200x140' id='dog_photo1' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
+      <img src='http://placehold.it/200x140' id='dog_photo2' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
       <img src='http://placehold.it/200x140' id='dog_photo3' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
-      <input type='file' name='dog_photo4' id='btnPhoto4'/>
       <img src='http://placehold.it/200x140' id='dog_photo4' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
          
       <hr>

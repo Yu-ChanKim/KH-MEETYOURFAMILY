@@ -176,6 +176,7 @@ var admin = function(){
    if(btnUpdate != null){
       btnUpdate.onclick = function(){
       var frm = document.frm_admin_garden;
+	  frm.serial.disabled = false;
       frm.enctype = "multipart/form-data";
       frm.action = "dog_garden?admin=update";
       frm.submit();

@@ -6,11 +6,12 @@
 <meta charset="UTF-8">
 <title>수정</title>
 <script src='./js/garden_admin/garden_admin.js'></script>
+<link rel="stylesheet" href="/css/garden_admin/garden_admin.css" type="text/css">
 
 </head>
 <body>
-<div id='admin_garden'>
-   <h2>강아지 관리</h2>
+<div id='admin_garden_update'>
+   <h2>강아지 정보변경</h2>
    <form class='update' method='post' name='frm_admin_garden'>
       <label>serialNo</label>
       <input type='text' name='serial' size='10' value='${vo.dog_serial }' disabled/><br>
@@ -33,14 +34,14 @@
       <label>스토리</label><br>      
       <textarea rows="10" cols="90" name='story'>${vo.dog_story }</textarea><br>
             
-      <label>사진</label>
+      <label></label>
       <input type='file' name='dog_photo1' id='btnPhoto1'/>
-      <img src='http://placehold.it/200x140' id='dog_photo1' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
       <input type='file' name='dog_photo2' id='btnPhoto2'/>
-      <img src='http://placehold.it/200x140' id='dog_photo2' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
       <input type='file' name='dog_photo3' id='btnPhoto3'/>
+      <input type='file' name='dog_photo4' id='btnPhoto4'/><br>
+      <img src='http://placehold.it/200x140' id='dog_photo1' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
+      <img src='http://placehold.it/200x140' id='dog_photo2' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
       <img src='http://placehold.it/200x140' id='dog_photo3' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
-      <input type='file' name='dog_photo4' id='btnPhoto4'/>
       <img src='http://placehold.it/200x140' id='dog_photo4' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
 
       <hr>
@@ -49,6 +50,7 @@
          <input type='button' value='수정' id='btnUpdate'/>
          <input type='button' value='목록으로' id='btnSelect'/>            
       </div>
+         <input type='hidden' name='serial' value='${vo.dog_serial}'/>
         <input type='hidden' name='delFile1' value='${vo.dog_photo1 }'/>
           <input type='hidden' name='delFile2' value='${vo.dog_photo2 }'/>
             <input type='hidden' name='delFile3' value='${vo.dog_photo3 }'/>
