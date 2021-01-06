@@ -13,8 +13,8 @@
 <title>마당</title>
 <link rel="stylesheet" href="./css/garden.css" type="text/css">
 <link rel="stylesheet" href="./css/main.css" type="text/css">
-<script src="./js/garden.js"></script>
 <script src='./lib/jquery-3.5.1.min.js'></script>
+<script src="./js/garden.js"></script>
 
 </head>
 <!------------------------------------------------------------------------------------- 바디 ------------------------------------------------------------------------------------->
@@ -54,32 +54,38 @@
        <input name='dname' type='hidden' value='${param.dname }'>  
        <input name='group' type='hidden' value='${param.group }'>       
     </form>           
-         
+
+
+
    <div id='main'>
-       <table>
-           <tr>
-           
-           <c:set var='mbti' value="${param.mbti }"/>
-           <c:forEach var='vo' items='${list}' varStatus='vs'>                 
-           <c:if test="${vo.dog_mbti eq mbti || mbti eq null }">
-                  <td>
-                     <img src="./img/dog_image/${vo.dog_photo1 }" onclick='detail(name)' name='${vo.dog_name }' width='330px' height='330px'
-                          onmouseover="Show_Minibar(this, '견종 : ${vo.dog_breed }'
-                                                          , '성별 : ${vo.dog_gender }'
-                                                          , '나이 : ${vo.dog_age }'
-                                                          , 'MBTI : ${vo.dog_mbti }' );">
-                       
-                   <div id="MiniBar_title"></div>                   
-                   <p>${vo.dog_name }</p>
-                   </td>
-                <c:if test="${vs.index%3 == 2 }">
-                     <tr>
-                    </tr>        
-               </c:if>
-           </c:if>
-         </c:forEach>
-         </tr>
-            
+      <table>
+         <tr>
+
+
+<c:set var="count" value="0" />
+<c:forEach var='vo' items='${list}' varStatus='vs'>
+   <c:if test = "${((param.mbti != null) and (param.mbti == vo.dog_mbti)) or (param.mbti == null)}">
+   <c:set var="count" value="${count + 1}"/>
+            <td>
+               <img src="./img/dog_image/${vo.dog_photo1 }" onclick='detail(name)' name='${vo.dog_name }' width='330px' height='330px'
+                  onmouseover="Show_Minibar(this, '견종 : ${vo.dog_breed }'
+                                                      , '성별 : ${vo.dog_gender }'
+                                                      , '나이 : ${vo.dog_age }'
+                                                      , 'MBTI : ${vo.dog_mbti }' );">
+               <div id="MiniBar_title"></div>                   
+               <p>${vo.dog_name }</p>
+            </td>
+      <c:if test="${vs.index%3 == 2 }">
+         <tr>
+            </tr>        
+      </c:if>
+   </c:if>
+</c:forEach>
+<%-- --%>
+<c:if test = "${count == 0}">
+                  <h1>매칭된 강아지가 없습니다. 죄송합니다.</h1>
+</c:if>         
+               </tr>
        </table>
     </div>
 </div>   

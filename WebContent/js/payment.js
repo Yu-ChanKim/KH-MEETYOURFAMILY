@@ -29,7 +29,7 @@ function getID(id) {
                     button: "회원가입/로그인 이동",
                 }) .then((value) => {
                    if(value) {
-                      location.href ='./main.jsp?inc=./dog_login/login.jsp'
+                      location.href ='./main.jsp?inc=./member/login.jsp'
                    }
                 })
             });
@@ -42,7 +42,7 @@ function together(){
       
       var frm = document.frm_garden;   
    
-      var win = window.open('./dog_garden/payment/together.jsp', 'win', 'width=700, height=900, left=600');
+      var win = window.open('./dog_garden/payment/together.jsp', 'win', 'width=700, height=870, left=600');
       
       win.onbeforeunload = function(){       
             frm.action = 'garden.do?siba=together';
@@ -54,7 +54,7 @@ function together(){
 function love(){
    var frm = document.frm_garden;
    
-    var win = window.open('./dog_garden/payment/love.jsp', 'win', 'width=700, height=900, left=600');
+    var win = window.open('./dog_garden/payment/love.jsp', 'win', 'width=700, height=870, left=600');
  
    win.onbeforeunload = function(){       
       if(frm.price.value != ''){

@@ -100,10 +100,10 @@
          
          <div id='dog_btns'>
             <input type="button" value="목록으로" class="basic-input" id='btn_garden'/>
-            <c:if test="${empty sessionScope.mid }">
+            <c:if test="${empty sessionScope.customInfo.userId }">
             <input type="button" value="함께하기" class="basic-input" id='btn_together_out'/>
             </c:if>
-            <c:if test='${not empty sessionScope.mid }'>
+            <c:if test='${not empty sessionScope.customInfo.userId}'>
             <input type="button" value="함께하기" class="basic-input" id='btn_together' onclick='together()'/>
             </c:if>
              
