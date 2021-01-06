@@ -10,7 +10,7 @@
                     
                     <li><a href="/dog_MYF/login">meet your family</a></li>
                     
-                    <li><a href="/main.jsp?inc=./member/updated.jsp">마이페이지</a></li>
+                    <li><a href="main.jsp?inc=./member/updated.jsp">마이페이지</a></li>
                     <li><a href="dog_garden?admin=select">강아지 관리자 페이지</a></li>
                 </ul>
             </nav>
@@ -18,12 +18,12 @@
 
 			<c:choose>
 		      	<c:when test="${empty sessionScope.customInfo.userId}">
-		      		<button onclick="javascript:location.href='main.jsp?inc=./member/created.jsp';">회원가입</button>
-		      	    <button onclick="javascript:location.href='main.jsp?inc=./member/login.jsp';">로그인</button>
+		      		<a href="main.jsp?inc=./member/created.jsp">회원가입</a>
+		      	    <a href="main.jsp?inc=./member/login.jsp">로그인</a>
 		      	</c:when>
 		      	<c:otherwise>
-		      		<button onclick="javascript:location.href='main.jsp?inc=./member/updated.jsp';">정보수정</button>
-		      		<button onclick="javascript:location.href='main.jsp?inc=./member/logout.jsp';">로그아웃</button>
+		      		<a href="main.jsp?inc=./member/updated.jsp">정보수정</a>
+		      		<a href="main.jsp?inc=./member/logout.jsp">로그아웃</a>
 		      	</c:otherwise>               
 	      	</c:choose>
 

@@ -9,7 +9,7 @@
     }
     #article2>div{
         margin:30px;        
-        height: 670px;
+        height: auto;
         text-align: center;
     }
     #article2>div>p{

@@ -24,9 +24,9 @@
          return;
       }
       
-      if(!f.userAnswer.value){
-         alert("질문을 입력하세요!");
-         f.userAnswer.focus;
+      if(!f.userTel.value){
+         alert("번호를 입력하세요!");
+         f.userTel.focus;
          return;
       }
       
@@ -61,7 +61,7 @@
                   
                     <!-- 질문답변 -->
                     <div class="l-row l-input">
-                  <input type="text" id="userAnswer" name="userAnswer" placeholder="내가 다닌 초등학교는? ex)00초등학교"/>
+                  <input type="text" id="userTel" name="userTel" placeholder="번호 주세요"/>
                      </div>                    
         
                   

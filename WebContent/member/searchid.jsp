@@ -51,6 +51,8 @@
          <span class="line"></span>
        </div>
                   
+       <hr width = "65%" color="gray" size="1">           
+                  
        <div class="login-box">
      
          <div class="login-form">
