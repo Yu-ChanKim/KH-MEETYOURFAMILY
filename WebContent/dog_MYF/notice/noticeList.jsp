@@ -78,7 +78,7 @@
 									${l.writer}
 								</td>
 								<td>
-									${l.regdate}
+									<fmt:formatDate pattern="yyyy-MM-dd" value="${l.regdate}"/>
 								</td>
 								<td>
 									<fmt:formatNumber value="${l.hit}" />
