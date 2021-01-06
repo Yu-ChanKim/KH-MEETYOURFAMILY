@@ -5,20 +5,50 @@
 <head>
 <meta charset="UTF-8">
 <title>결과</title>
-<script src='./js/garden_admin/garden_admin.js'></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<style>
+.swal-footer {
+   text-align: center;
+}
+</style>
 </head>
 <body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <body>
-<div id='admin_garden'>
-   <div class='result_msg'>
-      작업이 처리 되었습니다.   
-   </div>
-   <form name='frm_admin_garden' method='post'>      
-      <div class='btns'>
-         <input type='button' value='목록으로' id='btnSelect'/>
-      </div>
-   </form>
-</div>
-<script>admin()</script>
+<script>
+$().ready(function () {                   
+   swal({
+       icon: "success",
+        title: "작업이 처리 되었습니다.",
+        button: "목록으로",
+    }) .then((value) => {
+          if(value) {
+             location.href ='dog_garden?admin=select'
+          }
+       })                   
+});
+</script>
 </body>
 </html>

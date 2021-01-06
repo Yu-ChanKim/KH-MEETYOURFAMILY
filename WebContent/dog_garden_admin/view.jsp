@@ -7,10 +7,11 @@
 <meta charset="UTF-8">
 <title>상세보기</title>
 <script src='./js/garden_admin/garden_admin.js'></script>
+<link rel="stylesheet" href="/css/garden_admin/garden_admin.css" type="text/css">
 </head>
 <body>
-<div id='admin_garden'>
-   <h2>강아지 관리</h2>
+<div id='admin_garden_view'>
+   <h2>강아지 상세정보</h2>
    <form class='view' method='post' name='frm_admin_garden'>
       <label>serialNo</label>
       <input type='text' name='serial' size='10' disabled value='${vo.dog_serial }'/><br>

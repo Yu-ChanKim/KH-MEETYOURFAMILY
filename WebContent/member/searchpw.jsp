@@ -9,7 +9,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 <title>MYF : 비밀번호 찾기</title>
-<link rel="stylesheet" href="<%=cp %>/css/main.css" type="text/css">
 <link rel="stylesheet" href="<%=cp %>/member/data/join.css" type="text/css"/>
 
 <script src='./lib/jquery-3.5.1.min.js'></script>
@@ -24,9 +23,9 @@
          return;
       }
       
-      if(!f.userTel.value){
-         alert("번호를 입력하세요!");
-         f.userTel.focus;
+      if(!f.userAnswer.value){
+         alert("질문을 입력하세요!");
+         f.userAnswer.focus;
          return;
       }
       
@@ -35,9 +34,7 @@
    }
 </script>
 </head>
-<body> 
-<div class="container">   
-<%@include file="/header.jsp"%>   
+<body>  
  <div style="position: relative;">
       <div id="contents">
         <div class="member-contents">
@@ -61,7 +58,7 @@
                   
                     <!-- 질문답변 -->
                     <div class="l-row l-input">
-                  <input type="text" id="userTel" name="userTel" placeholder="번호 주세요"/>
+                  <input type="text" id="userAnswer" name="userAnswer" placeholder="내가 다닌 초등학교는? ex)00초등학교"/>
                      </div>                    
         
                   
@@ -76,8 +73,6 @@
         </div>
       </div>
     </div>
-    </div>
-<%@include file="/footer.jsp"%>
-</div>              
+    </div>             
 </body>
 </html>

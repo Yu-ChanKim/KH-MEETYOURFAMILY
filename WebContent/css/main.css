@@ -20,36 +20,80 @@
     }
 
     /*--------------------------------------------  상단 헤더 --------------------------------------------*/
-    header{
-        height: 10%; padding:1px;               
+    #header{
+         text-align: left;
+        position: relative;
+        width: 1000px;
+        margin: 0 auto;
         height: 100px;
-        display: flex;
         list-style-type: none;
-        position: relative;        
+       text-decoration:none;               
     }   
-    header a>h2{ 
+    
+    #header>.header_1 {      
+       position: absolute;
+        display: inline-block;
+        width: 300px;
+        left: -450px;
+        top: -6px; 
+        height: 100px;
+        line-height: 100px;
+        text-align: center;       
+    }
+    #header>.header_1>a{
         font-family: 'Dancing Script', cursive;
-        color: rgb(219, 46, 46);
+       text-decoration:none;
         font-size: 30px;
         font-weight: bold;        
-        float:left;
-        padding-top: 8px;
-        padding-left: 100px;
-        padding-right: 130px;
         box-sizing:border-box;        
-    }
-    header nav{ 
-        width:70%; float:right; margin-left: 80px;
+        color: rgb(219, 46, 46);
+    }   
+
+    #header>.header_2 {       
+        display: inline-block;
+        width : 100%;        
+        text-align: center;
+        height: 100px;
     }
 
-    header nav>ul>li{ 
-        display: inline-block;
-        padding: 15px; 
-        margin-right:30px;
-        padding-right: 30px;
-        margin-top: 6px;
+    #header>.header_2>ul {
+       position: relative;
+       top:-20px;
+        height: 100%;
+        line-height: 10px;        
         
     }
+    #header>.header_2>ul>li {  
+        display: inline-block;
+        margin: 50px 25px 0px 25px;     
+    }
+    #header>.header_2>ul>li>a {
+       text-decoration:none;
+    }      
+    
+    #header>.header_3 {       
+        position: absolute;
+        display: inline-block;
+        width: 200px;
+        left: calc(100% + 50px);
+        text-align: center;
+        height: 50px;
+        top: 25px;
+        line-height: 45px;
+        border: 1px solid rgb(107, 101, 101);                      
+        border-radius: 25px;
+        color:rgb(107, 101, 101);
+              
+    } 
+    
+    #header>.header_3 a  {
+           text-decoration:none;
+           padding-right: 20px;
+    
+    
+    }
+    
+    /*
     header div{      
         position: absolute;
         left: 1500px;
@@ -67,7 +111,7 @@
         text-decoration:none;
         font-size: 1rem;
     }  
-  
+  */
     /*-------------------------------------------- 중간 섹션 --------------------------------------------*/
     
     /*------------------ 첫번째 ------------------*/
@@ -194,7 +238,7 @@
     /*--------------------------------------------  후기글  --------------------------------------------*/
    aside{         
       margin-top: -22px;
-      background-color: rgb(243, 235, 235);
+      background-color: rgb(243, 235, 235) ;
    }
    #aside{
       font-size: 40px;
@@ -237,59 +281,77 @@
 
     /*-------------------------------------------- 하단 푸터 --------------------------------------------*/
    
-    #footer{
-        text-align: center;
-        background-color: #f1f1f1;      
-        line-height: 25px;            
-        height : 440px;
-      
-    }
-    .footer-container ul{
-        list-style-type: none;
-    }
-    .footer-container .footer-sns{
-        margin-right: 30px;
-        display: flex; 
-        justify-content: center;
-    }
-    .footer-container .footer-sns li{
+   #footer {
         position: relative;
-        margin-top: 10px;
-        padding-left: 20px;
-        right: 20px;
-    }
-    .footer-container .footer-link{        
-        right: 40px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-    }
-    .footer-container .footer-link li{
-        padding-left: 35px;
-        justify-content: center;
-    }
-    .footer-container p{
-        padding-left: 5px;
-        position: relative;
-        right:8px
-    }
-    .footer-wrap {
-        font-size: 12px;
+        height: 400px;
+        margin: 0 auto;
+        text-align: center;           
+        background-color: rgba(0,0,0,0.1);
+   }
 
-    }
-    .footer-container .footer-logo{
-        padding-top: 75px;
-        font-size: 25px;
+   #footer>.footer_1 {
+         padding-top: 45px;
+        font-size: 30px;
         font-weight: bold;
         font-family: 'Dancing Script', cursive;
         color:rgb(219, 46, 46);
-        
-    }
-    .footer-container .footer-info {
-        padding-top: 8px;
+   }
+   
+   #footer>.footer_2 {
+         padding-top: 20px;                  
         position: relative;
-        right:28px;
-    }
-    .footer-container .copyright{
-        padding-top: 20px;
-    }
+        text-align:left;
+        display: inline-block;
+        width: 100%;
+        text-align: center;     
+   }
+   #footer>.footer_2>a {
+        text-align: center;     
+         padding: 10px;
+         
+   }
+   
+   #footer>.footer_3 {
+      padding: 20px;
+   }
+   
+   
+   #footer>.footer_3>a {         
+       text-decoration:none;
+        text-align: center;
+        padding: 20px;
+   }   
+   
+   #footer>.footer_4 {
+        padding-top: 25px;
+        line-height: 20px;  
+   }
+   
+  
+  
+   
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

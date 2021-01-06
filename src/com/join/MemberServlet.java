@@ -66,7 +66,7 @@ public class MemberServlet extends HttpServlet {
          
          dao.insertData(dto);
          
-         url=cp+"/main.jsp"; // http:localhost:8080/study 입력시 index.jsp 실행됨
+         url=cp+"main.jsp"; // http:localhost:8080/study 입력시 index.jsp 실행됨
          resp.sendRedirect(url);
          
       }else if(uri.indexOf("login.do")!=-1){
@@ -143,7 +143,7 @@ public class MemberServlet extends HttpServlet {
          String userName =req.getParameter("userName");
          String userAnswer =req.getParameter("userAnswer");
          
-         MemberDTO dto = dao.getReadData(userName);
+         MemberDTO dto = dao.getNameData(userName);
          
          if(dto==null||!dto.getUserAnswer().equals(userAnswer)){
             req.setAttribute("message", "회원정보가 존재하지 않습니다.");
@@ -155,7 +155,7 @@ public class MemberServlet extends HttpServlet {
          
          //1. 세션 값 담기
          CustomInfo info=new CustomInfo();
-
+         
          info.setUserName(dto.getUserName());
          info.setUserAnswer(dto.getUserAnswer());
          
@@ -178,11 +178,11 @@ public class MemberServlet extends HttpServlet {
       }else if(uri.indexOf("searchpw_ok.do")!=-1){//비밀번호 찾기_jsp
          
          String userId=req.getParameter("userId");
-         String userTel=req.getParameter("userTel");
+         String userAnswer=req.getParameter("userAnswer");
          
          MemberDTO dto=dao.getReadData(userId);
          
-         if(dto==null||!dto.getUserTel().equals(userTel)){
+         if(dto==null||!dto.getUserAnswer().equals(userAnswer)){
             req.setAttribute("message", "회원정보가 존재하지 않습니다.");
             
             url="/member/login.jsp";
@@ -194,7 +194,7 @@ public class MemberServlet extends HttpServlet {
          CustomInfo info=new CustomInfo();
          
          info.setUserId(dto.getUserId());
-         info.setUserName(dto.getUserName());
+         info.setUserAnswer(dto.getUserAnswer());
          
          HttpSession session=req.getSession();
          
