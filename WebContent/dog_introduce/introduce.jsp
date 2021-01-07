@@ -29,7 +29,7 @@
                     <br>
                          <img width="600px" height="500px" src="./img/pj2.JPG">
                      <br>
-                         <h2>who's meet family</h2>
+                         <h2>Meet Your Family</h2>
                     <br>
                     <h1>조금이라도 버려지는 강아지가 줄어들기를 바라며</h1>
                     <br>

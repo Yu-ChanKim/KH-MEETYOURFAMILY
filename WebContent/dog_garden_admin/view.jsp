@@ -11,30 +11,33 @@
 </head>
 <body>
 <div id='admin_garden_view'>
+	<div id='box1'></div>
    <h2>강아지 상세정보</h2>
+   <div id='box2'></div>
    <form class='view' method='post' name='frm_admin_garden'>
       <label>serialNo</label>
       <input type='text' name='serial' size='10' disabled value='${vo.dog_serial }'/><br>
       <label>분류</label>
-      <input type='text' name='group'size='12' disabled value='${vo.dog_group }'/><br>
+      <input type='text' name='group'size='10' disabled value='${vo.dog_group }'/><br>
       <label>이름</label>
-      <input type='text' name='name' size='12' disabled value='${vo.dog_name }'/><br>
+      <input type='text' name='name' size='10' disabled value='${vo.dog_name }'/><br>
       <label>견종</label>
-      <input type='text' name='breed' size='12' disabled value='${vo.dog_breed }'/><br>
+      <input type='text' name='breed' size='10' disabled value='${vo.dog_breed }'/><br>
       <label>성별</label>
-      <input type='text' name='gender' size='35' disabled value='${vo.dog_gender }'/><br>
+      <input type='text' name='gender' size='10' disabled value='${vo.dog_gender }'/><br>
       <label>나이</label>
-      <input type='text' name='age' size='15' disabled value='${vo.dog_age }'/><br>
+      <input type='text' name='age' size='10' disabled value='${vo.dog_age }'/><br>
       <label>무게</label>
-      <input type='text' name='weight' size='6' disabled value='${vo.dog_weight }'/><br>                  
+      <input type='text' name='weight' size='10' disabled value='${vo.dog_weight }'/><br>                  
       <label>MBTI</label>
-      <input type='text' name='mbti' size='60' disabled value='${vo.dog_mbti }'/><br>
+      <input type='text' name='mbti' size='10' disabled value='${vo.dog_mbti }'/><br>
       <label>MBTI 성격</label>
-      <input type='text' name='mbti_char' size='60' disabled value='${vo.dog_mbti_char }'/><br>
-      <label>스토리</label><br>
-      <p>${vo.dog_story }</p>
+      <input type='text' name='mbti_char' size='10' disabled value='${vo.dog_mbti_char }'/><br>
+      <label id='story'>스토리</label>
 
-      <hr>
+      <p>${vo.dog_story }</p>
+		
+	<div id='box2'></div>
    
       <div class='btns'>
          <input type='button' value='수정' id='btnModify'/>
