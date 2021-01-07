@@ -53,7 +53,7 @@ body {
     background-color: lightcyan;
 }
 
-#myf_detail .detail table input {
+#myf_detail .detail table input[type="text"] {
     box-sizing: border-box;
     width: calc(100% - 20px);
     height: 30px;
@@ -76,14 +76,16 @@ body {
     padding : 20px;
 }
 
-#myf_detail .detail table input:focus {
+#myf_detail .detail table input[type="text"]:focus {
+    outline-color: lavender;
+}
+
+#myf_detail .detail table input[type="file"]:focus {
     outline: none;
-    border: 3px solid lavender;
 }
 
 #myf_detail .detail table textarea:focus {
-    outline: none;
-    border: 3px solid lavender;
+    outline-color: lavender;
 }
 
 #myf_detail .btns {

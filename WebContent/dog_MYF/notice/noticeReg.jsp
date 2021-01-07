@@ -41,20 +41,17 @@
 	                    	<input type="text" name="title" placeholder="제목을 입력해주라."/>
 	                    </td>
 					</tr>
+					<tr>
+						<td colspan="1" class="box1">작성자</td>
+						<td colspan="3" class="box2">
+							${currentUser}
+						</td>
+					</tr>
 	                <tr>
-	                	<td colspan="1" class="box1">첨부파일</td>
-	                	<td colspan="1" class="box2">
-	                        <c:forTokens var="fileName" items="${n.files}" delims="," varStatus="st">
-	                        	<a href="${fileName}">${fileName}</a>
-	                        	<c:if test="${!st.last}">
-	                        		/ 
-	                        	</c:if>
-	                        </c:forTokens>
-	                    </td>
-	                    <td colspan="1" class="box1">Admin</td>
-	                    <td colspan="1" class="box2">
-	                        관리자
-	                	</td>
+						<td colspan="1" class="box1">첨부파일</td>
+						<td colspan="3" class="box2">
+							<input type="file">
+						</td>
 	                </tr>
 					<tr>
 						<td colspan="4" class="box2">

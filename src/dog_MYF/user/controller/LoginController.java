@@ -17,23 +17,29 @@ public class LoginController extends HttpServlet
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
-
-		String btn = req.getParameter("btn");
-		String id = req.getParameter("id");
-		String pw = req.getParameter("pw");
 		String currentUser = "log-off";
-		if(btn != null && btn.equals("login") && id != null && pw != null)
+
+		String login = req.getParameter("login");
+		if(login != null)
 		{
-			UserService service = new UserService();
-			boolean result = service.login(id, pw);
-			if(result)
+			String id = req.getParameter("id");
+			String pw = req.getParameter("pw");
+			if(id != null && pw != null)
 			{
-				HttpSession myfSession = req.getSession(true);
-				myfSession.setAttribute("id", id);
-				currentUser = (String)myfSession.getAttribute("id");
+				UserService service = new UserService();
+				boolean result = service.login(id, pw);
+				if(result)
+				{
+					HttpSession myfSession = req.getSession(true);
+					myfSession.setAttribute("id", id);
+					currentUser = (String)myfSession.getAttribute("id");
+					req.setAttribute("currentUser", currentUser);
+				}
 			}
 		}
-		else if(btn != null && btn.equals("logout"))
+		
+		String logout = req.getParameter("logout");
+		if(logout != null)
 		{
 			HttpSession myfSession = req.getSession(false);
 			if(myfSession != null)
@@ -41,21 +47,8 @@ public class LoginController extends HttpServlet
 				myfSession.invalidate();
 			}
 		}
-		else
-		{
-			HttpSession myfSession = req.getSession(false);
-			if(myfSession != null)
-			{
-				String currentUser_ = (String)myfSession.getAttribute("id");
-				if (currentUser_ != null)
-				{
-					currentUser = currentUser_;
-				}
-			}
-		}
 		
 		req.setAttribute("currentUser", currentUser);
-//		resp.sendRedirect("/dog_MYF/meetyourfamily.jsp");
 		
 		req.getRequestDispatcher("/dog_MYF/meetyourfamily.jsp").forward(req, resp);
 	}
