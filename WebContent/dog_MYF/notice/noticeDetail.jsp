@@ -92,6 +92,9 @@
             <c:if test="${currentUser == 'admin'}">
 				<button type="submit">수정</button>
 				<button type="submit" form="deleteId" name="deleteId" value="${n.id}">삭제</button>
+<%--
+				<button type="submit" name="deleteId" value="${n.id}" onClick="location.href='/dog_MYF/noticeList'">삭제</button>
+--%>
 			</c:if>
 <%-----------%>
         </div>

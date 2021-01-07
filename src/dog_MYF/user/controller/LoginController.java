@@ -16,48 +16,83 @@ public class LoginController extends HttpServlet
 {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-	{
+	{	
+		
 		String currentUser = "log-off";
-
+		String currentUser_ = req.getParameter("currentUser");
+		if(currentUser_ != null)
+		{
+			currentUser = currentUser_;
+		}
+		
+		/*
+		 * CurrentUser
+		 */
+		
 		String login = req.getParameter("login");
-		if(login != null)
+		String logout = req.getParameter("logout");
+		
+		if (login == null && logout == null)
+		{
+			HttpSession myfSession = req.getSession(false);
+			if (myfSession != null)
+			{
+				currentUser = (String) myfSession.getAttribute("id");
+			}
+		}
+		
+
+		/*
+		 * LOGIN
+		 */
+
+		if (login != null)
 		{
 			String id = req.getParameter("id");
 			String pw = req.getParameter("pw");
-			if(id != null && pw != null)
+			if (id != null && pw != null)
 			{
 				UserService service = new UserService();
 				boolean result = service.login(id, pw);
-				if(result)
+				if (result)
 				{
 					HttpSession myfSession = req.getSession(true);
 					myfSession.setAttribute("id", id);
-					currentUser = (String)myfSession.getAttribute("id");
-					req.setAttribute("currentUser", currentUser);
+					currentUser = (String) myfSession.getAttribute("id");
 				}
 			}
 		}
-		
-		String logout = req.getParameter("logout");
-		if(logout != null)
+
+		/*
+		 * LOGOUT
+		 */
+
+		if (logout != null)
 		{
 			HttpSession myfSession = req.getSession(false);
-			if(myfSession != null)
+			if (myfSession != null)
 			{
 				myfSession.invalidate();
+				currentUser = "log-off";
 			}
+		}
+
+		/*
+		 * 
+		 */
+		if(currentUser == null)
+		{
+			currentUser = "log-off";
 		}
 		
 		req.setAttribute("currentUser", currentUser);
-		
-		req.getRequestDispatcher("/dog_MYF/meetyourfamily.jsp").forward(req, resp);
+
+		req.getRequestDispatcher("/dog_MYF/meetyourfamily.jsp").forward(req, resp);		
 	}
 
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
 		doPost(req, resp);
 	}
 }
-
