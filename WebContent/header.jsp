@@ -12,7 +12,7 @@
             <li><a href="/garden.do?siba=page&dname=&group=전체">마당</a></li>
             <li><a href="/main.jsp?inc=/dog_test/testMain.jsp">who's my family</a></li>
             <li><a href="/dog_MYF/login">meet your family</a></li>
-            <li><a href="/main.jsp?inc=./member/updated.jsp">마이페이지</a></li>
+            <li><a href="/main.jsp?inc=./member/mypage.jsp">마이페이지</a></li>
             <li><a href="/dog_garden?admin=select">강아지 관리자 페이지</a></li>
        </ul>
     </nav>

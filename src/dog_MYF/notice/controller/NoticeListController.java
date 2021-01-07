@@ -30,17 +30,24 @@ public class NoticeListController extends HttpServlet
 		/*
 		 * SESSION : TRUE/FALSE
 		 */
+		String currentUser = "log-off";
+		String currentUser_ = req.getParameter("currentUser");
+		if(currentUser_ != null)
+		{
+			currentUser = currentUser_;
+		}
+
 		
 		boolean isLogin = false;
 		HttpSession myfSession = req.getSession(false);
 		if(myfSession != null)
 		{
-			req.setAttribute("currentUser", (String)myfSession.getAttribute("id"));
+			currentUser = (String)myfSession.getAttribute("id");
 		}
-		else
-		{
-			req.setAttribute("currentUser", "log-off");
-		}
+//		else
+//		{
+//			req.setAttribute("currentUser", "log-off");
+//		}
 		
 		/*
 		 * VALUE : INIT/POST
@@ -94,8 +101,6 @@ public class NoticeListController extends HttpServlet
 			Notice notice = service.getNotice(Integer.parseInt(detailPage));
 			req.setAttribute("n", notice);
 			viewPage = "noticeDetail";
-			
-			System.out.println(notice.getRegdate());
 		}
 		
 		
@@ -154,6 +159,11 @@ public class NoticeListController extends HttpServlet
 		/*
 		 * ACTION : viewPage
 		 */
+		if(currentUser == null)
+		{
+			currentUser = "log-off";
+		}
+		req.setAttribute("currentUser", currentUser);
 		
 		NoticeService service = new NoticeService();
 		List<NoticeView> list = service.getNoticeList(category, keyword, pageNo);
@@ -169,7 +179,6 @@ public class NoticeListController extends HttpServlet
 		{	
 			resp.sendRedirect("/dog_MYF/" + viewPage);
 		}
-	
 	}
 	
 	@Override
