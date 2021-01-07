@@ -7,6 +7,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
@@ -53,8 +54,13 @@
                 <tr>
                     <td colspan="1" class="box1">첨부파일</td>
                     <td colspan="1" class="box2 contcontent_ent">
-                        <c:forTokens var="fileName" items="${n.files}" delims="," varStatus="st">
-                        	<a href="${fileName}">${fileName}</a>
+                        <c:forTokens var="fileName" items="${n.files}" delims="/" varStatus="st">
+                        	<a href="/dog_MYF/notice/upload/${fn:split(fileName,',')[0]}", download="${fn:split(fileName,',')[1]}">
+								${fn:split(fileName,',')[1]}
+                        	</a>
+<%--
+                        	<img src="/dog_MYF/notice/upload/${fileName}">
+--%>
                         	<c:if test="${!st.last}">
                         		/ 
                         	</c:if>

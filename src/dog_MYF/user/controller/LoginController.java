@@ -16,8 +16,7 @@ public class LoginController extends HttpServlet
 {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-	{	
-		
+	{
 		String currentUser = "log-off";
 		String currentUser_ = req.getParameter("currentUser");
 		if(currentUser_ != null)

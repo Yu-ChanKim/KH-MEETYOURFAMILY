@@ -33,7 +33,7 @@
         <br>현재 접속자(test) : ${currentUser}
         
         <div class="detail">
-       	    <form id="register" action="/dog_MYF/noticeList" method="post">
+       	    <form id="register" action="/dog_MYF/noticeList" method="post" enctype="multipart/form-data">
 	            <table>
 					<tr>
 	                	<td colspan="1" class="box1">제목</td>
@@ -50,7 +50,7 @@
 	                <tr>
 						<td colspan="1" class="box1">첨부파일</td>
 						<td colspan="3" class="box2">
-							<input type="file">
+							<input type="file" name="file" multiple>
 						</td>
 	                </tr>
 					<tr>

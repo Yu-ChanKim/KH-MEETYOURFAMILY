@@ -35,20 +35,20 @@ public class NoticeService
 	{
 		int result = 0;
 	
-		String sql = "INSERT INTO NOTICE_TB (TITLE, WRITER, CONTENT) VALUES(?, ?, ?)";
-//		String sql = "INSERT INTO NOTICE_TB (TITLE, WRITER, CONTENT, REGDATE) VALUES(?, ?, ?, SYSTIMESTAMP)";
+		String sql = "INSERT INTO NOTICE_TB (TITLE, WRITER, CONTENT, FILES) VALUES(?, ?, ?, ?)";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, notice.getTitle());
 			pstmt.setString(2, notice.getWriter());
 			pstmt.setString(3, notice.getContent());
+			pstmt.setString(4, notice.getFiles());
 			
 			result = pstmt.executeUpdate();
 		}
@@ -122,8 +122,8 @@ public class NoticeService
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, "%" + keyword + "%");
@@ -194,8 +194,8 @@ public class NoticeService
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, "%" + keyword + "%");
@@ -241,8 +241,8 @@ public class NoticeService
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setInt(1, id);
@@ -306,8 +306,8 @@ public class NoticeService
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setInt(1, id);
@@ -374,8 +374,8 @@ public class NoticeService
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setInt(1, id);
@@ -436,8 +436,8 @@ public class NoticeService
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			stmt = conn.createStatement();
 
 			result = stmt.executeUpdate(sql);
