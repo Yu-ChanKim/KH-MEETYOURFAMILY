@@ -161,70 +161,9 @@ public class NoticeController extends HttpServlet
 			if(register != null)
 			{
 				String title = req.getParameter("title");
-				
-				/*
-				 * FILE UPLOAD
-				 */
+				String content = req.getParameter("content");
 				NoticeFileUpload upload = new NoticeFileUpload(req);
 				String files = upload.getFileNames();
-//				Collection<Part> fileParts = req.getParts();
-//				String fileNames = "";
-//				for(Part p : fileParts)
-//				{
-//					
-//					if(!p.getName().equals("file")) continue;
-//					if(p.getSize() == 0) continue;
-//	
-//					Part filePart = p;
-//					
-//					UUID uuid = UUID.randomUUID();
-//					fileNames += uuid.toString() + "_" + filePart.getSubmittedFileName();
-//					fileNames += ",";
-//					fileNames += filePart.getSubmittedFileName();
-//					fileNames += ",";
-//					
-//					String realPath = req.getServletContext().getRealPath("/");
-//					String path = realPath.substring(0, realPath.indexOf("\\.metadata\\"));
-//					path += "\\KH-MEETYOURFAMILY\\WebContent\\dog_MYF\\notice\\upload";
-//					path += File.separator;
-//					path += filePart.getSubmittedFileName();
-//		
-//					System.out.println(path);
-//					
-//					InputStream fileIS = null;
-//					FileOutputStream fileOS = null;
-//					try
-//					{
-//						fileIS = filePart.getInputStream();
-//						fileOS = new FileOutputStream(path);
-//						byte[] bf = new byte[1024];
-//						int bfRead;
-//						for(;;)
-//						{
-//							if((bfRead = fileIS.read(bf)) == -1)
-//							{
-//								break;
-//							}
-//							fileOS.write(bf, 0, bfRead);
-//						}
-//					}
-//					catch (IOException e)
-//					{
-//						e.printStackTrace();
-//					}
-//					finally
-//					{
-//						if (fileIS != null)		try { fileIS.close();	}	catch (Exception e) {}
-//						if (fileOS != null)		try { fileOS.close();	}	catch (Exception e) {}
-//					}
-//				}
-//				fileNames = fileNames.substring(0, fileNames.length()-1);
-				
-				/*
-				 * 
-				 */
-				
-				String content = req.getParameter("content");
 				
 				Notice notice = new Notice();
 				notice.setTitle(title);

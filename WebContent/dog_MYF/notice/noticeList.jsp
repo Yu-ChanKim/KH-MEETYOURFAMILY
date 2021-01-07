@@ -31,9 +31,6 @@
 		<div class="btns">
 <%-- ADMIN --%>
 			<c:if test="${currentUser == 'admin'}">		
-<%--
-				<button class="btn" type="submit" name="regPage" value="regPage" onClick="location.href='/dog_MYF/noticeList'">글쓰기</button>
---%>
 				<form id="regPage" action="/dog_MYF/noticeList" method="post"></form>				
 				<button class="btn" type="submit" form="regPage" name="regPage" value="regPage">글쓰기</button>
 				<button class="btn" type="submit" name="deleteIds" form="deleteIds" value="deleteIds">삭제하기</button>
