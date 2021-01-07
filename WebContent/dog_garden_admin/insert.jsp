@@ -35,10 +35,10 @@
       <label id='story'>스토리</label><br>
       <textarea rows="20" cols="85" name ='story' required></textarea><br>
       <label></label>
-      <input type='file' name='dog_photo1' id='btnPhoto1'/> <!-- 이벤트 처리를 위해 id 생성 -->
-      <input type='file' name='dog_photo2' id='btnPhoto2'/>
-      <input type='file' name='dog_photo3' id='btnPhoto3'/>
-      <input type='file' name='dog_photo4' id='btnPhoto4'/><br>
+      <input type='file' name='dog_photo1' id='btnPhoto1' required/> <!-- 이벤트 처리를 위해 id 생성 -->
+      <input type='file' name='dog_photo2' id='btnPhoto2' required/>
+      <input type='file' name='dog_photo3' id='btnPhoto3' required/>
+      <input type='file' name='dog_photo4' id='btnPhoto4' required/><br>
       <img src='http://placehold.it/200x140' id='dog_photo1' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
       <img src='http://placehold.it/200x140' id='dog_photo2' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
       <img src='http://placehold.it/200x140' id='dog_photo3' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->

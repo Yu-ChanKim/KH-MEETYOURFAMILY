@@ -1,22 +1,22 @@
 @charset "UTF-8";
 
     /*-------------------------------------------- 메인 --------------------------------------------*/
-    #article2>div h2{
+    #introduce>div h2{
         margin-top: 60px;
         color:black;
         font-size: 40px;
         font-weight: bold;
     }
-    #article2>div{
+    #introduce>div{
         margin:30px;        
         height: auto;
         text-align: center;
     }
 
-    #article2 #p1{
+    #introduce #p1{
         padding-top: 70px;
     }
-    #article2 #p3,#p4,#p6,#p7{
+    #introduce #p3,#p4,#p6,#p7{
         padding-top: 30px;
     }
     /*-------------------------------------------- 하단 푸터 --------------------------------------------*/

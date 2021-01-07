@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +44,7 @@
                   </h2>
                   <li>어떤 강아지와 잘 맞을지 궁금할땐, 견종 매칭테스트</li>
                   <div id='testpage'>
-                     <li><a href="main.jsp?inc=/dog_test/testMain.jsp">검사하러 가기</a></li>
+                     <a class='button' href="main.jsp?inc=/dog_test/testMain.jsp">검사하러 가기</a>
                   </div>
                </div>
                <div id='article1_div2'>
@@ -57,7 +57,7 @@
             <!------------------ 두번째 ------------------>
             <article id="article2">
                <div>
-                  <h2>Meet Your Family</h2>
+                  <img src="/img/myflogo.png" width='90px' height='90px'><h2>Meet Your Family</h2>
                   <p id='p1'>오늘날 전 세계적으로 700억여 마리의 동물들이 인간에 의해</p>
                   <p>태어나고 죽음에 이르고 있습니다.</p>
                   <p id='p3'>우리가 함께 사는 세상에는 따스한 관심이 필요한 곳이 너무나도 많습니다.</p>
@@ -71,7 +71,7 @@
                </div>
             </article>
             <!------------------ 세번째 ------------------>
-            <article id="article3">
+			<article id="article3">
                <div id="love">
                   <div>
                      <img src="/img/love.png" width='500px' height='500px'>
@@ -88,7 +88,7 @@
                      <p>동물실험으로 생명이 위태로운,</p>
                      <p>학대로 인해 몸과 마음에 큰 상처를 입은,</p>
                      <p>사고로 인해 장애를 갖게 되어버린,</p>
-                     <br>
+                   
                      <p>지금 당장 몸과 마음에 치료가 필요한 가엾고</p>
                      <p>여린 생명들을 위하여 Meet Your Family가 함께합니다.</p>
                   </div>
@@ -110,8 +110,9 @@
                   </div>
                   <div id="together2">
                      <p>사랑스러운 당신의 가족을 찾으세요.</p>
-                     <p>힘든 일을 겪었음에도 아이들은 순수한 눈동자와 미소를 잃지</p>
-                     <p>않고 넘치는 정을 나누어줄 새 동반자를 찾고 있습니다.</p>
+                     <p>힘든 일을 겪었음에도 아이들은 순수한 눈동자와</p>
+                     <p>미소를 잃지 않고 넘치는 정을 나누어 줄</p>
+                     <p>새 동반자를 찾고 있습니다.</p>
                      <p>아이들에게 따뜻한 손길을 내어주세요!</p>
                   </div>
                   <div>

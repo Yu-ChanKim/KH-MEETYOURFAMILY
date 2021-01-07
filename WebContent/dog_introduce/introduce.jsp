@@ -9,10 +9,9 @@
     </head>
 <body>
 
-        <div class="container"></div>
-        <!--main-->
-        <section>
-            <article id="article2">
+        
+
+            <article id="introduce">
                 <div>
                     <br>
                     <h2>사업개요</h2>
@@ -38,8 +37,8 @@
 
                 </div>
             </article>   
-             </section>  
-        <!-- <div class="scroll-top"><button class="scroll-top-btn" type="button" data-state="true"></button></div> -->
+
+
     
     
 
