@@ -22,11 +22,11 @@
       <label>이름</label>
       <input type='text' name='name' size='10' required value='${vo.dog_name }'/><br>
       <label>견종</label>
-      <input type='text' name='breed' size='10' value='${vo.dog_breed }'/><br>
+      <input type='text' name='breed' size='10' required value='${vo.dog_breed }'/><br>
       <label>성별</label>
-      <input type='email' name='gender' size='10' value='${vo.dog_gender }'/><br>
+      <input type='text' name='gender' size='10' required value='${vo.dog_gender }'/><br>
       <label>나이</label>
-      <input type='text' name='age' size='10' value='${vo.dog_age }'/><br>
+      <input type='text' name='age' size='10' required value='${vo.dog_age }'/><br>
       <label>무게</label>
       <input type='text' name='weight' size='10' required value='${vo.dog_weight }'/><br>                  
       <label>MBTI</label>
@@ -37,10 +37,10 @@
       <textarea rows="20" cols="85" name ='story' required>'${vo.dog_story }'</textarea><br>
             
       <label></label>
-      <input type='file' name='dog_photo1' id='btnPhoto1'/>
-      <input type='file' name='dog_photo2' id='btnPhoto2'/>
-      <input type='file' name='dog_photo3' id='btnPhoto3'/>
-      <input type='file' name='dog_photo4' id='btnPhoto4'/><br>
+      <input type='file' name='dog_photo1' id='btnPhoto1' required/>
+      <input type='file' name='dog_photo2' id='btnPhoto2' required/>
+      <input type='file' name='dog_photo3' id='btnPhoto3' required/>
+      <input type='file' name='dog_photo4' id='btnPhoto4' required/><br>
       <img src='http://placehold.it/200x140' id='dog_photo1' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
       <img src='http://placehold.it/200x140' id='dog_photo2' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->
       <img src='http://placehold.it/200x140' id='dog_photo3' width='200px' height='140px'/> <!-- 이미지 적용을 위해 id 생성 -->

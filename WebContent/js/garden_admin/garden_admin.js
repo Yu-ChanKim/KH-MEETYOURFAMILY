@@ -36,37 +36,46 @@ var admin = function() {
          var checkFlag = true;
 
          if (!frm.serial.checkValidity()) {
-            alert('SerialNo');
+            alert('SerialNo를 입력하세요.');
             checkFlag = false;
          } else if (!frm.group.checkValidity()) {
-            alert('분류')
+            alert('분류를 입력하세요.')
             checkFlag = false;
          } else if (!frm.name.checkValidity()) {
-            alert('이름')
+            alert('이름을 입력하세요.')
             checkFlag = false;
          } else if (!frm.breed.checkValidity()) {
-            alert('견종')
+            alert('견종을 입력하세요.')
             checkFlag = false;
          } else if (!frm.gender.checkValidity()) {
-            alert('성별')
+            alert('성별을 입력하세요.')
             checkFlag = false;
          } else if (!frm.age.checkValidity()) {
-            alert('나이')
+            alert('나이를 입력하세요.')
             checkFlag = false;
          } else if (!frm.weight.checkValidity()) {
-            alert('무게')
+            alert('무게를 입력하세요.')
             checkFlag = false;
          } else if (!frm.mbti.checkValidity()) {
-            alert('MBTI')
+            alert('MBTI를 입력하세요.')
             checkFlag = false;
          } else if (!frm.mbti_char.checkValidity()) {
-            alert('MBTI성격')
+            alert('MBTI성격을 입력하세요.')
             checkFlag = false;
          } else if (!frm.story.checkValidity()) {
-            alert('스토리')
+            alert('스토리를 입력하세요.')
             checkFlag = false;
          } else if (!frm.dog_photo1.checkValidity()) {
-            alert('사진')
+            alert('사진을 선택하세요.')
+            checkFlag = false;
+         } else if (!frm.dog_photo2.checkValidity()) {
+            alert('사진을 선택하세요.')
+            checkFlag = false;
+         } else if (!frm.dog_photo3.checkValidity()) {
+            alert('사진을 선택하세요.')
+            checkFlag = false;
+         } else if (!frm.dog_photo4.checkValidity()) {
+            alert('사진을 선택하세요.')
             checkFlag = false;
          }
 
@@ -172,9 +181,55 @@ var admin = function() {
       btnUpdate.onclick = function() {
          var frm = document.frm_admin_garden;
          frm.serial.disabled = false;
+		 var checkFlag = true;
+
+
+         if(!frm.group.checkValidity()) {
+            alert('분류를 입력하세요.')
+            checkFlag = false;
+         } else if (!frm.name.checkValidity()) {
+            alert('이름을 입력하세요.')
+            checkFlag = false;
+         } else if (!frm.breed.checkValidity()) {
+            alert('견종을 입력하세요.')
+            checkFlag = false;
+         } else if (!frm.gender.checkValidity()) {
+            alert('성별을 입력하세요.')
+            checkFlag = false;
+         } else if (!frm.age.checkValidity()) {
+            alert('나이를 입력하세요.')
+            checkFlag = false;
+         } else if (!frm.weight.checkValidity()) {
+            alert('무게를 입력하세요.')
+            checkFlag = false;
+         } else if (!frm.mbti.checkValidity()) {
+            alert('MBTI를 입력하세요.')
+            checkFlag = false;
+         } else if (!frm.mbti_char.checkValidity()) {
+            alert('MBTI성격을 입력하세요.')
+            checkFlag = false;
+         } else if (!frm.story.checkValidity()) {
+            alert('스토리를 입력하세요.')
+            checkFlag = false;
+         } else if (!frm.dog_photo1.checkValidity()) {
+            alert('사진을 선택하세요.')
+            checkFlag = false;
+         } else if (!frm.dog_photo2.checkValidity()) {
+            alert('사진을 선택하세요.')
+            checkFlag = false;
+         } else if (!frm.dog_photo3.checkValidity()) {
+            alert('사진을 선택하세요.')
+            checkFlag = false;
+         } else if (!frm.dog_photo4.checkValidity()) {
+            alert('사진을 선택하세요.')
+            checkFlag = false;
+         }
+
+		 if(checkFlag) {			
          frm.enctype = "multipart/form-data";
          frm.action = "dog_garden?admin=update";
          frm.submit();
+		 }
       }
    }
 }

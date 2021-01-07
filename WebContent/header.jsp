@@ -1,18 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>    
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
  
 <header id='header'>
    <div class="header_1">
-       <a href="/main.jsp">Meet Your Family</a>
+       <a href="/main.jsp"><img src="/img/myflogo.png" width='70px' height='70px'><span>Meet Your Family</span></a>
     </div>
     <nav class="header_2">             
        <ul>                    
           <li><a href="/main.jsp?inc=/dog_introduce/introduce.jsp">사업소개</a></li>
             <li><a href="/garden.do?siba=page&dname=&group=전체">마당</a></li>
-           <c:if test="${not empty sessionScope.customInfo.userId && sessionScope.customInfo.userId == 'admin'}">
-            <li><a href="/dog_garden?admin=select">마당 관리</a></li>
-           </c:if> 
+            <c:if test="${not empty sessionScope.customInfo.userId && sessionScope.customInfo.userId == 'admin'}">           
+               <li><a href="/dog_garden?admin=select">마당 관리</a></li>                              
+            </c:if>                 
             <li><a href="/main.jsp?inc=/dog_test/testMain.jsp">who's my family</a></li>
             <li><a href="/dog_MYF/login">meet your family</a></li>
             <li><a href="/main.jsp?inc=./member/mypage.jsp">마이페이지</a></li>
