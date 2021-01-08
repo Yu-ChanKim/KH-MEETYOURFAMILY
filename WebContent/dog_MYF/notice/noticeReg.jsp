@@ -71,8 +71,8 @@
         </div>      	
         
         <div class="btns">
-            <button onClick="location.href='/dog_MYF/noticeList'">목록</button>
-            <button type="submit" form="register" name="register" value="register">등록</button>
+            <button class="detailBtn" onClick="location.href='/dog_MYF/noticeList'">목록</button>
+            <button class="detailBtn" type="submit" form="register" name="register" value="register">등록</button>
         </div>
 
     </div>

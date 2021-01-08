@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import dog_MYF.notice.entity.Comment;
 import dog_MYF.notice.entity.Notice;
 import dog_MYF.notice.entity.NoticeView;
 import dog_MYF.notice.service.NoticeService;
@@ -59,7 +60,7 @@ public class NoticeController extends HttpServlet
 				adminLogin = true;
 			}
 		}
-		else
+		if(req.getAttribute("currentUser") == null)
 		{
 			req.setAttribute("currentUser", "log-off");
 		}
@@ -103,6 +104,8 @@ public class NoticeController extends HttpServlet
 			NoticeService service = new NoticeService();
 			Notice notice = service.getNotice(Integer.parseInt(detailPage));
 			req.setAttribute("n", notice);
+			List<Comment> cList = service.getCommentList(Integer.parseInt(detailPage));
+			req.setAttribute("cList", cList);
 			viewPage = "noticeDetail";
 		}
 		
@@ -162,8 +165,8 @@ public class NoticeController extends HttpServlet
 			{
 				String title = req.getParameter("title");
 				String content = req.getParameter("content");
-				NoticeFileUpload upload = new NoticeFileUpload(req);
-				String files = upload.getFileNames();
+				NoticeFileUpload fileUpload = new NoticeFileUpload(req);
+				String files = fileUpload.getFileNames();
 				
 				Notice notice = new Notice();
 				notice.setTitle(title);
@@ -175,6 +178,39 @@ public class NoticeController extends HttpServlet
 				service.insertNotice(notice);
 				
 				isForward = false;
+			}
+		}
+		
+		
+		/*
+		 * ACTION : comment register
+		 */
+		if(generalLogin)
+		{
+			String cRegister = null; 
+			String cRegister_ = req.getParameter("cRegister");
+			if(cRegister_ != null)
+			{
+				cRegister = cRegister_;
+				String content = req.getParameter("comment");
+//				int noticeId = Integer.parseInt(req.getParameter("n.id"));
+				int noticeId = Integer.parseInt(cRegister);
+				
+				Comment comment = new Comment();
+				comment.setWriter((String)myfSession.getAttribute("id"));
+				comment.setContent(content);
+				comment.setNoticeId(noticeId);
+				
+				NoticeService service = new NoticeService();
+				service.insertComment(comment);
+				
+				Notice notice = service.getNotice(Integer.parseInt(cRegister));
+				req.setAttribute("n", notice);
+				List<Comment> cList = service.getCommentList(Integer.parseInt(cRegister));
+				req.setAttribute("cList", cList);
+				
+				req.setAttribute("cRegister", null);
+				viewPage = "noticeDetail";
 			}
 		}
 

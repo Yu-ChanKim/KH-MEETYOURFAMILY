@@ -1,4 +1,3 @@
-<%@ page import="dog_MYF.notice.entity.Notice"%>
 <%@ page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
