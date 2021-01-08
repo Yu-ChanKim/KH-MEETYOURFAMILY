@@ -35,7 +35,8 @@
 		<br>현재 접속자(test) : ${currentUser}
 		
         <div class="detail">
-        	<form id="comment" action="/dog_MYF/noticeList" method="post">
+        	<form id="comment" action="/dog_MYF/noticeComment" method="post">
+        		<input name="detailPage" type="hidden" value='${param.detailPage}'>
 	            <table>
 					<tr>
 	                	<td colspan="1" class="box1">제목</td>
@@ -79,7 +80,7 @@
 									<p>${cL.content}</p>
 <%-- ADMIN OR GENERAL --%>
 									<c:if test="${currentUser == cL.writer or currentUser == 'admin'}">
-										<button class="detailBtn" >삭제</button>
+										<button type="submit" form="comment" class="detailBtn" name="deleteComment" value="${cL.id}">삭제</button>
 									</c:if>
 <%-----------%>
 								</div>
@@ -111,7 +112,6 @@
             <button class="detailBtn" onClick="location.href='/dog_MYF/noticeList'">목록</button>
 <%-- ADMIN --%>
             <c:if test="${currentUser == 'admin'}">
-				<button class="detailBtn" type="submit">수정</button>
 				<button class="detailBtn" type="submit" form="deleteId" name="deleteId" value="${n.id}">삭제</button>
 			</c:if>
 <%-----------%>

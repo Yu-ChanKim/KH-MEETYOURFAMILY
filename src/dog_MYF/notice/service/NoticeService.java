@@ -171,6 +171,44 @@ public class NoticeService
 		return list;
 	}
 	
+	public int deleteComment(int id)
+	{
+		int result = 0;
+		
+		String sql = "DELETE NOTICE_COMMENT_TB WHERE ID IN ("+ id +")";
+		
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try
+		{
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
+			stmt = conn.createStatement();
+
+			result = stmt.executeUpdate(sql);
+		}
+		catch (ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			if (stmt != null)	try { stmt.close();}	catch (Exception e) {}
+			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
+		}
+		
+		return result;
+	}
+	
 	
 	public int insertComment(Comment comment)
 	{

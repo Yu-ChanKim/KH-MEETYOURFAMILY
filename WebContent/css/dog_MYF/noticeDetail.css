@@ -52,7 +52,7 @@ body {
 }
 
 #myf_detail .detail table .commentInput {
-    margin: 20px 0px 0px 0px;
+    margin: 20px 0px 10px 0px;
     width: 100%;
     height: 80px;
 }
