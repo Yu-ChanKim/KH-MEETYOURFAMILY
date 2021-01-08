@@ -46,7 +46,6 @@ $.mbti_calc = function(answer_type) {
 
         $(".mbti_question").attr("src", "img/img_mbti/mbti_test_Q_" + count + ".png");
 
-        $("#header").html("count:"+count+" E:"+mbti.E+" I:"+mbti.I+" S:"+mbti.S+" N:"+mbti.N+" T:"+mbti.T+" F:"+mbti.F+" J:"+mbti.J+" P:"+mbti.P);
     } else {
         $.mbti_result();
     }
@@ -62,5 +61,5 @@ $.mbti_result = function () {
     $(".mbti_go").show();
     $(".mbti_question").attr("src", "img/img_mbti/mbti_test_" + mbtiResult.join("") + ".png");
 
-    $("#header").html("mbti_type:"+mbtiResult.join(""));
 }
+
