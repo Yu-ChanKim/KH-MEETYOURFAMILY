@@ -106,6 +106,10 @@ public class NoticeListController extends HttpServlet
 				myfSession.setAttribute("detailPage", detailPage);
 			}
 			NoticeService service = new NoticeService();
+			if(!adminLogin)
+			{
+				service.updateNoticeHit(Integer.parseInt(detailPage));
+			}
 			Notice notice = service.getNotice(Integer.parseInt(detailPage));
 			req.setAttribute("n", notice);
 			List<Comment> cList = service.getCommentList(Integer.parseInt(detailPage));
@@ -189,41 +193,10 @@ public class NoticeListController extends HttpServlet
 		}
 		
 		
-//		/*
-//		 * ACTION : comment register
-//		 */
-//		
-//		if(generalLogin)
-//		{
-//			String cRegister = null; 
-//			String cRegister_ = req.getParameter("cRegister");
-//			if(cRegister_ != null)
-//			{
-//				cRegister = cRegister_;
-//				
-//				String content = req.getParameter("comment");
-////				String content = (String)req.getAttribute("comment");
-////				int noticeId = Integer.parseInt(req.getParameter("n.id"));
-//				int noticeId = Integer.parseInt(cRegister);
-//				
-//				Comment comment = new Comment();
-//				comment.setWriter((String)myfSession.getAttribute("id"));
-//				comment.setContent(content);
-//				comment.setNoticeId(noticeId);
-//				
-//				NoticeService service = new NoticeService();
-//				service.insertComment(comment);
-//				
-//				Notice notice = service.getNotice(Integer.parseInt(cRegister));
-//				req.setAttribute("n", notice);
-//				List<Comment> cList = service.getCommentList(Integer.parseInt(cRegister));
-//				req.setAttribute("cList", cList);
-//				
-//				req.setAttribute("cRegister", null);
-//				viewPage = "noticeDetail.jsp";
-//			}
-//		}
-
+		/*
+		 * ACTION : comment register
+		 */
+		
 
 		/*
 		 * ACTION : COMMON
