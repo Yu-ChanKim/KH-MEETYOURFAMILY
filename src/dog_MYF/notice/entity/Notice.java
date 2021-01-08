@@ -15,7 +15,7 @@ public class Notice
 	
 	public Notice()
 	{
-		
+
 	}
 	
 	public Notice(int id, String title, String writer, String content, Timestamp regdate, String files, String hit, boolean pub)

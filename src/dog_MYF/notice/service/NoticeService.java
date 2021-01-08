@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 
+import dog_MYF.notice.entity.Comment;
 import dog_MYF.notice.entity.Notice;
 import dog_MYF.notice.entity.NoticeView;
 
@@ -137,7 +138,6 @@ public class NoticeService
 				int id = rs.getInt("ID");
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
-//				String content = rs.getString("CONTENT");
 				Timestamp regdate = rs.getTimestamp("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
@@ -170,6 +170,106 @@ public class NoticeService
 		
 		return list;
 	}
+	
+	
+	public int insertComment(Comment comment)
+	{
+		int result = 0;
+	
+		String sql = "INSERT INTO NOTICE_COMMENT_TB (WRITER, CONTENT, NOTICE_ID) VALUES(?, ?, ?)";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try
+		{
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, comment.getWriter());
+			pstmt.setString(2, comment.getContent());
+			pstmt.setInt(3, comment.getNoticeId());
+			
+			result = pstmt.executeUpdate();
+		}
+		catch (ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			if (pstmt != null)	try { pstmt.close();}	catch (Exception e) {}
+			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
+		}
+		
+		return result;
+	}
+	
+	
+	
+	public List<Comment> getCommentList(int noticeId)
+	{	
+		List<Comment> list = new ArrayList<>();
+		
+		String sql = "SELECT * FROM NOTICE_COMMENT_TB WHERE NOTICE_ID=?";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try
+		{
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, noticeId);
+			
+			rs = pstmt.executeQuery();
+
+			while(rs.next())
+			{
+				int id = rs.getInt("ID");
+				String writer = rs.getString("WRITER");
+				String content = rs.getString("CONTENT");
+				Timestamp regdate = rs.getTimestamp("REGDATE");
+
+				
+				Comment comment = new Comment(id, writer, content, regdate, noticeId);
+				
+				list.add(comment);
+			}
+		}
+		catch (ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			if (rs != null)		try { rs.close();	}	catch (Exception e) {}
+			if (pstmt != null)	try { pstmt.close();}	catch (Exception e) {}
+			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
+		}
+		
+		return list;
+	}
+	
 	
 	public int getNoticeCount()
 	{

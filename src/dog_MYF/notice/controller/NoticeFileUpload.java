@@ -60,9 +60,10 @@ public class NoticeFileUpload
 	
 	String getFileNames()
 	{
-		if(fileParts == null)
+		if(fileParts.size() == 0)
 		{
 			return null;
+			
 		}
 		else
 		{
@@ -107,8 +108,11 @@ public class NoticeFileUpload
 					if (this.fileOS != null)	try { this.fileOS.close();	}	catch (Exception e) {}
 				}
 			}
+			if(this.fileNames.length() > 0)
+			{
+				this.fileNames = this.fileNames.substring(0, this.fileNames.length()-1);
+			}
 		}
-		this.fileNames = this.fileNames.substring(0, this.fileNames.length()-1);
 		return this.fileNames;
 		
 		/*
