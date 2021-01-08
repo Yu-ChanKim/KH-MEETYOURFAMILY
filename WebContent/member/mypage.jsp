@@ -1,18 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-   request.setCharacterEncoding("UTF-8");
-   String cp=request.getContextPath();
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>마이페이지</title>
 
-<link rel="stylesheet" href="<%=cp %>/member/data/updated.css" type="text/css"/>
+<link rel="stylesheet" href="/member/data/updated.css" type="text/css"/>
 
-<script type="text/javascript" src="<%=cp %>/member/data/util.js"></script>
+<script type="text/javascript" src="/member/data/util.js"></script>
 <script type="text/javascript">
 
   

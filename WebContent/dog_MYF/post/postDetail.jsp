@@ -9,8 +9,8 @@
 
 <head>
 	<meta charset="UTF-8">
-    <title>notice_DETAIL</title>
-    <link rel="stylesheet" href="/css/dog_MYF/noticeDetail.css">
+    <title>post_DETAIL</title>
+    <link rel="stylesheet" href="/css/dog_MYF/postDetail.css">
     <link rel="stylesheet" href="/css/main.css" type="text/css">
 </head>
 
@@ -21,36 +21,36 @@
     <div id="myf_detail">
         
         <div class="title">
-            공지사항
+            게시판
         </div>
 
 		<br>현재 접속자(test) : ${currentUser}
 		
         <div class="detail">
-        	<form id="comment" action="/dog_MYF/noticeComment" method="post">
+        	<form id="comment" action="/dog_MYF/postComment" method="post">
         		<input name="detailPage" type="hidden" value='${param.detailPage}'>
 	            <table>
 					<tr>
 	                	<td colspan="1" class="box1">제목</td>
 	                    <td colspan="3" class="box2">
-	                    	${n.title}
+	                    	${p.title}
 	                    </td>
 					</tr>
 	                <tr>
 	                    <td colspan="1" class="box1">작성자</td>
 	                    <td colspan="1" class="box2">
-	                        ${n.writer}
+	                        ${p.writer}
 	                	</td>
 	                    <td colspan="1" class="box1">작성일</td>
 	                    <td colspan="1" class="box2">
-							<fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${n.regdate}"/>
+							<fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${p.regdate}"/>
 	                    </td>
 	                </tr>
 	                <tr>
 	                    <td colspan="1" class="box1">첨부파일</td>
 	                    <td colspan="1" class="box2 contcontent_ent">
-	                        <c:forTokens var="fileName" items="${n.files}" delims="/" varStatus="st">
-	                        	<a href="/dog_MYF/notice/upload/${fn:split(fileName,',')[0]}", download="${fn:split(fileName,',')[1]}">
+	                        <c:forTokens var="fileName" items="${p.files}" delims="/" varStatus="st">
+	                        	<a href="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}", download="${fn:split(fileName,',')[1]}">
 									${fn:split(fileName,',')[1]}
 	                        	</a>
 	                        	<c:if test="${!st.last}">
@@ -60,12 +60,12 @@
 	                    </td>
 	                    <td colspan="1" class="box1">조회수</td>
 	                    <td colspan="1" class="box2">
-	                    	<fmt:formatNumber value="${n.hit}" />
+	                    	<fmt:formatNumber value="${p.hit}" />
 	                    </td>
 	                </tr>
 					<tr>
 						<td colspan="4" class="box2 content_">
-							<p class="contentTxt">${n.content}</p>
+							<p class="contentTxt">${p.content}</p>
 							<c:forEach var="cL" items="${cList}">
 								<div class="comment">
 									<p class="firstP">${cL.writer} 님의 댓글 &nbsp;&nbsp;<fmt:formatDate pattern=" yyyy-MM-dd HH:mm" value="${cL.regdate}"/></p>
@@ -82,7 +82,7 @@
 								<div class="comment">
 									<p>작성자</p>
 									<textarea class="commentInput" name="comment" placeholder="댓글을 입력해주라."></textarea>
-									<button type="submit" form="comment" class="detailBtn" name="cRegister" value="${n.id}">작성</button>
+									<button type="submit" form="comment" class="detailBtn" name="cRegister" value="${p.id}">작성</button>
 								</div>
 							</c:if>
 <%-----------%>
@@ -101,17 +101,17 @@
         </div>
 
         <div class="btns">
-            <button class="detailBtn" onClick="location.href='/dog_MYF/noticeList'">목록</button>
+            <button class="detailBtn" onClick="location.href='/dog_MYF/postList'">목록</button>
 <%-- ADMIN --%>
             <c:if test="${currentUser == 'admin'}">
-				<button class="detailBtn" type="submit" form="deleteId" name="deleteId" value="${n.id}">삭제</button>
+				<button class="detailBtn" type="submit" form="deleteId" name="deleteId" value="${p.id}">삭제</button>
 			</c:if>
 <%-----------%>
         </div>
         
     </div>
     
-	<form id="deleteId" action="/dog_MYF/noticeList" method="post"></form>
+	<form id="deleteId" action="/dog_MYF/postList" method="post"></form>
 		
 	<%@include file="/footer.jsp"%>
 

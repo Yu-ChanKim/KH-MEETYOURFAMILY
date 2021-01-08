@@ -60,6 +60,8 @@ $.mbti_result = function () {
     $(".mbti_answer").hide();
     $(".mbti_go").show();
     $(".mbti_question").attr("src", "img/img_mbti/mbti_test_" + mbtiResult.join("") + ".png");
-
 }
+
+
+
 

@@ -48,7 +48,7 @@
          <div class="resultBg_pop">
             <div class="result_container">
                <img class="test_resultBox" src="img/testForSuitability/testResult_pass.png"/>
-               <a href="main.jsp?inc=./dog_test/mbti_test.jsp" class="test_resultBtn_link"> <%-- 여기 수정 하면 회원가입으로 --%>
+               <a href="main.jsp?inc=./member/created.jsp" class="test_resultBtn_link">
                   <img class="test_resultBtn" src="img/testForSuitability/testBtn_pass.png"/>               
                </a>
             </div>

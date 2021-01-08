@@ -1,6 +1,6 @@
 package dog_MYF.post.entity;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class Post
 {
@@ -8,17 +8,17 @@ public class Post
 	private String title;
 	private String writer;
 	private String content;
-	private Date regdate;
+	private Timestamp regdate;
 	private String files;
 	private String hit;
 	private boolean pub;
 	
 	public Post()
 	{
-		
+
 	}
 	
-	public Post(int id, String title, String writer, String content, Date regdate, String files, String hit, boolean pub)
+	public Post(int id, String title, String writer, String content, Timestamp regdate, String files, String hit, boolean pub)
 	{
 		this.id = id;
 		this.title = title;
@@ -70,12 +70,12 @@ public class Post
 		this.content = content;
 	}
 	
-	public Date getRegdate()
+	public Timestamp getRegdate()
 	{
 		return regdate;
 	}
 
-	public void setRegdate(Date regdate)
+	public void setRegdate(Timestamp regdate)
 	{
 		this.regdate = regdate;
 	}
@@ -112,7 +112,7 @@ public class Post
 
 	@Override
 	public String toString() {
-		return "Post [id=" + id + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regdate="
+		return "Notice [id=" + id + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regdate="
 				+ regdate + ", files=" + files + ", hit=" + hit + ", pub=" + pub + "]";
 	}
 }

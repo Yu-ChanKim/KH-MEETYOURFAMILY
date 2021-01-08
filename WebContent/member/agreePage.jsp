@@ -1,15 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%
-   request.setCharacterEncoding("UTF-8");
-   String cp=request.getContextPath();
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
 <title>약관동의</title>
- <link rel="stylesheet" href="<%=cp %>/member/data/agreePage.css" type="text/css"/>
+ <link rel="stylesheet" href="/member/data/agreePage.css" type="text/css"/>
 
    <!-- accordion 접히는 Script 선언 -->
   <script>
@@ -23,9 +19,9 @@
 </head>
 
 <body>
-<form action="main.jsp?inc=./member/created.jsp" method="post" id="form1">
+<form action="main.jsp?inc=./dog_test/testForSuitability_login.jsp" method="post" id="form1">
 <div id="d1">
- <h1 align="center">약관동의</h2>
+ <h1 align="center">약관동의</h1>
  <hr width = "100%" color="orange" /><br/><br/>
   <tr>
    <h2><td align="left"><font>견주 적합 테스트, 회원가입 이용약관, 개인정보 수집 및 이용에 모두 동의합니다.</font></td>
