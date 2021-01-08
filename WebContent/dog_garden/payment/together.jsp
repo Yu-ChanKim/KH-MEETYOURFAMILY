@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/payment.css" type="text/css">
 <script src="/js/payment.js"></script>
 </head>
-<body style ='overflow-y:hidden'>
+<body style='overflow-y: hidden'>
    <div id='love'>
       <div id='love_title'>
          <h2>함께하기(책임금)</h2>
@@ -20,45 +20,41 @@
       </div>
 
       <div id='line1'></div>
-
-      <form name ='love_frm1' id='love_frm1' method='post'>
-		<div id ='info'>후원금액</div>
-		<input type='text' class='info1' id='loveSelect' name='love_select' value='50000' readOnly/>
-        <label for='love_select' class = 'info1'>원</label> 
-      
+      <!---------------------------- 후원금액 ---------------------------->
+      <form name='love_frm1' id='love_frm1' method='post'>
+         <div id='info'>후원금액</div>
+         <input type='text' class='info1' id='loveSelect' name='love_select'   value='50000' readOnly /> 
+         <label for='love_select' class='info1'>원</label>
       </form>
 
       <div id='line2'></div>
-
-
+      <!---------------------------- 회원정보 입력 ---------------------------->
       <form id='love_frm2' method='post'>
          <div id='info'>회원정보</div>
          <label class='info1' for='name'>이름</label> 
-         <input class='info1' type='text' id='name' name='name' placeholder='이름을 입력하세요'/><br> 
-         <label class='info1' for='phone'>휴대전화</label>
-         <input class='info1' type='text' id='phone' name='phone' placeholder='번호를 입력하세요'/>
+         <input class='info1' type='text' id='name' name='name' placeholder='이름을 입력하세요' /><br>
+         <label class='info1' for='phone'>휴대전화</label> 
+         <input class='info1' type='text' id='phone' name='phone' placeholder='번호를 입력하세요' />
       </form>
 
       <div id='line2'></div>
-
-        <div id='pay'>
-          <div id='payment'>결제정보</div> <br>
-            <input type='checkbox' id='card' checked="true" onclick="return false;" size='20'>
-            <label class='info1'>신용카드 결제</label><br>          
-        </div>
-      <div id='finish'>
-           <input type='button' value='완료' id='love_btn' name='love_btn'/>
+      <!---------------------------- 결제 정보 ---------------------------->
+      <div id='pay'>
+         <div id='payment'>결제정보</div>
+         <br>
+         <input type='checkbox' id='card' checked="true"   onclick="return false;" size='20'> 
+         <label class='info1'>신용카드   결제</label><br>
       </div>
-
+      
+      <div id='finish'>
+         <input type='button' value='완료' id='love_btn' name='love_btn' />
+      </div>
    </div>
-   
-   
-<script>
-var love_btn = document.getElementById("love_btn");
-love_btn.onclick = function(){   
-   self.close();
-   }
-</script>
-
+   <script>
+      var love_btn = document.getElementById("love_btn");
+      love_btn.onclick = function(){   
+         self.close();
+         }
+   </script>
 </body>
 </html>

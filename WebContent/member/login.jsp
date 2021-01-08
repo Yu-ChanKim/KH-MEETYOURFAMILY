@@ -61,38 +61,32 @@
 				
 				
 				<div>
-					<input class="login1" type="button" value="로그인" class="btn2" onclick="login();">
+					<input type="button" value="로그인" class="btn2" onclick="login();">
 					
 					<span class="line"></span>
-										
-					<input type="button" value="회원가입"  class="btn2"
-					onclick="javascript:location.href='<%=cp %>/join/created.do';"/>
-					
-					<input type="button" value="취소"  class="btn2"
-					onclick="javascript:location.href='<%=cp %>/main.jsp';"/>
-									
+
 				</div>
 				
-				<span class="line"></span>
 				
 				<div class="find">
-		          <a class="button id-find" 
-		          	onclick="javascript:location.href='<%=cp %>/join/searchid.do';">
+		          <a class="button id-find"
+		           onclick="javascript:location.href='<%=cp %>/join/searchid.do';">
 		            <span>아이디 찾기</span>
 		          </a>
 		          
-		          <a class="button pw-find" 
-		          onclick="javascript:location.href='<%=cp %>/join/searchpw.do';">
+		          <a class="button pw-find"
+		           onclick="javascript:location.href='<%=cp %>/join/searchpw.do';">
 		            <span>비밀번호 찾기</span>
 		          </a>
 		          
 		        </div>
-				
-		        <div class="login-bottom">
-		          <p class="font-nsr title-xsmall6 color-grey9">
-		        	    가입시 동의하신 <a class="color-peach b" href="">이용약관</a>과 <a class="color-peach b" href="">개인정보처리방침</a>에 따라 관리됩니다.
-		          </p>
-		        </div>
+		        
+		         <div class="login-bottom">
+                <p class="font-nsr title-xsmall6 color-grey9">
+                 	    가입시 동의하신 <a class="color-peach b" href="/main.jsp?inc=/member/joinAgree.jsp">이용약관동의,</a>
+                     		<a class="color-peach b" href="/main.jsp?inc=/member/privacyAgree.jsp">개인정보처리방침</a>에 따라 관리됩니다.
+                </p>
+              </div>
 				
 				
 				<c:if test="${!empty message }">

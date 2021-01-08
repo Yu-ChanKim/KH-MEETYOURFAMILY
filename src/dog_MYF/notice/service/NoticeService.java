@@ -1,13 +1,14 @@
 package dog_MYF.notice.service;
 
 import java.sql.Connection;
+import java.sql.Timestamp;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 import dog_MYF.notice.entity.Notice;
@@ -34,19 +35,20 @@ public class NoticeService
 	{
 		int result = 0;
 	
-		String sql = "INSERT INTO NOTICE_TB (TITLE, WRITER, CONTENT) VALUES(?, ?, ?)";
+		String sql = "INSERT INTO NOTICE_TB (TITLE, WRITER, CONTENT, FILES) VALUES(?, ?, ?, ?)";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, notice.getTitle());
 			pstmt.setString(2, notice.getWriter());
 			pstmt.setString(3, notice.getContent());
+			pstmt.setString(4, notice.getFiles());
 			
 			result = pstmt.executeUpdate();
 		}
@@ -73,7 +75,10 @@ public class NoticeService
 	
 	public int deleteNotice(int id)
 	{
-		return 0;
+		int[] idArr = {id};
+		int result = deleteNoticeAll(idArr);
+		
+		return result;
 	}
 	
 	public int updateNotice(Notice notice)
@@ -117,8 +122,8 @@ public class NoticeService
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, "%" + keyword + "%");
@@ -133,7 +138,7 @@ public class NoticeService
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
 //				String content = rs.getString("CONTENT");
-				Date regdate = rs.getDate("REGDATE");
+				Timestamp regdate = rs.getTimestamp("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 				boolean pub = rs.getBoolean("PUB");
@@ -189,8 +194,8 @@ public class NoticeService
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, "%" + keyword + "%");
@@ -236,8 +241,8 @@ public class NoticeService
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setInt(1, id);
@@ -250,7 +255,7 @@ public class NoticeService
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
 				String content = rs.getString("CONTENT");
-				Date regdate = rs.getDate("REGDATE");
+				Timestamp regdate = rs.getTimestamp("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 				boolean pub = rs.getBoolean("PUB");
@@ -301,8 +306,8 @@ public class NoticeService
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setInt(1, id);
@@ -315,7 +320,7 @@ public class NoticeService
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
 				String content = rs.getString("CONTENT");
-				Date regdate = rs.getDate("REGDATE");
+				Timestamp regdate = rs.getTimestamp("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 				boolean pub = rs.getBoolean("PUB");
@@ -369,8 +374,8 @@ public class NoticeService
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setInt(1, id);
@@ -383,7 +388,7 @@ public class NoticeService
 				String title = rs.getString("TITLE");
 				String writer = rs.getString("WRITER");
 				String content = rs.getString("CONTENT");
-				Date regdate = rs.getDate("REGDATE");
+				Timestamp regdate = rs.getTimestamp("REGDATE");
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 				boolean pub = rs.getBoolean("PUB");
@@ -431,8 +436,8 @@ public class NoticeService
 		
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			stmt = conn.createStatement();
 
 			result = stmt.executeUpdate(sql);

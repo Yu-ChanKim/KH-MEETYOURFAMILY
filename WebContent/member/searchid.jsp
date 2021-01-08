@@ -9,8 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
 <title>MYF : 아이디 찾기</title>
-<link rel="stylesheet" href="<%=cp %>/css/main.css" type="text/css">
-<link rel="stylesheet" href="<%=cp %>/member/data/join.css" type="text/css"/>
+<link rel="stylesheet" href="<%=cp %>/member/data/search.css" type="text/css"/>
 <script src='./lib/jquery-3.5.1.min.js'></script>
 
 <script type="text/javascript">
@@ -39,9 +38,8 @@
 
 
 </head>
-<body> 
-<div class="container">   
-<%@include file="/header.jsp"%>   
+<body>
+<div class="container">
 <div style="position: relative;">
  <div id="contents">
    <div class="member-contents">
@@ -50,8 +48,6 @@
          <h3>아이디 찾기</h3>
          <span class="line"></span>
        </div>
-                  
-       <hr width = "65%" color="gray" size="1">           
                   
        <div class="login-box">
      
@@ -78,7 +74,6 @@
    </div>
  </div>
 </div>
-<%@include file="/footer.jsp"%>
-</div>            
+</div>        
 </body>
 </html>

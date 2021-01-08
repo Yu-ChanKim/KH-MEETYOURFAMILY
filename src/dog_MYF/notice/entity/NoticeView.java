@@ -1,6 +1,6 @@
 package dog_MYF.notice.entity;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class NoticeView extends Notice
 {
@@ -16,7 +16,7 @@ public class NoticeView extends Notice
 		this.commentCount = commentCount;
 	}
 
-	public NoticeView(int id, String title, String writer, /*String content,*/ Date regdate, String files, String hit, boolean pub, int commentCount)
+	public NoticeView(int id, String title, String writer, /*String content,*/ Timestamp regdate, String files, String hit, boolean pub, int commentCount)
 	{
 		super(id, title, writer, null, regdate, files, hit, pub);
 		this.commentCount = commentCount;

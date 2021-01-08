@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원수정</title>
 
-<link rel="stylesheet" href="<%=cp %>/member/data/created.css" type="text/css"/>
+<link rel="stylesheet" href="<%=cp %>/member/data/updated.css" type="text/css"/>
 
 <script type="text/javascript" src="<%=cp %>/member/data/util.js"></script>
 <script type="text/javascript">
@@ -62,7 +62,7 @@
          <h3>회원정보수정</h3>
          <span class="line"></span>
        </div>
-           
+           </br></br>
               <div id="bbs">
                  <form action="" method="post" name="myForm">
                     <div id="bbsCreated">
@@ -100,7 +100,7 @@
 	                          <dd>
 	                             <input type="date" name="userBirth" size="35" maxlength="50" class="boxTF"
 	                             value="${dto.userBirth }" />
-	                             [YYYY-MM-DD]
+	                             
 	                          </dd>
 	                       </dl>
 	                    </div>
@@ -115,6 +115,10 @@
 	                       </dl>
 	                    </div>
                     </div>
+                    
+                    </br>
+                                                           
+                    </br>
                     
                     <div id="bbsCreated_footer">
                      <input type="button" value="수정하기" class="btn2" onclick="sendIt()"/>

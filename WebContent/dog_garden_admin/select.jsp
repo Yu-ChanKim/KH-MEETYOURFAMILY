@@ -5,13 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마당 관리자</title>
+<title>마당 관리</title>
 <script src='./js/garden_admin/garden_admin.js'></script>
+<link rel="stylesheet" href="/css/garden_admin/garden_admin.css" type="text/css">
 </head>
 <body>
-<div id='admin_garden'>
-   <h3>강아지 관리</h3>
-   
+<div id='admin_garden_select'>
+	<div id='box1'></div>
+   <h3>마당 관리</h3>
+   <div id='box2'></div>
    <form name='frm_admin_garden' method='post' id='frm_admin_garden'>
       <input type='button' value='추가' id='btnInsert' />
       <div>         

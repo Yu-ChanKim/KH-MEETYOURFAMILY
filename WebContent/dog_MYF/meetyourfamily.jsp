@@ -21,10 +21,10 @@
 			font-size: 22px;
 			font-weight: bolder;
 		}
-    	#TlqkfTlqkf input {
+    	#TlqkfTlqkf button {
     		display: inline-block;
 			font-size: 18px;
-    		width: 160px;
+    		width: 180px;
     		height: 35px;
     		margin: 5px;
     		cursor: pointer;
@@ -33,53 +33,33 @@
 </head>
 
 <body>
+
 	<%@include file="/header.jsp"%>
 	
 	<div id="TlqkfTlqkf">
 		임시 회원 세션
 		<p>[현재 상태] ${currentUser}</p>
-		<input type="button" onClick="login('gildong', '18')" value="로그인(id-gildong)">
-		<input type="button" onClick="login('admin', 'admin')" value="로그인(id-admin)">
-		<input type="button" onClick="logout()" value="로그아웃">
+		<button type="submit" name="login" form="loginGeneral" value="">로그인(id-gildong)</button>
+		<button type="submit" name="login" form="loginAdmin" value="">로그인(id-admin)</button>
+		<button type="submit" name="logout" form="logout" value="">로그아웃</button>
 		<br>
-		<input type="button" onClick="location.href='/dog_MYF/noticeList'" value="공지사항">
-		<input type="button" onClick="location.href='/dog_MYF/noticeList/Admin'" value="공지사항(관리자)">
-		<input type="button" onClick="location.href='/dog_MYF/postList'" value="게시판">
-		<input type="button" value="[미구현]">
-	
+		<button onClick="location.href='/dog_MYF/noticeList'">공지사항</button>
+		<button onClick="location.href='/dog_MYF/postList'">게시판</button>
+		<button> ? </button>		
 	</div>	
-	<%@include file="/footer.jsp"%>
 	
-	<script>
-		function login(id, pw)
-		{
-			var frm = document.createElement("form");
-			frm.method = "post"
-			frm.action = "/dog_MYF/login";
-			frm.appendChild(addFormData("btn", "login"));
-			frm.appendChild(addFormData("id",id));
-			frm.appendChild(addFormData("pw",pw));
-			document.body.appendChild(frm);
-			frm.submit();	
-		}
-		function logout()
-		{
-			var frm = document.createElement("form");
-			frm.method = "post"
-			frm.action = "/dog_MYF/login";
-			frm.appendChild(addFormData("btn","logout"));
-			document.body.appendChild(frm);
-			frm.submit();
-		}
-		function addFormData(name, value)
-		{
-		    var elmt = document.createElement("input");
-		    elmt.setAttribute("type", "hidden");
-		    elmt.setAttribute("name", name);
-		    elmt.setAttribute("value", value);
-		    return elmt;
-		}
-	</script>
+	<form action="/dog_MYF/login" id="loginGeneral" method="post">
+		<input name="id" type="hidden" value="gildong">  
+		<input name="pw" type="hidden" value="18">       
+	</form>
+	<form aciton="/dog_MYF/login" id="loginAdmin" method="post">
+		<input name="id" type="hidden" value="admin">  
+		<input name="pw" type="hidden" value="admin">       
+	</form>
+	<form aciton="/dog_MYF/login" id="logout" method="post"></form>
+	
+	<%@include file="/footer.jsp"%>
+
 </body>
 
 </html>

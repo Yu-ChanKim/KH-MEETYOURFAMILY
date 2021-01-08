@@ -90,6 +90,40 @@
 			return;
 		}
 		f.userGender.value=str;
+
+		
+		//우편번호를 입력 안할 때
+		str=f.zipcode.value;
+		str=str.trim();
+		if(!str){
+			alert("우편번호를 입력하세요 (아래 주소찾기 버튼을 누르세요)");
+			f.zipcode.focus();
+			return;
+		}
+		f.zipcode.value=str;
+		
+		//주소를 입력 안할 때
+		str=f.address1.value;
+		str=str.trim();
+		if(!str){
+			alert("주소를 입력하세요 (위에 주소찾기 버튼을 누르세요)");
+			f.address1.focus();
+			return;
+		}
+		f.address1.value=str;
+		
+		//상세주소를 입력 안할 때
+		str=f.address2.value;
+		str=str.trim();
+		if(!str){
+			alert("상세주소를 입력하세요");
+			f.address2.focus();
+			return;
+		}
+		f.address2.value=str;
+		
+		
+		//이금찬이 작성
 		
 		
 		//실행 됐을때 서블릿 메소드에  created_ok.do 부분 실행
@@ -168,15 +202,15 @@
 					
 					<div class="l-row l-input">
 					
-	                <input type="text" id="zipcode" name="zipcode" readonly><br/><br/>
+					
+					
+	                <input type="text" id="zipcode" name="zipcode" placeholder="우편번호 (주소찾기 버튼을 눌러주세요)" readonly><br/><br/>
 	                <input type="button" onclick="DaumPostcode()" value="주소찾기"><br/><br/>
 					<input type="text" id="address1" name="address1" placeholder="주소"><br/><br/>
 					<input type="text" id="address2" name="address2" placeholder="상세주소"><br/><br/>
 					
                		</div>
-					
-					
-					
+               		
 
 					<!-- 버튼 -->
 					<input class="join-button" type="button" value="가입하기" class="btn2" 
@@ -184,10 +218,10 @@
 					
 					<hr width = "100%" color="gray" >
 					
-					<input type="reset" value="다시입력" class="btn2" 
+					<input type="reset" value="다시입력" class="btn3" 
 						onclick="document.myForm.userId.focus();"/>
 						
-					<input type="button" value="작성취소" class="btn2"	 
+					<input type="button" value="작성취소" class="btn3"	 
 						onclick="javascript:location.href='<%=cp%>/main.jsp';"/>
 						
 				

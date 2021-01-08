@@ -18,8 +18,6 @@
 	<title>notice_DETAIL</title>
     <link rel="stylesheet" href="/css/dog_MYF/noticeDetail.css">
 	<link rel="stylesheet" href="/css/main.css" type="text/css">
-	<script src="/lib/jquery-3.5.1.min.js"></script>
-    <script src="/js/dog_MYF/meetyourfamily.js"></script>
 </head>
 
 <body>
@@ -32,8 +30,10 @@
             공지사항
         </div>
         
+        <br>현재 접속자(test) : ${currentUser}
+        
         <div class="detail">
-       	    <form id="reg" action="/dog_notice/noticeReg/Admin" method="post">
+       	    <form id="register" action="/dog_MYF/noticeList" method="post" enctype="multipart/form-data">
 	            <table>
 					<tr>
 	                	<td colspan="1" class="box1">제목</td>
@@ -41,20 +41,17 @@
 	                    	<input type="text" name="title" placeholder="제목을 입력해주라."/>
 	                    </td>
 					</tr>
+					<tr>
+						<td colspan="1" class="box1">작성자</td>
+						<td colspan="3" class="box2">
+							${currentUser}
+						</td>
+					</tr>
 	                <tr>
-	                	<td colspan="1" class="box1">첨부파일</td>
-	                	<td colspan="1" class="box2">
-	                        <c:forTokens var="fileName" items="${n.files}" delims="," varStatus="st">
-	                        	<a href="${fileName}">${fileName}</a>
-	                        	<c:if test="${!st.last}">
-	                        		/ 
-	                        	</c:if>
-	                        </c:forTokens>
-	                    </td>
-	                    <td colspan="1" class="box1">Admin</td>
-	                    <td colspan="1" class="box2">
-	                        관리자
-	                	</td>
+						<td colspan="1" class="box1">첨부파일</td>
+						<td colspan="3" class="box2">
+							<input type="file" name="file" multiple>
+						</td>
 	                </tr>
 					<tr>
 						<td colspan="4" class="box2">
@@ -74,8 +71,8 @@
         </div>      	
         
         <div class="btns">
-            <input type="button" onClick="goPage(nListA)" value="목록">
-            <input type="submit" form="reg" name="regBtn" value="등록">
+            <button onClick="location.href='/dog_MYF/noticeList'">목록</button>
+            <button type="submit" form="register" name="register" value="register">등록</button>
         </div>
 
     </div>
