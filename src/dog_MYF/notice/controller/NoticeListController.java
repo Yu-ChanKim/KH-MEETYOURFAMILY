@@ -36,7 +36,7 @@ import oracle.net.ano.Service;
 	maxRequestSize=1024*1024*5*5
 )
 @WebServlet("/dog_MYF/noticeList")
-public class NoticeController extends HttpServlet
+public class NoticeListController extends HttpServlet
 {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -92,7 +92,7 @@ public class NoticeController extends HttpServlet
 			pageNo = Integer.parseInt(pageNo_);
 		}
 		
-		String viewPage = "noticeList";
+		String viewPage = "noticeList.jsp";
 		
 		
 		/*
@@ -101,12 +101,20 @@ public class NoticeController extends HttpServlet
 		String detailPage = req.getParameter("detailPage");
 		if(detailPage != null)
 		{
+			if(generalLogin)
+			{
+				myfSession.setAttribute("detailPage", detailPage);
+			}
 			NoticeService service = new NoticeService();
+			if(!adminLogin)
+			{
+				service.updateNoticeHit(Integer.parseInt(detailPage));
+			}
 			Notice notice = service.getNotice(Integer.parseInt(detailPage));
 			req.setAttribute("n", notice);
 			List<Comment> cList = service.getCommentList(Integer.parseInt(detailPage));
 			req.setAttribute("cList", cList);
-			viewPage = "noticeDetail";
+			viewPage = "noticeDetail.jsp";
 		}
 		
 		
@@ -121,6 +129,7 @@ public class NoticeController extends HttpServlet
 				NoticeService service = new NoticeService();
 				service.deleteNotice(Integer.parseInt(deleteId));
 				isForward = false;
+				viewPage = "noticeList";
 			}
 			
 			String deleteIds = req.getParameter("deleteIds");
@@ -138,6 +147,7 @@ public class NoticeController extends HttpServlet
 					service.deleteNoticeAll(ids);
 				}
 				isForward = false;
+				viewPage = "noticeList";
 			}
 		}
 		
@@ -150,7 +160,7 @@ public class NoticeController extends HttpServlet
 			String regPage = req.getParameter("regPage");
 			if(regPage != null)
 			{
-				viewPage = "noticeReg";
+				viewPage = "noticeReg.jsp";
 			}
 		}
 		
@@ -178,6 +188,7 @@ public class NoticeController extends HttpServlet
 				service.insertNotice(notice);
 				
 				isForward = false;
+				viewPage = "noticeList";
 			}
 		}
 		
@@ -185,35 +196,7 @@ public class NoticeController extends HttpServlet
 		/*
 		 * ACTION : comment register
 		 */
-		if(generalLogin)
-		{
-			String cRegister = null; 
-			String cRegister_ = req.getParameter("cRegister");
-			if(cRegister_ != null)
-			{
-				cRegister = cRegister_;
-				String content = req.getParameter("comment");
-//				int noticeId = Integer.parseInt(req.getParameter("n.id"));
-				int noticeId = Integer.parseInt(cRegister);
-				
-				Comment comment = new Comment();
-				comment.setWriter((String)myfSession.getAttribute("id"));
-				comment.setContent(content);
-				comment.setNoticeId(noticeId);
-				
-				NoticeService service = new NoticeService();
-				service.insertComment(comment);
-				
-				Notice notice = service.getNotice(Integer.parseInt(cRegister));
-				req.setAttribute("n", notice);
-				List<Comment> cList = service.getCommentList(Integer.parseInt(cRegister));
-				req.setAttribute("cList", cList);
-				
-				req.setAttribute("cRegister", null);
-				viewPage = "noticeDetail";
-			}
-		}
-
+		
 
 		/*
 		 * ACTION : COMMON
@@ -224,10 +207,11 @@ public class NoticeController extends HttpServlet
 		int count = service.getNoticeCount(category, keyword);
 		req.setAttribute("count", count);
 		req.setAttribute("list", list);
+
 		
 		if(isForward)
 		{
-			req.getRequestDispatcher("/dog_MYF/notice/" + viewPage + ".jsp").forward(req, resp);
+			req.getRequestDispatcher("/dog_MYF/notice/" + viewPage).forward(req, resp);
 		}
 		else
 		{	

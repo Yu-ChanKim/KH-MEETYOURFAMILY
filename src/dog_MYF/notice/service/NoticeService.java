@@ -92,7 +92,6 @@ public class NoticeService
 		return null;
 	}
 	
-	
 	// NoticeView
 	public List<NoticeView> getNoticeList()
 	{
@@ -169,6 +168,85 @@ public class NoticeService
 		}
 		
 		return list;
+	}
+	
+	public void updateNoticeHit(int pageNo)
+	{
+		String sql = "UPDATE NOTICE_TB N"
+				+ " SET N.HIT = N.HIT+1"
+				+ " WHERE N.ID = ?";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try
+		{
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, pageNo);
+			
+			rs = pstmt.executeQuery();
+		}
+		catch (ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			if (rs != null)		try { rs.close();	}	catch (Exception e) {}
+			if (pstmt != null)	try { pstmt.close();}	catch (Exception e) {}
+			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
+		}
+	}
+	
+	
+	public int deleteComment(int id)
+	{
+		int result = 0;
+		
+		String sql = "DELETE NOTICE_COMMENT_TB WHERE ID IN ("+ id +")";
+		
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try
+		{
+			Class.forName(this.JDBC_DRIVER);
+			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
+			stmt = conn.createStatement();
+
+			result = stmt.executeUpdate(sql);
+		}
+		catch (ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			if (stmt != null)	try { stmt.close();}	catch (Exception e) {}
+			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
+		}
+		
+		return result;
 	}
 	
 	

@@ -8,8 +8,8 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>notice_DETAIL</title>
-    <link rel="stylesheet" href="/css/dog_MYF/noticeDetail.css">
+	<title>post_DETAIL</title>
+    <link rel="stylesheet" href="/css/dog_MYF/postDetail.css">
 	<link rel="stylesheet" href="/css/main.css" type="text/css">
 </head>
 
@@ -20,13 +20,13 @@
     <div id="myf_detail">
         
         <div class="title">
-            공지사항
+            게시판
         </div>
         
         <br>현재 접속자(test) : ${currentUser}
         
         <div class="detail">
-       	    <form id="register" action="/dog_MYF/noticeList" method="post" enctype="multipart/form-data">
+       	    <form id="register" action="/dog_MYF/postList" method="post" enctype="multipart/form-data">
 	            <table>
 					<tr>
 	                	<td colspan="1" class="box1">제목</td>
@@ -64,7 +64,7 @@
         </div>      	
         
         <div class="btns">
-            <button class="detailBtn" onClick="location.href='/dog_MYF/noticeList'">목록</button>
+            <button class="detailBtn" onClick="location.href='/dog_MYF/postList'">목록</button>
             <button class="detailBtn" type="submit" form="register" name="register" value="register">등록</button>
         </div>
 
