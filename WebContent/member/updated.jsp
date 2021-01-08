@@ -67,52 +67,41 @@
                  <form action="" method="post" name="myForm">
                     <div id="bbsCreated">
 	                    <div class="bbsCreated_bottomLine">
-	                       <dl>
 	                          <dt>아이디</dt>
 	                          <dd>
 	                          ${sessionScope.customInfo.userId }
 	                          </dd>
-	                       </dl>
 	                    </div>
 	                    
 	                    <div class="bbsCreated_bottomLine">
-	                       <dl>
 	                          <dt>이름</dt>
 	                          <dd>
 	                          ${sessionScope.customInfo.userName }
 	                          </dd>
-	                       </dl>
 	                    </div>
 	                    
 	                    <div class="bbsCreated_bottomLine">
-	                       <dl>
 	                          <dt>패스워드</dt>
 	                          <dd>
 	                             <input type="password" name="userPwd" size="35" maxlength="20" class="booxTF"
 	                             value="${dto.userPwd }" />
 	                          </dd>
-	                       </dl>
 	                    </div>
 	                    
 	                    <div class="bbsCreated_bottomLine">
-	                       <dl>
 	                          <dt>생년월일</dt>
 	                          <dd>
 	                             <input type="date" name="userBirth" size="35" maxlength="50" class="boxTF"
 	                             value="${dto.userBirth }" />
-	                             
 	                          </dd>
-	                       </dl>
 	                    </div>
 	                    
 	                    <div class="bbsCreated_bottomLine">
-	                       <dl>
 	                          <dt>전화번호</dt>
 	                          <dd>
 	                             <input type="text" name="userTel" size="35" maxlength="50" class="boxTF"
 	                             value="${dto.userTel }" />
 	                          </dd>
-	                       </dl>
 	                    </div>
                     </div>
                     
@@ -120,10 +109,16 @@
                                                            
                     </br>
                     
+                  <div class="login-bottom">
+	                <p >
+	                	*수정완료시 자동 로그아웃 됩니다.*
+	                </p>
+	              </div>
+                    
                     <div id="bbsCreated_footer">
                      <input type="button" value="수정하기" class="btn2" onclick="sendIt()"/>
-                  <input type="button" value="수정취소" class="btn2"
-                  onclick="javascript:location.href='<%=cp%>/main.jsp';"/>   
+	                 <input type="button" value="수정취소" class="btn2"
+	                 	onclick="javascript:location.href='<%=cp%>/main.jsp';"/>   
                   </div>
                  </form>
             </div>

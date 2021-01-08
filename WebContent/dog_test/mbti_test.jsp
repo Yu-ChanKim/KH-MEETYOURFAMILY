@@ -29,7 +29,8 @@
 				<img class="mbti_question" src="#" />
 				<img class="mbti_go btn_pointer" src="img/img_mbti/mbti_test_btn_go0.PNG" alt="만나러 가기"
 					onmouseover="this.src='img/img_mbti/mbti_test_btn_go1.PNG'"
-					onmouseout="this.src='img/img_mbti/mbti_test_btn_go0.PNG'">
+					onmouseout="this.src='img/img_mbti/mbti_test_btn_go0.PNG'"
+					onclick = "location.href = '/garden.do?siba=page&dname=&group=전체&mbti=' + mbtiResult.join('')">
 				<div class="mbti_answer">
 					<img class="mbti_answer_A btn_pointer" src="img/img_mbti/mbti_test_btn_A0.png" alt="A선택"
 						onmouseover="this.src='img/img_mbti/mbti_test_btn_A1.png'"

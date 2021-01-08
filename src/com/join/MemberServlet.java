@@ -249,7 +249,7 @@ public class MemberServlet extends HttpServlet {
 			dao.updateData(dto);
 			
 			//다시 인덱스 화면으로
-			url=cp+"/main.jsp";
+			url="../main.jsp?inc=./member/logout.jsp";
 			resp.sendRedirect(url);
 			
 		}
