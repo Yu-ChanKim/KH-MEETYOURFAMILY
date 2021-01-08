@@ -22,7 +22,7 @@
     <div class="header_3">
       <c:choose>
            <c:when test="${empty sessionScope.customInfo.userId}">
-               <a href="/main.jsp?inc=./member/created.jsp">회원가입</a>
+               <a href="/main.jsp?inc=./member/agreePage.jsp">회원가입</a>
                 <a href="/main.jsp?inc=./member/login.jsp">로그인</a>
             </c:when>
             <c:otherwise>

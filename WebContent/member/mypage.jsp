@@ -8,9 +8,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원수정</title>
+<title>마이페이지</title>
 
-<link rel="stylesheet" href="<%=cp %>/member/data/created.css" type="text/css"/>
+<link rel="stylesheet" href="<%=cp %>/member/data/updated.css" type="text/css"/>
 
 <script type="text/javascript" src="<%=cp %>/member/data/util.js"></script>
 <script type="text/javascript">
@@ -28,6 +28,7 @@
          <h3 text align=center>My Page</h3>
          <span class="line"></span>
        </div>
+           </br></br>
            
               <div id="bbs">
                  <form action="" method="post" name="myForm">
@@ -117,3 +118,4 @@
 
 </body>
 </html>
+

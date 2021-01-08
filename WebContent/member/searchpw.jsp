@@ -9,7 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 <title>MYF : 비밀번호 찾기</title>
-<link rel="stylesheet" href="<%=cp %>/member/data/join.css" type="text/css"/>
+<link rel="stylesheet" href="<%=cp %>/member/data/search.css" type="text/css"/>
 
 <script src='./lib/jquery-3.5.1.min.js'></script>
 
@@ -43,10 +43,7 @@
               <h3>비밀번호 찾기</h3>
               <span class="line"></span>
             </div>
-         
-            <hr width = "65%" color="gray" size="1">
-            
-            
+              
             <div class="login-box">
           
               <div class="login-form">

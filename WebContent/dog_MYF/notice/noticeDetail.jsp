@@ -58,9 +58,6 @@
                         	<a href="/dog_MYF/notice/upload/${fn:split(fileName,',')[0]}", download="${fn:split(fileName,',')[1]}">
 								${fn:split(fileName,',')[1]}
                         	</a>
-<%--
-                        	<img src="/dog_MYF/notice/upload/${fileName}">
---%>
                         	<c:if test="${!st.last}">
                         		/ 
                         	</c:if>
@@ -89,22 +86,15 @@
         </div>
 
         <div class="btns">
-<%-- ????? --%>
-<%--
-            <button type="submit" name="listPage" value="">목록</button>
---%>
             <button onClick="location.href='/dog_MYF/noticeList'">목록</button>
 <%-- ADMIN --%>
             <c:if test="${currentUser == 'admin'}">
 				<button type="submit">수정</button>
 				<button type="submit" form="deleteId" name="deleteId" value="${n.id}">삭제</button>
-<%--
-				<button type="submit" name="deleteId" value="${n.id}" onClick="location.href='/dog_MYF/noticeList'">삭제</button>
---%>
 			</c:if>
 <%-----------%>
         </div>
-
+        
     </div>
     
 	<form id="deleteId" action="/dog_MYF/noticeList" method="post"></form>

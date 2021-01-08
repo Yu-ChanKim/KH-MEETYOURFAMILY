@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+ #d1{
+     width:710px;
+     margin:0 auto;
+    }
+    
+    textarea {
+    width : 700px;
+    margin : 0 auto;
+    
+    }
+    
+    font {
+    font-size : 20px;
+    
+    }
+    
+    .btn2 {
+	
+	font-family: inherit;
+	background: #ffffff !important;
+	cursor: pointer;
+	font-size: 24px;
+	border:10px;
+	outline: none;
+	letter-spacing: -0.1em;
+	border-radius: 40px;
+	border: 1px solid #ff778899 !important;
+	height: 80px;
+	line-height: 77px;
+	margin: 5px 0 5px;
+	width: 300px;
+	display: inline-block;
+	text-align: center;
+		
+	}

@@ -10,7 +10,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>MYF : 로그아웃</title>
-<link rel="stylesheet" href="<%=cp %>/member/data/login.css" type="text/css"/>
+<link rel="stylesheet" href="<%=cp %>/member/data/join.css" type="text/css"/>
 
 <script>
    function logout(){
@@ -37,7 +37,7 @@
       <div class="login-form">
       <form action="" method="post" name="myForm">
          
-         <input class="login1" type="button" value="메인으로 이동하기" class="btn2" onclick="logout();">
+         <input type="button" value="메인으로 이동하기" class="btn2" onclick="logout();">
       </form>
       </div>
      </div>

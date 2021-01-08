@@ -36,13 +36,26 @@ public class NoticeFileUpload
 			e.printStackTrace();
 		}
 		fileNames = "";
+		
 		realPath = req.getServletContext().getRealPath("/");
+		
 		this.path = this.realPath.substring(0, this.realPath.indexOf("\\.metadata\\"));
 		this.path += "\\KH-MEETYOURFAMILY\\WebContent\\dog_MYF\\notice\\upload";
+		newPath(this.path);
+		
 		this.path += File.separator;
 		this.path_ = "";
 		this.fileIS = null;
 		this.fileOS = null;
+	}
+	
+	void newPath(String realPath)
+	{
+		File newPath = new File(realPath);
+		if(!newPath.exists())
+		{
+			newPath.mkdirs();
+		}
 	}
 	
 	String getFileNames()
@@ -95,7 +108,7 @@ public class NoticeFileUpload
 				}
 			}
 		}
-		this.fileNames = this.fileNames.substring(0, this.fileNames.length()-2);
+		this.fileNames = this.fileNames.substring(0, this.fileNames.length()-1);
 		return this.fileNames;
 		
 		/*
