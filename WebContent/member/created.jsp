@@ -10,7 +10,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원가입</title>
 <!-- 링크가져오기 -->
-<link rel="stylesheet" href="<%=cp %>/css/main.css" type="text/css">
 <link rel="stylesheet" href="<%=cp %>/member/data/join.css" type="text/css"/>
 <!-- 헤어 가져올때 JSP 라이브러리  -->
 <script src='./lib/jquery-3.5.1.min.js'></script>
@@ -91,9 +90,6 @@
 			return;
 		}
 		f.userGender.value=str;
-		
-		
-		//이금찬이 작성
 		
 		
 		//실행 됐을때 서블릿 메소드에  created_ok.do 부분 실행
