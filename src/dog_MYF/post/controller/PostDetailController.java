@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dog_MYF.notice.entity.Notice;
+import dog_MYF.notice.service.NoticeService;
 import dog_MYF.post.entity.Comment;
 import dog_MYF.post.entity.Post;
 import dog_MYF.post.service.PostService;
@@ -47,17 +49,24 @@ public class PostDetailController extends HttpServlet
 		/*
 		 * 
 		 */
-		String detailPage;
+		String detailPageStr;
 		if(generalLogin)
 		{
-			detailPage = (String)myfSession.getAttribute("detailPage");
+			detailPageStr = (String)myfSession.getAttribute("detailPage");
+			int detailPage = Integer.parseInt(detailPageStr);
+			
 			PostService service = new PostService();
-			Post post = service.getPost(Integer.parseInt(detailPage));
+			Post post = service.getPost(detailPage);
+			
 			req.setAttribute("p", post);
-			List<Comment> cList = service.getCommentList(Integer.parseInt(detailPage));
+			List<Comment> cList = service.getCommentList(detailPage);
 			req.setAttribute("cList", cList);
+			Post nextPost = service.getNextPost(detailPage);
+			req.setAttribute("nextPost", nextPost);
+			Post prevPost = service.getPrevPost(detailPage);
+			req.setAttribute("prevPost", prevPost);
 		}
-		
+
 		req.getRequestDispatcher("/dog_MYF/post/postDetail.jsp").forward(req, resp);
 	}
 	

@@ -98,22 +98,28 @@ public class NoticeListController extends HttpServlet
 		/*
 		 * ACTION : detailPage
 		 */
-		String detailPage = req.getParameter("detailPage");
-		if(detailPage != null)
+		String detailPageStr = req.getParameter("detailPage");
+		if(detailPageStr != null)
 		{
+			int detailPage = Integer.parseInt(detailPageStr);
 			if(generalLogin)
 			{
-				myfSession.setAttribute("detailPage", detailPage);
+				myfSession.setAttribute("detailPage", detailPageStr);
 			}
 			NoticeService service = new NoticeService();
 			if(!adminLogin)
 			{
-				service.updateNoticeHit(Integer.parseInt(detailPage));
+				service.updateNoticeHit(detailPage);
 			}
-			Notice notice = service.getNotice(Integer.parseInt(detailPage));
+			Notice notice = service.getNotice(detailPage);
 			req.setAttribute("n", notice);
-			List<Comment> cList = service.getCommentList(Integer.parseInt(detailPage));
+			List<Comment> cList = service.getCommentList(detailPage);
 			req.setAttribute("cList", cList);
+			Notice nextNotice = service.getNextNotice(detailPage);
+			req.setAttribute("nextNotice", nextNotice);
+			Notice prevNotice = service.getPrevNotice(detailPage);
+			req.setAttribute("prevNotice", prevNotice);
+			
 			viewPage = "noticeDetail.jsp";
 		}
 		
@@ -131,7 +137,6 @@ public class NoticeListController extends HttpServlet
 				isForward = false;
 				viewPage = "noticeList";
 			}
-			
 			String deleteIds = req.getParameter("deleteIds");
 			if(deleteIds != null)
 			{
@@ -192,11 +197,6 @@ public class NoticeListController extends HttpServlet
 			}
 		}
 		
-		
-		/*
-		 * ACTION : comment register
-		 */
-		
 
 		/*
 		 * ACTION : COMMON
@@ -208,7 +208,6 @@ public class NoticeListController extends HttpServlet
 		req.setAttribute("count", count);
 		req.setAttribute("list", list);
 
-		
 		if(isForward)
 		{
 			req.getRequestDispatcher("/dog_MYF/notice/" + viewPage).forward(req, resp);

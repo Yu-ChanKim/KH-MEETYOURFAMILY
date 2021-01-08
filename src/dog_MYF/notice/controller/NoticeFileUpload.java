@@ -63,7 +63,6 @@ public class NoticeFileUpload
 		if(fileParts.size() == 0)
 		{
 			return null;
-			
 		}
 		else
 		{
@@ -94,7 +93,6 @@ public class NoticeFileUpload
 						{
 							break;
 						}
-						
 						this.fileOS.write(bf, 0, bfRead);
 					}
 				}

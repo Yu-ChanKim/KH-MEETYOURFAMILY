@@ -70,9 +70,7 @@ public class PostCommentController extends HttpServlet
 				PostService service = new PostService();
 				service.insertComment(comment);
 				
-				
 				resp.sendRedirect("/dog_MYF/postDetail");
-				
 			}
 
 			

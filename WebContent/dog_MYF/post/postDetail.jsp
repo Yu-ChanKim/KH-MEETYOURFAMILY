@@ -38,17 +38,23 @@
 					</tr>
 	                <tr>
 	                    <td colspan="1" class="box1">작성자</td>
-	                    <td colspan="1" class="box2">
+	                    <td colspan="3" class="box2">
 	                        ${p.writer}
 	                	</td>
+	                </tr>
+	                <tr>
 	                    <td colspan="1" class="box1">작성일</td>
 	                    <td colspan="1" class="box2">
 							<fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${p.regdate}"/>
 	                    </td>
+	                    <td colspan="1" class="box1">조회수</td>
+	                    <td colspan="1" class="box2">
+	                    	<fmt:formatNumber value="${p.hit}" />
+	                    </td>
 	                </tr>
 	                <tr>
 	                    <td colspan="1" class="box1">첨부파일</td>
-	                    <td colspan="1" class="box2 contcontent_ent">
+	                    <td colspan="3" class="box2 contcontent_ent">
 	                        <c:forTokens var="fileName" items="${p.files}" delims="/" varStatus="st">
 	                        	<a href="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}", download="${fn:split(fileName,',')[1]}">
 									${fn:split(fileName,',')[1]}
@@ -58,10 +64,7 @@
 	                        	</c:if>
 	                        </c:forTokens>
 	                    </td>
-	                    <td colspan="1" class="box1">조회수</td>
-	                    <td colspan="1" class="box2">
-	                    	<fmt:formatNumber value="${p.hit}" />
-	                    </td>
+
 	                </tr>
 					<tr>
 						<td colspan="4" class="box2 content_">
@@ -90,11 +93,15 @@
 					</tr>
 					<tr>
 						<td colspan="1" class="box1">이전글</td>
-						<td colspan="3" class="box2">이전글</td>
+						<td colspan="3" class="box3">
+							<button type="submit" form="prevNext" class="prevNext detailBtn" name="prevNext" value="${prevPost.id}">${prevPost.title}</button>
+						</td>
 					</tr>
 					<tr>
 						<td colspan="1" class="box1">다음글</td>
-						<td colspan="3" class="box2">다음글</td>
+						<td colspan="3" class="box3">
+							<button type="submit" form="prevNext" class="prevNext detailBtn" name="prevNext" value="${nextPost.id}">${nextPost.title}</button>
+						</td>
 					</tr>				                
 	            </table>
 			</form>            
@@ -111,7 +118,8 @@
         
     </div>
     
-	<form id="deleteId" action="/dog_MYF/postList" method="post"></form>
+	<form id="deleteId" type="hidden" action="/dog_MYF/postList" method="post"></form>
+	<form id="prevNext" type="hidden" action="/dog_MYF/noticeDetail" method="post"></form>
 		
 	<%@include file="/footer.jsp"%>
 

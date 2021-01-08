@@ -50,14 +50,6 @@
 						<td colspan="4" class="box2">
 							<textarea name="content" placeholder="내용을 입력해주라."></textarea>
 						</td>
-					</tr>
-					<tr>
-						<td colspan="1" class="box1">이전글</td>
-						<td colspan="3" class="box2">이전글</td>
-					</tr>
-					<tr>
-						<td colspan="1" class="box1">다음글</td>
-						<td colspan="3" class="box2">다음글</td>
 					</tr>				
 	            </table>
             </form>

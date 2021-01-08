@@ -44,20 +44,27 @@ public class NoticeDetailController extends HttpServlet
 			req.setAttribute("currentUser", "log-off");
 		}
 		
+		
 		/*
 		 * 
 		 */
-		String detailPage;
+		String detailPageStr;
 		if(generalLogin)
 		{
-			detailPage = (String)myfSession.getAttribute("detailPage");
+			detailPageStr = (String)myfSession.getAttribute("detailPage");
+			int detailPage = Integer.parseInt(detailPageStr);
+			
 			NoticeService service = new NoticeService();
-			Notice notice = service.getNotice(Integer.parseInt(detailPage));
+			Notice notice = service.getNotice(detailPage);
+			
 			req.setAttribute("n", notice);
-			List<Comment> cList = service.getCommentList(Integer.parseInt(detailPage));
+			List<Comment> cList = service.getCommentList(detailPage);
 			req.setAttribute("cList", cList);
+			Notice nextNotice = service.getNextNotice(detailPage);
+			req.setAttribute("nextNotice", nextNotice);
+			Notice prevNotice = service.getPrevNotice(detailPage);
+			req.setAttribute("prevNotice", prevNotice);
 		}
-		
 		req.getRequestDispatcher("/dog_MYF/notice/noticeDetail.jsp").forward(req, resp);
 	}
 	

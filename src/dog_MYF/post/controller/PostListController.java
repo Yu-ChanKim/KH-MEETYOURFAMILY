@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import dog_MYF.notice.entity.Notice;
 import dog_MYF.post.entity.Comment;
 import dog_MYF.post.entity.Post;
 import dog_MYF.post.entity.PostView;
@@ -41,7 +42,6 @@ public class PostListController extends HttpServlet
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
-	    
 		/*
 		 * SESSION - CHECK
 		 */
@@ -98,22 +98,28 @@ public class PostListController extends HttpServlet
 		/*
 		 * ACTION : detailPage
 		 */
-		String detailPage = req.getParameter("detailPage");
-		if(detailPage != null)
+		String detailPageStr = req.getParameter("detailPage");
+		if(detailPageStr != null)
 		{
+			int detailPage = Integer.parseInt(detailPageStr);
 			if(generalLogin)
 			{
-				myfSession.setAttribute("detailPage", detailPage);
+				myfSession.setAttribute("detailPage", detailPageStr);
 			}
 			PostService service = new PostService();
 			if(!adminLogin)
 			{
-				service.updatePostHit(Integer.parseInt(detailPage));
+				service.updatePostHit(detailPage);
 			}
-			Post post = service.getPost(Integer.parseInt(detailPage));
+			Post post = service.getPost(detailPage);
 			req.setAttribute("p", post);
-			List<Comment> cList = service.getCommentList(Integer.parseInt(detailPage));
+			List<Comment> cList = service.getCommentList(detailPage);
 			req.setAttribute("cList", cList);
+			Post nextPost = service.getNextPost(detailPage);
+			req.setAttribute("nextPost", nextPost);
+			Post prevPost = service.getPrevPost(detailPage);
+			req.setAttribute("prevPost", prevPost);
+			
 			viewPage = "postDetail.jsp";
 		}
 		

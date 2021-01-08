@@ -58,8 +58,6 @@ public class NoticeCommentController extends HttpServlet
 				cRegister = cRegister_;
 				
 				String content = req.getParameter("comment");
-//				String content = (String)req.getAttribute("comment");
-//				int noticeId = Integer.parseInt(req.getParameter("n.id"));
 				int noticeId = Integer.parseInt(cRegister);
 				
 				Comment comment = new Comment();
