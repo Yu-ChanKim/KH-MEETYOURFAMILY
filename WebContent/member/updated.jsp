@@ -1,18 +1,15 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-   request.setCharacterEncoding("UTF-8");
-   String cp=request.getContextPath();
-%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원수정</title>
 
-<link rel="stylesheet" href="<%=cp %>/member/data/updated.css" type="text/css"/>
+<link rel="stylesheet" href="/member/data/updated.css" type="text/css"/>
 
-<script type="text/javascript" src="<%=cp %>/member/data/util.js"></script>
+<script type="text/javascript" src="/member/data/util.js"></script>
 <script type="text/javascript">
 
    function sendIt(){
@@ -46,7 +43,7 @@
       }
       f.userTel.value=str;
       
-      f.action="<%=cp%>/join/updated_ok.do";
+      f.action="/join/updated_ok.do";
       f.submit();
       
    }
@@ -118,7 +115,7 @@
                     <div id="bbsCreated_footer">
                      <input type="button" value="수정하기" class="btn2" onclick="sendIt()"/>
 	                 <input type="button" value="수정취소" class="btn2"
-	                 	onclick="javascript:location.href='<%=cp%>/main.jsp';"/>   
+	                 	onclick="javascript:location.href='/main.jsp';"/>   
                   </div>
                  </form>
             </div>

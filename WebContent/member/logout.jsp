@@ -1,23 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-   request.setCharacterEncoding("UTF-8");
-   String cp=request.getContextPath();
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>MYF : 로그아웃</title>
-<link rel="stylesheet" href="<%=cp %>/member/data/join.css" type="text/css"/>
+<link rel="stylesheet" href="/member/data/join.css" type="text/css"/>
 
 <script>
    function logout(){
       
       var f = document.myForm;
       //로그아웃 버튼 눌렀을 때 넘어가는 버튼
-      f.action="<%=cp%>/join/logout.do";
+      f.action="/join/logout.do";
       f.submit();
    }
 </script>

@@ -40,7 +40,6 @@ public class MemberServlet extends HttpServlet {
 		Connection conn=DBCPConn.getConnection(); 
 		MemberDAO dao=new MemberDAO(conn);
 		
-		String cp=req.getContextPath(); //http://localhost:8080/프로젝트명
 		String uri=req.getRequestURI();  // (/프로젝트명/created.do 뒷부분의 주소를 읽어옴) // URI : 프로젝트 이하 경로 (CP + SP)
 		
 		String url;
@@ -50,7 +49,8 @@ public class MemberServlet extends HttpServlet {
 		if(uri.indexOf("created.do")!=-1){
 			url="/member/created.jsp";
 			forward(req,resp,url);
-		}else if(uri.indexOf("created_ok.do")!=-1){
+		}
+		else if(uri.indexOf("created_ok.do")!=-1){
 			MemberDTO dto=new MemberDTO();
 			
 			dto.setUserId(req.getParameter("userId"));
@@ -66,14 +66,15 @@ public class MemberServlet extends HttpServlet {
 			
 			dao.insertData(dto);
 			
-			url=cp+"/main.jsp"; // http:localhost:8080/study 입력시 index.jsp 실행됨
+			url="/main.jsp?inc=./member/alert.jsp";
 			resp.sendRedirect(url);
-			
-		}else if(uri.indexOf("login.do")!=-1){
+		}
+		else if(uri.indexOf("login.do")!=-1){
 			//로그인시 포워드 페이지
-			url="main.jsp?inc=./member/login.jsp";
+			url="/main.jsp?inc=./member/login.jsp";
 			forward(req, resp, url);
-		}else if(uri.indexOf("login_ok.do")!=-1){
+		}
+		else if(uri.indexOf("login_ok.do")!=-1){
 			
 			String userId=req.getParameter("userId");
 			String userPwd=req.getParameter("userPwd");
@@ -85,11 +86,12 @@ public class MemberServlet extends HttpServlet {
 			if(dto==null||!dto.getUserPwd().equals(userPwd)){
 				req.setAttribute("message", "아이디 또는 패스워드를 정확히 입력하세요!");
 				
-				url="/member/login.jsp";
+				url="/main.jsp?inc=./member/login.jsp";
 				forward(req, resp, url);
 				
-				return;//로그인이 실패하면 return(뒤에 코드 실행하지 않는다)
-			}
+//				return;//로그인이 실패하면 return(뒤에 코드 실행하지 않는다)
+			} 
+			else {
 			
 			//로그인이 성공했을 경우
 			//세션에 현재 아이디,이름을      담는다.
@@ -117,18 +119,18 @@ public class MemberServlet extends HttpServlet {
 			HttpSession session=req.getSession(); // 세션 객체 생성
 			session.setAttribute("customInfo", info); //세션에 값 담기
 			
-			url=cp+"/main.jsp"; // cp는 http:localhost:8080/KH-MEETYOURFAMILY 입력시 index.jsp 실행됨 하지만 우리 프로젝트는 /main.jsp넣기
+			url="/main.jsp"; // cp는 http:localhost:8080/KH-MEETYOURFAMILY 입력시 index.jsp 실행됨 하지만 우리 프로젝트는 /main.jsp넣기
 			resp.sendRedirect(url);				
-			
-			
-		}else if(uri.indexOf("logout.do")!=-1){
+			}
+		}
+		else if(uri.indexOf("logout.do")!=-1){
 		
 			HttpSession session=req.getSession();
 			
 			session.removeAttribute("customInfo");
 			session.invalidate();//변수도 지움
 			
-			url=cp+"/main.jsp";
+			url="/main.jsp";
 			resp.sendRedirect(url);
 		}
 		
@@ -148,7 +150,7 @@ public class MemberServlet extends HttpServlet {
 			if(dto==null||!dto.getUserAnswer().equals(userAnswer)){
 				req.setAttribute("message", "회원정보가 존재하지 않습니다.");
 				
-				url="/member/login.jsp";
+	            url="/main.jsp?inc=./member/login.jsp";
 				forward(req, resp, url);
 				return;
 			}
@@ -166,7 +168,7 @@ public class MemberServlet extends HttpServlet {
 			req.setAttribute("message", "아이디는 ["+dto.getUserId()+"]입니다.");
 			
 			req.setAttribute("find", "아이디 찾기");
-			url="/member/login.jsp";
+			url="/main.jsp?inc=./member/login.jsp";
 			forward(req, resp, url);		
 		}
 		
@@ -175,22 +177,25 @@ public class MemberServlet extends HttpServlet {
 			
 			url="/member/searchpw.jsp";
 			forward(req, resp, url);
-		}else if(uri.indexOf("searchpw_ok.do")!=-1){//비밀번호 찾기_jsp
+		}
+		else if(uri.indexOf("searchpw_ok.do")!=-1){//비밀번호 찾기_jsp
 			
 			String userId=req.getParameter("userId");
 			String userAnswer=req.getParameter("userAnswer");
 			
 			MemberDTO dto=dao.getReadData(userId);
 			
+			//찾기 실패 했을때
 			if(dto==null||!dto.getUserAnswer().equals(userAnswer)){
 				req.setAttribute("message", "회원정보가 존재하지 않습니다.");
 				
-				url="/member/login.jsp";
+				url="/main.jsp?inc=./member/login.jsp";
 				forward(req, resp, url);
 				
 				return;
 			}
 			
+			// 찾기 성공 했을때
 			CustomInfo info=new CustomInfo();
 			
 			info.setUserId(dto.getUserId());
@@ -203,12 +208,10 @@ public class MemberServlet extends HttpServlet {
 			req.setAttribute("message", "비밀번호는 ["+dto.getUserPwd()+"]입니다.");
 			
 			req.setAttribute("find", "비밀번호 찾기");
-			url="/member/login.jsp";
+			url="/main.jsp?inc=./member/login.jsp";
 			forward(req, resp, url);
 					
 		}
-		
-		
 		else if(uri.indexOf("updated.do")!=-1){
 			
 			HttpSession session=req.getSession();
@@ -219,16 +222,12 @@ public class MemberServlet extends HttpServlet {
 			
 			req.setAttribute("dto", dto);//updated.jsp에서 정보 띄워주기위해 받아준다.
 			
-			//회원정보가 없을때
-			if(dto==null){
-				url=cp;
-				resp.sendRedirect(url);
-			}
 			
 			url="/member/updated.jsp";
 			forward(req, resp, url);
 			
-		}else if(uri.indexOf("updated_ok.do")!=-1){
+		}
+		else if(uri.indexOf("updated_ok.do")!=-1){
 			
 			MemberDTO dto=new MemberDTO();
 			
@@ -248,7 +247,7 @@ public class MemberServlet extends HttpServlet {
 			
 			dao.updateData(dto);
 			
-			//다시 인덱스 화면으로
+			//다시 로그아웃 화면으로
 			url="../main.jsp?inc=./member/logout.jsp";
 			resp.sendRedirect(url);
 			

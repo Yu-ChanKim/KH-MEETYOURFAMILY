@@ -1,20 +1,16 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-	request.setCharacterEncoding("UTF-8");
-	String cp=request.getContextPath();
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원가입</title>
 <!-- 링크가져오기 -->
-<link rel="stylesheet" href="<%=cp %>/member/data/join.css" type="text/css"/>
+<link rel="stylesheet" href="/member/data/join.css" type="text/css"/>
 <!-- 헤어 가져올때 JSP 라이브러리  -->
 <script src='./lib/jquery-3.5.1.min.js'></script>
 <!-- utill.js 파일 참조 -->
-<script src="<%=cp %>/member/data/util.js"></script>
+<script src="/member/data/util.js"></script>
 <script>
 // 회원가입 버튼을 눌렀을 때 메소드
 	function sendIt(){
@@ -127,7 +123,7 @@
 		
 		
 		//실행 됐을때 서블릿 메소드에  created_ok.do 부분 실행
-		f.action="<%=cp%>/join/created_ok.do";
+		f.action="/join/created_ok.do";
 		f.submit();
 		
 	}
@@ -222,14 +218,16 @@
 						onclick="document.myForm.userId.focus();"/>
 						
 					<input type="button" value="작성취소" class="btn3"	 
-						onclick="javascript:location.href='<%=cp%>/main.jsp';"/>
+						onclick="javascript:location.href='/main.jsp';"/>
 						
 				
 				
 	           	<div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 110px;position:relative"> 
             		<img src="//i1.daumcdn.net/localimg/localimages/07/postcode/320/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼"> 
             	</div>
+            	
 				<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js">	</script> 
+				
 				<script> 
 				// 우편번호 찾기 화면을 넣을 element 
 				var element_wrap = document.getElementById('wrap');
@@ -289,22 +287,13 @@
 					element_wrap.style.display = 'block';
 					
 				}
-				</script>		
-				
-				
-				
-				
-				
-				</form>
-			</div>
-
-				
-          </div>
-       </div>
-    </div>        
-  </div>         
-</div>
-</div>
+				</script>
+			</form>
+		 </div>	
+        </div>
+     </div>
+  </div>        
+</div>         
 </div>
 </body>
 </html>

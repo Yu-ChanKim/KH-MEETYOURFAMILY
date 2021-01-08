@@ -1,15 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-	request.setCharacterEncoding("UTF-8");
-	String cp=request.getContextPath();
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="stylesheet" href="<%=cp %>/member/data/login.css" type="text/css"/>
+<link rel="stylesheet" href="/member/data/login.css" type="text/css"/>
 
 <title>MYF : 로그인</title>
 
@@ -30,7 +26,7 @@
 		}
 		
 		//로그인이 됐을 때 넘어가는 페이지
-		f.action="<%=cp%>/join/login_ok.do";
+		f.action="/join/login_ok.do";
 		f.submit();
 	}
 </script>
@@ -69,13 +65,11 @@
 				
 				
 				<div class="find">
-		          <a class="button id-find"
-		           onclick="javascript:location.href='<%=cp %>/join/searchid.do';">
+		          <a class="button id-find" href="/main.jsp?inc=./member/searchid.jsp">
 		            <span>아이디 찾기</span>
 		          </a>
 		          
-		          <a class="button pw-find"
-		           onclick="javascript:location.href='<%=cp %>/join/searchpw.do';">
+		          <a class="button pw-find" href="/main.jsp?inc=./member/searchpw.jsp">
 		            <span>비밀번호 찾기</span>
 		          </a>
 		          
