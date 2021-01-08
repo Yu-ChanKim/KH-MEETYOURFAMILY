@@ -64,7 +64,6 @@
 	                        	</c:if>
 	                        </c:forTokens>
 	                    </td>
-
 	                </tr>
 					<tr>
 						<td colspan="4" class="box2 content_">
@@ -94,13 +93,21 @@
 					<tr>
 						<td colspan="1" class="box1">이전글</td>
 						<td colspan="3" class="box3">
-							<button type="submit" form="prevNext" class="prevNext detailBtn" name="prevNext" value="${prevPost.id}">${prevPost.title}</button>
+							<c:if test="${!empty prevPost}">
+								<button type="submit" form="prevNext" class="prevNext detailBtn" name="prevNext" value="${prevPost.id}">
+									${prevPost.title}
+								</button>
+							</c:if>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="1" class="box1">다음글</td>
 						<td colspan="3" class="box3">
-							<button type="submit" form="prevNext" class="prevNext detailBtn" name="prevNext" value="${nextPost.id}">${nextPost.title}</button>
+							<c:if test="${!empty nextPost}">
+								<button type="submit" form="prevNext" class="prevNext detailBtn" name="prevNext" value="${nextPost.id}">
+									${nextPost.title}
+								</button>
+							</c:if>
 						</td>
 					</tr>				                
 	            </table>

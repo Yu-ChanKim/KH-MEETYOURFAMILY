@@ -42,6 +42,7 @@
 	                        ${n.writer}
 	                	</td>
 	                </tr>
+					<tr>
 	                    <td colspan="1" class="box1">작성일</td>
 	                    <td colspan="1" class="box2">
 							<fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${n.regdate}"/>
