@@ -99,7 +99,7 @@
 		<div class="paging">
 			<table>
 				<tr>
-					<fmt:parseNumber var="pages" type="number" value="10" />
+					<fmt:parseNumber var="pages" type="number" value="5" />
 					<fmt:parseNumber var="pNo" type="number" value="${(param.pageNo == null) ? 1 : param.pageNo}" />
 					<fmt:parseNumber var="totalPage" type="number" value="${fn:substringBefore(Math.ceil(count/10), '.')}" />
 					<fmt:parseNumber var="firstPage" type="number" value="${pNo-((pNo-1) mod pages)}" />
