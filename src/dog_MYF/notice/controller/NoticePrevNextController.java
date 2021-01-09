@@ -14,8 +14,8 @@ import dog_MYF.notice.entity.Comment;
 import dog_MYF.notice.entity.Notice;
 import dog_MYF.notice.service.NoticeService;
 
-@WebServlet("/dog_MYF/noticeComment")
-public class NoticeCommentController extends HttpServlet
+@WebServlet("/dog_MYF/noticeNextPrev")
+public class NoticePrevNextController extends HttpServlet
 {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -43,53 +43,38 @@ public class NoticeCommentController extends HttpServlet
 			req.setAttribute("currentUser", "log-off");
 		}
 		
-		
+
 		/*
-		 * ACTION : NEW COMMENT
+		 *	PREV or NEXT PAGE  
 		 */
-		String detailPage = req.getParameter("detailPage");
-		
-		if(generalLogin)
+
+		String prevNextStr = req.getParameter("prevNext");
+		if(prevNextStr != null)
 		{
-			String cRegister = null; 
-			String cRegister_ = req.getParameter("cRegister");
-			if(cRegister_ != null)
-			{
-				cRegister = cRegister_;
-				
-				String content = req.getParameter("comment");
-				int noticeId = Integer.parseInt(cRegister);
-				
-				Comment comment = new Comment();
-				comment.setWriter((String)myfSession.getAttribute("id"));
-				comment.setContent(content);
-				comment.setNoticeId(noticeId);
-				
-				NoticeService service = new NoticeService();
-				service.insertComment(comment);
-				
-				
-				resp.sendRedirect("/dog_MYF/noticeDetail");
-				
-			}
-
-			
-			/*
-			 * ACTION : DELETE COMMENT
-			 */
-
+			int prevNext = Integer.parseInt(prevNextStr);
 			if(generalLogin)
 			{
-				String deleteComment = req.getParameter("deleteComment");
-				if(deleteComment != null)
-				{
-					NoticeService service = new NoticeService();
-					service.deleteComment(Integer.parseInt(deleteComment));
-					
-					resp.sendRedirect("/dog_MYF/noticeDetail");
-				}
+				myfSession.setAttribute("detailPage", prevNext);
 			}
+			NoticeService service = new NoticeService();
+			if(!adminLogin)
+			{
+				service.updateNoticeHit(prevNext);
+			}
+			Notice notice = service.getNotice(prevNext);
+			req.setAttribute("n", notice);
+			List<Comment> cList = service.getCommentList(prevNext);
+			req.setAttribute("cList", cList);
+			Notice nextNotice = service.getNextNotice(prevNext);
+			req.setAttribute("nextNotice", nextNotice);
+			Notice prevNotice = service.getPrevNotice(prevNext);
+			req.setAttribute("prevNotice", prevNotice);
+
+			req.getRequestDispatcher("/dog_MYF/notice/noticeDetail.jsp").forward(req, resp);
 		}
+//		req.getRequestDispatcher("/dog_MYF/noticeDetail").forward(req, resp);
+//		resp.sendRedirect("/dog_MYF/noticeDetail");
+//		resp.sendRedirect("/dog_MYF/notice/noticeDetail.jsp");
 	}
 	
 	@Override

@@ -14,8 +14,8 @@ import dog_MYF.post.entity.Comment;
 import dog_MYF.post.entity.Post;
 import dog_MYF.post.service.PostService;
 
-@WebServlet("/dog_MYF/postComment")
-public class PostCommentController extends HttpServlet
+@WebServlet("/dog_MYF/postNextPrev")
+public class PostPrevNextController extends HttpServlet
 {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -43,58 +43,42 @@ public class PostCommentController extends HttpServlet
 			req.setAttribute("currentUser", "log-off");
 		}
 		
-		
+
 		/*
-		 * ACTION : NEW COMMENT
+		 *	PREV or NEXT PAGE  
 		 */
-		String detailPage = req.getParameter("detailPage");
-		
-		if(generalLogin)
+
+		String prevNextStr = req.getParameter("prevNext");
+		if(prevNextStr != null)
 		{
-			String cRegister = null; 
-			String cRegister_ = req.getParameter("cRegister");
-			if(cRegister_ != null)
-			{
-				cRegister = cRegister_;
-				
-				String content = req.getParameter("comment");
-//				String content = (String)req.getAttribute("comment");
-//				int postId = Integer.parseInt(req.getParameter("n.id"));
-				int postId = Integer.parseInt(cRegister);
-				
-				Comment comment = new Comment();
-				comment.setWriter((String)myfSession.getAttribute("id"));
-				comment.setContent(content);
-				comment.setPostId(postId);
-				
-				PostService service = new PostService();
-				service.insertComment(comment);
-				
-				resp.sendRedirect("/dog_MYF/postDetail");
-			}
-
-			
-			/*
-			 * ACTION : DELETE COMMENT
-			 */
-
+			int prevNext = Integer.parseInt(prevNextStr);
 			if(generalLogin)
 			{
-				String deleteComment = req.getParameter("deleteComment");
-				if(deleteComment != null)
-				{
-					PostService service = new PostService();
-					service.deleteComment(Integer.parseInt(deleteComment));
-					
-					resp.sendRedirect("/dog_MYF/postDetail");
-				}
+				myfSession.setAttribute("detailPage", prevNext);
 			}
+			PostService service = new PostService();
+			if(!adminLogin)
+			{
+				service.updatePostHit(prevNext);
+			}
+			Post post= service.getPost(prevNext);
+			req.setAttribute("n", post);
+			List<Comment> cList = service.getCommentList(prevNext);
+			req.setAttribute("cList", cList);
+			Post nextPost = service.getNextPost(prevNext);
+			req.setAttribute("nextPost", nextPost);
+			Post prevPost = service.getPrevPost(prevNext);
+			req.setAttribute("prevPost", prevPost);
+
+			req.getRequestDispatcher("/dog_MYF/post/postDetail.jsp").forward(req, resp);
 		}
+//		req.getRequestDispatcher("/dog_MYF/postDetail").forward(req, resp);
+//		resp.sendRedirect("/dog_MYF/postDetail");
+//		resp.sendRedirect("/dog_MYF/post/Detail.jsp");
 	}
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
-		doPost(req, resp);
+
 	}
 }

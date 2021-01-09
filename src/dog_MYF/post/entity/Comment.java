@@ -46,7 +46,7 @@ public class Comment
 
 	public String getContent()
 	{
-		return content;
+		return content.replace("\r\n", "<br>").replace(" ", "&nbsp;");
 	}
 
 	public void setContent(String content)

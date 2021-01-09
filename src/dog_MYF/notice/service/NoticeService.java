@@ -50,7 +50,6 @@ public class NoticeService
 			pstmt.setString(2, notice.getWriter());
 			pstmt.setString(3, notice.getContent());
 			pstmt.setString(4, notice.getFiles());
-			
 			result = pstmt.executeUpdate();
 		}
 		catch (ClassNotFoundException e)
@@ -185,9 +184,7 @@ public class NoticeService
 			Class.forName(this.JDBC_DRIVER);
 			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
-
 			pstmt.setInt(1, pageNo);
-			
 			rs = pstmt.executeQuery();
 		}
 		catch (ClassNotFoundException e)
@@ -245,7 +242,6 @@ public class NoticeService
 			if (stmt != null)	try { stmt.close();}	catch (Exception e) {}
 			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
 		}
-		
 		return result;
 	}
 	
@@ -267,7 +263,6 @@ public class NoticeService
 			pstmt.setString(1, comment.getWriter());
 			pstmt.setString(2, comment.getContent());
 			pstmt.setInt(3, comment.getNoticeId());
-			
 			result = pstmt.executeUpdate();
 		}
 		catch (ClassNotFoundException e)
@@ -287,12 +282,10 @@ public class NoticeService
 			if (pstmt != null)	try { pstmt.close();}	catch (Exception e) {}
 			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
 		}
-		
 		return result;
 	}
 	
-	
-	
+
 	public List<Comment> getCommentList(int noticeId)
 	{	
 		List<Comment> list = new ArrayList<>();
@@ -308,9 +301,7 @@ public class NoticeService
 			Class.forName(this.JDBC_DRIVER);
 			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
-
 			pstmt.setInt(1, noticeId);
-			
 			rs = pstmt.executeQuery();
 
 			while(rs.next())
@@ -320,9 +311,7 @@ public class NoticeService
 				String content = rs.getString("CONTENT");
 				Timestamp regdate = rs.getTimestamp("REGDATE");
 
-				
 				Comment comment = new Comment(id, writer, content, regdate, noticeId);
-				
 				list.add(comment);
 			}
 		}
@@ -344,7 +333,6 @@ public class NoticeService
 			if (pstmt != null)	try { pstmt.close();}	catch (Exception e) {}
 			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
 		}
-		
 		return list;
 	}
 	
@@ -377,7 +365,6 @@ public class NoticeService
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, "%" + keyword + "%");
-
 			rs = pstmt.executeQuery();
 
 			if(rs.next())
@@ -403,7 +390,6 @@ public class NoticeService
 			if (pstmt != null)	try { pstmt.close();}	catch (Exception e) {}
 			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
 		}
-		
 		return count;
 	}
 	
@@ -412,7 +398,7 @@ public class NoticeService
 		Notice notice = null;
 		
 		String sql = "SELECT * FROM NOTICE_TB WHERE ID=?";
-				
+
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -422,9 +408,7 @@ public class NoticeService
 			Class.forName(this.JDBC_DRIVER);
 			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
-
 			pstmt.setInt(1, id);
-			
 			rs = pstmt.executeQuery();
 
 			if(rs.next())
@@ -437,7 +421,7 @@ public class NoticeService
 				String files = rs.getString("FILES");
 				String hit = rs.getString("HIT");
 				boolean pub = rs.getBoolean("PUB");
-				
+
 				notice = new Notice(nid, title, writer, content, regdate, files, hit, pub);
 			}
 		}
@@ -459,7 +443,6 @@ public class NoticeService
 			if (pstmt != null)	try { pstmt.close();}	catch (Exception e) {}
 			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
 		}
-		
 		return notice;
 	}
 	
@@ -487,9 +470,7 @@ public class NoticeService
 			Class.forName(this.JDBC_DRIVER);
 			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
-
 			pstmt.setInt(1, id);
-			
 			rs = pstmt.executeQuery();
 
 			if(rs.next())
@@ -555,9 +536,7 @@ public class NoticeService
 			Class.forName(this.JDBC_DRIVER);
 			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			pstmt = conn.prepareStatement(sql);
-
 			pstmt.setInt(1, id);
-			
 			rs = pstmt.executeQuery();
 
 			if(rs.next())
@@ -592,7 +571,6 @@ public class NoticeService
 			if (pstmt != null)	try { pstmt.close();}	catch (Exception e) {}
 			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
 		}
-		
 		return notice;
 	}
 
@@ -617,7 +595,6 @@ public class NoticeService
 			Class.forName(this.JDBC_DRIVER);
 			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			stmt = conn.createStatement();
-
 			result = stmt.executeUpdate(sql);
 		}
 		catch (ClassNotFoundException e)
@@ -637,7 +614,6 @@ public class NoticeService
 			if (stmt != null)	try { stmt.close();}	catch (Exception e) {}
 			if (conn != null)	try { conn.close();	}	catch (Exception e) {}
 		}
-		
 		return result;
 	}
 }
