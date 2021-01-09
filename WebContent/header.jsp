@@ -9,7 +9,7 @@
     </div>
     <nav class="header_2">             
        <ul>                    
-          <li><a href="/main.jsp?inc=/dog_introduce/introduce.jsp">사업소개</a></li>
+          <li><a href="/main.jsp?inc=/dog_introduce/introduce.jsp">About MYF</a></li>
             <li><a href="/garden.do?siba=page&dname=&group=전체">마당</a></li>
             <c:if test="${not empty sessionScope.customInfo.userId && sessionScope.customInfo.userId == 'admin'}">           
                <li><a href="/dog_garden?admin=select">마당 관리</a></li>                              

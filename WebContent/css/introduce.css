@@ -1,23 +1,201 @@
 @charset "UTF-8";
 
-    /*-------------------------------------------- 메인 --------------------------------------------*/
-    #introduce>div h2{
-        margin-top: 60px;
-        color:black;
-        font-size: 40px;
-        font-weight: bold;
-    }
-    #introduce>div{
-        margin:30px;        
-        height: auto;
-        text-align: center;
-    }
+/*----------------------- 공통 -----------------------*/
+#introduce{
+   font-family: 'Maven Pro', sans-serif;
+   position: relative;         
+}
+#intro_1{
+   width: 1500px;
+   margin-left:200px;   
+   text-align:center;   
+}
+#intro_1 ul{
+   display: flex;   
+   justify-content: center;   
+   padding-left: 60px;
+   margin-bottom: 60px;
+}
+#intro_1 ul li {
+   list-style-type: none;
+   padding: 5px;
+   padding-right: 70px;   
+   cursor: pointer;
+   font-weight: bold;
+   font-size: 26px;
+}
+#introduce #myf{
+   position: relative;
+}
+#introduce #myf>h2{
+   position: absolute;
+   left:40.8%;
+   top: 110px;
+   font-size:35px;
+   color: rgb(219, 46, 46);
+}
 
-    #introduce #p1{
-        padding-top: 70px;
-    }
-    #introduce #p3,#p4,#p6,#p7{
-        padding-top: 30px;
-    }
-    /*-------------------------------------------- 하단 푸터 --------------------------------------------*/
+/*----------------------- 프로젝트 -----------------------*/
+
+#intro_1>#intro_Pro h1{
+   font-size: 40px;
+   letter-spacing: 10px;    
+}
+#intro_1>#intro_Pro #project1{   
+   
+   display: inline-block;   
+   border: 1rem outset pink;
+     border-radius: 20px;
+     font: bold 1rem sans-serif;
+     margin: 2rem;
+     padding: 1rem;
+     outline-offset: 0.3rem;
+     margin-bottom: 60px;
+  
+   
+   /*
+   display: inline-block;   
+   margin-top: 100px;
+   padding: 10px;
+   font-weight: bold;
+   border: 1.5rem ridge black;
+   margin-bottom: 50px;
+   */
+}
+#intro_1>#intro_Pro p{
+   font-size: 25px;   
+}
+#intro_1>#intro_Pro #project1 #leader>p{
+   font-weight: bold;
+   font-size: 30px;
+}
+
+#intro_1>#intro_Pro #project2,#project3,#project4{ 
+   display: inline-block;   
+   border: 1rem outset khaki;
+     border-radius: 20px;
+     font: bold 1rem sans-serif;
+     margin: 2rem;
+     padding: 1rem;
+     outline-offset: 0.3rem;
+}
+   
+
+
+#intro_1>#intro_Pro .intro_title{
+   
+   margin-top: 40px;
+   display: inline-block;
+   border: 1px solide white;
+   background-color: black;
+   font-size: 35px;
+   color: white;
+   /*color:rgb(196, 95, 95);*/   
+}
+#intro_1>#intro_Pro .intro_middle{
+   font-weight: bold;
+   font-size: 33px;
+}
+
+#intro_1>#intro_Pro #p2{
+   font-size: 30px;
+   color:rgb(180, 80, 80);
+   font-weight: bold;
+}
+
+#intro_1>#intro_Pro #intro_line {
+   width: 400px;
+   margin-top: -30px;
+   margin-left: 545px;
+    overflow: visible;
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+#intro_1>#intro_Pro #intro_line:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+#intro_1>#intro_Pro #intro_line2{
+   border: 0;
+    height: 0;
+    width: 1200px;    
+    margin-left: 150px;
+    box-shadow: 0 0 10px 1px black;
+}
+#intro_1>#intro_Pro #intro_line2:after {
+    content: "\00a0";
+}
+
+
+
+
+
+
+
+
+
+
+/*----------------------- 사업소개 -----------------------*/
+#middle #box1 {
+   font-family: 'Maven Pro', sans-serif;
+   padding-top: 20px;
+   font-size: 26px;
+}
+#middle #img2{
+   margin-bottom:-28px;
+}
+
+#middle #box2 {
+   font-family: 'Maven Pro', sans-serif;
+   padding: 20px;   
+   font-size: 26px;
+   text-align:center;   
+   line-height: 40px;
+}
+#middle #box2>h2 {
+   font-size: 45px;
+   text-shadow: 2px 2px 9px gray; 
+}
+#middle iframe {
+   margin-bottom: 60px;
+}
+
+
+
+
+
+
+
+
+/*----------------------- 분양절차 -----------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------- 찾아오시는길 -----------------------*/
+ 
+ 
+ 
  

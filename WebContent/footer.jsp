@@ -10,8 +10,8 @@
         <a href="https://www.facebook.com/" target="_new"><img src="/img/footer-sns-facebook.png"></a>        
     </div>
     <div class="footer_3">
-       <a href="https://google.com/" target="_new">이용약관</a>
-        <a href="https://google.com/" target="_new">개인정보취급방침</a>
+        <a href="/member/joinAgree.jsp" target="_new">이용약관</a>
+        <a href="/member/privacyAgree.jsp" target="_new">개인정보취급방침</a>
         <a href="/center/">고객센터</a>       
     </div>  
     <div class="footer_4">

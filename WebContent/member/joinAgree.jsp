@@ -5,7 +5,7 @@
 <head>
 <title>개인정보 수집 및 이용동의</title>
 <meta charset="utf-8">
-<link rel="stylesheet" href="/member/data/join.css" type="text/css"/>
+<link rel="stylesheet" href="/css/log_join/join.css" type="text/css"/>
 
 </head>
 <body>

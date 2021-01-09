@@ -43,11 +43,11 @@
    $().ready(function () {                   
        swal({
           icon: "success",
-           title: "회원가입이 완료 되었습니다.",
-           button: "반려견 MBTI 검사하기",
+           title: "회원탈퇴가 완료되었습니다.",
+           button: "메인으로 이동하기",
        }) .then((value) => {
           if(value) {
-             location.href ='/main.jsp?inc=./dog_test/mbti_test.jsp'
+             location.href ='/main.jsp'
           }
        })                   
    });
