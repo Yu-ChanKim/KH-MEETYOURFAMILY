@@ -42,7 +42,7 @@ public class PostFileUpload
 		this.path = this.realPath.substring(0, this.realPath.indexOf("\\.metadata\\"));
 		this.path += "\\KH-MEETYOURFAMILY\\WebContent\\dog_MYF\\post\\upload";
 		newPath(this.path);
-
+		
 		this.path += File.separator;
 		this.path_ = "";
 		this.fileIS = null;
@@ -92,7 +92,7 @@ public class PostFileUpload
 						if((bfRead = this.fileIS.read(bf)) == -1)
 						{
 							break;
-						}	
+						}
 						this.fileOS.write(bf, 0, bfRead);
 					}
 				}
@@ -112,7 +112,10 @@ public class PostFileUpload
 			}
 		}
 		return this.fileNames;
-
+		
+		/*
+		 * 
+		 */
 	}
 	
 }

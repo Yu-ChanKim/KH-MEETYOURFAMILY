@@ -127,8 +127,8 @@ public class PostService
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, "%" + keyword + "%");
-			pstmt.setInt(2, 1+(pageNo-1)*10);
-			pstmt.setInt(3, pageNo*10);
+			pstmt.setInt(2, 1+(pageNo-1)*9);
+			pstmt.setInt(3, pageNo*9);
 			
 			rs = pstmt.executeQuery();
 
@@ -215,7 +215,7 @@ public class PostService
 	{
 		int result = 0;
 		
-		String sql = "DELETE POSET_COMMENT_TB WHERE ID IN ("+ id +")";
+		String sql = "DELETE POST_COMMENT_TB WHERE ID IN ("+ id +")";
 		
 		Connection conn = null;
 		Statement stmt = null;
@@ -225,7 +225,6 @@ public class PostService
 			Class.forName(this.JDBC_DRIVER);
 			conn = DriverManager.getConnection(this.JDBC_URL, this.DB_USER, this.DB_PASS);
 			stmt = conn.createStatement();
-
 			result = stmt.executeUpdate(sql);
 		}
 		catch (ClassNotFoundException e)
@@ -297,7 +296,7 @@ public class PostService
 	{	
 		List<Comment> list = new ArrayList<>();
 		
-		String sql = "SELECT * FROM POST_COMMENT_TB WHERE POST_ID=?";
+		String sql = "SELECT * FROM POST_COMMENT_TB WHERE POST_ID=? ORDER BY REGDATE ASC";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;

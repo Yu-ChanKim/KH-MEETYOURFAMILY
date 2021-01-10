@@ -1,18 +1,7 @@
 package dog_MYF.post.controller;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -21,14 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
 
-import dog_MYF.notice.entity.Notice;
+import com.join.CustomInfo;
+
 import dog_MYF.post.entity.Comment;
 import dog_MYF.post.entity.Post;
 import dog_MYF.post.entity.PostView;
 import dog_MYF.post.service.PostService;
-import oracle.net.ano.Service;
 
 @MultipartConfig
 (
@@ -48,16 +36,20 @@ public class PostListController extends HttpServlet
 		String adminId = "admin";
 		boolean adminLogin = false;
 		boolean generalLogin = false;
-
-		HttpSession myfSession = req.getSession(false);
-		if(myfSession != null)
+		
+		CustomInfo loginId = new CustomInfo();
+		HttpSession session = req.getSession(false);
+		if(session != null)
 		{
-			String loginId = (String)myfSession.getAttribute("id");
-			req.setAttribute("currentUser", loginId);
-			generalLogin = true;			
-			if(adminId.equals(loginId))
+			loginId = (CustomInfo) session.getAttribute("customInfo");
+			if(loginId != null)
 			{
-				adminLogin = true;
+				req.setAttribute("currentUser", loginId.getUserId());
+				generalLogin = true;
+				if(adminId.equals(loginId.getUserId()))
+				{
+					adminLogin = true;
+				}
 			}
 		}
 		if(req.getAttribute("currentUser") == null)
@@ -104,7 +96,7 @@ public class PostListController extends HttpServlet
 			int detailPage = Integer.parseInt(detailPageStr);
 			if(generalLogin)
 			{
-				myfSession.setAttribute("detailPage", detailPageStr);
+				session.setAttribute("detailPage", detailPageStr);
 			}
 			PostService service = new PostService();
 			if(!adminLogin)
@@ -161,7 +153,7 @@ public class PostListController extends HttpServlet
 		/*
 		 * ACTION : regPage
 		 */
-		if(adminLogin)
+		if(generalLogin)
 		{
 			String regPage = req.getParameter("regPage");
 			if(regPage != null)
@@ -174,7 +166,7 @@ public class PostListController extends HttpServlet
 		/*
 		 * ACTION : register
 		 */
-		if(adminLogin)
+		if(generalLogin)
 		{
 			String register = req.getParameter("register");
 			if(register != null)
@@ -186,7 +178,7 @@ public class PostListController extends HttpServlet
 				
 				Post post = new Post();
 				post.setTitle(title);
-				post.setWriter((String)myfSession.getAttribute("id"));
+				post.setWriter(loginId.getUserId());
 				post.setContent(content);
 				post.setFiles(files);
 				
@@ -197,12 +189,7 @@ public class PostListController extends HttpServlet
 				viewPage = "postList";
 			}
 		}
-		
-		
-		/*
-		 * ACTION : comment register
-		 */
-		
+
 
 		/*
 		 * ACTION : COMMON

@@ -15,7 +15,7 @@
                <li><a href="/dog_garden?admin=select">마당 관리</a></li>                              
             </c:if>                 
             <li><a href="/main.jsp?inc=/dog_test/testMain.jsp">who's my family</a></li>
-            <li><a href="/dog_MYF/login">meet your family</a></li>
+            <li><a href="/dog_MYF/postList">meet your family</a></li>
             <li><a href="/main.jsp?inc=./member/mypage.jsp">마이페이지</a></li>
        </ul>
     </nav>

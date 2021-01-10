@@ -31,8 +31,8 @@
         		<input name="detailPage" type="hidden" value='${param.detailPage}'>
 	            <table>
 					<tr>
-	                	<td colspan="1" class="box1">제목</td>
-	                    <td colspan="3" class="box2">
+	                	<td colspan="1" class="box1 radius_LT">제목</td>
+	                    <td colspan="3" class="box2 radius_RT">
 	                    	${p.title}
 	                    </td>
 					</tr>
@@ -55,14 +55,18 @@
 	                <tr>
 	                    <td colspan="1" class="box1">첨부파일</td>
 	                    <td colspan="3" class="box2 contcontent_ent">
-	                        <c:forTokens var="fileName" items="${p.files}" delims="/" varStatus="st">
+							<div class="pictures scrollH">
+		                    	<c:forTokens var="fileName" items="${p.files}" delims="/" varStatus="st">		                    	
+<%--
 	                        	<a href="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}", download="${fn:split(fileName,',')[1]}">
 									${fn:split(fileName,',')[1]}
 	                        	</a>
-	                        	<c:if test="${!st.last}">
-	                        		/ 
-	                        	</c:if>
-	                        </c:forTokens>
+--%>
+		                    		<a href="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}" target"_blank">
+		                    			<img src="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}" />
+		                    		</a>
+		                        </c:forTokens>
+							</div>
 	                    </td>
 	                </tr>
 					<tr>
@@ -70,8 +74,8 @@
 							<p class="contentTxt">${p.content}</p>
 							<c:forEach var="cL" items="${cList}">
 								<div class="comment">
-									<p class="firstP">${cL.writer} 님의 댓글 &nbsp;&nbsp;<fmt:formatDate pattern=" yyyy-MM-dd HH:mm" value="${cL.regdate}"/></p>
-									<p>${cL.content}</p>
+									<p class="commentW">${cL.writer} 님의 댓글 &nbsp;&nbsp;<fmt:formatDate pattern=" yyyy-MM-dd HH:mm" value="${cL.regdate}"/></p>
+									<p class="commentP">${cL.content}</p>
 <%-- ADMIN OR GENERAL --%>
 									<c:if test="${currentUser == cL.writer or currentUser == 'admin'}">
 										<button type="submit" form="comment" class="detailBtn" name="deleteComment" value="${cL.id}">삭제</button>
@@ -82,7 +86,7 @@
 <%-- LOGIN --%>
 							<c:if test="${currentUser != 'log-off' or empty currentUser}">
 								<div class="comment">
-									<p>작성자</p>
+									<p class="commentW">${currentUser} 님의 댓글</p>
 									<textarea class="commentInput" name="comment" placeholder="댓글을 입력해주라."></textarea>
 									<button type="submit" form="comment" class="detailBtn" name="cRegister" value="${p.id}">작성</button>
 								</div>
@@ -92,24 +96,24 @@
 					</tr>
 					<tr>
 						<td colspan="1" class="box1">이전글</td>
-						<td colspan="3" class="box3">
+						<td colspan="3" class="box3 prevNext">
 							<c:if test="${!empty prevPost}">
-								<button type="submit" form="prevNext" class="prevNext detailBtn" name="prevNext" value="${prevPost.id}">
+								<button type="submit" form="prevNext" class="prevNextBtn" name="prevNext" value="${prevPost.id}">
 									${prevPost.title}
 								</button>
 							</c:if>
 						</td>
 					</tr>
 					<tr>
-						<td colspan="1" class="box1">다음글</td>
-						<td colspan="3" class="box3">
+						<td colspan="1" class="box1 radius_LB">다음글</td>
+						<td colspan="3" class="box3 prevNext radius_RB">
 							<c:if test="${!empty nextPost}">
-								<button type="submit" form="prevNext" class="prevNext detailBtn" name="prevNext" value="${nextPost.id}">
+								<button type="submit" form="prevNext" class="prevNextBtn" name="prevNext" value="${nextPost.id}">
 									${nextPost.title}
 								</button>
 							</c:if>
 						</td>
-					</tr>				                
+					</tr>					                
 	            </table>
 			</form>            
         </div>

@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.join.CustomInfo;
+
 import dog_MYF.notice.entity.Comment;
 import dog_MYF.notice.entity.Notice;
 import dog_MYF.notice.service.NoticeService;
@@ -26,16 +28,20 @@ public class NoticePrevNextController extends HttpServlet
 		String adminId = "admin";
 		boolean adminLogin = false;
 		boolean generalLogin = false;
-
-		HttpSession myfSession = req.getSession(false);
-		if(myfSession != null)
+		
+		CustomInfo loginId = new CustomInfo();
+		HttpSession session = req.getSession(false);
+		if(session != null)
 		{
-			String loginId = (String)myfSession.getAttribute("id");
-			req.setAttribute("currentUser", loginId);
-			generalLogin = true;			
-			if(adminId.equals(loginId))
+			loginId = (CustomInfo) session.getAttribute("customInfo");
+			if(loginId != null)
 			{
-				adminLogin = true;
+				req.setAttribute("currentUser", loginId.getUserId());
+				generalLogin = true;
+				if(adminId.equals(loginId.getUserId()))
+				{
+					adminLogin = true;
+				}
 			}
 		}
 		if(req.getAttribute("currentUser") == null)
@@ -54,7 +60,7 @@ public class NoticePrevNextController extends HttpServlet
 			int prevNext = Integer.parseInt(prevNextStr);
 			if(generalLogin)
 			{
-				myfSession.setAttribute("detailPage", prevNext);
+				session.setAttribute("detailPage", prevNext);
 			}
 			NoticeService service = new NoticeService();
 			if(!adminLogin)

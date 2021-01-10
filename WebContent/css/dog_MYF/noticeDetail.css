@@ -76,13 +76,23 @@ body {
     display: block;
     box-sizing: border-box;
     resize: none;
-    width: calc(100% - 40px);
+    width: calc(100% - 30px);
     height: 300px;
-    margin: 20px 0px 20px 20px;
+    margin: 20px 0px 20px 10px;
     border: 1px solid lavender;
     background-color: snow;
     border-radius: 10px;
     padding : 20px;
+}
+#myf_detail .detail table .titleInput {
+	height: 35px;
+	width: calc(100% - 15px);
+	margin: 10px 10px 10px 0px;
+	overflow: hidden;
+	padding: 10px;
+}
+#myf_detail .detail table textarea:focus {
+	outline-color: aqua;
 }
 
 #myf_detail .detail table input[type="text"]:focus {
@@ -91,10 +101,6 @@ body {
 
 #myf_detail .detail table input[type="file"]:focus {
     outline: none;
-}
-
-#myf_detail .detail table textarea:focus {
-    outline-color: aqua;
 }
 
 #myf_detail .btns {
@@ -129,11 +135,15 @@ body {
     text-align: right;
 }
 
-#myf_detail .detail table .comment p:first-child {
+#myf_detail .detail table .comment .commentW {
     border-top: 2px solid aqua;
     margin-top: 10px;
     padding-top: 20px;
     font-weight: bolder;
+}
+
+#myf_detail .detail table .comment .commentP {
+	font-weight: normal;
 }
 
 #myf_detail .detail table .comment p {
@@ -166,7 +176,4 @@ body {
     border: none;
     margin: 0;
     /* background-color: Transparent; */
-}
-#myf_detail .detail table .box3 {
-    /* padding-right: 10px; */
 }

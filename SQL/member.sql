@@ -16,7 +16,7 @@ constraint pk_mem_userId primary key(userId)
 
 INSERT INTO member (userId, userPwd, userName, userBirth, userTel, userAnswer,
                     userGender, zipcode, address1, address2) 
-VALUES ('gmchan', '123', 'ì´ê¸ˆì°¬', '19961112', '01083550433', 'ë§ˆê³¡ì´ˆë“±í•™êµ', 'ë‚¨ì', '21512', 'ê²½ê¸°ë„ êµ¬ë¦¬ì‹œ ìˆ˜íƒë™ ë§ˆì œìŠ¤íƒ€ì›Œ', '1ì¸µ');
+VALUES ('gmchan', '123', '?´ê¸ˆì°¬', '19961112', '01083550433', 'ë§ˆê³¡ì´ˆë“±?•™êµ?', '?‚¨?', '21512', 'ê²½ê¸°?„ êµ¬ë¦¬?‹œ ?ˆ˜?ƒ?™ ë§ˆì œ?Š¤???›Œ', '1ì¸?');
 
 commit;
 

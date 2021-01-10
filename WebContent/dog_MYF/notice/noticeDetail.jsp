@@ -70,8 +70,8 @@
 							<p class="contentTxt">${n.content}</p>
 							<c:forEach var="cL" items="${cList}">
 								<div class="comment">
-									<p class="firstP">${cL.writer} 님의 댓글 &nbsp;&nbsp;<fmt:formatDate pattern=" yyyy-MM-dd HH:mm" value="${cL.regdate}"/></p>
-									<p>${cL.content}</p>
+									<p class="commentW">${cL.writer} 님의 댓글 &nbsp;&nbsp;<fmt:formatDate pattern=" yyyy-MM-dd HH:mm" value="${cL.regdate}"/></p>
+									<p class="commentP">${cL.content}</p>
 <%-- ADMIN OR GENERAL --%>
 									<c:if test="${currentUser == cL.writer or currentUser == 'admin'}">
 										<button type="submit" form="comment" class="detailBtn" name="deleteComment" value="${cL.id}">삭제</button>
@@ -82,7 +82,7 @@
 <%-- LOGIN --%>
 							<c:if test="${currentUser != 'log-off' or empty currentUser}">
 								<div class="comment">
-									<p>작성자</p>
+									<p class="commentW">${currentUser} 님의 댓글</p>
 									<textarea class="commentInput" name="comment" placeholder="댓글을 입력해주라."></textarea>
 									<button type="submit" form="comment" class="detailBtn" name="cRegister" value="${n.id}">작성</button>
 								</div>

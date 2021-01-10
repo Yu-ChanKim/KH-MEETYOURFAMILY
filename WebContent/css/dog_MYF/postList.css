@@ -1,7 +1,21 @@
 @charset "utf-8";
 
 * {
-    /* border: 1px solid rgba(255, 0, 0, 0.3); */
+    /* border: 1px solid black; */
+}
+
+@font-face {
+    font-family: 'NEXONFootballGothicBA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicBA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXONFootballGothicLA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicLA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
@@ -17,76 +31,149 @@ body {
     height: 100%;
 }
 
+
 #myf_list > .title {
+    position: relative;
+    /* box-sizing: border-box; */
     display: inline-block;
+    width: 180px;
+    height: 55px;
     font-size: 40px;
     font-weight: bold;
-    margin: 50px 0px 50px 0px;
-    padding: 0px 15px 15px 15px;
-    border-bottom: 10px solid aqua;
+    margin: 50px 20px 50px 20px;
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 1s, border 1s, left 1s;
+    cursor: pointer;
+	font-family: 'NEXONFootballGothicBA1';
+    z-index: 2;
 }
+
+#myf_list > #title_1 {
+    background-color: lavender;
+}
+
+#myf_list > #title_2 {
+    background-color: #ECF370;
+}
+
+#myf_list > #title_1:hover ~ #titleBox {
+    transform: translate(-245px, 0px);
+    border: 8px solid aqua;
+}
+
+#myf_list > #titleBox {
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    width: 245px;
+    height: 115px;
+    border-radius: 40px;
+    left: calc(50% - 0px);
+    top: 30px;
+    border: 8px solid #CBCB47;
+    transform: translate(0px, 0px);
+    transition: background-color 1s, border 1s, transform 1s;
+    z-index: 1;
+}
+
+/* 여기부터 */
 
 #myf_list > .list table {
-    position: relative;
-    width: 100%;
-    border-spacing: 0px;
-    table-layout: fixed;
-    font-size: 15px;
+	table-layout: fixed;
+	width: 100%;
+	border-spacing: 30px;
+	border-radius: 15px;
+	border: 5px solid #EADD2C;
+	text-align: center;
 }
-
-#myf_list > .list table thead tr th:nth-child(1) {width: 10%;}
-#myf_list > .list table thead tr th:nth-child(2) {width: 45%;}
-#myf_list > .list table thead tr th:nth-child(3) {width: 15%;}
-#myf_list > .list table thead tr th:nth-child(4) {width: 15%;}
-#myf_list > .list table thead tr th:nth-child(5) {width: 10%;}
-#myf_list > .list table thead tr th:nth-child(6) {width: 5%;}
-#myf_list > .list table thead tr th:nth-child(7) {width: 5%;}
 
 #myf_list > .list table tr td {
-    border-bottom: 1px solid aqua;
+	position: relative;
+	height: 200px;
 }
 
-#myf_list > .list table tr th {
-    background-color: lightcyan;
-    border-top: 5px solid aqua;
-    border-bottom: 1px solid aqua;
+#myf_list > .list table .chkbox {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: calc(0% + 10px);
+	left: calc(0% + 10px);
+	/* transform: translate(-10px, -200px); */
 }
 
-#myf_list > .list table tr:hover {
-    background-color: lightcyan;
+#myf_list > .list table .chkbox:checked+button {
+	background-color: forestgreen;
 }
 
-#myf_list > .list table th p {
-    font-weight: bolder;
-    border-right: 3px solid aqua;
+
+#myf_list > .list table tr td img {
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	max-width: 100%;
+	max-height: 100%;
+	border-radius: 20px;
+	border: none;
+	top: 50%;
+	transform: translate(0%, -50%);
 }
 
-#myf_list > .list table th:last-child p {
-    border-right: none;
+#myf_list > .list table button > :first-child {
+	height: 180px;
 }
 
-#myf_list > .list table tbody .title button {
-    display: block;
-    cursor: pointer;
-    text-align: left;
-    padding: 0px 10px 0px 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 15px;
-    width: 100%;
-    height: 50px;
-    border: none;
-    background-color: Transparent;
+#myf_list > .list table button {
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+    /* border: 5px dotted skyblue; */
+    border: 5px dotted #ECF370;
+	border-radius: 0px 20px 20px 20px;
+	background: none;
+	padding: 30px;
+	transition: background-color 2000ms;
 }
 
-#myf_list > .list table tbody .title button:hover {
-    font-weight: bolder;
+#myf_list > .list table button:hover {
+	background-color: #EADD2C;
 }
 
-#myf_list > .list table tbody .title button:focus {
+#myf_list > .list table button:active {
+	background-color: #CBCB47;
+}
+
+#myf_list > .list table button:focus {
     outline: none;
 }
+
+#myf_list > .list table button:focus {
+
+	transition: background-color 1s, color 1s;
+}
+#myf_list > .list table .writerP {
+	font-size: 24px;
+	margin : 20px 0px 0px 0px;
+}
+
+#myf_list > .list table .titleP {
+	font-size: 18px;
+	margin : 0px 0px 0px 0px;
+}
+
+#myf_list > .list table P {
+	/* display: block; */
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	background-color: Transparent;
+	width: 100%;
+	font-size: 20px;	
+	text-align: center;
+	font-family: 'NEXONFootballGothicLA1';
+}
+
+/* 여기까지 */
 
 #myf_list > .paging table {
     display: inline-block;
@@ -100,7 +187,7 @@ body {
     color: black;
     font-size: 15px;
     font-weight: bold;
-    background-color: white;
+    background-color: transparent;
     border: 0px;
     cursor: pointer;
     outline: none;
@@ -108,15 +195,15 @@ body {
 }
 
 #myf_list > .paging table .currentPage {
-	background-color: lavender;
+	background-color: #ECF370;
 }
 
 #myf_list > .paging table button:hover {
-    background-color: aqua;
+    background-color: #EADD2C;
 }
 
 #myf_list > .paging table button:active {
-    background-color: deepskyblue;
+    background-color: #CBCB47;
 }
 
 #myf_list > .btns {
@@ -137,7 +224,7 @@ body {
     border : 0px;
     margin-right : 10px;
     cursor: pointer;
-    background-color: lavender;
+    background-color: #ECF370;
     transition: background-color 500ms, color 500ms;
 }
 
@@ -150,7 +237,7 @@ body {
     font-weight: bold;
     text-align: center;
     border-radius: 10px;
-    background-color: white;
+    background-color: transparent;
 }
 
 #myf_list > .btns .search * {
@@ -159,7 +246,7 @@ body {
     height: 100%;
     outline: none;
     font-size: 15px;
-    border: 1px solid lavender;
+    border: 1px solid #ECF370;
     padding: 0px 10px 0px 10px;
 }
 
@@ -183,15 +270,15 @@ body {
     right: 0;
     margin-right : 0px;
     border-radius: 0px 10px 10px 0px;
-    background-color: lavender;
+    background-color: #ECF370;
     transition: background-color 500ms, color 500ms;
     border: none;
 }
 
 #myf_list > .btns .btn:hover {
-    background-color: aqua;
+    background-color: #EADD2C;
 }
 
 #myf_list > .btns .btn:active {
-    background-color: deepskyblue;
+    background-color: #CBCB47;
 }

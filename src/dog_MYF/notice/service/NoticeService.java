@@ -290,7 +290,7 @@ public class NoticeService
 	{	
 		List<Comment> list = new ArrayList<>();
 		
-		String sql = "SELECT * FROM NOTICE_COMMENT_TB WHERE NOTICE_ID=?";
+		String sql = "SELECT * FROM NOTICE_COMMENT_TB WHERE NOTICE_ID=? ORDER BY REGDATE ASC";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;

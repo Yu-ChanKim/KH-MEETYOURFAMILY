@@ -1,7 +1,6 @@
 package dog_MYF.post.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,8 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.join.CustomInfo;
+
 import dog_MYF.post.entity.Comment;
-import dog_MYF.post.entity.Post;
 import dog_MYF.post.service.PostService;
 
 @WebServlet("/dog_MYF/postComment")
@@ -26,16 +26,20 @@ public class PostCommentController extends HttpServlet
 		String adminId = "admin";
 		boolean adminLogin = false;
 		boolean generalLogin = false;
-
-		HttpSession myfSession = req.getSession(false);
-		if(myfSession != null)
+		
+		CustomInfo loginId = new CustomInfo();
+		HttpSession session = req.getSession(false);
+		if(session != null)
 		{
-			String loginId = (String)myfSession.getAttribute("id");
-			req.setAttribute("currentUser", loginId);
-			generalLogin = true;			
-			if(adminId.equals(loginId))
+			loginId = (CustomInfo) session.getAttribute("customInfo");
+			if(loginId != null)
 			{
-				adminLogin = true;
+				req.setAttribute("currentUser", loginId.getUserId());
+				generalLogin = true;
+				if(adminId.equals(loginId.getUserId()))
+				{
+					adminLogin = true;
+				}
 			}
 		}
 		if(req.getAttribute("currentUser") == null)
@@ -58,19 +62,19 @@ public class PostCommentController extends HttpServlet
 				cRegister = cRegister_;
 				
 				String content = req.getParameter("comment");
-//				String content = (String)req.getAttribute("comment");
-//				int postId = Integer.parseInt(req.getParameter("n.id"));
 				int postId = Integer.parseInt(cRegister);
 				
 				Comment comment = new Comment();
-				comment.setWriter((String)myfSession.getAttribute("id"));
+				comment.setWriter(loginId.getUserId());
 				comment.setContent(content);
 				comment.setPostId(postId);
 				
 				PostService service = new PostService();
 				service.insertComment(comment);
 				
+				
 				resp.sendRedirect("/dog_MYF/postDetail");
+				
 			}
 
 			
