@@ -1,7 +1,21 @@
 @charset "utf-8";
 
 * {
-    /* border: 1px solid rgba(255, 0, 0, 0.3); */
+    /* border: 1px solid black; */
+}
+
+@font-face {
+    font-family: 'NEXONFootballGothicBA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicBA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXONFootballGothicLA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicLA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
@@ -17,14 +31,53 @@ body {
     height: 100%;
 }
 
+
 #myf_list > .title {
+    position: relative;
+    /* box-sizing: border-box; */
     display: inline-block;
+    width: 180px;
+    height: 55px;
     font-size: 40px;
     font-weight: bold;
-    margin: 50px 0px 50px 0px;
-    padding: 0px 15px 15px 15px;
-    border-bottom: 10px solid aqua;
+    margin: 50px 20px 50px 20px;
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 1s, border 1s, left 1s;
+    cursor: pointer;
+	font-family: 'NEXONFootballGothicBA1';
+    z-index: 2;
 }
+
+#myf_list > #title_1 {
+    background-color: lavender;
+}
+
+#myf_list > #title_2 {
+    background-color: #ECF370;
+}
+
+#myf_list > #title_2:hover ~ #titleBox {
+    transform: translate(+245px, 0px);
+    border: 8px solid #CBCB47;
+}
+
+#myf_list > #titleBox {
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    width: 245px;
+    height: 115px;
+    border-radius: 40px;
+    left: calc(50% - 245px);
+    top: 30px;
+    border: 8px solid aqua;
+    transform: translate(0px, 0px);
+    transition: background-color 1s, border 1s, transform 1s;
+    z-index: 1;
+}
+
+/* */
 
 #myf_list > .list table {
     position: relative;
@@ -100,7 +153,7 @@ body {
     color: black;
     font-size: 15px;
     font-weight: bold;
-    background-color: white;
+    background-color: transparent;
     border: 0px;
     cursor: pointer;
     outline: none;
@@ -150,7 +203,7 @@ body {
     font-weight: bold;
     text-align: center;
     border-radius: 10px;
-    background-color: white;
+    background-color: transparent;
 }
 
 #myf_list > .btns .search * {

@@ -21,9 +21,13 @@
 	
 	<div id="myf_list">
 	    
-		<div class="title">
+		<div class="title" id="title_1">
 			공지사항
 		</div>
+		<div class="title" id="title_2" onClick="location.href='/dog_MYF/postList'">
+			게시판
+		</div>
+		<div id="titleBox"></div>
 		
 		<br>현재 접속자(test) : ${currentUser}
 			

@@ -20,17 +20,25 @@
 	
 	<div id="myf_list">
 	    
-		<div class="title">
+		<div class="title" id="title_1" onClick="location.href='/dog_MYF/noticeList'">
+			공지사항
+		</div>
+		<div class="title" id="title_2">
 			게시판
 		</div>
+		<div id="titleBox"></div>
 		
 		<br>현재 접속자(test) : ${currentUser}
 			
 		<div class="btns">
-<%-- ADMIN --%>
-			<c:if test="${currentUser == 'admin'}">		
+<%-- ADMIN or GENERAL --%>
+			<c:if test="${currentUser == 'admin' or currentUser != 'log-off'}">		
 				<form id="regPage" action="/dog_MYF/postList" method="post"></form>				
 				<button class="btn" type="submit" form="regPage" name="regPage" value="regPage">글쓰기</button>
+			</c:if>
+<%-----------%>
+<%-- ADMIN --%>			
+			<c:if test="${currentUser == 'admin'}">		
 				<button class="btn" type="submit" name="deleteIds" form="deleteIds" value="deleteIds">삭제하기</button>
 			</c:if>
 <%-----------%>
@@ -47,50 +55,28 @@
 		<div class="list">
 			<form id="deleteIds" action="/dog_MYF/postList" method="post">
 				<table>
-					<thead>
-						<tr>
-							<th><p>번호</p></th>
-							<th><p>제목</p></th>
-							<th><p>작성자</p></th>
-							<th><p>작성일</p></th>
-							<th><p>조회수</p></th>
-<%-- ADMIN --%>
-							<c:if test="${currentUser == 'admin'}">
-								<th><p>삭제</p></th>
-							</c:if>
-<%-----------%>
-						</tr>
-					</thead>
-					<tbody>
+					<tr>
+						<fmt:parseNumber var="countPost" type="number" value="0" />
 						<c:forEach var="l" items="${list}">
-							<tr>
-								<td>
-									<fmt:formatNumber value="${l.id}" />
-								</td>
-								<td class="title">
-									<button type="submit" name="detailPage" value="${l.id}">
-										${l.title}&nbsp;${(l.commentCount) != 0 ? [l.commentCount] : ""}
-									</button>
-								</td>
-								<td>
-									${l.writer}
-								</td>
-								<td>
-									<fmt:formatDate pattern="yyyy-MM-dd" value="${l.regdate}"/>
-								</td>
-								<td>
-									<fmt:formatNumber value="${l.hit}" />
-								</td>
-<%-- ADMIN --%>
-								<c:if test="${currentUser == 'admin'}">
-									<td>
-										<input type="checkbox" name="delIds" value="${l.id}">
-									</td>
-								</c:if>
-<%-----------%>
-							</tr>
-						</c:forEach>
-					</tbody>
+							<c:set var="countPost" value="${countPost + 1}" />
+							<td>
+								<input class="chkbox" type="checkbox" name="delIds" value="${l.id}">
+								<button type="submit" name="detailPage" value="${l.id}">
+									<div>
+										<img src="/dog_MYF/post/upload/${fn:split(l.files,',')[0]}" alt="imageFile">
+									</div>
+									<div>
+										<p class="writerP">${l.writer}</p>
+										<p class="titleP">${l.title}</p>
+									</div>
+								</button>
+							</td>
+						<c:if test="${countPost % 3 == 0}">
+					</tr>
+					<tr>
+						</c:if>
+						</c:forEach>					
+					</tr>
 				</table>
 			</form>
 		</div>

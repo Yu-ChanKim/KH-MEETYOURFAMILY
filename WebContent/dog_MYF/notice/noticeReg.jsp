@@ -31,7 +31,7 @@
 					<tr>
 	                	<td colspan="1" class="box1">제목</td>
 	                    <td colspan="3" class="box2">
-	                    	<input type="text" name="title" placeholder="제목을 입력해주라."/>
+	                    	<textarea class="titleInput" name="title" placeholder="제목을 입력해주라."></textarea>
 	                    </td>
 					</tr>
 					<tr>

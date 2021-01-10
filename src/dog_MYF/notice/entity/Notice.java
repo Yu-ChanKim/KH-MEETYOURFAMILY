@@ -42,7 +42,7 @@ public class Notice
 
 	public String getTitle()
 	{
-		return title;
+		return title.replace("\r\n", "<br>").replace(" ", "&nbsp;");
 	}
 
 	public void setTitle(String title)

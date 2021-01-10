@@ -29,9 +29,9 @@
        	    <form id="register" action="/dog_MYF/postList" method="post" enctype="multipart/form-data">
 	            <table>
 					<tr>
-	                	<td colspan="1" class="box1">제목</td>
-	                    <td colspan="3" class="box2">
-	                    	<input type="text" name="title" placeholder="제목을 입력해주라."/>
+	                	<td colspan="1" class="box1 radius_LT">제목</td>
+	                    <td colspan="3" class="box2 radius_RT">
+	                    	<textarea class="titleInput" name="title" placeholder="제목을 입력해주라."></textarea>
 	                    </td>
 					</tr>
 					<tr>
@@ -43,17 +43,17 @@
 	                <tr>
 						<td colspan="1" class="box1">첨부파일</td>
 						<td colspan="3" class="box2">
-							<input type="file" name="file" multiple>
+							<input type="file" name="file" accept=".jpg, .gif, .png, .jpeg, .bmp" multiple>
 						</td>
 	                </tr>
 					<tr>
-						<td colspan="4" class="box2">
-							<textarea name="content" placeholder="내용을 입력해주라."></textarea>
+						<td colspan="4" class="box2 radius_B">
+							<textarea class="scrollV" name="content" placeholder="내용을 입력해주라."></textarea>
 						</td>
 					</tr>				
 	            </table>
             </form>
-        </div>      	
+        </div>  	
         
         <div class="btns">
             <button class="detailBtn" onClick="location.href='/dog_MYF/postList'">목록</button>
