@@ -28,7 +28,7 @@ create table dog(
 );
 
 insert into dog values(seq_dog_serial.nextval,'소형견','츄비','푸들','수컷','2살','2.8kg','INFP','재밌는 개그맨형','(소)푸들1.jpg','(소)푸들2.jpg','(소)푸들3.jpg','(소)푸들4.jpg','');
-insert into dog values(seq_dog_serial.nextval,'소형견','찰랑','비숑프라제','수컷','4살','3.6kg','ISFP','어리버리 모범생형','(소)비숑프리제1.jpg','(소)비숑프리제2.jpg','(소)비숑프리제3.jpg','(소)비숑프리제4.jpg','');
+insert into dog values(seq_dog_serial.nextval,'소형견','찰랑','비숑프리제','수컷','4살','3.6kg','ISFP','어리버리 모범생형','(소)비숑프리제1.jpg','(소)비숑프리제2.jpg','(소)비숑프리제3.jpg','(소)비숑프리제4.jpg','');
 insert into dog values(seq_dog_serial.nextval,'소형견','무무','치와와','수컷','3살','2.9kg','ISTJ','듬직한 기사형','(소)치와와1.jpg','(소)치와와2.jpg','(소)치와와3.jpg','(소)치와와4.jpg','');
 insert into dog values(seq_dog_serial.nextval,'소형견','아라','요크셔테리어','암컷','13살','2.9kg','INTJ','음흉한 귀족형','(소)요크셔테리어1.jpg','(소)요크셔테리어2.jpg','(소)요크셔테리어3.jpg','(소)요크셔테리어4.jpg','');
 insert into dog values(seq_dog_serial.nextval,'소형견','봉봉','페키니즈','암컷','8살','6.3kg','ISTP','오늘만사는 백수형','(소)페키니즈1.jpg','(소)페키니즈2.jpg','(소)페키니즈3.jpg','(소)페키니즈4.jpg','');
