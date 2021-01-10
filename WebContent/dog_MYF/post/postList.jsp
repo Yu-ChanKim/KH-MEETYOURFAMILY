@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -23,25 +24,29 @@
 		<div class="title" id="title_1" onClick="location.href='/dog_MYF/noticeList'">
 			공지사항
 		</div>
-		<div class="title" id="title_2">
+		<div class="title" id="title_2" onClick="location.href='/dog_MYF/postList'">
 			게시판
 		</div>
 		<div id="titleBox"></div>
 		
-		<br>현재 접속자(test) : ${currentUser}
+
 			
 		<div class="btns">
-<%-- ADMIN or GENERAL --%>
-			<c:if test="${currentUser == 'admin' or currentUser != 'log-off'}">		
+${postListTag_1}
+<%--
+ADMIN or GENERAL
+			<c:if test="${currentUser != 'log-off' or !empty currentUser}">		
 				<form id="regPage" action="/dog_MYF/postList" method="post"></form>				
 				<button class="btn" type="submit" form="regPage" name="regPage" value="regPage">글쓰기</button>
 			</c:if>
-<%-----------%>
-<%-- ADMIN --%>			
-			<c:if test="${currentUser == 'admin'}">		
+--%>
+${postListTag_2}
+<%--
+ADMIN
+			<c:if test="${currentUser == 'admin'}">
 				<button class="btn" type="submit" name="deleteIds" form="deleteIds" value="deleteIds">삭제하기</button>
 			</c:if>
-<%-----------%>
+--%>
 			<form class="search" name="search"  method="post">
 				<select class="category" name="category">
 					<option ${(param.category == "title") ? "selected" : ""} value="title">제목</option>
@@ -60,7 +65,9 @@
 						<c:forEach var="l" items="${list}">
 							<c:set var="countPost" value="${countPost + 1}" />
 							<td>
+						<c:if test="${currentUser == 'admin'}">
 								<input class="chkbox" type="checkbox" name="delIds" value="${l.id}">
+						</c:if>
 								<button type="submit" name="detailPage" value="${l.id}">
 									<div>
 										<img src="/dog_MYF/post/upload/${fn:split(l.files,',')[0]}" alt="imageFile">

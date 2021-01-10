@@ -16,7 +16,7 @@ import dog_MYF.notice.entity.Comment;
 import dog_MYF.notice.entity.Notice;
 import dog_MYF.notice.service.NoticeService;
 
-@WebServlet("/dog_MYF/noticeNextPrev")
+@WebServlet("/dog_MYF/noticePrevNext")
 public class NoticePrevNextController extends HttpServlet
 {
 	@Override

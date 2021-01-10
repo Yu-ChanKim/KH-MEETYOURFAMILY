@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -20,11 +21,15 @@
 
     <div id="myf_detail">
         
-        <div class="title">
-            공지사항
-        </div>
+		<div class="title" id="title_1" onClick="location.href='/dog_MYF/noticeList'">
+			공지사항
+		</div>
+		<div class="title" id="title_2" onClick="location.href='/dog_MYF/postList'">
+			게시판
+		</div>
+		<div id="titleBox"></div>
 
-		<br>현재 접속자(test) : ${currentUser}
+
 		
         <div class="detail">
         	<form id="comment" action="/dog_MYF/noticeComment" method="post">
@@ -80,7 +85,7 @@
 								</div>
 							</c:forEach>
 <%-- LOGIN --%>
-							<c:if test="${currentUser != 'log-off' or empty currentUser}">
+							<c:if test="${currentUser != 'log-off' && !empty currentUser}">
 								<div class="comment">
 									<p class="commentW">${currentUser} 님의 댓글</p>
 									<textarea class="commentInput" name="comment" placeholder="댓글을 입력해주라."></textarea>
@@ -126,7 +131,7 @@
     </div>
     
 	<form id="deleteId" type="hidden" action="/dog_MYF/noticeList" method="post"></form>
-	<form id="prevNext" type="hidden" action="/dog_MYF/noticeNextPrev" method="post"></form>
+	<form id="prevNext" type="hidden" action="/dog_MYF/noticePrevNext" method="post"></form>
 		
 	<%@include file="/footer.jsp"%>
 

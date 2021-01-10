@@ -1,5 +1,5 @@
-<%@ page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -21,7 +21,7 @@
 	
 	<div id="myf_list">
 	    
-		<div class="title" id="title_1">
+		<div class="title" id="title_1" onClick="location.href='/dog_MYF/noticeList'">
 			공지사항
 		</div>
 		<div class="title" id="title_2" onClick="location.href='/dog_MYF/postList'">
@@ -29,16 +29,18 @@
 		</div>
 		<div id="titleBox"></div>
 		
-		<br>현재 접속자(test) : ${currentUser}
+
 			
 		<div class="btns">
-<%-- ADMIN --%>
+${noticeListTag_1}
+<%--
+ADMIN
 			<c:if test="${currentUser == 'admin'}">		
 				<form id="regPage" action="/dog_MYF/noticeList" method="post"></form>				
 				<button class="btn" type="submit" form="regPage" name="regPage" value="regPage">글쓰기</button>
 				<button class="btn" type="submit" name="deleteIds" form="deleteIds" value="deleteIds">삭제하기</button>
 			</c:if>
-<%-----------%>
+--%>
 			<form class="search" name="search"  method="post">
 				<select class="category" name="category">
 					<option ${(param.category == "title") ? "selected" : ""} value="title">제목</option>
@@ -59,10 +61,13 @@
 							<th><p>작성자</p></th>
 							<th><p>작성일</p></th>
 							<th><p>조회수</p></th>
-<%-- ADMIN --%>
+${noticeListTag_2}
+<%--
+ADMIN
 							<c:if test="${currentUser == 'admin'}">
 								<th><p>삭제</p></th>
 							</c:if>
+--%>
 <%-----------%>
 						</tr>
 					</thead>
@@ -86,13 +91,15 @@
 								<td>
 									<fmt:formatNumber value="${l.hit}" />
 								</td>
-<%-- ADMIN --%>
+${noticeListTag_3}
+<%--
+ADMIN
 								<c:if test="${currentUser == 'admin'}">
 									<td>
 										<input type="checkbox" name="delIds" value="${l.id}">
 									</td>
 								</c:if>
-<%-----------%>
+--%>
 							</tr>
 						</c:forEach>
 					</tbody>

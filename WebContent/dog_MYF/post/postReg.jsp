@@ -1,7 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -19,11 +20,15 @@
 
     <div id="myf_detail">
         
-        <div class="title">
-            게시판
-        </div>
+		<div class="title" id="title_1" onClick="location.href='/dog_MYF/noticeList'">
+			공지사항
+		</div>
+		<div class="title" id="title_2" onClick="location.href='/dog_MYF/postList'">
+			게시판
+		</div>
+		<div id="titleBox"></div>
         
-        <br>현재 접속자(test) : ${currentUser}
+
         
         <div class="detail">
        	    <form id="register" action="/dog_MYF/postList" method="post" enctype="multipart/form-data">

@@ -65,7 +65,7 @@
                             button: "입양 절차 소개로 이동",
                         }) .then((value) => {
                            if(value) {
-                              location.href ='main.jsp?inc=./dog_introduce/introduce.jsp'
+                              location.href ='main.jsp?inc=./dog_introduce/procedure.jsp'
                            }
                         })                   
                 });
