@@ -69,8 +69,12 @@
 								<a onclick="window.open('/dog_MYF/post/upload/${fn:split(fileName,',')[0]}', '_blank'); return false;">
             						<img src="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}" alt="" />
         						</a>
---%>
 									<img src="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}" onclick="window.open('/dog_MYF/post/upload/${fn:split(fileName,',')[0]}','popup','width=auto,height=auto')" />
+									<img src="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}" onclick="window.open('/dog_MYF/post/upload/${fn:split(fileName,',')[0]}', 'win', 'width=700, height=870, left=600')" />
+--%>
+									<button class="imgBtn" type="submit" form="imagePage" name="imgFile" value="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}">
+										<img src="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}" />
+									</button>
 		                        </c:forTokens>
 							</div>
 	                    </td>
@@ -137,10 +141,11 @@
     
 	<form id="deleteId" type="hidden" action="/dog_MYF/postList" method="post"></form>
 	<form id="prevNext" type="hidden" action="/dog_MYF/postPrevNext" method="post"></form>
+	<form id="imagePage" type="hidden" action="/dog_MYF/postImage" method="post"></form>
 		
 	<%@include file="/footer.jsp"%>
 
-</script>
+
 
 </body>
 
