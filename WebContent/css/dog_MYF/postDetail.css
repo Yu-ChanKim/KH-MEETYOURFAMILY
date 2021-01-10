@@ -1,9 +1,22 @@
 @charset "utf-8";
 
-/* * {
-    border: 1px solid black;
-} */
+* {
+    /* border: 1px solid black; */
+}
 
+@font-face {
+    font-family: 'NEXONFootballGothicBA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicBA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXONFootballGothicLA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicLA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
     margin: 0;
@@ -18,14 +31,54 @@ body {
     height: 100%;
 }
 
-#myf_detail .title {
+
+#myf_detail > .title {
+    position: relative;
+    /* box-sizing: border-box; */
     display: inline-block;
+    width: 180px;
+    height: 55px;
     font-size: 40px;
     font-weight: bold;
-    margin: 50px 0px 50px 0px;
-    padding: 0px 15px 15px 15px;
-    border-bottom: 10px solid #EADD2C;
+    margin: 50px 20px 50px 20px;
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 500ms, border 500ms, transform 500ms;
+    cursor: pointer;
+	font-family: 'NEXONFootballGothicBA1';
+    z-index: 2;
 }
+
+#myf_detail > #title_1 {
+    background-color: lavender;
+}
+
+#myf_detail > #title_2 {
+    background-color: #ECF370;
+}
+
+#myf_detail > #title_1:hover ~ #titleBox {
+    transform: translate(-245px, 0px);
+    border: 8px solid aqua;
+}
+
+#myf_detail > #titleBox {
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    width: 245px;
+    height: 115px;
+    border-radius: 40px;
+    left: calc(50% - 0px);
+    top: 30px;
+    border: 8px solid #CBCB47;
+    transform: translate(0px, 0px);
+    transition: background-color 500ms, border 500ms, transform 500ms;
+    z-index: 1;
+}
+
+
+/*  */
 
 #myf_detail .detail table {
     position: relative;

@@ -59,6 +59,24 @@ public class PostListController extends HttpServlet
 		
 		
 		/*
+		 *  SET TAG
+		 */
+		String postListTag_1 = "";
+		if(generalLogin == true)
+		{
+			postListTag_1 = "<form id='regPage' action='/dog_MYF/postList' method='post'></form>"
+					+ "<button class='btn' type='submit' form='regPage' name='regPage' value='regPage'>글쓰기</button>";
+			req.setAttribute("postListTag_1", postListTag_1);
+		}
+		String postListTag_2 = "";
+		if(adminLogin == true)
+		{
+			postListTag_2 = "<button class='btn' type='submit' name='deleteIds' form='deleteIds' value='deleteIds'>삭제하기</button>";
+			req.setAttribute("postListTag_2", postListTag_2);		
+		}
+		
+		
+		/*
 		 * VALUE - INIT
 		 */
 		boolean isForward = true;
@@ -189,7 +207,7 @@ public class PostListController extends HttpServlet
 				viewPage = "postList";
 			}
 		}
-
+		
 
 		/*
 		 * ACTION : COMMON

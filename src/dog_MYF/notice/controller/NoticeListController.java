@@ -60,6 +60,25 @@ public class NoticeListController extends HttpServlet
 		
 		
 		/*
+		 *  SET TAG
+		 */
+		String noticeListTag_1 = "";
+		String noticeListTag_2 = "";
+		String noticeListTag_3 = "";
+		if(adminLogin == true)
+		{
+			noticeListTag_1 = "<form id='regPage' action='/dog_MYF/noticeList' method='post'></form>"
+					+ "<button class='btn' type='submit' form='regPage' name='regPage' value='regPage'>글쓰기</button>"
+					+ "<button class='btn' type='submit' name='deleteIds' form='deleteIds' value='deleteIds'>삭제하기</button>";
+			noticeListTag_2 = "<th><p>삭제</p></th>";
+			noticeListTag_3 = "<td><input type='checkbox' name='delIds' value='${l.id}'></td>";
+			req.setAttribute("noticeListTag_1", noticeListTag_1);
+			req.setAttribute("noticeListTag_2", noticeListTag_2);
+			req.setAttribute("noticeListTag_3", noticeListTag_3);
+		}
+		
+		
+		/*
 		 * VALUE - INIT
 		 */
 		boolean isForward = true;
@@ -115,6 +134,7 @@ public class NoticeListController extends HttpServlet
 			
 			viewPage = "noticeDetail.jsp";
 		}
+
 		
 		
 		/*
@@ -190,7 +210,7 @@ public class NoticeListController extends HttpServlet
 			}
 		}
 		
-
+		
 		/*
 		 * ACTION : COMMON
 		 */

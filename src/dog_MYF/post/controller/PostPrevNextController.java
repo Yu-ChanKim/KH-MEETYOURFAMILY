@@ -16,7 +16,7 @@ import dog_MYF.post.entity.Comment;
 import dog_MYF.post.entity.Post;
 import dog_MYF.post.service.PostService;
 
-@WebServlet("/dog_MYF/postNextPrev")
+@WebServlet("/dog_MYF/postPrevNext")
 public class PostPrevNextController extends HttpServlet
 {
 	@Override
@@ -68,7 +68,7 @@ public class PostPrevNextController extends HttpServlet
 				service.updatePostHit(prevNext);
 			}
 			Post post= service.getPost(prevNext);
-			req.setAttribute("n", post);
+			req.setAttribute("p", post);
 			List<Comment> cList = service.getCommentList(prevNext);
 			req.setAttribute("cList", cList);
 			Post nextPost = service.getNextPost(prevNext);
