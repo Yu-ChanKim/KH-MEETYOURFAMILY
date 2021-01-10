@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>찾아오는길</title>
 <link rel="stylesheet" href="/css/introduce.css" type="text/css">
-<script src="./js/introduce.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,7 +14,7 @@
       <div id='intro_menu'>
           <ul>
                <li><p id='check2' onclick="location.href = '/main.jsp?inc=./dog_introduce/introduce.jsp'">사업소개</p></li>
-              <li><p id='check1' onclick="location.href = '/main.jsp?inc=./dog_introduce/project.jsp'">프로젝트</p></li>
+               <li><p id='check1' onclick="location.href = '/main.jsp?inc=./dog_introduce/project.jsp'">프로젝트</p></li>
                <li><p id='check3' onclick="location.href = '/main.jsp?inc=./dog_introduce/procedure.jsp'">입양절차</p></li>
                <li><p id='check4' onclick="location.href = '/main.jsp?inc=./dog_introduce/position.jsp'">센터위치</p></li>
             </ul>

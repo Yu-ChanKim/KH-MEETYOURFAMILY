@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+   pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,26 +11,26 @@
 </head>
 
 <body>
-	<form action="main.jsp?inc=./dog_test/testForSuitability_login.jsp"
-		method="post" id="form1">
-		<div id="d1">
-			<h1 align="center">약관동의</h1>
-			<hr width="100%" color="orange" />
-			<br /> <br />
-			<tr>
-				<h2>
-					<td align="left"><font>견주 적합 테스트, 회원가입 이용약관, 개인정보 수집 및
-							이용에 모두 동의합니다.</font></td>
-					<td><input type="checkbox" name="all" id="all"></td>
-				</h2>
-				<hr width="100%" color="gray" />
-			</tr>
-			<div id="accordion">
+   <form action="main.jsp?inc=./dog_test/testForSuitability_login.jsp"
+      method="post" id="form1">
+      <div id="d1">
+         <h1 align="center">약관동의</h1>
+         <hr width="100%" color="orange" />
+         <br /> <br />
+         <tr>
+            <h2>
+               <td align="left"><font>견주 적합 테스트, 회원가입 이용약관, 개인정보 수집 및
+                     이용에 모두 동의합니다.</font></td>
+               <td><input type="checkbox" name="all" id="all"></td>
+            </h2>
+            <hr width="100%" color="gray" />
+         </tr>
+         <div id="accordion">
 
-				<h3>
-					<font>견주 적합 테스트(필수)</font><input type="checkbox" name="c1" id="c1" />
-				</h3>
-				<td><textarea readonly="readonly" rows="5" cols="66">
+            <h3>
+               <font>견주 적합 테스트(필수)</font><input type="checkbox" name="c1" id="c1" />
+            </h3>
+            <td><textarea readonly="readonly" rows="5" cols="66">
 
 견주 적합 테스트를 하는 목적이라 함은 길위에 잃어버린 이름을 다시 찾자라는 의도에서 시작 되었습니다.
 
@@ -50,11 +50,11 @@
 
    </textarea>
 
-					<h3>
-						<font>이용약관(필수)</font><input type="checkbox" name="c2" id="c2" />
-					</h3>
-					<div>
-						<textarea readonly="readonly" rows="5" cols="66">
+               <h3>
+                  <font>이용약관(필수)</font><input type="checkbox" name="c2" id="c2" />
+               </h3>
+               <div>
+                  <textarea readonly="readonly" rows="5" cols="66">
 - 제1조(목적)
 이 약관은 MEET YOUR FAMILY가 운영하는 사이트 유기견보호센터 
 에서 제공하는 인터넷 관련 서비스를 이용함에 있어 이를 이용하는
@@ -252,13 +252,13 @@
 
 
    </textarea>
-					</div>
+               </div>
 
-					<h3>
-						<font>개인정보동의(필수)</font><input type="checkbox" name="c3" id="c3" />
-					</h3>
-					<div>
-						<textarea readonly="readonly" rows="5" cols="66">
+               <h3>
+                  <font>개인정보동의(필수)</font><input type="checkbox" name="c3" id="c3" />
+               </h3>
+               <div>
+                  <textarea readonly="readonly" rows="5" cols="66">
 MEET YOUR FAMILY은 아래의 목적으로 개인정보를 수집 및 이용하며, 회원의 개인정보를 안전하게 취급하는데 최선을 다하고 있습니다.
 1.개인정보의 수집목적 및 이용목적
 ① 유기견 보호센터는 회원님께 최대한으로 최적화되고 맞춤화된 서비스를 제공하기 위하여 다음과 같은 목적으로 개인정보를 수집하고 있습니다.
@@ -286,15 +286,15 @@ MEET YOUR FAMILY은 아래의 목적으로 개인정보를 수집 및 이용하며, 회원의 개인정보�
 - 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년
 ② 귀하의 동의를 받아 보유하고 있는 거래정보 등을 귀하께서 열람을 요구하는 경우 유기견 보호센터는 지체없이 그 열람, 확인 할 수 있도록 조치합니다.
     </textarea>
-					</div>
-			</div>
+               </div>
+         </div>
 
 
-			<h3>
-				<font>반려견 MBTI(선택)</font><input type="checkbox" />
-			</h3>
-			<div>
-				<textarea readonly="readonly" rows="5" cols="66">
+         <h3>
+            <font>반려견 MBTI(선택)</font><input type="checkbox" />
+         </h3>
+         <div>
+            <textarea readonly="readonly" rows="5" cols="66">
 MEET YOUR FAMILY 에서는 이러한 이유로 MBTI를 진행하고 있습니다.
 
 * 반려견과 함께하다 보면 흔히 듣는 이야기가 있습니다.
@@ -502,21 +502,21 @@ MEET YOUR FAMILY의 연구진들은 반려견이 지속적으로, 또 비슷하게 나타내는 행동 패�
 
   ▶ 세 차례에 걸친 수정으로 문항과 요인 점수에 대한 해석 확정
      </textarea>
-			</div>
+         </div>
 
 
-			<div align="center">
-				<br /> <br /> <input type="submit" value="동의" class="btn2">
-				<input type="reset" value="비동의" class="btn2"> <br />
-			</div>
-		</div>
-	</form>
-	<br />
-	<br />
-	<br />
-	<br />
+         <div align="center">
+            <br /> <br /> <input type="submit" value="동의" class="btn2">
+            <input type="button" value="취소" onclick="location.href='/main.jsp'" class="btn2"> <br />
+         </div>
+      </div>
+   </form>
+   <br />
+   <br />
+   <br />
+   <br />
 
-	<!-- check Box 이벤트처리를 위한 Script -->
-	<script src="/js/log_join/agreePage.js"></script>
+   <!-- check Box 이벤트처리를 위한 Script -->
+   <script src="/js/log_join/agreePage.js"></script>
 </body>
 </html>

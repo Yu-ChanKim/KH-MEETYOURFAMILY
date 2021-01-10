@@ -170,9 +170,9 @@ public class MemberServlet extends HttpServlet {
 			info.setUserName(dto.getUserName());
 			info.setUserAnswer(dto.getUserAnswer());
 
-			HttpSession session = req.getSession();
-
-			session.setAttribute("customInfo", info);
+//			HttpSession session = req.getSession();
+//
+//			session.setAttribute("customInfo", info);
 
 			req.setAttribute("message", "아이디는 [" + dto.getUserId() + "]입니다.");
 
@@ -209,9 +209,9 @@ public class MemberServlet extends HttpServlet {
 			info.setUserId(dto.getUserId());
 			info.setUserAnswer(dto.getUserAnswer());
 
-			HttpSession session = req.getSession();
-
-			session.setAttribute("customInfo", info);
+//			HttpSession session = req.getSession();
+//
+//			session.setAttribute("customInfo", info);
 
 			req.setAttribute("message", "비밀번호는 [" + dto.getUserPwd() + "]입니다.");
 
@@ -267,7 +267,7 @@ public class MemberServlet extends HttpServlet {
 				MemberDTO dto = dao.getReadData(userId);
 
 				if (dto == null || !dto.getUserPwd().equals(userPwd)) {
-					req.setAttribute("message", "아이디 또는 패스워드를 정확히 입력하세요!");
+					req.setAttribute("message", "패스워드를 정확히 입력하세요!");
 
 					url = "/main.jsp?inc=./member/delete.jsp";
 					forward(req, resp, url);

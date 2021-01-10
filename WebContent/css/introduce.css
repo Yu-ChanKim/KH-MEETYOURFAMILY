@@ -41,6 +41,10 @@
    font-size: 40px;
    letter-spacing: 10px;    
 }
+#intro_menu p {
+	font-size : 20px;
+}
+
 #intro_1>#intro_Pro #project1{   
    
    display: inline-block;   

@@ -32,7 +32,7 @@
 		                <div class="test-choice2">
 		                    <div class="containerForTest">
 		                        <img class="imgForChoice" src="./img/testForSuitability/iconForChoice2.png" alt="비회원으로 검사 >" />
-		                        <div class="btnForChoice"><a class="clickForChoice" href="main.jsp?inc=./member/created.jsp">회원가입 후 검사 ></a></div>
+		                        <div class="btnForChoice"><a class="clickForChoice" href="main.jsp?inc=./member/agreePage.jsp">회원가입 후 검사 ></a></div>
 		                    </div>
 		                </div>
 		            </div>
