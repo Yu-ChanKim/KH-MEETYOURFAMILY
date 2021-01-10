@@ -7,168 +7,198 @@ import java.sql.SQLException;
 
 public class MemberDAO {
 
-   private Connection conn;
+	private Connection conn;
 
-   public MemberDAO(Connection conn){
-      this.conn=conn;
-   }
+	public MemberDAO(Connection conn) {
+		this.conn = conn;
+	}
 
-   //회원가입
-   public int insertData(MemberDTO dto){
-      int result=0;
-      PreparedStatement pstmt=null;
-      String sql;
+	// 회원탈퇴
+	public int deleteData(MemberDTO dto) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String sql;
+		try {
+			sql = "delete from member where userId=?";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, dto.getUserId());
 
-       try {
-            sql="insert into member (userId,userPwd,userName,userBirth,userTel,userAnswer,userGender,zipcode,address1,address2) values (?,?,?,?,?,?,?,?,?,?)";
-           
+			result = pstmt.executeUpdate();
+			pstmt.close();
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return result;
+	}
 
-            pstmt=conn.prepareStatement(sql);
+	// 회원가입
+	public int insertData(MemberDTO dto) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String sql;
 
-            pstmt.setString(1, dto.getUserId());
-            pstmt.setString(2, dto.getUserPwd());
-            pstmt.setString(3, dto.getUserName());
-            pstmt.setString(4, dto.getUserBirth());
-            pstmt.setString(5, dto.getUserTel());
-            pstmt.setString(6, dto.getUserAnswer());
-            pstmt.setString(7, dto.getUserGender());
-            pstmt.setString(8, dto.getZipcode());
-            pstmt.setString(9, dto.getAddress1());
-            pstmt.setString(10, dto.getAddress2());
+		try {
+			sql = "insert into member (userId,userPwd,userName,userBirth,userTel,userAnswer,userGender,zipcode,address1,address2) values (?,?,?,?,?,?,?,?,?,?)";
 
-         result=pstmt.executeUpdate();
+			pstmt = conn.prepareStatement(sql);
 
-         pstmt.close();
+			pstmt.setString(1, dto.getUserId());
+			pstmt.setString(2, dto.getUserPwd());
+			pstmt.setString(3, dto.getUserName());
+			pstmt.setString(4, dto.getUserBirth());
+			pstmt.setString(5, dto.getUserTel());
+			pstmt.setString(6, dto.getUserAnswer());
+			pstmt.setString(7, dto.getUserGender());
+			pstmt.setString(8, dto.getZipcode());
+			pstmt.setString(9, dto.getAddress1());
+			pstmt.setString(10, dto.getAddress2());
 
-      } catch (Exception e) {
-         System.out.println(e.toString());
-      }
+			result = pstmt.executeUpdate();
 
-      return result;
-   }
+			pstmt.close();
 
-   //회원 가져오기(한명의 회원찾기) [비밀번호 찾기]
-   public MemberDTO getReadData(String userId){
-      MemberDTO dto=null;
-      PreparedStatement pstmt=null;
-      ResultSet rs=null;
-      String sql;
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
 
-       try {
-            sql="select userId,userPwd,userName,to_char(userBirth,'YYYY-MM-DD') userBirth,userTel,userAnswer,userGender,zipcode,address1,address2 ";
-            sql+="from member where userId=?";
+		return result;
+	}
 
-            pstmt=conn.prepareStatement(sql);
+	// 회원 가져오기(한명의 회원찾기) [비밀번호 찾기]
+	public MemberDTO getReadData(String userId) {
+		MemberDTO dto = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql;
 
-            pstmt.setString(1, userId);
+		try {
+			sql = "select userId,userPwd,userName,to_char(userBirth,'YYYY-MM-DD') userBirth,userTel,userAnswer,userGender,zipcode,address1,address2 ";
+			sql += "from member where userId=?";
 
-            rs=pstmt.executeQuery();
+			pstmt = conn.prepareStatement(sql);
 
-            if(rs.next()){
-               dto= new MemberDTO();
+			pstmt.setString(1, userId);
 
-               dto.setUserId(rs.getString("userId"));
-               dto.setUserPwd(rs.getString("userPwd"));
-               dto.setUserName(rs.getString("userName"));
-               dto.setUserBirth(rs.getString("userBirth"));
-               dto.setUserTel(rs.getString("userTel"));
-               dto.setUserAnswer(rs.getString("userAnswer"));
-               dto.setUserGender(rs.getString("userGender"));
-               dto.setZipcode(rs.getString("zipcode"));
-               dto.setAddress1(rs.getString("address1"));
-               dto.setAddress2(rs.getString("address2"));
-               
-              
+			rs = pstmt.executeQuery();
 
-            }
+			if (rs.next()) {
+				dto = new MemberDTO();
 
-         rs.close();
-         pstmt.close();
+				dto.setUserId(rs.getString("userId"));
+				dto.setUserPwd(rs.getString("userPwd"));
+				dto.setUserName(rs.getString("userName"));
+				dto.setUserBirth(rs.getString("userBirth"));
+				dto.setUserTel(rs.getString("userTel"));
+				dto.setUserAnswer(rs.getString("userAnswer"));
+				dto.setUserGender(rs.getString("userGender"));
+				dto.setZipcode(rs.getString("zipcode"));
+				dto.setAddress1(rs.getString("address1"));
+				dto.setAddress2(rs.getString("address2"));
 
-      } catch (Exception e) {
-         System.out.println(e.toString());
-      }
+			}
 
-      return dto;
-   }
-   
-   //네임 회원 가져오기(한명의 회원찾기)[아이디찾기]
-   public MemberDTO getNameData(String userName){
-      MemberDTO dto=null;
-      PreparedStatement pstmt=null;
-      ResultSet rs=null;
-      String sql;
+			rs.close();
+			pstmt.close();
 
-       try {
-            sql="select userId,userPwd,userName,to_char(userBirth,'YYYY-MM-DD') userBirth,userTel,userAnswer,userGender,zipcode,address1,address2 ";
-            sql+="from member where userName=?";
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
 
-            pstmt=conn.prepareStatement(sql);
+		return dto;
+	}
 
-            pstmt.setString(1, userName);
+	// 네임 회원 가져오기(한명의 회원찾기)[아이디찾기]
+	public MemberDTO getNameData(String userName) {
+		MemberDTO dto = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql;
 
-            rs=pstmt.executeQuery();
+		try {
+			sql = "select userId,userPwd,userName,to_char(userBirth,'YYYY-MM-DD') userBirth,userTel,userAnswer,userGender,zipcode,address1,address2 ";
+			sql += "from member where userName=?";
 
-            if(rs.next()){
-               dto= new MemberDTO();
+			pstmt = conn.prepareStatement(sql);
 
-               dto.setUserId(rs.getString("userId"));
-               dto.setUserPwd(rs.getString("userPwd"));
-               dto.setUserName(rs.getString("userName"));
-               dto.setUserBirth(rs.getString("userBirth"));
-               dto.setUserTel(rs.getString("userTel"));
-               dto.setUserAnswer(rs.getString("userAnswer"));
-               dto.setUserGender(rs.getString("userGender"));
-               dto.setZipcode(rs.getString("zipcode"));
-               dto.setAddress1(rs.getString("address1"));
-               dto.setAddress2(rs.getString("address2"));
-               
-              
+			pstmt.setString(1, userName);
 
-            }
+			rs = pstmt.executeQuery();
 
-         rs.close();
-         pstmt.close();
+			if (rs.next()) {
+				dto = new MemberDTO();
 
-      } catch (Exception e) {
-         System.out.println(e.toString());
-      }
+				dto.setUserId(rs.getString("userId"));
+				dto.setUserPwd(rs.getString("userPwd"));
+				dto.setUserName(rs.getString("userName"));
+				dto.setUserBirth(rs.getString("userBirth"));
+				dto.setUserTel(rs.getString("userTel"));
+				dto.setUserAnswer(rs.getString("userAnswer"));
+				dto.setUserGender(rs.getString("userGender"));
+				dto.setZipcode(rs.getString("zipcode"));
+				dto.setAddress1(rs.getString("address1"));
+				dto.setAddress2(rs.getString("address2"));
 
-      return dto;
-   }
-   
+			}
 
-   //수정
-   public int updateData(MemberDTO dto) {
+			rs.close();
+			pstmt.close();
 
-      int result = 0;
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
 
-      PreparedStatement pstmt = null;
-      String sql;
+		return dto;
+	}
 
-      try {
+	// 수정
+	public int updateData(MemberDTO dto) {
 
-         sql = "update member set userPwd=?,userBirth=?,userTel=? ";
-         sql+= "where userId=?";
+		int result = 0;
 
-         pstmt = conn.prepareStatement(sql);
+		PreparedStatement pstmt = null;
+		String sql;
 
-         pstmt.setString(1, dto.getUserPwd());
-         pstmt.setString(2, dto.getUserBirth());
-         pstmt.setString(3, dto.getUserTel());
-         pstmt.setString(4, dto.getUserId());
+		try {
 
-         result = pstmt.executeUpdate();
+			sql = "update member set userPwd=?,userBirth=?,userTel=? ";
+			sql += "where userId=?";
 
-         pstmt.close();
+			pstmt = conn.prepareStatement(sql);
 
-      } catch (Exception e) {
-         System.out.println(e.toString());
-      }
-      return result;
+			pstmt.setString(1, dto.getUserPwd());
+			pstmt.setString(2, dto.getUserBirth());
+			pstmt.setString(3, dto.getUserTel());
+			pstmt.setString(4, dto.getUserId());
 
-   }
-   
-   
-   
+			result = pstmt.executeUpdate();
+
+			pstmt.close();
+
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return result;
+
+	}
+
+//	public MemberDTO deleteData(String userId) {
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		MemberDTO dto = new MemberDTO();
+//		String sql;
+//		int result = 0;
+//		try {
+//			
+//			String delsql = "delete from member where userId = ?";
+//			pstmt = conn.prepareStatement(delsql);
+//			pstmt.setString(1, dto.getUserId());
+//			result = pstmt.executeUpdate();
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return null;
+//	}
+
 }

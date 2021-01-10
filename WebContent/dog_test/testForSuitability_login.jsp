@@ -7,7 +7,7 @@
    <meta charset="UTF-8">
    <title>who's my family</title>
    <link rel="stylesheet" href="css/test_main_suitability.css">
-   <script src="js/testForSuitability.js"></script>
+   <script src="js/testForSuitability_login.js"></script>
 </head>
 
 <body>
