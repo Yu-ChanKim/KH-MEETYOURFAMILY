@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>입양절차</title>
 <link rel="stylesheet" href="/css/introduce.css" type="text/css">
-<script src="./js/introduce.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap" rel="stylesheet">
 
 </head>

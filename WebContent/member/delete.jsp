@@ -63,8 +63,8 @@
 											placeholder="비밀번호를 입력하세요" required
 											pattern='[a-zA-Z가-힣]{2,20}' />
 									</div>
-									</br> <input type="button" value="회원 탈퇴 하기" class="btn2"
-										onclick="member_delete();">
+									</br> <input type="button" value="회원 탈퇴 하기" class="btn2" onclick="member_delete();">
+						                 <input type="button" value="메인으로 돌아가기" class="btn2" onclick="javascript:location.href='/main.jsp';"/>   
 
 									<c:if test="${!empty message }">
 										<font color="red"><b>${message }</b></font>

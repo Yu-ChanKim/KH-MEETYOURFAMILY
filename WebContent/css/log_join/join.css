@@ -306,3 +306,9 @@ input[type='text'], input[type='password'], input[type='email'], select
 	display: inline-block;
 	text-align: center;
 }
+
+.container .container-login .login-box b{
+   display: inline-block;
+   padding: 15px;
+   margin-left: 83px;   
+}

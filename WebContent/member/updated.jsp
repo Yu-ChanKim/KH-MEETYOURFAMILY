@@ -39,7 +39,7 @@
 	                    <div class="bbsCreated_bottomLine">
 	                          <dt>패스워드</dt>
 	                          <dd>
-	                             <input type="password" name="userPwd" size="35" maxlength="20" class="booxTF"
+	                             <input type="password" name="userPwd" size="35" maxlength="20" class="booxTF" placeholder="변경할 비밀번호를 입력하세요"
 	                             value="${dto.userPwd }" />
 	                          </dd>
 	                    </div>
@@ -55,7 +55,7 @@
 	                    <div class="bbsCreated_bottomLine">
 	                          <dt>전화번호</dt>
 	                          <dd>
-	                             <input type="text" name="userTel" size="35" maxlength="50" class="boxTF"
+	                             <input type="text" name="userTel" size="35" maxlength="50" class="boxTF" placeholder="변경할 전화번호를 입력하세요" 
 	                             value="${dto.userTel }" />
 	                          </dd>
 	                    </div>
