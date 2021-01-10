@@ -1,4 +1,5 @@
---SemiProject KH-MEETYOURFAMILY 12.28
+--마당 강아지
+
 --DOG TABLE 삭제.
 drop table dog;
 
