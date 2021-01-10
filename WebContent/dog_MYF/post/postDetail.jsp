@@ -29,7 +29,7 @@
 		</div>
 		<div id="titleBox"></div>
 
-		<br>현재 접속자(test) : ${currentUser}
+
 		
         <div class="detail">
         	<form id="comment" action="/dog_MYF/postComment" method="post">
@@ -94,7 +94,7 @@
 								</div>
 							</c:forEach>
 <%-- LOGIN --%>
-							<c:if test="${currentUser != 'log-off' or !empty currentUser}">
+							<c:if test="${currentUser != 'log-off' && !empty currentUser}">
 								<div class="comment">
 									<p class="commentW">${currentUser} 님의 댓글</p>
 									<textarea class="commentInput" name="comment" placeholder="댓글을 입력해주라."></textarea>

@@ -29,7 +29,7 @@
 		</div>
 		<div id="titleBox"></div>
 
-		<br>현재 접속자(test) : ${currentUser}
+
 		
         <div class="detail">
         	<form id="comment" action="/dog_MYF/noticeComment" method="post">

@@ -28,7 +28,7 @@
 		</div>
 		<div id="titleBox"></div>
         
-        <br>현재 접속자(test) : ${currentUser}
+
         
         <div class="detail">
        	    <form id="register" action="/dog_MYF/postList" method="post" enctype="multipart/form-data">
