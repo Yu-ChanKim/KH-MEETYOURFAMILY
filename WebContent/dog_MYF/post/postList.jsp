@@ -70,7 +70,7 @@ ADMIN
 						</c:if>
 								<button type="submit" name="detailPage" value="${l.id}">
 									<div>
-										<img src="/dog_MYF/post/upload/${fn:split(l.files,',')[0]}" alt="imageFile">
+										<img src="${fn:split(l.files,',')[0]}" alt="imageFile">
 									</div>
 									<div>
 										<p class="writerP">${l.writer}</p>

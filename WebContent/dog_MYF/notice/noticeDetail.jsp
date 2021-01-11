@@ -60,8 +60,8 @@
 	                <tr>
 	                    <td colspan="1" class="box1">첨부파일</td>
 	                    <td colspan="3" class="box2 contcontent_ent">
-	                        <c:forTokens var="fileName" items="${n.files}" delims="/" varStatus="st">
-	                        	<a href="/dog_MYF/notice/upload/${fn:split(fileName,',')[0]}", download="${fn:split(fileName,',')[1]}">
+	                        <c:forTokens var="fileName" items="${n.files}" delims=":" varStatus="st">
+	                        	<a href="${fn:split(fileName,',')[0]}", download="${fn:split(fileName,',')[1]}">
 									${fn:split(fileName,',')[1]}
 	                        	</a>
 	                        	<c:if test="${!st.last}">

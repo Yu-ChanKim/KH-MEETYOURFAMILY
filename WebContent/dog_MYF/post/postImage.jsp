@@ -14,7 +14,7 @@
 			position: relative;
 			width: 100%;
 			min-height: 800px;
-			background-color: orange;
+			background-color: beige;
 			text-align: center;
 		}
 		#postI {

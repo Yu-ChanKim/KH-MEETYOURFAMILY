@@ -61,7 +61,7 @@
 	                    <td colspan="1" class="box1">첨부파일</td>
 	                    <td colspan="3" class="box2 contcontent_ent">
 							<div class="pictures scrollH">
-		                    	<c:forTokens var="fileName" items="${p.files}" delims="/" varStatus="st">		                    	
+		                    	<c:forTokens var="fileName" items="${p.files}" delims=":" varStatus="st">		                    	
 <%--
 	                        	<a href="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}", download="${fn:split(fileName,',')[1]}">
 									${fn:split(fileName,',')[1]}
@@ -72,8 +72,8 @@
 									<img src="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}" onclick="window.open('/dog_MYF/post/upload/${fn:split(fileName,',')[0]}','popup','width=auto,height=auto')" />
 									<img src="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}" onclick="window.open('/dog_MYF/post/upload/${fn:split(fileName,',')[0]}', 'win', 'width=700, height=870, left=600')" />
 --%>
-									<button class="imgBtn" type="submit" form="imagePage" name="imgFile" value="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}">
-										<img src="/dog_MYF/post/upload/${fn:split(fileName,',')[0]}" />
+									<button class="imgBtn" type="submit" form="imagePage" name="imgFile" value="${fn:split(fileName,',')[0]}">
+										<img src="${fn:split(fileName,',')[0]}" />
 									</button>
 		                        </c:forTokens>
 							</div>
