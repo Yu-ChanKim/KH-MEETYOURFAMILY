@@ -16,9 +16,11 @@ import dog_MYF.post.entity.Post;
 import dog_MYF.post.service.PostService;
 
 @WebServlet("/dog_MYF/postDetail")
-public class PostDetailController extends HttpServlet {
+public class PostDetailController extends HttpServlet
+{
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+	{
 		/*
 		 * SESSION - CHECK
 		 */
@@ -28,25 +30,35 @@ public class PostDetailController extends HttpServlet {
 
 		CustomInfo loginId = new CustomInfo();
 		HttpSession session = req.getSession(false);
-		if (session != null) {
+		if (session != null)
+		{
 			loginId = (CustomInfo) session.getAttribute("customInfo");
-			if (loginId != null) {
+			if (loginId != null)
+			{
 				req.setAttribute("currentUser", loginId.getUserId());
 				generalLogin = true;
-				if (adminId.equals(loginId.getUserId())) {
+				if (adminId.equals(loginId.getUserId()))
+				{
 					adminLogin = true;
 				}
 			}
 		}
-		if (req.getAttribute("currentUser") == null) {
+		if (req.getAttribute("currentUser") == null)
+		{
 			req.setAttribute("currentUser", "log-off");
 		}
 
+		
+
+
+
+		
 		/*
 		 * 
 		 */
 		String detailPageStr;
-		if (generalLogin) {
+		if (generalLogin)
+		{
 			detailPageStr = (String) session.getAttribute("detailPage");
 			int detailPage = Integer.parseInt(detailPageStr);
 
@@ -66,7 +78,8 @@ public class PostDetailController extends HttpServlet {
 	}
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+	{
 		doPost(req, resp);
 	}
 }

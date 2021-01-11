@@ -14,13 +14,16 @@
 			position: relative;
 			width: 100%;
 			min-height: 800px;
-			background-color: beige;
+			background-color: orange;
+			text-align: center;
 		}
 		#postI {
+			display: block;
 			position: absolute;
+			max-height: 800px;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50px, -50%);
+			transform: translate(-50%, -50%);
 		}
 	</style>
 </head>
